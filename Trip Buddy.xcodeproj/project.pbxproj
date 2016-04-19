@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		71792E311CC3119F008EAAAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71792E301CC3119F008EAAAF /* AppDelegate.swift */; };
-		71792E331CC3119F008EAAAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71792E321CC3119F008EAAAF /* ViewController.swift */; };
+		71792E331CC3119F008EAAAF /* MoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71792E321CC3119F008EAAAF /* MoneyViewController.swift */; };
 		71792E361CC3119F008EAAAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71792E341CC3119F008EAAAF /* Main.storyboard */; };
 		71792E391CC3119F008EAAAF /* Trip_Buddy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71792E371CC3119F008EAAAF /* Trip_Buddy.xcdatamodeld */; };
 		71792E3B1CC3119F008EAAAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71792E3A1CC3119F008EAAAF /* Assets.xcassets */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		71792E2D1CC3119E008EAAAF /* Trip Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trip Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71792E301CC3119F008EAAAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		71792E321CC3119F008EAAAF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		71792E321CC3119F008EAAAF /* MoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyViewController.swift; sourceTree = "<group>"; };
 		71792E351CC3119F008EAAAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		71792E381CC3119F008EAAAF /* Trip_Buddy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Trip_Buddy.xcdatamodel; sourceTree = "<group>"; };
 		71792E3A1CC3119F008EAAAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				71792E301CC3119F008EAAAF /* AppDelegate.swift */,
-				71792E321CC3119F008EAAAF /* ViewController.swift */,
+				71792E321CC3119F008EAAAF /* MoneyViewController.swift */,
 				71792E341CC3119F008EAAAF /* Main.storyboard */,
 				71792E3A1CC3119F008EAAAF /* Assets.xcassets */,
 				71792E3C1CC3119F008EAAAF /* LaunchScreen.storyboard */,
@@ -138,7 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71792E331CC3119F008EAAAF /* ViewController.swift in Sources */,
+				71792E331CC3119F008EAAAF /* MoneyViewController.swift in Sources */,
 				71792E391CC3119F008EAAAF /* Trip_Buddy.xcdatamodeld in Sources */,
 				71792E311CC3119F008EAAAF /* AppDelegate.swift in Sources */,
 			);
@@ -294,6 +294,7 @@
 				71792E441CC3119F008EAAAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
