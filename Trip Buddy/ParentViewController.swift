@@ -33,7 +33,7 @@ class ParentViewController: UIViewController {
 
 	//CoreData variables for saving program data
 	let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-	var programData: SaveData? = nil
+	var programData: ProgramData? = nil
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -46,10 +46,10 @@ class ParentViewController: UIViewController {
 	}
 
 	func accessProgramData() {
-		var existingData: [SaveData]
+		var existingData: [ProgramData]
 
 		do {
-			existingData = try context.executeFetchRequest(NSFetchRequest(entityName: "SaveData")) as! [SaveData]
+			existingData = try context.executeFetchRequest(NSFetchRequest(entityName: "ProgramData")) as! [ProgramData]
 		} catch _ as NSError {
 			existingData = []
 		}
@@ -58,7 +58,7 @@ class ParentViewController: UIViewController {
 				context.deleteObject(existingData[i] as NSManagedObject)
 				existingData.removeAtIndex(i)
 			}
-			existingData = [NSEntityDescription.insertNewObjectForEntityForName("SaveData", inManagedObjectContext: context) as! SaveData]
+			existingData = [NSEntityDescription.insertNewObjectForEntityForName("ProgramData", inManagedObjectContext: context) as! ProgramData]
 			existingData[0].country1 = countries.count - 1
 			existingData[0].country2 = countries.count - 2
 			saveProgramData()
@@ -74,11 +74,11 @@ class ParentViewController: UIViewController {
 
 	func updateCountryElements() {
 		country1Button.setTitle(countries[programData!.country1.integerValue], forState: UIControlState.Normal)
-		//country1ImageView.image = ... countries[saveData!.country1.integerValue] + ".png" ...
+		//country1ImageView.image = ... countries[programData!.country1.integerValue] + ".png" ...
 		country1Label.text = "\(currencies[programData!.country1.integerValue]) " +
 			"(\(symbols[programData!.country1.integerValue])) \(amounts[programData!.country1.integerValue])"
 		country2Button.setTitle(countries[programData!.country2.integerValue], forState: UIControlState.Normal)
-		//country2ImageView.image = ... countries[saveData!.country2.integerValue] + ".png" ...
+		//country2ImageView.image = ... countries[programData!.country2.integerValue] + ".png" ...
 		country2Label.text = "\(currencies[programData!.country2.integerValue]) " +
 			"(\(symbols[programData!.country2.integerValue])) \(amounts[programData!.country2.integerValue])"
 	}

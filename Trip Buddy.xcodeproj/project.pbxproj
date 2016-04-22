@@ -18,7 +18,7 @@
 		719496831CC604D100299AC2 /* MealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719496821CC604D100299AC2 /* MealsViewController.swift */; };
 		719496851CC604E600299AC2 /* DistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719496841CC604E600299AC2 /* DistanceViewController.swift */; };
 		719496871CC6051400299AC2 /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719496861CC6051400299AC2 /* TemperatureViewController.swift */; };
-		719496951CC9E46C00299AC2 /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719496931CC9E46C00299AC2 /* SaveData.swift */; };
+		719496951CC9E46C00299AC2 /* ProgramData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719496931CC9E46C00299AC2 /* ProgramData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 		719496821CC604D100299AC2 /* MealsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsViewController.swift; sourceTree = "<group>"; };
 		719496841CC604E600299AC2 /* DistanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceViewController.swift; sourceTree = "<group>"; };
 		719496861CC6051400299AC2 /* TemperatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
-		719496931CC9E46C00299AC2 /* SaveData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
+		719496931CC9E46C00299AC2 /* ProgramData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +75,7 @@
 				719496821CC604D100299AC2 /* MealsViewController.swift */,
 				719496841CC604E600299AC2 /* DistanceViewController.swift */,
 				719496861CC6051400299AC2 /* TemperatureViewController.swift */,
-				719496931CC9E46C00299AC2 /* SaveData.swift */,
+				719496931CC9E46C00299AC2 /* ProgramData.swift */,
 				71792E341CC3119F008EAAAF /* Main.storyboard */,
 				71792E3A1CC3119F008EAAAF /* Assets.xcassets */,
 				71792E3C1CC3119F008EAAAF /* LaunchScreen.storyboard */,
@@ -164,7 +164,7 @@
 				719496871CC6051400299AC2 /* TemperatureViewController.swift in Sources */,
 				718299E61CCADCAC0069F92D /* ParentViewController.swift in Sources */,
 				71792E311CC3119F008EAAAF /* AppDelegate.swift in Sources */,
-				719496951CC9E46C00299AC2 /* SaveData.swift in Sources */,
+				719496951CC9E46C00299AC2 /* ProgramData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
