@@ -13,11 +13,11 @@
 		71792E391CC3119F008EAAAF /* Trip_Buddy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71792E371CC3119F008EAAAF /* Trip_Buddy.xcdatamodeld */; };
 		71792E3B1CC3119F008EAAAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71792E3A1CC3119F008EAAAF /* Assets.xcassets */; };
 		71792E3E1CC3119F008EAAAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71792E3C1CC3119F008EAAAF /* LaunchScreen.storyboard */; };
+		718299E61CCADCAC0069F92D /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718299E51CCADCAC0069F92D /* ParentViewController.swift */; };
 		719496811CC604C000299AC2 /* GasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719496801CC604C000299AC2 /* GasViewController.swift */; };
 		719496831CC604D100299AC2 /* MealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719496821CC604D100299AC2 /* MealsViewController.swift */; };
 		719496851CC604E600299AC2 /* DistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719496841CC604E600299AC2 /* DistanceViewController.swift */; };
 		719496871CC6051400299AC2 /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719496861CC6051400299AC2 /* TemperatureViewController.swift */; };
-		719496891CC9828600299AC2 /* ProgramData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719496881CC9828600299AC2 /* ProgramData.swift */; };
 		719496951CC9E46C00299AC2 /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719496931CC9E46C00299AC2 /* SaveData.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,11 +30,11 @@
 		71792E3A1CC3119F008EAAAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71792E3D1CC3119F008EAAAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71792E3F1CC3119F008EAAAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		718299E51CCADCAC0069F92D /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		719496801CC604C000299AC2 /* GasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasViewController.swift; sourceTree = "<group>"; };
 		719496821CC604D100299AC2 /* MealsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsViewController.swift; sourceTree = "<group>"; };
 		719496841CC604E600299AC2 /* DistanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceViewController.swift; sourceTree = "<group>"; };
 		719496861CC6051400299AC2 /* TemperatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
-		719496881CC9828600299AC2 /* ProgramData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramData.swift; sourceTree = "<group>"; };
 		719496931CC9E46C00299AC2 /* SaveData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,12 +69,12 @@
 			isa = PBXGroup;
 			children = (
 				71792E301CC3119F008EAAAF /* AppDelegate.swift */,
+				718299E51CCADCAC0069F92D /* ParentViewController.swift */,
 				71792E321CC3119F008EAAAF /* MoneyViewController.swift */,
 				719496801CC604C000299AC2 /* GasViewController.swift */,
 				719496821CC604D100299AC2 /* MealsViewController.swift */,
 				719496841CC604E600299AC2 /* DistanceViewController.swift */,
 				719496861CC6051400299AC2 /* TemperatureViewController.swift */,
-				719496881CC9828600299AC2 /* ProgramData.swift */,
 				719496931CC9E46C00299AC2 /* SaveData.swift */,
 				71792E341CC3119F008EAAAF /* Main.storyboard */,
 				71792E3A1CC3119F008EAAAF /* Assets.xcassets */,
@@ -162,8 +162,8 @@
 				71792E391CC3119F008EAAAF /* Trip_Buddy.xcdatamodeld in Sources */,
 				719496851CC604E600299AC2 /* DistanceViewController.swift in Sources */,
 				719496871CC6051400299AC2 /* TemperatureViewController.swift in Sources */,
+				718299E61CCADCAC0069F92D /* ParentViewController.swift in Sources */,
 				71792E311CC3119F008EAAAF /* AppDelegate.swift in Sources */,
-				719496891CC9828600299AC2 /* ProgramData.swift in Sources */,
 				719496951CC9E46C00299AC2 /* SaveData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
