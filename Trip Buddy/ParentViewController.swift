@@ -35,6 +35,10 @@ class ParentViewController: UIViewController {
 	let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
 	var programData: ProgramData? = nil
 
+	//Variables for swiping between tabs
+	var startPosition: CGFloat = 0
+	let threshold: CGFloat = 30
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
@@ -61,6 +65,7 @@ class ParentViewController: UIViewController {
 			existingData = [NSEntityDescription.insertNewObjectForEntityForName("ProgramData", inManagedObjectContext: context) as! ProgramData]
 			existingData[0].country1 = countries.count - 1
 			existingData[0].country2 = countries.count - 2
+			//set all program data default values here
 			saveProgramData()
 		}
 		programData = existingData[0]
@@ -84,10 +89,64 @@ class ParentViewController: UIViewController {
 	}
 
 	@IBAction func country1ButtonPressed(sender: AnyObject) {
-		print("Country 1 Button Pressed")
+		let alertController = UIAlertController(title: "Select a country:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
+
+		for i in 0.stride(to: countries.count, by: 1) {
+			alertController.addAction(UIAlertAction(title: countries[i], style: UIAlertActionStyle.Default, handler: country1AlertActionHandler))
+		}
+		alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+		presentViewController(alertController, animated: true, completion: nil)
+	}
+
+	func country1AlertActionHandler(action: UIAlertAction!) {
+		for i in 0.stride(to: countries.count, by: 1) {
+			if countries[i] == action.title {
+				programData!.country1 = i
+				saveProgramData()
+				updateCountryElements()
+				break
+			}
+		}
 	}
 
 	@IBAction func country2ButtonPressed(sender: AnyObject) {
-		print("Country 2 Button Pressed")
+		let alertController = UIAlertController(title: "Select a country:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
+
+		for i in 0.stride(to: countries.count, by: 1) {
+			alertController.addAction(UIAlertAction(title: countries[i], style: UIAlertActionStyle.Default, handler: country2AlertActionHandler))
+		}
+		alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
+		presentViewController(alertController, animated: true, completion: nil)
+	}
+
+	func country2AlertActionHandler(action: UIAlertAction!) {
+		for i in 0.stride(to: countries.count, by: 1) {
+			if countries[i] == action.title {
+				programData!.country2 = i
+				saveProgramData()
+				updateCountryElements()
+				break
+			}
+		}
+	}
+
+	@IBAction func leftEdgeSwiped(sender: AnyObject) {
+		let gestureRecognizer = sender as! UIScreenEdgePanGestureRecognizer
+
+		if gestureRecognizer.state == UIGestureRecognizerState.Began {
+			startPosition = gestureRecognizer.locationInView(view).x
+		} else if gestureRecognizer.state == UIGestureRecognizerState.Ended && gestureRecognizer.locationInView(view).x - startPosition >= threshold {
+			tabBarController!.selectedIndex -= 1
+		}
+	}
+
+	@IBAction func rightEdgeSwiped(sender: AnyObject) {
+		let gestureRecognizer = sender as! UIScreenEdgePanGestureRecognizer
+
+		if gestureRecognizer.state == UIGestureRecognizerState.Began {
+			startPosition = gestureRecognizer.locationInView(view).x
+		} else if gestureRecognizer.state == UIGestureRecognizerState.Ended && gestureRecognizer.locationInView(view).x - startPosition <= -threshold {
+			tabBarController!.selectedIndex += 1
+		}
 	}
 }

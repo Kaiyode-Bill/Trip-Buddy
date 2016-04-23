@@ -82,6 +82,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Cna-R7-Ns6" firstAttribute="leading" secondItem="hH6-3z-i9P" secondAttribute="trailing" constant="5" id="1Ey-wg-0aR"/>
                             <constraint firstAttribute="trailing" secondItem="iYr-g0-Zep" secondAttribute="trailing" constant="20" id="Bts-uK-fDj"/>
@@ -103,6 +104,9 @@
                             <constraint firstItem="mZT-fb-uGQ" firstAttribute="top" secondItem="F8w-Mq-FxO" secondAttribute="bottom" constant="5" id="tli-IQ-sb4"/>
                             <constraint firstItem="iYr-g0-Zep" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zTA-sF-mrs"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="xGE-4w-dRa" appends="YES" id="VUK-wT-j6b"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" title="Money" id="uJN-6i-syc"/>
                     <connections>
@@ -115,6 +119,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="xGE-4w-dRa">
+                    <rectEdge key="edges" right="YES"/>
+                    <connections>
+                        <action selector="rightEdgeSwiped:" destination="BYZ-38-t0r" id="FlL-wg-KDK"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1165" y="-1006"/>
         </scene>
@@ -195,6 +205,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Zof-32-Dol" firstAttribute="leading" secondItem="1WE-t3-cRN" secondAttribute="trailing" constant="5" id="1E8-Dk-te6"/>
                             <constraint firstItem="LxY-Xm-0PC" firstAttribute="top" secondItem="qmf-YM-keH" secondAttribute="bottom" constant="5" id="2cC-GK-BAe"/>
@@ -216,6 +227,10 @@
                             <constraint firstItem="O5r-LU-c7k" firstAttribute="top" secondItem="NDe-xS-we2" secondAttribute="bottom" constant="5" id="uxe-Bh-3n5"/>
                             <constraint firstItem="1WE-t3-cRN" firstAttribute="top" secondItem="hVu-LC-sio" secondAttribute="bottom" constant="5" id="wjp-ZG-YbE"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="o4S-cr-vab" appends="YES" id="4xo-zY-BH3"/>
+                            <outletCollection property="gestureRecognizers" destination="cdf-JL-Dj1" appends="YES" id="p7X-Ua-rjb"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" tag="2" title="Gas" id="0LL-8e-AO5"/>
                     <connections>
@@ -228,6 +243,18 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Na5-ki-rRa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="o4S-cr-vab">
+                    <rectEdge key="edges" left="YES"/>
+                    <connections>
+                        <action selector="leftEdgeSwiped:" destination="tIl-l4-lV5" id="JJz-lk-MI0"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="cdf-JL-Dj1">
+                    <rectEdge key="edges" right="YES"/>
+                    <connections>
+                        <action selector="rightEdgeSwiped:" destination="tIl-l4-lV5" id="TMq-UJ-9aW"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1165" y="-312"/>
         </scene>
@@ -308,6 +335,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="S1j-uS-a0w" firstAttribute="leading" secondItem="sw1-w7-xm1" secondAttribute="trailing" constant="5" id="2ZO-lN-P3H"/>
                             <constraint firstItem="tSt-ZZ-a4h" firstAttribute="leading" secondItem="Fs2-qB-91F" secondAttribute="trailing" constant="5" id="66Q-Ub-f03"/>
@@ -329,6 +357,10 @@
                             <constraint firstItem="yhP-k2-Ol0" firstAttribute="centerY" secondItem="W1p-AB-y9h" secondAttribute="centerY" id="rj4-fV-Zie"/>
                             <constraint firstItem="sw1-w7-xm1" firstAttribute="top" secondItem="TCe-Px-EdX" secondAttribute="bottom" constant="5" id="x7S-7x-BfH"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="FMs-qz-fCy" appends="YES" id="X0Y-Ad-PPi"/>
+                            <outletCollection property="gestureRecognizers" destination="2ud-xF-h0I" appends="YES" id="4YS-t7-vSl"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" tag="3" title="Meals" id="gyS-ID-Dsm"/>
                     <connections>
@@ -341,6 +373,18 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9eO-a6-DhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="FMs-qz-fCy">
+                    <rectEdge key="edges" left="YES"/>
+                    <connections>
+                        <action selector="leftEdgeSwiped:" destination="u7p-3x-v2w" id="cQ1-MB-eiE"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="2ud-xF-h0I">
+                    <rectEdge key="edges" right="YES"/>
+                    <connections>
+                        <action selector="rightEdgeSwiped:" destination="u7p-3x-v2w" id="YN1-UK-bSg"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1165" y="387"/>
         </scene>
@@ -456,6 +500,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="oab-RV-h0D" firstAttribute="top" secondItem="RHR-Nt-Hgs" secondAttribute="bottom" constant="10" id="3Ao-pD-VeI"/>
                             <constraint firstItem="sLk-W7-rIJ" firstAttribute="top" secondItem="FQb-5a-r0p" secondAttribute="bottom" constant="5" id="ACg-58-YXs"/>
@@ -489,6 +534,10 @@
                             <constraint firstItem="lox-GB-8lP" firstAttribute="top" secondItem="34X-hz-1ED" secondAttribute="bottom" constant="5" id="t0K-wQ-ys6"/>
                             <constraint firstItem="2Sh-Ge-KxT" firstAttribute="leading" secondItem="UUg-3C-hqa" secondAttribute="leading" constant="20" id="tBt-JB-sR0"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="QHT-wZ-hdN" appends="YES" id="ThR-tp-Ybm"/>
+                            <outletCollection property="gestureRecognizers" destination="Iyz-mr-nbN" appends="YES" id="AQb-tG-YUo"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" tag="4" title="Distance" id="Mz3-XH-IR7"/>
                     <connections>
@@ -501,6 +550,18 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cJ9-bJ-8Ng" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="QHT-wZ-hdN">
+                    <rectEdge key="edges" left="YES"/>
+                    <connections>
+                        <action selector="leftEdgeSwiped:" destination="ITE-Fc-U9o" id="584-1g-aKX"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="Iyz-mr-nbN">
+                    <rectEdge key="edges" right="YES"/>
+                    <connections>
+                        <action selector="rightEdgeSwiped:" destination="ITE-Fc-U9o" id="rmN-hD-XQr"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1165" y="1078"/>
         </scene>
@@ -581,6 +642,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Gbr-fr-NgI" firstAttribute="top" secondItem="Ddc-r0-eNK" secondAttribute="bottom" constant="5" id="26U-m7-sUB"/>
                             <constraint firstItem="P2N-Sg-Ykh" firstAttribute="centerX" secondItem="5Kh-8F-I7p" secondAttribute="centerX" id="4ej-Nt-PcX"/>
@@ -602,6 +664,9 @@
                             <constraint firstItem="HlK-vZ-kNX" firstAttribute="centerX" secondItem="5Kh-8F-I7p" secondAttribute="centerX" id="qvd-2G-jaE"/>
                             <constraint firstItem="FFt-eK-fPK" firstAttribute="leading" secondItem="5Kh-8F-I7p" secondAttribute="leading" constant="20" id="t6q-4b-xUT"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="a1d-dK-fa8" appends="YES" id="ke4-TN-2JC"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" tag="5" title="Temperature" id="yzH-nA-YIW"/>
                     <connections>
@@ -614,6 +679,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QWc-l4-Y00" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="a1d-dK-fa8">
+                    <rectEdge key="edges" left="YES"/>
+                    <connections>
+                        <action selector="leftEdgeSwiped:" destination="Ey7-D7-e4y" id="6ZJ-b3-hDl"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1165" y="1776"/>
         </scene>
