@@ -14,6 +14,54 @@
 		71792E3B1CC3119F008EAAAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71792E3A1CC3119F008EAAAF /* Assets.xcassets */; };
 		71792E3E1CC3119F008EAAAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71792E3C1CC3119F008EAAAF /* LaunchScreen.storyboard */; };
 		718299E61CCADCAC0069F92D /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718299E51CCADCAC0069F92D /* ParentViewController.swift */; };
+		718299FA1CCAF6970069F92D /* Argentina.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299E81CCAF6970069F92D /* Argentina.png */; };
+		718299FB1CCAF6970069F92D /* Austria.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299E91CCAF6970069F92D /* Austria.png */; };
+		718299FC1CCAF6970069F92D /* Bulgaria.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299EA1CCAF6970069F92D /* Bulgaria.png */; };
+		718299FD1CCAF6970069F92D /* Canada.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299EB1CCAF6970069F92D /* Canada.png */; };
+		718299FE1CCAF6970069F92D /* Chile.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299EC1CCAF6970069F92D /* Chile.png */; };
+		718299FF1CCAF6970069F92D /* China.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299ED1CCAF6970069F92D /* China.png */; };
+		71829A001CCAF6970069F92D /* France.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299EE1CCAF6970069F92D /* France.png */; };
+		71829A011CCAF6970069F92D /* Germany.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299EF1CCAF6970069F92D /* Germany.png */; };
+		71829A021CCAF6970069F92D /* India.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299F01CCAF6970069F92D /* India.png */; };
+		71829A031CCAF6970069F92D /* Italy.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299F11CCAF6970069F92D /* Italy.png */; };
+		71829A041CCAF6970069F92D /* Japan.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299F21CCAF6970069F92D /* Japan.png */; };
+		71829A051CCAF6970069F92D /* Malaysia.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299F31CCAF6970069F92D /* Malaysia.png */; };
+		71829A061CCAF6970069F92D /* Mexico.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299F41CCAF6970069F92D /* Mexico.png */; };
+		71829A071CCAF6970069F92D /* Singapore.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299F51CCAF6970069F92D /* Singapore.png */; };
+		71829A081CCAF6970069F92D /* Spain.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299F61CCAF6970069F92D /* Spain.png */; };
+		71829A091CCAF6970069F92D /* Switzerland.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299F71CCAF6970069F92D /* Switzerland.png */; };
+		71829A0A1CCAF6970069F92D /* United Kingdom.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299F81CCAF6970069F92D /* United Kingdom.png */; };
+		71829A0B1CCAF6970069F92D /* United States.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299F91CCAF6970069F92D /* United States.png */; };
+		71829A2A1CCAFEF10069F92D /* Distance Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A0C1CCAFEF10069F92D /* Distance Empty.png */; };
+		71829A2B1CCAFEF10069F92D /* Distance Empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A0D1CCAFEF10069F92D /* Distance Empty@2x.png */; };
+		71829A2C1CCAFEF10069F92D /* Distance Empty@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A0E1CCAFEF10069F92D /* Distance Empty@3x.png */; };
+		71829A2D1CCAFEF10069F92D /* Distance Filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A0F1CCAFEF10069F92D /* Distance Filled.png */; };
+		71829A2E1CCAFEF10069F92D /* Distance Filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A101CCAFEF10069F92D /* Distance Filled@2x.png */; };
+		71829A2F1CCAFEF10069F92D /* Distance Filled@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A111CCAFEF10069F92D /* Distance Filled@3x.png */; };
+		71829A301CCAFEF10069F92D /* Gas Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A121CCAFEF10069F92D /* Gas Empty.png */; };
+		71829A311CCAFEF10069F92D /* Gas Empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A131CCAFEF10069F92D /* Gas Empty@2x.png */; };
+		71829A321CCAFEF10069F92D /* Gas Empty@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A141CCAFEF10069F92D /* Gas Empty@3x.png */; };
+		71829A331CCAFEF10069F92D /* Gas Filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A151CCAFEF10069F92D /* Gas Filled.png */; };
+		71829A341CCAFEF10069F92D /* Gas Filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A161CCAFEF10069F92D /* Gas Filled@2x.png */; };
+		71829A351CCAFEF10069F92D /* Gas Filled@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A171CCAFEF10069F92D /* Gas Filled@3x.png */; };
+		71829A361CCAFEF10069F92D /* Meals Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A181CCAFEF10069F92D /* Meals Empty.png */; };
+		71829A371CCAFEF10069F92D /* Meals Empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A191CCAFEF10069F92D /* Meals Empty@2x.png */; };
+		71829A381CCAFEF10069F92D /* Meals Empty@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A1A1CCAFEF10069F92D /* Meals Empty@3x.png */; };
+		71829A391CCAFEF10069F92D /* Meals Filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A1B1CCAFEF10069F92D /* Meals Filled.png */; };
+		71829A3A1CCAFEF10069F92D /* Meals Filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A1C1CCAFEF10069F92D /* Meals Filled@2x.png */; };
+		71829A3B1CCAFEF10069F92D /* Meals Filled@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A1D1CCAFEF10069F92D /* Meals Filled@3x.png */; };
+		71829A3C1CCAFEF10069F92D /* Money Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A1E1CCAFEF10069F92D /* Money Empty.png */; };
+		71829A3D1CCAFEF10069F92D /* Money Empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A1F1CCAFEF10069F92D /* Money Empty@2x.png */; };
+		71829A3E1CCAFEF10069F92D /* Money Empty@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A201CCAFEF10069F92D /* Money Empty@3x.png */; };
+		71829A3F1CCAFEF10069F92D /* Money Filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A211CCAFEF10069F92D /* Money Filled.png */; };
+		71829A401CCAFEF10069F92D /* Money Filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A221CCAFEF10069F92D /* Money Filled@2x.png */; };
+		71829A411CCAFEF10069F92D /* Money Filled@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A231CCAFEF10069F92D /* Money Filled@3x.png */; };
+		71829A421CCAFEF10069F92D /* Temperature Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A241CCAFEF10069F92D /* Temperature Empty.png */; };
+		71829A431CCAFEF10069F92D /* Temperature Empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A251CCAFEF10069F92D /* Temperature Empty@2x.png */; };
+		71829A441CCAFEF10069F92D /* Temperature Empty@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A261CCAFEF10069F92D /* Temperature Empty@3x.png */; };
+		71829A451CCAFEF10069F92D /* Temperature Filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A271CCAFEF10069F92D /* Temperature Filled.png */; };
+		71829A461CCAFEF10069F92D /* Temperature Filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A281CCAFEF10069F92D /* Temperature Filled@2x.png */; };
+		71829A471CCAFEF10069F92D /* Temperature Filled@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A291CCAFEF10069F92D /* Temperature Filled@3x.png */; };
 		719496811CC604C000299AC2 /* GasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719496801CC604C000299AC2 /* GasViewController.swift */; };
 		719496831CC604D100299AC2 /* MealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719496821CC604D100299AC2 /* MealsViewController.swift */; };
 		719496851CC604E600299AC2 /* DistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719496841CC604E600299AC2 /* DistanceViewController.swift */; };
@@ -31,6 +79,54 @@
 		71792E3D1CC3119F008EAAAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71792E3F1CC3119F008EAAAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		718299E51CCADCAC0069F92D /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
+		718299E81CCAF6970069F92D /* Argentina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Argentina.png; path = Images/Argentina.png; sourceTree = "<group>"; };
+		718299E91CCAF6970069F92D /* Austria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Austria.png; path = Images/Austria.png; sourceTree = "<group>"; };
+		718299EA1CCAF6970069F92D /* Bulgaria.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Bulgaria.png; path = Images/Bulgaria.png; sourceTree = "<group>"; };
+		718299EB1CCAF6970069F92D /* Canada.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Canada.png; path = Images/Canada.png; sourceTree = "<group>"; };
+		718299EC1CCAF6970069F92D /* Chile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Chile.png; path = Images/Chile.png; sourceTree = "<group>"; };
+		718299ED1CCAF6970069F92D /* China.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = China.png; path = Images/China.png; sourceTree = "<group>"; };
+		718299EE1CCAF6970069F92D /* France.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = France.png; path = Images/France.png; sourceTree = "<group>"; };
+		718299EF1CCAF6970069F92D /* Germany.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Germany.png; path = Images/Germany.png; sourceTree = "<group>"; };
+		718299F01CCAF6970069F92D /* India.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = India.png; path = Images/India.png; sourceTree = "<group>"; };
+		718299F11CCAF6970069F92D /* Italy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Italy.png; path = Images/Italy.png; sourceTree = "<group>"; };
+		718299F21CCAF6970069F92D /* Japan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Japan.png; path = Images/Japan.png; sourceTree = "<group>"; };
+		718299F31CCAF6970069F92D /* Malaysia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Malaysia.png; path = Images/Malaysia.png; sourceTree = "<group>"; };
+		718299F41CCAF6970069F92D /* Mexico.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Mexico.png; path = Images/Mexico.png; sourceTree = "<group>"; };
+		718299F51CCAF6970069F92D /* Singapore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Singapore.png; path = Images/Singapore.png; sourceTree = "<group>"; };
+		718299F61CCAF6970069F92D /* Spain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Spain.png; path = Images/Spain.png; sourceTree = "<group>"; };
+		718299F71CCAF6970069F92D /* Switzerland.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Switzerland.png; path = Images/Switzerland.png; sourceTree = "<group>"; };
+		718299F81CCAF6970069F92D /* United Kingdom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "United Kingdom.png"; path = "Images/United Kingdom.png"; sourceTree = "<group>"; };
+		718299F91CCAF6970069F92D /* United States.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "United States.png"; path = "Images/United States.png"; sourceTree = "<group>"; };
+		71829A0C1CCAFEF10069F92D /* Distance Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Distance Empty.png"; path = "Images/Distance Empty.png"; sourceTree = "<group>"; };
+		71829A0D1CCAFEF10069F92D /* Distance Empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Distance Empty@2x.png"; path = "Images/Distance Empty@2x.png"; sourceTree = "<group>"; };
+		71829A0E1CCAFEF10069F92D /* Distance Empty@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Distance Empty@3x.png"; path = "Images/Distance Empty@3x.png"; sourceTree = "<group>"; };
+		71829A0F1CCAFEF10069F92D /* Distance Filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Distance Filled.png"; path = "Images/Distance Filled.png"; sourceTree = "<group>"; };
+		71829A101CCAFEF10069F92D /* Distance Filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Distance Filled@2x.png"; path = "Images/Distance Filled@2x.png"; sourceTree = "<group>"; };
+		71829A111CCAFEF10069F92D /* Distance Filled@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Distance Filled@3x.png"; path = "Images/Distance Filled@3x.png"; sourceTree = "<group>"; };
+		71829A121CCAFEF10069F92D /* Gas Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Gas Empty.png"; path = "Images/Gas Empty.png"; sourceTree = "<group>"; };
+		71829A131CCAFEF10069F92D /* Gas Empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Gas Empty@2x.png"; path = "Images/Gas Empty@2x.png"; sourceTree = "<group>"; };
+		71829A141CCAFEF10069F92D /* Gas Empty@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Gas Empty@3x.png"; path = "Images/Gas Empty@3x.png"; sourceTree = "<group>"; };
+		71829A151CCAFEF10069F92D /* Gas Filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Gas Filled.png"; path = "Images/Gas Filled.png"; sourceTree = "<group>"; };
+		71829A161CCAFEF10069F92D /* Gas Filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Gas Filled@2x.png"; path = "Images/Gas Filled@2x.png"; sourceTree = "<group>"; };
+		71829A171CCAFEF10069F92D /* Gas Filled@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Gas Filled@3x.png"; path = "Images/Gas Filled@3x.png"; sourceTree = "<group>"; };
+		71829A181CCAFEF10069F92D /* Meals Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Meals Empty.png"; path = "Images/Meals Empty.png"; sourceTree = "<group>"; };
+		71829A191CCAFEF10069F92D /* Meals Empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Meals Empty@2x.png"; path = "Images/Meals Empty@2x.png"; sourceTree = "<group>"; };
+		71829A1A1CCAFEF10069F92D /* Meals Empty@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Meals Empty@3x.png"; path = "Images/Meals Empty@3x.png"; sourceTree = "<group>"; };
+		71829A1B1CCAFEF10069F92D /* Meals Filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Meals Filled.png"; path = "Images/Meals Filled.png"; sourceTree = "<group>"; };
+		71829A1C1CCAFEF10069F92D /* Meals Filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Meals Filled@2x.png"; path = "Images/Meals Filled@2x.png"; sourceTree = "<group>"; };
+		71829A1D1CCAFEF10069F92D /* Meals Filled@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Meals Filled@3x.png"; path = "Images/Meals Filled@3x.png"; sourceTree = "<group>"; };
+		71829A1E1CCAFEF10069F92D /* Money Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Money Empty.png"; path = "Images/Money Empty.png"; sourceTree = "<group>"; };
+		71829A1F1CCAFEF10069F92D /* Money Empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Money Empty@2x.png"; path = "Images/Money Empty@2x.png"; sourceTree = "<group>"; };
+		71829A201CCAFEF10069F92D /* Money Empty@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Money Empty@3x.png"; path = "Images/Money Empty@3x.png"; sourceTree = "<group>"; };
+		71829A211CCAFEF10069F92D /* Money Filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Money Filled.png"; path = "Images/Money Filled.png"; sourceTree = "<group>"; };
+		71829A221CCAFEF10069F92D /* Money Filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Money Filled@2x.png"; path = "Images/Money Filled@2x.png"; sourceTree = "<group>"; };
+		71829A231CCAFEF10069F92D /* Money Filled@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Money Filled@3x.png"; path = "Images/Money Filled@3x.png"; sourceTree = "<group>"; };
+		71829A241CCAFEF10069F92D /* Temperature Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Temperature Empty.png"; path = "Images/Temperature Empty.png"; sourceTree = "<group>"; };
+		71829A251CCAFEF10069F92D /* Temperature Empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Temperature Empty@2x.png"; path = "Images/Temperature Empty@2x.png"; sourceTree = "<group>"; };
+		71829A261CCAFEF10069F92D /* Temperature Empty@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Temperature Empty@3x.png"; path = "Images/Temperature Empty@3x.png"; sourceTree = "<group>"; };
+		71829A271CCAFEF10069F92D /* Temperature Filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Temperature Filled.png"; path = "Images/Temperature Filled.png"; sourceTree = "<group>"; };
+		71829A281CCAFEF10069F92D /* Temperature Filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Temperature Filled@2x.png"; path = "Images/Temperature Filled@2x.png"; sourceTree = "<group>"; };
+		71829A291CCAFEF10069F92D /* Temperature Filled@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Temperature Filled@3x.png"; path = "Images/Temperature Filled@3x.png"; sourceTree = "<group>"; };
 		719496801CC604C000299AC2 /* GasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasViewController.swift; sourceTree = "<group>"; };
 		719496821CC604D100299AC2 /* MealsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsViewController.swift; sourceTree = "<group>"; };
 		719496841CC604E600299AC2 /* DistanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +164,7 @@
 		71792E2F1CC3119F008EAAAF /* Trip Buddy */ = {
 			isa = PBXGroup;
 			children = (
+				718299E71CCAF67E0069F92D /* Images */,
 				71792E301CC3119F008EAAAF /* AppDelegate.swift */,
 				718299E51CCADCAC0069F92D /* ParentViewController.swift */,
 				71792E321CC3119F008EAAAF /* MoneyViewController.swift */,
@@ -83,6 +180,61 @@
 				71792E371CC3119F008EAAAF /* Trip_Buddy.xcdatamodeld */,
 			);
 			path = "Trip Buddy";
+			sourceTree = "<group>";
+		};
+		718299E71CCAF67E0069F92D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				718299E81CCAF6970069F92D /* Argentina.png */,
+				718299E91CCAF6970069F92D /* Austria.png */,
+				718299EA1CCAF6970069F92D /* Bulgaria.png */,
+				718299EB1CCAF6970069F92D /* Canada.png */,
+				718299EC1CCAF6970069F92D /* Chile.png */,
+				718299ED1CCAF6970069F92D /* China.png */,
+				71829A0C1CCAFEF10069F92D /* Distance Empty.png */,
+				71829A0D1CCAFEF10069F92D /* Distance Empty@2x.png */,
+				71829A0E1CCAFEF10069F92D /* Distance Empty@3x.png */,
+				71829A0F1CCAFEF10069F92D /* Distance Filled.png */,
+				71829A101CCAFEF10069F92D /* Distance Filled@2x.png */,
+				71829A111CCAFEF10069F92D /* Distance Filled@3x.png */,
+				718299EE1CCAF6970069F92D /* France.png */,
+				71829A121CCAFEF10069F92D /* Gas Empty.png */,
+				71829A131CCAFEF10069F92D /* Gas Empty@2x.png */,
+				71829A141CCAFEF10069F92D /* Gas Empty@3x.png */,
+				71829A151CCAFEF10069F92D /* Gas Filled.png */,
+				71829A161CCAFEF10069F92D /* Gas Filled@2x.png */,
+				71829A171CCAFEF10069F92D /* Gas Filled@3x.png */,
+				718299EF1CCAF6970069F92D /* Germany.png */,
+				718299F01CCAF6970069F92D /* India.png */,
+				718299F11CCAF6970069F92D /* Italy.png */,
+				718299F21CCAF6970069F92D /* Japan.png */,
+				718299F31CCAF6970069F92D /* Malaysia.png */,
+				71829A181CCAFEF10069F92D /* Meals Empty.png */,
+				71829A191CCAFEF10069F92D /* Meals Empty@2x.png */,
+				71829A1A1CCAFEF10069F92D /* Meals Empty@3x.png */,
+				71829A1B1CCAFEF10069F92D /* Meals Filled.png */,
+				71829A1C1CCAFEF10069F92D /* Meals Filled@2x.png */,
+				71829A1D1CCAFEF10069F92D /* Meals Filled@3x.png */,
+				718299F41CCAF6970069F92D /* Mexico.png */,
+				71829A1E1CCAFEF10069F92D /* Money Empty.png */,
+				71829A1F1CCAFEF10069F92D /* Money Empty@2x.png */,
+				71829A201CCAFEF10069F92D /* Money Empty@3x.png */,
+				71829A211CCAFEF10069F92D /* Money Filled.png */,
+				71829A221CCAFEF10069F92D /* Money Filled@2x.png */,
+				71829A231CCAFEF10069F92D /* Money Filled@3x.png */,
+				718299F51CCAF6970069F92D /* Singapore.png */,
+				718299F61CCAF6970069F92D /* Spain.png */,
+				718299F71CCAF6970069F92D /* Switzerland.png */,
+				71829A241CCAFEF10069F92D /* Temperature Empty.png */,
+				71829A251CCAFEF10069F92D /* Temperature Empty@2x.png */,
+				71829A261CCAFEF10069F92D /* Temperature Empty@3x.png */,
+				71829A271CCAFEF10069F92D /* Temperature Filled.png */,
+				71829A281CCAFEF10069F92D /* Temperature Filled@2x.png */,
+				71829A291CCAFEF10069F92D /* Temperature Filled@3x.png */,
+				718299F81CCAF6970069F92D /* United Kingdom.png */,
+				718299F91CCAF6970069F92D /* United States.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,9 +295,57 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71829A401CCAFEF10069F92D /* Money Filled@2x.png in Resources */,
+				71829A2D1CCAFEF10069F92D /* Distance Filled.png in Resources */,
+				718299FD1CCAF6970069F92D /* Canada.png in Resources */,
+				71829A441CCAFEF10069F92D /* Temperature Empty@3x.png in Resources */,
+				718299FE1CCAF6970069F92D /* Chile.png in Resources */,
+				71829A061CCAF6970069F92D /* Mexico.png in Resources */,
+				71829A371CCAFEF10069F92D /* Meals Empty@2x.png in Resources */,
+				718299FC1CCAF6970069F92D /* Bulgaria.png in Resources */,
+				71829A3A1CCAFEF10069F92D /* Meals Filled@2x.png in Resources */,
 				71792E3E1CC3119F008EAAAF /* LaunchScreen.storyboard in Resources */,
+				71829A301CCAFEF10069F92D /* Gas Empty.png in Resources */,
+				71829A351CCAFEF10069F92D /* Gas Filled@3x.png in Resources */,
+				71829A031CCAF6970069F92D /* Italy.png in Resources */,
+				71829A451CCAFEF10069F92D /* Temperature Filled.png in Resources */,
+				71829A001CCAF6970069F92D /* France.png in Resources */,
+				71829A421CCAFEF10069F92D /* Temperature Empty.png in Resources */,
+				71829A0A1CCAF6970069F92D /* United Kingdom.png in Resources */,
+				718299FA1CCAF6970069F92D /* Argentina.png in Resources */,
+				71829A381CCAFEF10069F92D /* Meals Empty@3x.png in Resources */,
 				71792E3B1CC3119F008EAAAF /* Assets.xcassets in Resources */,
+				71829A431CCAFEF10069F92D /* Temperature Empty@2x.png in Resources */,
+				71829A321CCAFEF10069F92D /* Gas Empty@3x.png in Resources */,
+				71829A3C1CCAFEF10069F92D /* Money Empty.png in Resources */,
+				71829A311CCAFEF10069F92D /* Gas Empty@2x.png in Resources */,
+				718299FB1CCAF6970069F92D /* Austria.png in Resources */,
+				71829A2E1CCAFEF10069F92D /* Distance Filled@2x.png in Resources */,
+				71829A2A1CCAFEF10069F92D /* Distance Empty.png in Resources */,
+				71829A391CCAFEF10069F92D /* Meals Filled.png in Resources */,
+				71829A051CCAF6970069F92D /* Malaysia.png in Resources */,
+				71829A2C1CCAFEF10069F92D /* Distance Empty@3x.png in Resources */,
+				71829A071CCAF6970069F92D /* Singapore.png in Resources */,
+				71829A361CCAFEF10069F92D /* Meals Empty.png in Resources */,
+				71829A331CCAFEF10069F92D /* Gas Filled.png in Resources */,
+				71829A011CCAF6970069F92D /* Germany.png in Resources */,
+				71829A021CCAF6970069F92D /* India.png in Resources */,
+				71829A3B1CCAFEF10069F92D /* Meals Filled@3x.png in Resources */,
+				71829A3D1CCAFEF10069F92D /* Money Empty@2x.png in Resources */,
+				718299FF1CCAF6970069F92D /* China.png in Resources */,
+				71829A041CCAF6970069F92D /* Japan.png in Resources */,
+				71829A341CCAFEF10069F92D /* Gas Filled@2x.png in Resources */,
 				71792E361CC3119F008EAAAF /* Main.storyboard in Resources */,
+				71829A081CCAF6970069F92D /* Spain.png in Resources */,
+				71829A461CCAFEF10069F92D /* Temperature Filled@2x.png in Resources */,
+				71829A3E1CCAFEF10069F92D /* Money Empty@3x.png in Resources */,
+				71829A0B1CCAF6970069F92D /* United States.png in Resources */,
+				71829A411CCAFEF10069F92D /* Money Filled@3x.png in Resources */,
+				71829A471CCAFEF10069F92D /* Temperature Filled@3x.png in Resources */,
+				71829A091CCAF6970069F92D /* Switzerland.png in Resources */,
+				71829A2F1CCAFEF10069F92D /* Distance Filled@3x.png in Resources */,
+				71829A2B1CCAFEF10069F92D /* Distance Empty@2x.png in Resources */,
+				71829A3F1CCAFEF10069F92D /* Money Filled.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

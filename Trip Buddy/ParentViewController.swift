@@ -49,6 +49,7 @@ class ParentViewController: UIViewController {
 		updateCountryElements()
 	}
 
+	//Access the program data from CoreData - if it doesn't exist, a default instance is created
 	func accessProgramData() {
 		var existingData: [ProgramData]
 
@@ -65,29 +66,32 @@ class ParentViewController: UIViewController {
 			existingData = [NSEntityDescription.insertNewObjectForEntityForName("ProgramData", inManagedObjectContext: context) as! ProgramData]
 			existingData[0].country1 = countries.count - 1
 			existingData[0].country2 = countries.count - 2
-			//set all program data default values here
+			//set all program data default values here as they are created
 			saveProgramData()
 		}
 		programData = existingData[0]
 	}
 
+	//Saves the program data to CoreData
 	func saveProgramData() {
 		do {
 			try context.save()
 		} catch _ as NSError {}
 	}
 
+	//Updates the country UI elements based upon the current program data
 	func updateCountryElements() {
 		country1Button.setTitle(countries[programData!.country1.integerValue], forState: UIControlState.Normal)
-		//country1ImageView.image = ... countries[programData!.country1.integerValue] + ".png" ...
+		country1ImageView.image = UIImage(named: countries[programData!.country1.integerValue] + ".png")
 		country1Label.text = "\(currencies[programData!.country1.integerValue]) " +
 			"(\(symbols[programData!.country1.integerValue])) \(amounts[programData!.country1.integerValue])"
 		country2Button.setTitle(countries[programData!.country2.integerValue], forState: UIControlState.Normal)
-		//country2ImageView.image = ... countries[programData!.country2.integerValue] + ".png" ...
+		country2ImageView.image = UIImage(named: countries[programData!.country2.integerValue] + ".png")
 		country2Label.text = "\(currencies[programData!.country2.integerValue]) " +
 			"(\(symbols[programData!.country2.integerValue])) \(amounts[programData!.country2.integerValue])"
 	}
 
+	//Triggers a menu to pop up for changing country 1
 	@IBAction func country1ButtonPressed(sender: AnyObject) {
 		let alertController = UIAlertController(title: "Select a country:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
 
@@ -98,6 +102,7 @@ class ParentViewController: UIViewController {
 		presentViewController(alertController, animated: true, completion: nil)
 	}
 
+	//Changes country 1 based upon the selected choice
 	func country1AlertActionHandler(action: UIAlertAction!) {
 		for i in 0.stride(to: countries.count, by: 1) {
 			if countries[i] == action.title {
@@ -109,6 +114,7 @@ class ParentViewController: UIViewController {
 		}
 	}
 
+	//Triggers a menu to pop up for changing country 2
 	@IBAction func country2ButtonPressed(sender: AnyObject) {
 		let alertController = UIAlertController(title: "Select a country:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
 
@@ -119,6 +125,7 @@ class ParentViewController: UIViewController {
 		presentViewController(alertController, animated: true, completion: nil)
 	}
 
+	//Changes country 2 based upon the selected choice
 	func country2AlertActionHandler(action: UIAlertAction!) {
 		for i in 0.stride(to: countries.count, by: 1) {
 			if countries[i] == action.title {
@@ -130,6 +137,7 @@ class ParentViewController: UIViewController {
 		}
 	}
 
+	//Tracks movement from the left edge of the screen to determine a tab change
 	@IBAction func leftEdgeSwiped(sender: AnyObject) {
 		let gestureRecognizer = sender as! UIScreenEdgePanGestureRecognizer
 
@@ -140,6 +148,7 @@ class ParentViewController: UIViewController {
 		}
 	}
 
+	//Tracks movement from the right edge of the screen to determine a tab change
 	@IBAction func rightEdgeSwiped(sender: AnyObject) {
 		let gestureRecognizer = sender as! UIScreenEdgePanGestureRecognizer
 

@@ -108,7 +108,7 @@
                             <outletCollection property="gestureRecognizers" destination="xGE-4w-dRa" appends="YES" id="VUK-wT-j6b"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="1" title="Money" id="uJN-6i-syc"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="Money" image="Money Empty.png" selectedImage="Money Filled.png" id="uJN-6i-syc"/>
                     <connections>
                         <outlet property="country1Button" destination="hH6-3z-i9P" id="wNe-AM-4OQ"/>
                         <outlet property="country1ImageView" destination="Cna-R7-Ns6" id="QHJ-Zx-7i9"/>
@@ -232,7 +232,7 @@
                             <outletCollection property="gestureRecognizers" destination="cdf-JL-Dj1" appends="YES" id="p7X-Ua-rjb"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="2" title="Gas" id="0LL-8e-AO5"/>
+                    <tabBarItem key="tabBarItem" tag="2" title="Gas" image="Gas Empty.png" selectedImage="Gas Filled.png" id="0LL-8e-AO5"/>
                     <connections>
                         <outlet property="country1Button" destination="hVu-LC-sio" id="sL8-i2-PeR"/>
                         <outlet property="country1ImageView" destination="LxY-Xm-0PC" id="vby-Jt-8Ak"/>
@@ -362,7 +362,7 @@
                             <outletCollection property="gestureRecognizers" destination="2ud-xF-h0I" appends="YES" id="4YS-t7-vSl"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="3" title="Meals" id="gyS-ID-Dsm"/>
+                    <tabBarItem key="tabBarItem" tag="3" title="Meals" image="Meals Empty.png" selectedImage="Meals Filled.png" id="gyS-ID-Dsm"/>
                     <connections>
                         <outlet property="country1Button" destination="Nng-D4-UhL" id="wdC-8Q-2go"/>
                         <outlet property="country1ImageView" destination="sw1-w7-xm1" id="4VL-r2-Ka6"/>
@@ -539,7 +539,7 @@
                             <outletCollection property="gestureRecognizers" destination="Iyz-mr-nbN" appends="YES" id="AQb-tG-YUo"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="4" title="Distance" id="Mz3-XH-IR7"/>
+                    <tabBarItem key="tabBarItem" tag="4" title="Distance" image="Distance Empty.png" selectedImage="Distance Filled.png" id="Mz3-XH-IR7"/>
                     <connections>
                         <outlet property="country1Button" destination="lox-GB-8lP" id="BNg-ok-fA9"/>
                         <outlet property="country1ImageView" destination="iUg-p9-RyY" id="L3R-wq-zsE"/>
@@ -668,7 +668,7 @@
                             <outletCollection property="gestureRecognizers" destination="a1d-dK-fa8" appends="YES" id="ke4-TN-2JC"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" tag="5" title="Temperature" id="yzH-nA-YIW"/>
+                    <tabBarItem key="tabBarItem" tag="5" title="Temperature" image="Temperature Empty.png" selectedImage="Temperature Filled.png" id="yzH-nA-YIW"/>
                     <connections>
                         <outlet property="country1Button" destination="Tt6-hh-oxN" id="f2p-ig-ob4"/>
                         <outlet property="country1ImageView" destination="P2N-Sg-Ykh" id="IXD-Zo-p2d"/>
@@ -711,4 +711,16 @@
             <point key="canvasLocation" x="325" y="387"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Distance Empty.png" width="32" height="32"/>
+        <image name="Distance Filled.png" width="32" height="32"/>
+        <image name="Gas Empty.png" width="32" height="32"/>
+        <image name="Gas Filled.png" width="32" height="32"/>
+        <image name="Meals Empty.png" width="32" height="32"/>
+        <image name="Meals Filled.png" width="32" height="32"/>
+        <image name="Money Empty.png" width="32" height="32"/>
+        <image name="Money Filled.png" width="32" height="32"/>
+        <image name="Temperature Empty.png" width="32" height="32"/>
+        <image name="Temperature Filled.png" width="32" height="32"/>
+    </resources>
 </document>
