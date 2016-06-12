@@ -5,5 +5,5 @@
 import UIKit
 
 class GasViewController: ParentViewController {
-	
+
 }

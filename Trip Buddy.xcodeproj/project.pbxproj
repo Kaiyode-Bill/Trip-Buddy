@@ -7,8 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71010CAC1D0CD68A00D2397A /* TripBuddyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71010CAB1D0CD68A00D2397A /* TripBuddyViewController.swift */; };
+		71010CAF1D0CEB4900D2397A /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71010CAD1D0CEB4900D2397A /* ExchangeViewController.swift */; };
+		71010CB01D0CEB4900D2397A /* ExchangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71010CAE1D0CEB4900D2397A /* ExchangeViewController.xib */; };
+		71010CB31D0CEFA400D2397A /* GasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71010CB11D0CEFA400D2397A /* GasViewController.swift */; };
+		71010CB41D0CEFA400D2397A /* GasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71010CB21D0CEFA400D2397A /* GasViewController.xib */; };
+		71010CB71D0CEFD100D2397A /* MealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71010CB51D0CEFD100D2397A /* MealsViewController.swift */; };
+		71010CB81D0CEFD100D2397A /* MealsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71010CB61D0CEFD100D2397A /* MealsViewController.xib */; };
+		71010CBB1D0CF02600D2397A /* MiscViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71010CB91D0CF02600D2397A /* MiscViewController.swift */; };
+		71010CBC1D0CF02600D2397A /* MiscViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71010CBA1D0CF02600D2397A /* MiscViewController.xib */; };
 		71792E311CC3119F008EAAAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71792E301CC3119F008EAAAF /* AppDelegate.swift */; };
-		71792E331CC3119F008EAAAF /* MoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71792E321CC3119F008EAAAF /* MoneyViewController.swift */; };
 		71792E361CC3119F008EAAAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71792E341CC3119F008EAAAF /* Main.storyboard */; };
 		71792E391CC3119F008EAAAF /* Trip_Buddy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71792E371CC3119F008EAAAF /* Trip_Buddy.xcdatamodeld */; };
 		71792E3B1CC3119F008EAAAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71792E3A1CC3119F008EAAAF /* Assets.xcassets */; };
@@ -32,47 +40,21 @@
 		71829A091CCAF6970069F92D /* Switzerland.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299F71CCAF6970069F92D /* Switzerland.png */; };
 		71829A0A1CCAF6970069F92D /* United Kingdom.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299F81CCAF6970069F92D /* United Kingdom.png */; };
 		71829A0B1CCAF6970069F92D /* United States.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299F91CCAF6970069F92D /* United States.png */; };
-		71829A2A1CCAFEF10069F92D /* Distance Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A0C1CCAFEF10069F92D /* Distance Empty.png */; };
-		71829A2B1CCAFEF10069F92D /* Distance Empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A0D1CCAFEF10069F92D /* Distance Empty@2x.png */; };
-		71829A2C1CCAFEF10069F92D /* Distance Empty@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A0E1CCAFEF10069F92D /* Distance Empty@3x.png */; };
-		71829A2D1CCAFEF10069F92D /* Distance Filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A0F1CCAFEF10069F92D /* Distance Filled.png */; };
-		71829A2E1CCAFEF10069F92D /* Distance Filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A101CCAFEF10069F92D /* Distance Filled@2x.png */; };
-		71829A2F1CCAFEF10069F92D /* Distance Filled@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A111CCAFEF10069F92D /* Distance Filled@3x.png */; };
-		71829A301CCAFEF10069F92D /* Gas Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A121CCAFEF10069F92D /* Gas Empty.png */; };
-		71829A311CCAFEF10069F92D /* Gas Empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A131CCAFEF10069F92D /* Gas Empty@2x.png */; };
-		71829A321CCAFEF10069F92D /* Gas Empty@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A141CCAFEF10069F92D /* Gas Empty@3x.png */; };
-		71829A331CCAFEF10069F92D /* Gas Filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A151CCAFEF10069F92D /* Gas Filled.png */; };
-		71829A341CCAFEF10069F92D /* Gas Filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A161CCAFEF10069F92D /* Gas Filled@2x.png */; };
-		71829A351CCAFEF10069F92D /* Gas Filled@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A171CCAFEF10069F92D /* Gas Filled@3x.png */; };
-		71829A361CCAFEF10069F92D /* Meals Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A181CCAFEF10069F92D /* Meals Empty.png */; };
-		71829A371CCAFEF10069F92D /* Meals Empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A191CCAFEF10069F92D /* Meals Empty@2x.png */; };
-		71829A381CCAFEF10069F92D /* Meals Empty@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A1A1CCAFEF10069F92D /* Meals Empty@3x.png */; };
-		71829A391CCAFEF10069F92D /* Meals Filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A1B1CCAFEF10069F92D /* Meals Filled.png */; };
-		71829A3A1CCAFEF10069F92D /* Meals Filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A1C1CCAFEF10069F92D /* Meals Filled@2x.png */; };
-		71829A3B1CCAFEF10069F92D /* Meals Filled@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A1D1CCAFEF10069F92D /* Meals Filled@3x.png */; };
-		71829A3C1CCAFEF10069F92D /* Money Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A1E1CCAFEF10069F92D /* Money Empty.png */; };
-		71829A3D1CCAFEF10069F92D /* Money Empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A1F1CCAFEF10069F92D /* Money Empty@2x.png */; };
-		71829A3E1CCAFEF10069F92D /* Money Empty@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A201CCAFEF10069F92D /* Money Empty@3x.png */; };
-		71829A3F1CCAFEF10069F92D /* Money Filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A211CCAFEF10069F92D /* Money Filled.png */; };
-		71829A401CCAFEF10069F92D /* Money Filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A221CCAFEF10069F92D /* Money Filled@2x.png */; };
-		71829A411CCAFEF10069F92D /* Money Filled@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A231CCAFEF10069F92D /* Money Filled@3x.png */; };
-		71829A421CCAFEF10069F92D /* Temperature Empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A241CCAFEF10069F92D /* Temperature Empty.png */; };
-		71829A431CCAFEF10069F92D /* Temperature Empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A251CCAFEF10069F92D /* Temperature Empty@2x.png */; };
-		71829A441CCAFEF10069F92D /* Temperature Empty@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A261CCAFEF10069F92D /* Temperature Empty@3x.png */; };
-		71829A451CCAFEF10069F92D /* Temperature Filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A271CCAFEF10069F92D /* Temperature Filled.png */; };
-		71829A461CCAFEF10069F92D /* Temperature Filled@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A281CCAFEF10069F92D /* Temperature Filled@2x.png */; };
-		71829A471CCAFEF10069F92D /* Temperature Filled@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 71829A291CCAFEF10069F92D /* Temperature Filled@3x.png */; };
-		719496811CC604C000299AC2 /* GasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719496801CC604C000299AC2 /* GasViewController.swift */; };
-		719496831CC604D100299AC2 /* MealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719496821CC604D100299AC2 /* MealsViewController.swift */; };
-		719496851CC604E600299AC2 /* DistanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719496841CC604E600299AC2 /* DistanceViewController.swift */; };
-		719496871CC6051400299AC2 /* TemperatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719496861CC6051400299AC2 /* TemperatureViewController.swift */; };
 		719496951CC9E46C00299AC2 /* ProgramData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719496931CC9E46C00299AC2 /* ProgramData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		71010CAB1D0CD68A00D2397A /* TripBuddyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripBuddyViewController.swift; sourceTree = "<group>"; };
+		71010CAD1D0CEB4900D2397A /* ExchangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
+		71010CAE1D0CEB4900D2397A /* ExchangeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExchangeViewController.xib; sourceTree = "<group>"; };
+		71010CB11D0CEFA400D2397A /* GasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasViewController.swift; sourceTree = "<group>"; };
+		71010CB21D0CEFA400D2397A /* GasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GasViewController.xib; sourceTree = "<group>"; };
+		71010CB51D0CEFD100D2397A /* MealsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsViewController.swift; sourceTree = "<group>"; };
+		71010CB61D0CEFD100D2397A /* MealsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MealsViewController.xib; sourceTree = "<group>"; };
+		71010CB91D0CF02600D2397A /* MiscViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscViewController.swift; sourceTree = "<group>"; };
+		71010CBA1D0CF02600D2397A /* MiscViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MiscViewController.xib; sourceTree = "<group>"; };
 		71792E2D1CC3119E008EAAAF /* Trip Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trip Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71792E301CC3119F008EAAAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		71792E321CC3119F008EAAAF /* MoneyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneyViewController.swift; sourceTree = "<group>"; };
 		71792E351CC3119F008EAAAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		71792E381CC3119F008EAAAF /* Trip_Buddy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Trip_Buddy.xcdatamodel; sourceTree = "<group>"; };
 		71792E3A1CC3119F008EAAAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,40 +79,6 @@
 		718299F71CCAF6970069F92D /* Switzerland.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Switzerland.png; path = Images/Switzerland.png; sourceTree = "<group>"; };
 		718299F81CCAF6970069F92D /* United Kingdom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "United Kingdom.png"; path = "Images/United Kingdom.png"; sourceTree = "<group>"; };
 		718299F91CCAF6970069F92D /* United States.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "United States.png"; path = "Images/United States.png"; sourceTree = "<group>"; };
-		71829A0C1CCAFEF10069F92D /* Distance Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Distance Empty.png"; path = "Images/Distance Empty.png"; sourceTree = "<group>"; };
-		71829A0D1CCAFEF10069F92D /* Distance Empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Distance Empty@2x.png"; path = "Images/Distance Empty@2x.png"; sourceTree = "<group>"; };
-		71829A0E1CCAFEF10069F92D /* Distance Empty@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Distance Empty@3x.png"; path = "Images/Distance Empty@3x.png"; sourceTree = "<group>"; };
-		71829A0F1CCAFEF10069F92D /* Distance Filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Distance Filled.png"; path = "Images/Distance Filled.png"; sourceTree = "<group>"; };
-		71829A101CCAFEF10069F92D /* Distance Filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Distance Filled@2x.png"; path = "Images/Distance Filled@2x.png"; sourceTree = "<group>"; };
-		71829A111CCAFEF10069F92D /* Distance Filled@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Distance Filled@3x.png"; path = "Images/Distance Filled@3x.png"; sourceTree = "<group>"; };
-		71829A121CCAFEF10069F92D /* Gas Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Gas Empty.png"; path = "Images/Gas Empty.png"; sourceTree = "<group>"; };
-		71829A131CCAFEF10069F92D /* Gas Empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Gas Empty@2x.png"; path = "Images/Gas Empty@2x.png"; sourceTree = "<group>"; };
-		71829A141CCAFEF10069F92D /* Gas Empty@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Gas Empty@3x.png"; path = "Images/Gas Empty@3x.png"; sourceTree = "<group>"; };
-		71829A151CCAFEF10069F92D /* Gas Filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Gas Filled.png"; path = "Images/Gas Filled.png"; sourceTree = "<group>"; };
-		71829A161CCAFEF10069F92D /* Gas Filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Gas Filled@2x.png"; path = "Images/Gas Filled@2x.png"; sourceTree = "<group>"; };
-		71829A171CCAFEF10069F92D /* Gas Filled@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Gas Filled@3x.png"; path = "Images/Gas Filled@3x.png"; sourceTree = "<group>"; };
-		71829A181CCAFEF10069F92D /* Meals Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Meals Empty.png"; path = "Images/Meals Empty.png"; sourceTree = "<group>"; };
-		71829A191CCAFEF10069F92D /* Meals Empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Meals Empty@2x.png"; path = "Images/Meals Empty@2x.png"; sourceTree = "<group>"; };
-		71829A1A1CCAFEF10069F92D /* Meals Empty@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Meals Empty@3x.png"; path = "Images/Meals Empty@3x.png"; sourceTree = "<group>"; };
-		71829A1B1CCAFEF10069F92D /* Meals Filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Meals Filled.png"; path = "Images/Meals Filled.png"; sourceTree = "<group>"; };
-		71829A1C1CCAFEF10069F92D /* Meals Filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Meals Filled@2x.png"; path = "Images/Meals Filled@2x.png"; sourceTree = "<group>"; };
-		71829A1D1CCAFEF10069F92D /* Meals Filled@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Meals Filled@3x.png"; path = "Images/Meals Filled@3x.png"; sourceTree = "<group>"; };
-		71829A1E1CCAFEF10069F92D /* Money Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Money Empty.png"; path = "Images/Money Empty.png"; sourceTree = "<group>"; };
-		71829A1F1CCAFEF10069F92D /* Money Empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Money Empty@2x.png"; path = "Images/Money Empty@2x.png"; sourceTree = "<group>"; };
-		71829A201CCAFEF10069F92D /* Money Empty@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Money Empty@3x.png"; path = "Images/Money Empty@3x.png"; sourceTree = "<group>"; };
-		71829A211CCAFEF10069F92D /* Money Filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Money Filled.png"; path = "Images/Money Filled.png"; sourceTree = "<group>"; };
-		71829A221CCAFEF10069F92D /* Money Filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Money Filled@2x.png"; path = "Images/Money Filled@2x.png"; sourceTree = "<group>"; };
-		71829A231CCAFEF10069F92D /* Money Filled@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Money Filled@3x.png"; path = "Images/Money Filled@3x.png"; sourceTree = "<group>"; };
-		71829A241CCAFEF10069F92D /* Temperature Empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Temperature Empty.png"; path = "Images/Temperature Empty.png"; sourceTree = "<group>"; };
-		71829A251CCAFEF10069F92D /* Temperature Empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Temperature Empty@2x.png"; path = "Images/Temperature Empty@2x.png"; sourceTree = "<group>"; };
-		71829A261CCAFEF10069F92D /* Temperature Empty@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Temperature Empty@3x.png"; path = "Images/Temperature Empty@3x.png"; sourceTree = "<group>"; };
-		71829A271CCAFEF10069F92D /* Temperature Filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Temperature Filled.png"; path = "Images/Temperature Filled.png"; sourceTree = "<group>"; };
-		71829A281CCAFEF10069F92D /* Temperature Filled@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Temperature Filled@2x.png"; path = "Images/Temperature Filled@2x.png"; sourceTree = "<group>"; };
-		71829A291CCAFEF10069F92D /* Temperature Filled@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Temperature Filled@3x.png"; path = "Images/Temperature Filled@3x.png"; sourceTree = "<group>"; };
-		719496801CC604C000299AC2 /* GasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasViewController.swift; sourceTree = "<group>"; };
-		719496821CC604D100299AC2 /* MealsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsViewController.swift; sourceTree = "<group>"; };
-		719496841CC604E600299AC2 /* DistanceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistanceViewController.swift; sourceTree = "<group>"; };
-		719496861CC6051400299AC2 /* TemperatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemperatureViewController.swift; sourceTree = "<group>"; };
 		719496931CC9E46C00299AC2 /* ProgramData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,12 +114,16 @@
 			children = (
 				718299E71CCAF67E0069F92D /* Images */,
 				71792E301CC3119F008EAAAF /* AppDelegate.swift */,
+				71010CAB1D0CD68A00D2397A /* TripBuddyViewController.swift */,
 				718299E51CCADCAC0069F92D /* ParentViewController.swift */,
-				71792E321CC3119F008EAAAF /* MoneyViewController.swift */,
-				719496801CC604C000299AC2 /* GasViewController.swift */,
-				719496821CC604D100299AC2 /* MealsViewController.swift */,
-				719496841CC604E600299AC2 /* DistanceViewController.swift */,
-				719496861CC6051400299AC2 /* TemperatureViewController.swift */,
+				71010CAD1D0CEB4900D2397A /* ExchangeViewController.swift */,
+				71010CAE1D0CEB4900D2397A /* ExchangeViewController.xib */,
+				71010CB11D0CEFA400D2397A /* GasViewController.swift */,
+				71010CB21D0CEFA400D2397A /* GasViewController.xib */,
+				71010CB51D0CEFD100D2397A /* MealsViewController.swift */,
+				71010CB61D0CEFD100D2397A /* MealsViewController.xib */,
+				71010CB91D0CF02600D2397A /* MiscViewController.swift */,
+				71010CBA1D0CF02600D2397A /* MiscViewController.xib */,
 				719496931CC9E46C00299AC2 /* ProgramData.swift */,
 				71792E341CC3119F008EAAAF /* Main.storyboard */,
 				71792E3A1CC3119F008EAAAF /* Assets.xcassets */,
@@ -191,46 +143,16 @@
 				718299EB1CCAF6970069F92D /* Canada.png */,
 				718299EC1CCAF6970069F92D /* Chile.png */,
 				718299ED1CCAF6970069F92D /* China.png */,
-				71829A0C1CCAFEF10069F92D /* Distance Empty.png */,
-				71829A0D1CCAFEF10069F92D /* Distance Empty@2x.png */,
-				71829A0E1CCAFEF10069F92D /* Distance Empty@3x.png */,
-				71829A0F1CCAFEF10069F92D /* Distance Filled.png */,
-				71829A101CCAFEF10069F92D /* Distance Filled@2x.png */,
-				71829A111CCAFEF10069F92D /* Distance Filled@3x.png */,
 				718299EE1CCAF6970069F92D /* France.png */,
-				71829A121CCAFEF10069F92D /* Gas Empty.png */,
-				71829A131CCAFEF10069F92D /* Gas Empty@2x.png */,
-				71829A141CCAFEF10069F92D /* Gas Empty@3x.png */,
-				71829A151CCAFEF10069F92D /* Gas Filled.png */,
-				71829A161CCAFEF10069F92D /* Gas Filled@2x.png */,
-				71829A171CCAFEF10069F92D /* Gas Filled@3x.png */,
 				718299EF1CCAF6970069F92D /* Germany.png */,
 				718299F01CCAF6970069F92D /* India.png */,
 				718299F11CCAF6970069F92D /* Italy.png */,
 				718299F21CCAF6970069F92D /* Japan.png */,
 				718299F31CCAF6970069F92D /* Malaysia.png */,
-				71829A181CCAFEF10069F92D /* Meals Empty.png */,
-				71829A191CCAFEF10069F92D /* Meals Empty@2x.png */,
-				71829A1A1CCAFEF10069F92D /* Meals Empty@3x.png */,
-				71829A1B1CCAFEF10069F92D /* Meals Filled.png */,
-				71829A1C1CCAFEF10069F92D /* Meals Filled@2x.png */,
-				71829A1D1CCAFEF10069F92D /* Meals Filled@3x.png */,
 				718299F41CCAF6970069F92D /* Mexico.png */,
-				71829A1E1CCAFEF10069F92D /* Money Empty.png */,
-				71829A1F1CCAFEF10069F92D /* Money Empty@2x.png */,
-				71829A201CCAFEF10069F92D /* Money Empty@3x.png */,
-				71829A211CCAFEF10069F92D /* Money Filled.png */,
-				71829A221CCAFEF10069F92D /* Money Filled@2x.png */,
-				71829A231CCAFEF10069F92D /* Money Filled@3x.png */,
 				718299F51CCAF6970069F92D /* Singapore.png */,
 				718299F61CCAF6970069F92D /* Spain.png */,
 				718299F71CCAF6970069F92D /* Switzerland.png */,
-				71829A241CCAFEF10069F92D /* Temperature Empty.png */,
-				71829A251CCAFEF10069F92D /* Temperature Empty@2x.png */,
-				71829A261CCAFEF10069F92D /* Temperature Empty@3x.png */,
-				71829A271CCAFEF10069F92D /* Temperature Filled.png */,
-				71829A281CCAFEF10069F92D /* Temperature Filled@2x.png */,
-				71829A291CCAFEF10069F92D /* Temperature Filled@3x.png */,
 				718299F81CCAF6970069F92D /* United Kingdom.png */,
 				718299F91CCAF6970069F92D /* United States.png */,
 			);
@@ -295,57 +217,31 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71829A401CCAFEF10069F92D /* Money Filled@2x.png in Resources */,
-				71829A2D1CCAFEF10069F92D /* Distance Filled.png in Resources */,
 				718299FD1CCAF6970069F92D /* Canada.png in Resources */,
-				71829A441CCAFEF10069F92D /* Temperature Empty@3x.png in Resources */,
+				71010CBC1D0CF02600D2397A /* MiscViewController.xib in Resources */,
 				718299FE1CCAF6970069F92D /* Chile.png in Resources */,
 				71829A061CCAF6970069F92D /* Mexico.png in Resources */,
-				71829A371CCAFEF10069F92D /* Meals Empty@2x.png in Resources */,
 				718299FC1CCAF6970069F92D /* Bulgaria.png in Resources */,
-				71829A3A1CCAFEF10069F92D /* Meals Filled@2x.png in Resources */,
 				71792E3E1CC3119F008EAAAF /* LaunchScreen.storyboard in Resources */,
-				71829A301CCAFEF10069F92D /* Gas Empty.png in Resources */,
-				71829A351CCAFEF10069F92D /* Gas Filled@3x.png in Resources */,
 				71829A031CCAF6970069F92D /* Italy.png in Resources */,
-				71829A451CCAFEF10069F92D /* Temperature Filled.png in Resources */,
 				71829A001CCAF6970069F92D /* France.png in Resources */,
-				71829A421CCAFEF10069F92D /* Temperature Empty.png in Resources */,
 				71829A0A1CCAF6970069F92D /* United Kingdom.png in Resources */,
 				718299FA1CCAF6970069F92D /* Argentina.png in Resources */,
-				71829A381CCAFEF10069F92D /* Meals Empty@3x.png in Resources */,
 				71792E3B1CC3119F008EAAAF /* Assets.xcassets in Resources */,
-				71829A431CCAFEF10069F92D /* Temperature Empty@2x.png in Resources */,
-				71829A321CCAFEF10069F92D /* Gas Empty@3x.png in Resources */,
-				71829A3C1CCAFEF10069F92D /* Money Empty.png in Resources */,
-				71829A311CCAFEF10069F92D /* Gas Empty@2x.png in Resources */,
 				718299FB1CCAF6970069F92D /* Austria.png in Resources */,
-				71829A2E1CCAFEF10069F92D /* Distance Filled@2x.png in Resources */,
-				71829A2A1CCAFEF10069F92D /* Distance Empty.png in Resources */,
-				71829A391CCAFEF10069F92D /* Meals Filled.png in Resources */,
+				71010CB41D0CEFA400D2397A /* GasViewController.xib in Resources */,
 				71829A051CCAF6970069F92D /* Malaysia.png in Resources */,
-				71829A2C1CCAFEF10069F92D /* Distance Empty@3x.png in Resources */,
+				71010CB01D0CEB4900D2397A /* ExchangeViewController.xib in Resources */,
 				71829A071CCAF6970069F92D /* Singapore.png in Resources */,
-				71829A361CCAFEF10069F92D /* Meals Empty.png in Resources */,
-				71829A331CCAFEF10069F92D /* Gas Filled.png in Resources */,
 				71829A011CCAF6970069F92D /* Germany.png in Resources */,
 				71829A021CCAF6970069F92D /* India.png in Resources */,
-				71829A3B1CCAFEF10069F92D /* Meals Filled@3x.png in Resources */,
-				71829A3D1CCAFEF10069F92D /* Money Empty@2x.png in Resources */,
 				718299FF1CCAF6970069F92D /* China.png in Resources */,
 				71829A041CCAF6970069F92D /* Japan.png in Resources */,
-				71829A341CCAFEF10069F92D /* Gas Filled@2x.png in Resources */,
 				71792E361CC3119F008EAAAF /* Main.storyboard in Resources */,
 				71829A081CCAF6970069F92D /* Spain.png in Resources */,
-				71829A461CCAFEF10069F92D /* Temperature Filled@2x.png in Resources */,
-				71829A3E1CCAFEF10069F92D /* Money Empty@3x.png in Resources */,
 				71829A0B1CCAF6970069F92D /* United States.png in Resources */,
-				71829A411CCAFEF10069F92D /* Money Filled@3x.png in Resources */,
-				71829A471CCAFEF10069F92D /* Temperature Filled@3x.png in Resources */,
+				71010CB81D0CEFD100D2397A /* MealsViewController.xib in Resources */,
 				71829A091CCAF6970069F92D /* Switzerland.png in Resources */,
-				71829A2F1CCAFEF10069F92D /* Distance Filled@3x.png in Resources */,
-				71829A2B1CCAFEF10069F92D /* Distance Empty@2x.png in Resources */,
-				71829A3F1CCAFEF10069F92D /* Money Filled.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,15 +252,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				719496811CC604C000299AC2 /* GasViewController.swift in Sources */,
-				71792E331CC3119F008EAAAF /* MoneyViewController.swift in Sources */,
-				719496831CC604D100299AC2 /* MealsViewController.swift in Sources */,
+				71010CB31D0CEFA400D2397A /* GasViewController.swift in Sources */,
 				71792E391CC3119F008EAAAF /* Trip_Buddy.xcdatamodeld in Sources */,
-				719496851CC604E600299AC2 /* DistanceViewController.swift in Sources */,
-				719496871CC6051400299AC2 /* TemperatureViewController.swift in Sources */,
 				718299E61CCADCAC0069F92D /* ParentViewController.swift in Sources */,
 				71792E311CC3119F008EAAAF /* AppDelegate.swift in Sources */,
+				71010CAC1D0CD68A00D2397A /* TripBuddyViewController.swift in Sources */,
+				71010CB71D0CEFD100D2397A /* MealsViewController.swift in Sources */,
 				719496951CC9E46C00299AC2 /* ProgramData.swift in Sources */,
+				71010CAF1D0CEB4900D2397A /* ExchangeViewController.swift in Sources */,
+				71010CBB1D0CF02600D2397A /* MiscViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
