@@ -32,9 +32,13 @@ class TripBuddyViewController: UIViewController {
 	                         "₹", "€", "¥", "R", "$", "$", "€", "C",
 	                         "£", "$"]
 
-	let amounts: [Float] = [9.41, 0.65, 1.75, 1.3336, 704.955, 6.34, 0.65, 0.93,
+	let amounts: [Double] = [9.41, 0.65, 1.75, 1.3336, 704.955, 6.34, 0.65, 0.93,
 	                        66.07, 0.94, 122.725, 4.3949, 16.7305, 1.4, 0.92, 0.99,
 	                        0.654, 1.5172]
+
+	//Miscellaneous data
+	let miscUnits: [[String]] = [["miles (or MPH)", "kilometers (or km/h)"], ["° farenheit", "° celsius"]]
+	let miscLabels: [String] = ["distance", "temperature"]
 
 	//CoreData variables for saving program data
 	let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
@@ -47,27 +51,22 @@ class TripBuddyViewController: UIViewController {
 		for i in 0.stride(to: viewControllers.count, by: 1) {
 			viewControllers[i].view.frame.origin.x = view.frame.size.width * CGFloat(i)
 			scrollView.addSubview(viewControllers[i].view)
-			//view controller intialization stuff goes here
+			viewControllers[i].tripBuddyViewController = self
 		}
 		scrollView.contentSize = CGSizeMake(view.frame.size.width * CGFloat(viewControllers.count), scrollView.bounds.height)
 	}
 
 	override func viewWillAppear(animated: Bool) {
 		super.viewWillAppear(animated)
-
-		accessProgramData()
-		updateUIElements()
-	}
-
-	//Access the program data from CoreData - if it doesn't exist, a default instance is created
-	func accessProgramData() {
 		var existingData: [ProgramData]
 
+		//Access the program data from CoreData
 		do {
 			existingData = try context.executeFetchRequest(NSFetchRequest(entityName: "ProgramData")) as! [ProgramData]
 		} catch _ as NSError {
 			existingData = []
 		}
+		//If valid program data doesn't exist, create a default instance instead
 		if existingData.count != 1 {
 			for i in (existingData.count - 1).stride(through: 0, by: -1) {
 				context.deleteObject(existingData[i] as NSManagedObject)
@@ -77,31 +76,53 @@ class TripBuddyViewController: UIViewController {
 			existingData[0].country1 = countries.count - 1
 			existingData[0].country2 = countries.count - 2
 			//set all program data default values here as they are created
-			saveProgramData()
+			existingData[0].miscMeasurement = 0
+			existingData[0].miscAmount = 0
+			existingData[0].miscUnit = 0
 		}
 		programData = existingData[0]
+		saveProgramData()
 	}
 
-	//Saves the program data to CoreData
+	//Saves the program data to CoreData and then updates all of the UI elements
 	func saveProgramData() {
 		do {
 			try context.save()
 		} catch _ as NSError {}
-	}
 
-	//Updates the UI elements based upon the current program data
-	func updateUIElements() {
 		let country1 = countries[programData!.country1.integerValue]
 		let currency1 = currencies[programData!.country1.integerValue]
 		let symbol1 = symbols[programData!.country1.integerValue]
 		let country2 = countries[programData!.country2.integerValue]
 		let currency2 = currencies[programData!.country2.integerValue]
 		let symbol2 = symbols[programData!.country2.integerValue]
+		let miscViewController = viewControllers[3] as! MiscViewController
+		let miscUnit1 = miscUnits[programData!.miscMeasurement.integerValue][programData!.miscUnit.integerValue]
+		let miscUnit2 = miscUnits[programData!.miscMeasurement.integerValue][1 - programData!.miscUnit.integerValue]
+		let miscLabel = miscLabels[programData!.miscMeasurement.integerValue]
 
 		country1ImageView.image = UIImage(named: country1 + ".png")
-		country1Button.setTitle("Country of Origin: \(country1) - \(currency1) (\(symbol1))", forState: UIControlState.Normal)
+		country1Button.setTitle("Origin Country: \(country1) - \(currency1) (\(symbol1))", forState: UIControlState.Normal)
 		country2ImageView.image = UIImage(named: country2 + ".png")
-		country2Button.setTitle("Country of Travel: \(country2) - \(currency2) (\(symbol2))", forState: UIControlState.Normal)
+		country2Button.setTitle("Travel Country: \(country2) - \(currency2) (\(symbol2))", forState: UIControlState.Normal)
+		miscViewController.measurementControl.selectedSegmentIndex = programData!.miscMeasurement.integerValue
+		miscViewController.amountTextField.text = String(format: "%.3f", programData!.miscAmount.doubleValue)
+		miscViewController.unitLabel.text = miscUnit1
+		miscViewController.equivalentLabel.text = "is equal to \(String(format: "%.3f", convertedMiscAmount())) \(miscUnit2)"
+		miscViewController.toggleButton.setTitle("Switch the \(miscLabel) units", forState: UIControlState.Normal)
+	}
+
+	//Returns the converted amount from the MiscViewController
+	func convertedMiscAmount() -> Double {
+		if programData!.miscMeasurement == 0 && programData!.miscUnit == 0 {
+			return programData!.miscAmount.doubleValue * 25146 / 15625
+		} else if programData!.miscMeasurement == 0 && programData!.miscUnit != 0 {
+			return programData!.miscAmount.doubleValue * 15625 / 25146
+		} else if programData!.miscMeasurement != 0 && programData!.miscUnit == 0 {
+			return (programData!.miscAmount.doubleValue - 32) * 5 / 9
+		} else {
+			return (programData!.miscAmount.doubleValue * 9 / 5) + 32
+		}
 	}
 
 	//Triggers a menu to pop up for changing country 1
@@ -121,7 +142,6 @@ class TripBuddyViewController: UIViewController {
 			if countries[i] == action.title {
 				programData!.country1 = i
 				saveProgramData()
-				updateUIElements()
 				break
 			}
 		}
@@ -144,7 +164,6 @@ class TripBuddyViewController: UIViewController {
 			if countries[i] == action.title {
 				programData!.country2 = i
 				saveProgramData()
-				updateUIElements()
 				break
 			}
 		}

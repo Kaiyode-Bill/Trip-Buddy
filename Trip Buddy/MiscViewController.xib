@@ -7,6 +7,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MiscViewController" customModule="Trip_Buddy" customModuleProvider="target">
             <connections>
+                <outlet property="amountTextField" destination="BEA-67-ipO" id="e1d-1y-0nq"/>
+                <outlet property="equivalentLabel" destination="yus-QM-rhB" id="nDB-LP-qk4"/>
+                <outlet property="measurementControl" destination="FqY-mr-d53" id="zu1-w5-Cy9"/>
+                <outlet property="toggleButton" destination="DBU-BJ-HGS" id="I9d-nt-Ij9"/>
+                <outlet property="unitLabel" destination="KgV-PG-RMj" id="8vC-rN-2TY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,7 +19,77 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" borderStyle="roundedRect" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="BEA-67-ipO">
+                    <rect key="frame" x="20" y="68" width="278" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="peK-Fr-wgT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="miles (or MPH)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgV-PG-RMj">
+                    <rect key="frame" x="302" y="68" width="278" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="2lp-7d-na7"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="is equal to 0.00 kilometers (or km/h)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yus-QM-rhB">
+                    <rect key="frame" x="20" y="102" width="560" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Zzt-ms-e3t"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBU-BJ-HGS">
+                    <rect key="frame" x="20" y="136" width="560" height="30"/>
+                    <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Zsw-Yn-puk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="Switch the distance units">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="toggleButtonPressed:" destination="-1" eventType="touchUpInside" id="xer-wc-5LL"/>
+                    </connections>
+                </button>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FqY-mr-d53">
+                    <rect key="frame" x="20" y="20" width="560" height="29"/>
+                    <segments>
+                        <segment title="Distance"/>
+                        <segment title="Temperature"/>
+                    </segments>
+                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="measurementChanged:" destination="-1" eventType="valueChanged" id="Dyt-hG-suF"/>
+                    </connections>
+                </segmentedControl>
+            </subviews>
             <color key="backgroundColor" red="0.50196078430000002" green="0.50196078430000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="yus-QM-rhB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="0V1-t1-uNB"/>
+                <constraint firstItem="KgV-PG-RMj" firstAttribute="leading" secondItem="BEA-67-ipO" secondAttribute="trailing" constant="4" id="85e-JR-L3B"/>
+                <constraint firstAttribute="trailing" secondItem="yus-QM-rhB" secondAttribute="trailing" constant="20" id="8bp-Lb-ueu"/>
+                <constraint firstItem="KgV-PG-RMj" firstAttribute="top" secondItem="FqY-mr-d53" secondAttribute="bottom" constant="20" id="EK5-Wd-b0y"/>
+                <constraint firstAttribute="trailing" secondItem="KgV-PG-RMj" secondAttribute="trailing" constant="20" id="FIV-8T-80l"/>
+                <constraint firstAttribute="trailing" secondItem="DBU-BJ-HGS" secondAttribute="trailing" constant="20" id="H7m-7z-Wr5"/>
+                <constraint firstItem="KgV-PG-RMj" firstAttribute="width" secondItem="BEA-67-ipO" secondAttribute="width" id="IJl-xS-Abv"/>
+                <constraint firstItem="FqY-mr-d53" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="TFc-YR-1XP"/>
+                <constraint firstItem="BEA-67-ipO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="UBz-ID-PhK"/>
+                <constraint firstItem="DBU-BJ-HGS" firstAttribute="top" secondItem="yus-QM-rhB" secondAttribute="bottom" constant="4" id="Z2f-vY-qPs"/>
+                <constraint firstItem="yus-QM-rhB" firstAttribute="top" secondItem="KgV-PG-RMj" secondAttribute="bottom" constant="4" id="acS-on-kDK"/>
+                <constraint firstItem="DBU-BJ-HGS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="fub-I0-sd7"/>
+                <constraint firstItem="BEA-67-ipO" firstAttribute="top" secondItem="FqY-mr-d53" secondAttribute="bottom" constant="20" id="gHo-os-ZXT"/>
+                <constraint firstAttribute="trailing" secondItem="FqY-mr-d53" secondAttribute="trailing" constant="20" id="w6M-of-WLT"/>
+                <constraint firstItem="FqY-mr-d53" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="xPR-qL-Amm"/>
+            </constraints>
         </view>
     </objects>
 </document>
