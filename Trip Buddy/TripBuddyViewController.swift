@@ -20,7 +20,7 @@ class TripBuddyViewController: UIViewController {
 	                                               MiscViewController(nibName: "MiscViewController", bundle: nil)]
 
 	//Arrays of information where an index in any array pertains to the same country
-	let countries: [String] = ["Argentina", "Austria", "Bulgaria", "Canada", "Chile", "China", "France", "Germany",
+	let names: [String] = ["Argentina", "Austria", "Bulgaria", "Canada", "Chile", "China", "France", "Germany",
 	                           "India", "Italy", "Japan", "Malaysia", "Mexico", "Singapore", "Spain", "Switzerland",
 	                           "United Kingdom", "United States"]
 
@@ -32,7 +32,7 @@ class TripBuddyViewController: UIViewController {
 	                         "₹", "€", "¥", "R", "$", "$", "€", "C",
 	                         "£", "$"]
 
-	let amounts: [Double] = [9.41, 0.65, 1.75, 1.3336, 704.955, 6.34, 0.65, 0.93,
+	let weights: [Double] = [9.41, 0.65, 1.75, 1.3336, 704.955, 6.34, 0.65, 0.93,
 	                        66.07, 0.94, 122.725, 4.3949, 16.7305, 1.4, 0.92, 0.99,
 	                        0.654, 1.5172]
 
@@ -73,8 +73,8 @@ class TripBuddyViewController: UIViewController {
 				existingData.removeAtIndex(i)
 			}
 			existingData = [NSEntityDescription.insertNewObjectForEntityForName("ProgramData", inManagedObjectContext: context) as! ProgramData]
-			existingData[0].country1 = countries.count - 1
-			existingData[0].country2 = countries.count - 2
+			existingData[0].country1 = names.count - 1
+			existingData[0].country2 = names.count - 2
 			//set all program data default values here as they are created
 			existingData[0].miscMeasurement = 0
 			existingData[0].miscAmount = 0
@@ -90,21 +90,23 @@ class TripBuddyViewController: UIViewController {
 			try context.save()
 		} catch _ as NSError {}
 
-		let country1 = countries[programData!.country1.integerValue]
-		let currency1 = currencies[programData!.country1.integerValue]
-		let symbol1 = symbols[programData!.country1.integerValue]
-		let country2 = countries[programData!.country2.integerValue]
-		let currency2 = currencies[programData!.country2.integerValue]
-		let symbol2 = symbols[programData!.country2.integerValue]
+		let name1 = names[programData!.country1.integerValue]
+		//let currency1 = currencies[programData!.country1.integerValue]
+		//let symbol1 = symbols[programData!.country1.integerValue]
+		//let weight1 = weights[programData!.country1.integerValue]
+		let name2 = names[programData!.country2.integerValue]
+		//let currency2 = currencies[programData!.country2.integerValue]
+		//let symbol2 = symbols[programData!.country2.integerValue]
+		//let weight2 = weights[programData!.country2.integerValue]
 		let miscViewController = viewControllers[3] as! MiscViewController
 		let miscUnit1 = miscUnits[programData!.miscMeasurement.integerValue][programData!.miscUnit.integerValue]
 		let miscUnit2 = miscUnits[programData!.miscMeasurement.integerValue][1 - programData!.miscUnit.integerValue]
 		let miscLabel = miscLabels[programData!.miscMeasurement.integerValue]
 
-		country1ImageView.image = UIImage(named: country1 + ".png")
-		country1Button.setTitle("Origin Country: \(country1) - \(currency1) (\(symbol1))", forState: UIControlState.Normal)
-		country2ImageView.image = UIImage(named: country2 + ".png")
-		country2Button.setTitle("Travel Country: \(country2) - \(currency2) (\(symbol2))", forState: UIControlState.Normal)
+		country1ImageView.image = UIImage(named: name1 + ".png")
+		country1Button.setTitle("Origin Country: \(name1)", forState: UIControlState.Normal)
+		country2ImageView.image = UIImage(named: name2 + ".png")
+		country2Button.setTitle("Travel Country: \(name2)", forState: UIControlState.Normal)
 		miscViewController.measurementControl.selectedSegmentIndex = programData!.miscMeasurement.integerValue
 		miscViewController.amountTextField.text = String(format: "%.3f", programData!.miscAmount.doubleValue)
 		miscViewController.unitLabel.text = miscUnit1
@@ -129,8 +131,8 @@ class TripBuddyViewController: UIViewController {
 	@IBAction func country1ButtonPressed(sender: AnyObject) {
 		let alertController = UIAlertController(title: "Select a country:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
 
-		for i in 0.stride(to: countries.count, by: 1) {
-			alertController.addAction(UIAlertAction(title: countries[i], style: UIAlertActionStyle.Default, handler: country1AlertActionHandler))
+		for i in 0.stride(to: names.count, by: 1) {
+			alertController.addAction(UIAlertAction(title: names[i], style: UIAlertActionStyle.Default, handler: country1AlertActionHandler))
 		}
 		alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
 		presentViewController(alertController, animated: true, completion: nil)
@@ -138,8 +140,8 @@ class TripBuddyViewController: UIViewController {
 
 	//Changes country 1 based upon the selected choice
 	func country1AlertActionHandler(action: UIAlertAction!) {
-		for i in 0.stride(to: countries.count, by: 1) {
-			if countries[i] == action.title {
+		for i in 0.stride(to: names.count, by: 1) {
+			if names[i] == action.title {
 				programData!.country1 = i
 				saveProgramData()
 				break
@@ -151,8 +153,8 @@ class TripBuddyViewController: UIViewController {
 	@IBAction func country2ButtonPressed(sender: AnyObject) {
 		let alertController = UIAlertController(title: "Select a country:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
 
-		for i in 0.stride(to: countries.count, by: 1) {
-			alertController.addAction(UIAlertAction(title: countries[i], style: UIAlertActionStyle.Default, handler: country2AlertActionHandler))
+		for i in 0.stride(to: names.count, by: 1) {
+			alertController.addAction(UIAlertAction(title: names[i], style: UIAlertActionStyle.Default, handler: country2AlertActionHandler))
 		}
 		alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
 		presentViewController(alertController, animated: true, completion: nil)
@@ -160,8 +162,8 @@ class TripBuddyViewController: UIViewController {
 
 	//Changes country 2 based upon the selected choice
 	func country2AlertActionHandler(action: UIAlertAction!) {
-		for i in 0.stride(to: countries.count, by: 1) {
-			if countries[i] == action.title {
+		for i in 0.stride(to: names.count, by: 1) {
+			if names[i] == action.title {
 				programData!.country2 = i
 				saveProgramData()
 				break
