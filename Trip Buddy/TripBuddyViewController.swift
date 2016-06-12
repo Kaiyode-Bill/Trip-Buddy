@@ -91,14 +91,17 @@ class TripBuddyViewController: UIViewController {
 
 	//Updates the country UI elements based upon the current program data
 	func updateCountryElements() {
-		country1ImageView.image = UIImage(named: countries[programData!.country1.integerValue] + ".png")
-		country1Button.setTitle("\(countries[programData!.country1.integerValue]) - " +
-			"\(currencies[programData!.country1.integerValue]) " +
-			"(\(symbols[programData!.country1.integerValue]))", forState: UIControlState.Normal)
-		country2ImageView.image = UIImage(named: countries[programData!.country2.integerValue] + ".png")
-		country2Button.setTitle("\(countries[programData!.country2.integerValue]) - " +
-			"\(currencies[programData!.country2.integerValue]) " +
-			"(\(symbols[programData!.country2.integerValue]))", forState: UIControlState.Normal)
+		let country1 = countries[programData!.country1.integerValue]
+		let currency1 = currencies[programData!.country1.integerValue]
+		let symbol1 = symbols[programData!.country1.integerValue]
+		let country2 = countries[programData!.country2.integerValue]
+		let currency2 = currencies[programData!.country2.integerValue]
+		let symbol2 = symbols[programData!.country2.integerValue]
+
+		country1ImageView.image = UIImage(named: country1 + ".png")
+		country1Button.setTitle("Country of Origin: \(country1) - \(currency1) (\(symbol1))", forState: UIControlState.Normal)
+		country2ImageView.image = UIImage(named: country2 + ".png")
+		country2Button.setTitle("Country of Travel: \(country2) - \(currency2) (\(symbol2))", forState: UIControlState.Normal)
 	}
 
 	//Triggers a menu to pop up for changing country 1
