@@ -56,7 +56,7 @@ class TripBuddyViewController: UIViewController {
 		super.viewWillAppear(animated)
 
 		accessProgramData()
-		updateCountryElements()
+		updateUIElements()
 	}
 
 	//Access the program data from CoreData - if it doesn't exist, a default instance is created
@@ -89,8 +89,8 @@ class TripBuddyViewController: UIViewController {
 		} catch _ as NSError {}
 	}
 
-	//Updates the country UI elements based upon the current program data
-	func updateCountryElements() {
+	//Updates the UI elements based upon the current program data
+	func updateUIElements() {
 		let country1 = countries[programData!.country1.integerValue]
 		let currency1 = currencies[programData!.country1.integerValue]
 		let symbol1 = symbols[programData!.country1.integerValue]
@@ -121,7 +121,7 @@ class TripBuddyViewController: UIViewController {
 			if countries[i] == action.title {
 				programData!.country1 = i
 				saveProgramData()
-				updateCountryElements()
+				updateUIElements()
 				break
 			}
 		}
@@ -144,7 +144,7 @@ class TripBuddyViewController: UIViewController {
 			if countries[i] == action.title {
 				programData!.country2 = i
 				saveProgramData()
-				updateCountryElements()
+				updateUIElements()
 				break
 			}
 		}
