@@ -8,8 +8,4 @@ class GasViewController: ParentViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
-
-	override func resignResponder() {
-		super.resignResponder()
-	}
 }

@@ -16,28 +16,25 @@ class MiscViewController: ParentViewController {
 		amountTextField.delegate = self
 	}
 
-	override func resignResponder() {
-		if amountTextField.isFirstResponder() {
-			super.resignResponder()
-			if Double(amountTextField.text!) != nil {
-				tripBuddyViewController!.programData!.miscAmount = truncateDouble(Double(amountTextField.text!)!, decimalPlaces: 3)
-			} else {
-				tripBuddyViewController!.programData!.miscAmount = 0
-			}
-			tripBuddyViewController!.saveProgramData()
-		}
-	}
-
 	@IBAction func measurementChanged(sender: AnyObject) {
-		resignResponder()
 		tripBuddyViewController!.programData!.miscMeasurement = measurementControl.selectedSegmentIndex
 		tripBuddyViewController!.programData!.miscAmount = 0
 		tripBuddyViewController!.programData!.miscUnit = 0
 		tripBuddyViewController!.saveProgramData()
+		view.endEditing(true) //If the amount was changed, save it after changing it to 0
+	}
+
+	@IBAction func amountChanged(sender: AnyObject) {
+		if Double(amountTextField.text!) != nil {
+			tripBuddyViewController!.programData!.miscAmount = truncateDouble(Double(amountTextField.text!)!, decimalPlaces: 3)
+		} else {
+			tripBuddyViewController!.programData!.miscAmount = 0
+		}
+		tripBuddyViewController!.saveProgramData()
 	}
 
 	@IBAction func toggleButtonPressed(sender: AnyObject) {
-		resignResponder()
+		view.endEditing(true) //If the amount was changed, save it before changing the units
 		tripBuddyViewController!.programData!.miscUnit = 1 - tripBuddyViewController!.programData!.miscUnit.integerValue
 		tripBuddyViewController!.saveProgramData()
 	}

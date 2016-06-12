@@ -8,25 +8,16 @@ import CoreData
 class ParentViewController: UIViewController, UITextFieldDelegate {
 	var tripBuddyViewController: TripBuddyViewController? = nil
 
-	override func viewDidLoad() {
-		super.viewDidLoad()
-	}
-
 	//Dismisses the responder when blank area is touched
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent!) {
-		resignResponder()
+		view.endEditing(true)
 		super.touchesBegan(touches, withEvent: event)
 	}
 
 	//Dismisses the responder when the enter key is pressed
 	func textFieldShouldReturn(textField: UITextField) -> Bool {
-		resignResponder()
-		return false
-	}
-
-	//Resigns the responder - children should control what happens to their text field values
-	func resignResponder() {
 		view.endEditing(true)
+		return false
 	}
 
 	//Truncates a double value down to the specified decimal places at most
