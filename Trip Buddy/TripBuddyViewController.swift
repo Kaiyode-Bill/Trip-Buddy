@@ -24,9 +24,9 @@ class TripBuddyViewController: UIViewController {
 	                           "India", "Italy", "Japan", "Malaysia", "Mexico", "Singapore", "Spain", "Switzerland",
 	                           "United Kingdom", "United States"]
 
-	let currencies: [String] = ["Peso", "Euro", "Lev", "Dollar", "Peso", "Yuan", "Euro", "Euro",
-	                            "Rupee", "Euro", "Yen", "Ringgit", "Peso", "Dollar", "Euro", "Franc",
-	                            "Pound", "Dollar"]
+	let currencies: [String] = ["Pesos", "Euros", "Leva", "Dollars", "Pesos", "Yuan", "Euros", "Euros",
+	                            "Rupees", "Euros", "Yen", "Ringgits", "Pesos", "Dollars", "Euros", "Francs",
+	                            "Pounds", "Dollars"]
 
 	let symbols: [String] = ["$", "€", "лев", "$", "$", "¥", "€", "€",
 	                         "₹", "€", "¥", "R", "$", "$", "€", "C",
