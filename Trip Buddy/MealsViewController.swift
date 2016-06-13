@@ -8,4 +8,7 @@ class MealsViewController: ParentViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
+
+	@IBAction func resetButtonPressed(sender: AnyObject) {
+	}
 }

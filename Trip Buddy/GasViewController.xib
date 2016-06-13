@@ -14,7 +14,28 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXt-sC-aQa">
+                    <rect key="frame" x="20" y="550" width="560" height="30"/>
+                    <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="ffJ-36-ivY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="Reset all fields above">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="resetButtonPressed:" destination="-1" eventType="touchUpInside" id="g3Z-QQ-Ag6"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="CXt-sC-aQa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="1xc-os-Nx7"/>
+                <constraint firstAttribute="bottom" secondItem="CXt-sC-aQa" secondAttribute="bottom" constant="20" id="GTI-FR-VhU"/>
+                <constraint firstAttribute="trailing" secondItem="CXt-sC-aQa" secondAttribute="trailing" constant="20" id="GaF-Mx-Kvx"/>
+            </constraints>
         </view>
     </objects>
 </document>

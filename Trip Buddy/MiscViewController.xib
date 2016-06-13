@@ -74,6 +74,20 @@
                         <action selector="measurementChanged:" destination="-1" eventType="valueChanged" id="Dyt-hG-suF"/>
                     </connections>
                 </segmentedControl>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9l-Z7-aUC">
+                    <rect key="frame" x="20" y="550" width="560" height="30"/>
+                    <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="61r-bW-Ef4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="Reset all fields above">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="resetButtonPressed:" destination="-1" eventType="touchUpInside" id="6Pc-Rl-R4c"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.50196078430000002" green="0.50196078430000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -82,6 +96,7 @@
                 <constraint firstAttribute="trailing" secondItem="yus-QM-rhB" secondAttribute="trailing" constant="20" id="8bp-Lb-ueu"/>
                 <constraint firstItem="KgV-PG-RMj" firstAttribute="top" secondItem="FqY-mr-d53" secondAttribute="bottom" constant="20" id="EK5-Wd-b0y"/>
                 <constraint firstAttribute="trailing" secondItem="KgV-PG-RMj" secondAttribute="trailing" constant="20" id="FIV-8T-80l"/>
+                <constraint firstAttribute="trailing" secondItem="C9l-Z7-aUC" secondAttribute="trailing" constant="20" id="FWV-gm-ddN"/>
                 <constraint firstAttribute="trailing" secondItem="DBU-BJ-HGS" secondAttribute="trailing" constant="20" id="H7m-7z-Wr5"/>
                 <constraint firstItem="KgV-PG-RMj" firstAttribute="width" secondItem="BEA-67-ipO" secondAttribute="width" id="IJl-xS-Abv"/>
                 <constraint firstItem="FqY-mr-d53" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="TFc-YR-1XP"/>
@@ -90,6 +105,8 @@
                 <constraint firstItem="yus-QM-rhB" firstAttribute="top" secondItem="KgV-PG-RMj" secondAttribute="bottom" constant="4" id="acS-on-kDK"/>
                 <constraint firstItem="DBU-BJ-HGS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="fub-I0-sd7"/>
                 <constraint firstItem="BEA-67-ipO" firstAttribute="top" secondItem="FqY-mr-d53" secondAttribute="bottom" constant="20" id="gHo-os-ZXT"/>
+                <constraint firstItem="C9l-Z7-aUC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="lW5-sb-HFQ"/>
+                <constraint firstAttribute="bottom" secondItem="C9l-Z7-aUC" secondAttribute="bottom" constant="20" id="nll-78-fU3"/>
                 <constraint firstAttribute="trailing" secondItem="FqY-mr-d53" secondAttribute="trailing" constant="20" id="w6M-of-WLT"/>
                 <constraint firstItem="FqY-mr-d53" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="xPR-qL-Amm"/>
             </constraints>

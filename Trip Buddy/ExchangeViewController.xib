@@ -141,11 +141,42 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygi-Je-EGv">
+                    <rect key="frame" x="20" y="550" width="560" height="30"/>
+                    <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="V5x-Wa-omi"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="Reset all fields above">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="resetButtonPressed:" destination="-1" eventType="touchUpInside" id="W0m-ZC-8RV"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2of-bY-vPb">
+                    <rect key="frame" x="20" y="516" width="560" height="30"/>
+                    <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Ii6-MG-bRY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="Need Help?">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="helpButtonPressed:" destination="-1" eventType="touchUpInside" id="mOz-eu-e5X"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="dOx-f7-oJi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="0oV-dU-NFY"/>
                 <constraint firstItem="hEa-Us-PYh" firstAttribute="top" secondItem="5dl-oe-tdH" secondAttribute="bottom" constant="4" id="6lL-9A-gtu"/>
+                <constraint firstItem="ygi-Je-EGv" firstAttribute="top" secondItem="2of-bY-vPb" secondAttribute="bottom" constant="4" id="7yk-2R-ZWb"/>
+                <constraint firstAttribute="trailing" secondItem="2of-bY-vPb" secondAttribute="trailing" constant="20" id="8Li-Og-XZ5"/>
+                <constraint firstItem="ygi-Je-EGv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="9O0-F1-rIj"/>
                 <constraint firstItem="VWA-Wy-ZFs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="Cfo-zF-idq"/>
                 <constraint firstAttribute="trailing" secondItem="hEa-Us-PYh" secondAttribute="trailing" constant="20" id="HIF-Hf-qFi"/>
                 <constraint firstItem="KsZ-pH-KUX" firstAttribute="leading" secondItem="sVD-M1-meW" secondAttribute="trailing" constant="4" id="IPu-pD-pAq"/>
@@ -153,6 +184,7 @@
                 <constraint firstItem="euC-Oe-8RE" firstAttribute="leading" secondItem="VVa-TX-KDM" secondAttribute="trailing" constant="4" id="MnW-dS-6cC"/>
                 <constraint firstItem="sVD-M1-meW" firstAttribute="top" secondItem="5dl-oe-tdH" secondAttribute="bottom" constant="4" id="O5S-ly-6p0"/>
                 <constraint firstItem="KsZ-pH-KUX" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Q6t-M4-XFT"/>
+                <constraint firstAttribute="bottom" secondItem="ygi-Je-EGv" secondAttribute="bottom" constant="20" id="QFk-3P-5Gq"/>
                 <constraint firstItem="euC-Oe-8RE" firstAttribute="top" secondItem="hEa-Us-PYh" secondAttribute="bottom" constant="4" id="Qd8-Gj-M7r"/>
                 <constraint firstItem="83y-rK-RqT" firstAttribute="top" secondItem="VWA-Wy-ZFs" secondAttribute="bottom" constant="4" id="Qfx-90-agD"/>
                 <constraint firstItem="sVD-M1-meW" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="QtX-Jm-L0R"/>
@@ -174,9 +206,11 @@
                 <constraint firstItem="ojj-6Y-mrr" firstAttribute="top" secondItem="euC-Oe-8RE" secondAttribute="bottom" constant="4" id="py4-Jy-wgk"/>
                 <constraint firstAttribute="trailing" secondItem="ojj-6Y-mrr" secondAttribute="trailing" constant="20" id="qVb-p3-GiG"/>
                 <constraint firstItem="a2l-ve-DYI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="r5D-R5-jig"/>
+                <constraint firstAttribute="trailing" secondItem="ygi-Je-EGv" secondAttribute="trailing" constant="20" id="rOy-hF-TDb"/>
                 <constraint firstItem="5dl-oe-tdH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="s9o-cr-fub"/>
                 <constraint firstAttribute="trailing" secondItem="a2l-ve-DYI" secondAttribute="trailing" constant="20" id="sCO-cT-Uwz"/>
                 <constraint firstItem="a2l-ve-DYI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="szv-sm-X3d"/>
+                <constraint firstItem="2of-bY-vPb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="tOm-nI-a5n"/>
                 <constraint firstAttribute="trailing" secondItem="VWA-Wy-ZFs" secondAttribute="trailing" constant="20" id="tPT-P9-0oI"/>
                 <constraint firstItem="ojj-6Y-mrr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="ugk-zt-spG"/>
                 <constraint firstItem="hG0-uz-X8b" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="uhW-Js-yuk"/>

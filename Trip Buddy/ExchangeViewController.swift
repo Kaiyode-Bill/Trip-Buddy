@@ -8,4 +8,10 @@ class ExchangeViewController: ParentViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
+
+	@IBAction func helpButtonPressed(sender: AnyObject) {
+	}
+
+	@IBAction func resetButtonPressed(sender: AnyObject) {
+	}
 }

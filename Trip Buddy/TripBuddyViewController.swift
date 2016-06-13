@@ -49,6 +49,7 @@ class TripBuddyViewController: UIViewController {
 
 		//Initialize each of the view controllers and add them into the scroll view
 		for i in 0.stride(to: viewControllers.count, by: 1) {
+			viewControllers[i].view.frame.size.height = scrollView.bounds.height
 			viewControllers[i].view.frame.origin.x = view.frame.size.width * CGFloat(i)
 			scrollView.addSubview(viewControllers[i].view)
 			viewControllers[i].tripBuddyViewController = self

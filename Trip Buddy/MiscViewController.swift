@@ -38,4 +38,12 @@ class MiscViewController: ParentViewController {
 		tripBuddyViewController!.programData!.miscUnit = 1 - tripBuddyViewController!.programData!.miscUnit.integerValue
 		tripBuddyViewController!.saveProgramData()
 	}
+
+	@IBAction func resetButtonPressed(sender: AnyObject) {
+		tripBuddyViewController!.programData!.miscMeasurement = 0
+		tripBuddyViewController!.programData!.miscAmount = 0
+		tripBuddyViewController!.programData!.miscUnit = 0
+		tripBuddyViewController!.saveProgramData()
+		view.endEditing(true) //If the amount was changed, save it after changing it to 0
+	}
 }

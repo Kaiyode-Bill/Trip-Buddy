@@ -14,7 +14,28 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTy-TW-jfm">
+                    <rect key="frame" x="20" y="550" width="560" height="30"/>
+                    <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="HB4-hD-25S"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="Reset all fields above">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="resetButtonPressed:" destination="-1" eventType="touchUpInside" id="wYv-Re-2tl"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="0.50196078430000002" green="1" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="QTy-TW-jfm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="0ZZ-j7-d9Q"/>
+                <constraint firstAttribute="trailing" secondItem="QTy-TW-jfm" secondAttribute="trailing" constant="20" id="8LN-Cb-iDF"/>
+                <constraint firstAttribute="bottom" secondItem="QTy-TW-jfm" secondAttribute="bottom" constant="20" id="Ddd-1W-s1H"/>
+            </constraints>
         </view>
     </objects>
 </document>
