@@ -39,5 +39,10 @@ class ExchangeViewController: ParentViewController {
 	}
 
 	@IBAction func resetButtonPressed(sender: AnyObject) {
+		tripBuddyViewController!.programData!.exchangeAmount = 0
+		tripBuddyViewController!.programData!.exchangePercentage = 0
+		tripBuddyViewController!.programData!.exchangeOutcome = 0
+		tripBuddyViewController!.saveProgramData()
+		view.endEditing(true) //If any quantity was changed, save it after changing it to 0
 	}
 }

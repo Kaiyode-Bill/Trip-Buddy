@@ -3,7 +3,6 @@
 //© 2016 Kaiyode Software
 
 import UIKit
-import CoreData
 
 class ParentViewController: UIViewController, UITextFieldDelegate {
 	var tripBuddyViewController: TripBuddyViewController? = nil

@@ -47,5 +47,12 @@ class GasViewController: ParentViewController {
 	}
 
 	@IBAction func resetButtonPressed(sender: AnyObject) {
+		tripBuddyViewController!.programData!.gasUnit = 1
+		tripBuddyViewController!.programData!.gasAmount = 0
+		tripBuddyViewController!.programData!.gasRate = 0
+		tripBuddyViewController!.programData!.gasOutcome = 0
+		tripBuddyViewController!.programData!.gasConvertedUnit = 0
+		tripBuddyViewController!.saveProgramData()
+		view.endEditing(true) //If any quantity was changed, save it after changing it to 0
 	}
 }

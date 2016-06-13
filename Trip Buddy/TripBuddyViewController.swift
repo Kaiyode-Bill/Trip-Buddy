@@ -76,6 +76,15 @@ class TripBuddyViewController: UIViewController {
 			existingData = [NSEntityDescription.insertNewObjectForEntityForName("ProgramData", inManagedObjectContext: context) as! ProgramData]
 			existingData[0].originCountry = names.count - 1
 			existingData[0].travelCountry = names.count - 2
+			existingData[0].showHelpAtStartup = 1
+			existingData[0].exchangeAmount = 0
+			existingData[0].exchangePercentage = 0
+			existingData[0].exchangeOutcome = 0
+			existingData[0].gasUnit = 1
+			existingData[0].gasAmount = 0
+			existingData[0].gasRate = 0
+			existingData[0].gasOutcome = 0
+			existingData[0].gasConvertedUnit = 0
 			//set all program data default values here as they are created
 			existingData[0].miscMeasurement = 0
 			existingData[0].miscAmount = 0
