@@ -7,6 +7,25 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MealsViewController" customModule="Trip_Buddy" customModuleProvider="target">
             <connections>
+                <outlet property="amountLabel1" destination="FMf-pz-sz0" id="pMy-Q1-VhQ"/>
+                <outlet property="amountLabel2" destination="bKd-A0-tyn" id="m12-uC-mvJ"/>
+                <outlet property="amountTextField" destination="SsL-qS-jL7" id="lO6-Al-dQA"/>
+                <outlet property="convertedAmountLabel" destination="BT5-dR-R41" id="OqF-VI-4Zn"/>
+                <outlet property="convertedDifferenceLabel" destination="xhy-eZ-ZWi" id="ceK-DT-AhM"/>
+                <outlet property="convertedOutcomeLabel" destination="xaL-TB-SjF" id="XKE-j5-Ynr"/>
+                <outlet property="convertedResultLabel" destination="dmC-cD-6JO" id="ZFD-z9-LZ4"/>
+                <outlet property="convertedTipLabel" destination="JEx-lf-FPc" id="itN-F0-4al"/>
+                <outlet property="convertedTotalLabel" destination="oPy-lB-QxJ" id="Ip6-1o-b9X"/>
+                <outlet property="convertedUnitLabel" destination="hRE-CP-PWH" id="STN-H8-Law"/>
+                <outlet property="differenceLabel" destination="Hie-sk-SQx" id="H29-DD-bgq"/>
+                <outlet property="outcomeLabel1" destination="6Di-oj-hmV" id="KRs-tb-dRT"/>
+                <outlet property="outcomeLabel2" destination="dYC-y4-STC" id="buQ-Bd-HsG"/>
+                <outlet property="outcomeTextField" destination="d8k-gX-5A6" id="Bfy-D2-rYy"/>
+                <outlet property="peopleTextField" destination="5ma-P1-X05" id="zuO-Us-Ggh"/>
+                <outlet property="percentageTextField" destination="Tl3-xF-tp7" id="Peu-0I-bus"/>
+                <outlet property="resultLabel" destination="yT7-J1-OTq" id="ZQr-sw-Ero"/>
+                <outlet property="tipLabel" destination="o2M-03-RUh" id="fhh-r8-ctX"/>
+                <outlet property="totalLabel" destination="DCn-YT-jZV" id="iv5-ci-meD"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -38,14 +57,17 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SsL-qS-jL7">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" borderStyle="roundedRect" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="SsL-qS-jL7">
                     <rect key="frame" x="250" y="10" width="100" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="7KU-jx-adm"/>
                         <constraint firstAttribute="height" constant="24" id="HeB-xC-p3z"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="amountTextFieldChanged:" destination="-1" eventType="editingDidEnd" id="9Iy-ct-heg"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pounds" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKd-A0-tyn">
                     <rect key="frame" x="354" y="10" width="236" height="24"/>
@@ -65,14 +87,17 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tl3-xF-tp7">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" borderStyle="roundedRect" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Tl3-xF-tp7">
                     <rect key="frame" x="250" y="38" width="100" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="Mmb-zC-joi"/>
                         <constraint firstAttribute="width" constant="100" id="rBU-IC-R03"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="percentageTextFieldChanged:" destination="-1" eventType="editingDidEnd" id="IF0-UA-PDb"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(%)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcO-be-4Sg">
                     <rect key="frame" x="354" y="38" width="236" height="24"/>
@@ -101,14 +126,17 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5ma-P1-X05">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="5ma-P1-X05">
                     <rect key="frame" x="250" y="120" width="100" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="2uf-f3-sf0"/>
                         <constraint firstAttribute="height" constant="24" id="Iyd-ZN-MF2"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="peopleTextFieldChanged:" destination="-1" eventType="editingDidEnd" id="q8a-Yx-KQ1"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="people" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3h-Vu-XSV">
                     <rect key="frame" x="354" y="120" width="236" height="24"/>
@@ -200,14 +228,17 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d8k-gX-5A6">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" borderStyle="roundedRect" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="d8k-gX-5A6">
                     <rect key="frame" x="250" y="178" width="100" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="Eap-fB-LPU"/>
                         <constraint firstAttribute="width" constant="100" id="uQ0-BW-sOI"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="outcomeTextFieldChanged:" destination="-1" eventType="editingDidEnd" id="A6p-o4-tUB"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pounds" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYC-y4-STC">
                     <rect key="frame" x="354" y="178" width="236" height="24"/>
