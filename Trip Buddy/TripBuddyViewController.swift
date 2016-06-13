@@ -109,8 +109,8 @@ class TripBuddyViewController: UIViewController {
 		//let travelSymbol = symbols[programData!.travelCountry.integerValue]
 		//let travelWeight = weights[programData!.travelCountry.integerValue]
 		let miscViewController = viewControllers[3] as! MiscViewController
-		let miscUnit1 = miscUnits[programData!.miscMeasurement.integerValue][programData!.miscUnit.integerValue]
-		let miscUnit2 = miscUnits[programData!.miscMeasurement.integerValue][1 - programData!.miscUnit.integerValue]
+		let miscUnit = miscUnits[programData!.miscMeasurement.integerValue][programData!.miscUnit.integerValue]
+		let miscConvertedUnit = miscUnits[programData!.miscMeasurement.integerValue][1 - programData!.miscUnit.integerValue]
 		let miscMeasurement = miscMeasurements[programData!.miscMeasurement.integerValue]
 
 		originCountryImageView.image = UIImage(named: originName + ".png")
@@ -119,13 +119,13 @@ class TripBuddyViewController: UIViewController {
 		travelCountryButton.setTitle("Travel Country: \(travelName)", forState: UIControlState.Normal)
 		miscViewController.measurementControl.selectedSegmentIndex = programData!.miscMeasurement.integerValue
 		miscViewController.amountTextField.text = String(format: "%.3f", programData!.miscAmount.doubleValue)
-		miscViewController.unitLabel.text = miscUnit1
-		miscViewController.equivalentLabel.text = "is equal to \(String(format: "%.3f", convertedMiscAmount())) \(miscUnit2)"
+		miscViewController.unitLabel.text = miscUnit
+		miscViewController.equivalentLabel.text = "is equal to \(String(format: "%.3f", miscConvertedAmount())) \(miscConvertedUnit)"
 		miscViewController.toggleButton.setTitle("Switch the \(miscMeasurement) units", forState: UIControlState.Normal)
 	}
 
 	//Returns the converted amount from the MiscViewController
-	func convertedMiscAmount() -> Double {
+	func miscConvertedAmount() -> Double {
 		if programData!.miscMeasurement == 0 && programData!.miscUnit == 0 {
 			return programData!.miscAmount.doubleValue * 25146 / 15625
 		} else if programData!.miscMeasurement == 0 && programData!.miscUnit != 0 {
