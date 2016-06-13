@@ -69,7 +69,7 @@
                         <segment title="Distance"/>
                         <segment title="Temperature"/>
                     </segments>
-                    <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <color key="tintColor" red="1" green="1" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
                         <action selector="measurementControlChanged:" destination="-1" eventType="valueChanged" id="IHN-B6-sci"/>
                     </connections>
