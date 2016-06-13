@@ -37,7 +37,7 @@ class TripBuddyViewController: UIViewController {
 	                        0.654, 1.5172]
 
 	//Miscellaneous data
-	let miscUnits: [[String]] = [["miles (or MPH)", "kilometers (or km/h)"], ["° farenheit", "° celsius"]]
+	let miscUnits: [[String]] = [["Miles (or MPH)", "Kilometers (or km/h)"], ["° Farenheit", "° Celsius"]]
 	let miscLabels: [String] = ["distance", "temperature"]
 
 	//CoreData variables for saving program data
