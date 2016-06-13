@@ -38,7 +38,7 @@ class TripBuddyViewController: UIViewController {
 
 	//Miscellaneous data
 	let miscUnits: [[String]] = [["Miles (or MPH)", "Kilometers (or km/h)"], ["° Farenheit", "° Celsius"]]
-	let miscLabels: [String] = ["distance", "temperature"]
+	let miscMeasurements: [String] = ["distance", "temperature"]
 
 	//CoreData variables for saving program data
 	let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
@@ -91,28 +91,28 @@ class TripBuddyViewController: UIViewController {
 			try context.save()
 		} catch _ as NSError {}
 
-		let name1 = names[programData!.country1.integerValue]
-		//let currency1 = currencies[programData!.country1.integerValue]
-		//let symbol1 = symbols[programData!.country1.integerValue]
-		//let weight1 = weights[programData!.country1.integerValue]
-		let name2 = names[programData!.country2.integerValue]
-		//let currency2 = currencies[programData!.country2.integerValue]
-		//let symbol2 = symbols[programData!.country2.integerValue]
-		//let weight2 = weights[programData!.country2.integerValue]
+		let originName = names[programData!.country1.integerValue]
+		//let originCurrency = currencies[programData!.country1.integerValue]
+		//let originSymbol = symbols[programData!.country1.integerValue]
+		//let originWeight = weights[programData!.country1.integerValue]
+		let travelName = names[programData!.country2.integerValue]
+		//let travelCurrency = currencies[programData!.country2.integerValue]
+		//let travelSymbol = symbols[programData!.country2.integerValue]
+		//let travelWeight = weights[programData!.country2.integerValue]
 		let miscViewController = viewControllers[3] as! MiscViewController
 		let miscUnit1 = miscUnits[programData!.miscMeasurement.integerValue][programData!.miscUnit.integerValue]
 		let miscUnit2 = miscUnits[programData!.miscMeasurement.integerValue][1 - programData!.miscUnit.integerValue]
-		let miscLabel = miscLabels[programData!.miscMeasurement.integerValue]
+		let miscMeasurement = miscMeasurements[programData!.miscMeasurement.integerValue]
 
-		originCountryImageView.image = UIImage(named: name1 + ".png")
-		originCountryButton.setTitle("Origin Country: \(name1)", forState: UIControlState.Normal)
-		travelCountryImageView.image = UIImage(named: name2 + ".png")
-		travelCountryButton.setTitle("Travel Country: \(name2)", forState: UIControlState.Normal)
+		originCountryImageView.image = UIImage(named: originName + ".png")
+		originCountryButton.setTitle("Origin Country: \(originName)", forState: UIControlState.Normal)
+		travelCountryImageView.image = UIImage(named: travelName + ".png")
+		travelCountryButton.setTitle("Travel Country: \(travelName)", forState: UIControlState.Normal)
 		miscViewController.measurementControl.selectedSegmentIndex = programData!.miscMeasurement.integerValue
 		miscViewController.amountTextField.text = String(format: "%.3f", programData!.miscAmount.doubleValue)
 		miscViewController.unitLabel.text = miscUnit1
 		miscViewController.equivalentLabel.text = "is equal to \(String(format: "%.3f", convertedMiscAmount())) \(miscUnit2)"
-		miscViewController.toggleButton.setTitle("Switch the \(miscLabel) units", forState: UIControlState.Normal)
+		miscViewController.toggleButton.setTitle("Switch the \(miscMeasurement) units", forState: UIControlState.Normal)
 	}
 
 	//Returns the converted amount from the MiscViewController
