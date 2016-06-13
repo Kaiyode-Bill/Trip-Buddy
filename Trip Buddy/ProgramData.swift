@@ -6,8 +6,8 @@ import Foundation
 import CoreData
 
 class ProgramData: NSManagedObject {
-	@NSManaged var country1: NSNumber
-	@NSManaged var country2: NSNumber
+	@NSManaged var originCountry: NSNumber
+	@NSManaged var travelCountry: NSNumber
 	//
 	@NSManaged var miscMeasurement: NSNumber
 	@NSManaged var miscAmount: NSNumber

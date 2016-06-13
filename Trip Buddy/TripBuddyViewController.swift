@@ -74,8 +74,8 @@ class TripBuddyViewController: UIViewController {
 				existingData.removeAtIndex(i)
 			}
 			existingData = [NSEntityDescription.insertNewObjectForEntityForName("ProgramData", inManagedObjectContext: context) as! ProgramData]
-			existingData[0].country1 = names.count - 1
-			existingData[0].country2 = names.count - 2
+			existingData[0].originCountry = names.count - 1
+			existingData[0].travelCountry = names.count - 2
 			//set all program data default values here as they are created
 			existingData[0].miscMeasurement = 0
 			existingData[0].miscAmount = 0
@@ -91,14 +91,14 @@ class TripBuddyViewController: UIViewController {
 			try context.save()
 		} catch _ as NSError {}
 
-		let originName = names[programData!.country1.integerValue]
-		//let originCurrency = currencies[programData!.country1.integerValue]
-		//let originSymbol = symbols[programData!.country1.integerValue]
-		//let originWeight = weights[programData!.country1.integerValue]
-		let travelName = names[programData!.country2.integerValue]
-		//let travelCurrency = currencies[programData!.country2.integerValue]
-		//let travelSymbol = symbols[programData!.country2.integerValue]
-		//let travelWeight = weights[programData!.country2.integerValue]
+		let originName = names[programData!.originCountry.integerValue]
+		//let originCurrency = currencies[programData!.originCountry.integerValue]
+		//let originSymbol = symbols[programData!.originCountry.integerValue]
+		//let originWeight = weights[programData!.originCountry.integerValue]
+		let travelName = names[programData!.travelCountry.integerValue]
+		//let travelCurrency = currencies[programData!.travelCountry.integerValue]
+		//let travelSymbol = symbols[programData!.travelCountry.integerValue]
+		//let travelWeight = weights[programData!.travelCountry.integerValue]
 		let miscViewController = viewControllers[3] as! MiscViewController
 		let miscUnit1 = miscUnits[programData!.miscMeasurement.integerValue][programData!.miscUnit.integerValue]
 		let miscUnit2 = miscUnits[programData!.miscMeasurement.integerValue][1 - programData!.miscUnit.integerValue]
@@ -143,7 +143,7 @@ class TripBuddyViewController: UIViewController {
 	func originCountryAlertActionHandler(action: UIAlertAction!) {
 		for i in 0.stride(to: names.count, by: 1) {
 			if names[i] == action.title {
-				programData!.country1 = i
+				programData!.originCountry = i
 				saveProgramData()
 				break
 			}
@@ -165,7 +165,7 @@ class TripBuddyViewController: UIViewController {
 	func travelCountryAlertActionHandler(action: UIAlertAction!) {
 		for i in 0.stride(to: names.count, by: 1) {
 			if names[i] == action.title {
-				programData!.country2 = i
+				programData!.travelCountry = i
 				saveProgramData()
 				break
 			}
