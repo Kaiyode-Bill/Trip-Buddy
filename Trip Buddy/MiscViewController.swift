@@ -16,7 +16,7 @@ class MiscViewController: ParentViewController {
 		amountTextField.delegate = self
 	}
 
-	@IBAction func measurementChanged(sender: AnyObject) {
+	@IBAction func measurementControlChanged(sender: AnyObject) {
 		tripBuddyViewController!.programData!.miscMeasurement = measurementControl.selectedSegmentIndex
 		tripBuddyViewController!.programData!.miscAmount = 0
 		tripBuddyViewController!.programData!.miscUnit = 0
@@ -24,7 +24,7 @@ class MiscViewController: ParentViewController {
 		view.endEditing(true) //If the amount was changed, save it after changing it to 0
 	}
 
-	@IBAction func amountChanged(sender: AnyObject) {
+	@IBAction func amountTextFieldChanged(sender: AnyObject) {
 		if Double(amountTextField.text!) != nil {
 			tripBuddyViewController!.programData!.miscAmount = truncateDouble(Double(amountTextField.text!)!, decimalPlaces: 3)
 		} else {
