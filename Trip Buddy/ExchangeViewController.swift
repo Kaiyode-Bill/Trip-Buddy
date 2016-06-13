@@ -20,6 +20,10 @@ class ExchangeViewController: ParentViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
+		amountTextField.delegate = self
+		percentageTextField.delegate = self
+		outcomeTextField.delegate = self
 	}
 
 	@IBAction func amountTextFieldChanged(sender: AnyObject) {

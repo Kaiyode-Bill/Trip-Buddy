@@ -7,6 +7,23 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GasViewController" customModule="Trip_Buddy" customModuleProvider="target">
             <connections>
+                <outlet property="amountLabel2" destination="nvz-Sw-9rr" id="bI5-RM-R0r"/>
+                <outlet property="amountTextField" destination="0b7-SK-NWj" id="L4H-kw-hi0"/>
+                <outlet property="convertedAmountLabel" destination="S5a-fe-nsQ" id="DuA-Uc-ksZ"/>
+                <outlet property="convertedDifferenceLabel" destination="6vz-pe-hvQ" id="TwR-Hm-FMb"/>
+                <outlet property="convertedOutcomeLabel" destination="HjS-Pt-4By" id="RJf-Xx-tsr"/>
+                <outlet property="convertedRateLabel" destination="ReC-yL-fAu" id="0q2-De-xaj"/>
+                <outlet property="convertedResultLabel" destination="dtC-1W-CK7" id="VXc-Iv-5Xn"/>
+                <outlet property="convertedUnitControl" destination="Fnx-uT-kbX" id="qVU-Ii-sk0"/>
+                <outlet property="differenceLabel" destination="JcJ-8B-q6Q" id="UK0-dc-Ajr"/>
+                <outlet property="outcomeLabel1" destination="eaV-bg-WpP" id="F1b-5r-UCr"/>
+                <outlet property="outcomeLabel2" destination="hRr-Gz-jov" id="Fda-dN-ETf"/>
+                <outlet property="outcomeTextField" destination="o8U-fh-4Mf" id="1VA-uG-fve"/>
+                <outlet property="rateLabel1" destination="0Uc-NK-cz5" id="j54-0v-FR0"/>
+                <outlet property="rateLabel2" destination="nlG-qb-2DY" id="fFu-G6-lFO"/>
+                <outlet property="rateTextField" destination="vx6-Nq-SUH" id="LX0-S8-3kT"/>
+                <outlet property="resultLabel" destination="OKi-Y7-mFM" id="cZq-ie-g1v"/>
+                <outlet property="unitControl" destination="0Yf-1F-XAx" id="Wqg-s7-NTN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -49,6 +66,9 @@
                         <segment title="Liters"/>
                     </segments>
                     <color key="tintColor" red="0.50196078431372548" green="0.50196078431372548" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="unitControlChanged:" destination="-1" eventType="valueChanged" id="szn-5g-bti"/>
+                    </connections>
                 </segmentedControl>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If I bought" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ech-22-XVL">
                     <rect key="frame" x="10" y="62" width="236" height="24"/>
@@ -67,6 +87,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="amountTextFieldChanged:" destination="-1" eventType="editingDidEnd" id="D6B-AU-Nzm"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imp. Gallons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nvz-Sw-9rr">
                     <rect key="frame" x="354" y="62" width="236" height="24"/>
@@ -85,6 +108,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="rateTextFieldChanged:" destination="-1" eventType="editingDidEnd" id="Mib-SJ-9ra"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pounds/Imp Gal." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlG-qb-2DY">
                     <rect key="frame" x="354" y="90" width="236" height="24"/>
@@ -121,6 +147,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="outcomeTextFieldChanged:" destination="-1" eventType="editingDidEnd" id="tbp-ah-Ss4"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pounds" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRr-Gz-jov">
                     <rect key="frame" x="354" y="142" width="236" height="24"/>
@@ -160,6 +189,9 @@
                         <segment title="Liters"/>
                     </segments>
                     <color key="tintColor" red="0.50196078430000002" green="0.50196078430000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <connections>
+                        <action selector="convertedUnitControlChanged:" destination="-1" eventType="touchUpInside" id="diW-Zg-0jn"/>
+                    </connections>
                 </segmentedControl>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="As such, I bought 0.00 U.S. Gallons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5a-fe-nsQ">
                     <rect key="frame" x="10" y="252" width="580" height="20"/>

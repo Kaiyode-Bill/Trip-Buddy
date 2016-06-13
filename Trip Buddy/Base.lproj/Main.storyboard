@@ -97,7 +97,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="country1ButtonPressed:" destination="IEU-Kc-3ir" eventType="touchUpInside" id="6wv-3A-5Vv"/>
+                                    <action selector="originCountryButtonPressed:" destination="IEU-Kc-3ir" eventType="touchUpInside" id="cE6-z8-pcJ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIb-0u-JrV">
@@ -110,7 +110,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="country2ButtonPressed:" destination="IEU-Kc-3ir" eventType="touchUpInside" id="OUQ-NH-T71"/>
+                                    <action selector="travelCountryButtonPressed:" destination="IEU-Kc-3ir" eventType="touchUpInside" id="D0l-1D-XjR"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4P-IN-2GG">
@@ -149,11 +149,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Trip Buddy" id="D16-AV-Qsn"/>
                     <connections>
-                        <outlet property="country1Button" destination="Brt-Bw-d27" id="HCg-tO-QNc"/>
-                        <outlet property="country1ImageView" destination="l0E-wI-R19" id="whO-RO-g52"/>
-                        <outlet property="country2Button" destination="DIb-0u-JrV" id="Rm5-ca-V0a"/>
-                        <outlet property="country2ImageView" destination="Sfr-qi-fHz" id="FoZ-Ka-MN0"/>
+                        <outlet property="originCountryButton" destination="Brt-Bw-d27" id="Ulm-I5-y2o"/>
+                        <outlet property="originCountryImageView" destination="l0E-wI-R19" id="CRz-4N-ymB"/>
                         <outlet property="scrollView" destination="U4P-IN-2GG" id="HWq-9a-78h"/>
+                        <outlet property="travelCountryButton" destination="DIb-0u-JrV" id="K2D-zP-cue"/>
+                        <outlet property="travelCountryImageView" destination="Sfr-qi-fHz" id="HTJ-s1-dzH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2p-pd-cpF" userLabel="First Responder" sceneMemberID="firstResponder"/>

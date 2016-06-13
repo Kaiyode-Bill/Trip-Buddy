@@ -7,10 +7,10 @@ import CoreData
 
 class TripBuddyViewController: UIViewController {
 	//All of the UI elements
-	@IBOutlet weak var country1ImageView: UIImageView!
-	@IBOutlet weak var country1Button: UIButton!
-	@IBOutlet weak var country2ImageView: UIImageView!
-	@IBOutlet weak var country2Button: UIButton!
+	@IBOutlet weak var originCountryImageView: UIImageView!
+	@IBOutlet weak var originCountryButton: UIButton!
+	@IBOutlet weak var travelCountryImageView: UIImageView!
+	@IBOutlet weak var travelCountryButton: UIButton!
 	@IBOutlet weak var scrollView: UIScrollView!
 
 	//The individual view controllers
@@ -104,10 +104,10 @@ class TripBuddyViewController: UIViewController {
 		let miscUnit2 = miscUnits[programData!.miscMeasurement.integerValue][1 - programData!.miscUnit.integerValue]
 		let miscLabel = miscLabels[programData!.miscMeasurement.integerValue]
 
-		country1ImageView.image = UIImage(named: name1 + ".png")
-		country1Button.setTitle("Origin Country: \(name1)", forState: UIControlState.Normal)
-		country2ImageView.image = UIImage(named: name2 + ".png")
-		country2Button.setTitle("Travel Country: \(name2)", forState: UIControlState.Normal)
+		originCountryImageView.image = UIImage(named: name1 + ".png")
+		originCountryButton.setTitle("Origin Country: \(name1)", forState: UIControlState.Normal)
+		travelCountryImageView.image = UIImage(named: name2 + ".png")
+		travelCountryButton.setTitle("Travel Country: \(name2)", forState: UIControlState.Normal)
 		miscViewController.measurementControl.selectedSegmentIndex = programData!.miscMeasurement.integerValue
 		miscViewController.amountTextField.text = String(format: "%.3f", programData!.miscAmount.doubleValue)
 		miscViewController.unitLabel.text = miscUnit1
@@ -128,19 +128,19 @@ class TripBuddyViewController: UIViewController {
 		}
 	}
 
-	//Triggers a menu to pop up for changing country 1
-	@IBAction func country1ButtonPressed(sender: AnyObject) {
+	//Triggers a menu to pop up for changing the origin country
+	@IBAction func originCountryButtonPressed(sender: AnyObject) {
 		let alertController = UIAlertController(title: "Select a country:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
 
 		for i in 0.stride(to: names.count, by: 1) {
-			alertController.addAction(UIAlertAction(title: names[i], style: UIAlertActionStyle.Default, handler: country1AlertActionHandler))
+			alertController.addAction(UIAlertAction(title: names[i], style: UIAlertActionStyle.Default, handler: originCountryAlertActionHandler))
 		}
 		alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
 		presentViewController(alertController, animated: true, completion: nil)
 	}
 
-	//Changes country 1 based upon the selected choice
-	func country1AlertActionHandler(action: UIAlertAction!) {
+	//Changes the origin country based upon the selected choice
+	func originCountryAlertActionHandler(action: UIAlertAction!) {
 		for i in 0.stride(to: names.count, by: 1) {
 			if names[i] == action.title {
 				programData!.country1 = i
@@ -150,19 +150,19 @@ class TripBuddyViewController: UIViewController {
 		}
 	}
 
-	//Triggers a menu to pop up for changing country 2
-	@IBAction func country2ButtonPressed(sender: AnyObject) {
+	//Triggers a menu to pop up for changing the travel country
+	@IBAction func travelCountryButtonPressed(sender: AnyObject) {
 		let alertController = UIAlertController(title: "Select a country:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
 
 		for i in 0.stride(to: names.count, by: 1) {
-			alertController.addAction(UIAlertAction(title: names[i], style: UIAlertActionStyle.Default, handler: country2AlertActionHandler))
+			alertController.addAction(UIAlertAction(title: names[i], style: UIAlertActionStyle.Default, handler: travelCountryAlertActionHandler))
 		}
 		alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
 		presentViewController(alertController, animated: true, completion: nil)
 	}
 
-	//Changes country 2 based upon the selected choice
-	func country2AlertActionHandler(action: UIAlertAction!) {
+	//Changes the travel country based upon the selected choice
+	func travelCountryAlertActionHandler(action: UIAlertAction!) {
 		for i in 0.stride(to: names.count, by: 1) {
 			if names[i] == action.title {
 				programData!.country2 = i
