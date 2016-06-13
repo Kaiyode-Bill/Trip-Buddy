@@ -85,7 +85,10 @@ class TripBuddyViewController: UIViewController {
 			existingData[0].gasRate = 0
 			existingData[0].gasOutcome = 0
 			existingData[0].gasConvertedUnit = 0
-			//set all program data default values here as they are created
+			existingData[0].mealsAmount = 0
+			existingData[0].mealsPercentage = 0
+			existingData[0].mealsPeople = 1
+			existingData[0].mealsOutcome = 0
 			existingData[0].miscMeasurement = 0
 			existingData[0].miscAmount = 0
 			existingData[0].miscUnit = 0

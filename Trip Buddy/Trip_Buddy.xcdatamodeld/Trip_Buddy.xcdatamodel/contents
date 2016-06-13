@@ -9,6 +9,10 @@
         <attribute name="gasOutcome" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="gasRate" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="gasUnit" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="mealsAmount" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="mealsOutcome" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
+        <attribute name="mealsPeople" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="mealsPercentage" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="miscAmount" optional="YES" attributeType="Double" defaultValueString="0" syncable="YES"/>
         <attribute name="miscMeasurement" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="miscUnit" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -17,6 +21,6 @@
         <attribute name="travelCountry" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ProgramData" positionX="-63" positionY="-18" width="128" height="255"/>
+        <element name="ProgramData" positionX="-63" positionY="-18" width="128" height="315"/>
     </elements>
 </model>

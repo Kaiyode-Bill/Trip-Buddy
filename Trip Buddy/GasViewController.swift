@@ -53,6 +53,6 @@ class GasViewController: ParentViewController {
 		tripBuddyViewController!.programData!.gasOutcome = 0
 		tripBuddyViewController!.programData!.gasConvertedUnit = 0
 		tripBuddyViewController!.saveProgramData()
-		view.endEditing(true) //If any quantity was changed, save it after changing it to 0
+		view.endEditing(true) //If any quantity was changed, save it after changing it to its default value
 	}
 }

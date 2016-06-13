@@ -47,5 +47,11 @@ class MealsViewController: ParentViewController {
 	}
 
 	@IBAction func resetButtonPressed(sender: AnyObject) {
+		tripBuddyViewController!.programData!.mealsAmount = 0
+		tripBuddyViewController!.programData!.mealsPercentage = 0
+		tripBuddyViewController!.programData!.mealsPeople = 1
+		tripBuddyViewController!.programData!.mealsOutcome = 0
+		tripBuddyViewController!.saveProgramData()
+		view.endEditing(true) //If any quantity was changed, save it after changing it to its default value
 	}
 }
