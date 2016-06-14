@@ -16,7 +16,7 @@ class TripBuddyViewController: UIViewController {
 	//The individual view controllers
 	let viewControllers: [ParentViewController] = [ExchangeViewController(nibName: "ExchangeViewController", bundle: nil),
 	                                               GasViewController(nibName: "GasViewController", bundle: nil),
-	                                               MealsViewController(nibName: "MealsViewController", bundle: nil),
+	                                               MealViewController(nibName: "MealViewController", bundle: nil),
 	                                               MiscViewController(nibName: "MiscViewController", bundle: nil)]
 
 	//Arrays of information where an index in any array pertains to the same country
@@ -93,10 +93,10 @@ class TripBuddyViewController: UIViewController {
 			existingData[0].gasRate = 0
 			existingData[0].gasOutcome = 0
 			existingData[0].gasConvertedUnit = 0
-			existingData[0].mealsAmount = 0
-			existingData[0].mealsPercentage = 0
-			existingData[0].mealsPeople = 1
-			existingData[0].mealsOutcome = 0
+			existingData[0].mealAmount = 0
+			existingData[0].mealPercentage = 0
+			existingData[0].mealPeople = 1
+			existingData[0].mealOutcome = 0
 			existingData[0].miscMeasurement = 0
 			existingData[0].miscAmount = 0
 			existingData[0].miscUnit = 0
@@ -127,7 +127,7 @@ class TripBuddyViewController: UIViewController {
 		let gasConvertedUnitPlural = gasUnitsPlural[programData!.gasConvertedUnit.integerValue]
 		let gasConvertedUnitSingular = gasUnitsSingular[programData!.gasConvertedUnit.integerValue]
 		//Relevant meal information
-		let mealsViewController = viewControllers[2] as! MealsViewController
+		let mealViewController = viewControllers[2] as! MealViewController
 		//Relevant miscellaneous information
 		let miscViewController = viewControllers[3] as! MiscViewController
 		let miscUnit = miscUnits[programData!.miscMeasurement.integerValue][programData!.miscUnit.integerValue]
@@ -182,32 +182,32 @@ class TripBuddyViewController: UIViewController {
 		gasViewController.convertedResultLabel.text = "which is worth \(originSymbol) \(String(format: "%.2f", gasConvertedResult())) \(originCurrency)"
 		gasViewController.convertedOutcomeLabel.text = "but I paid roughly \(originSymbol) \(String(format: "%.2f", gasConvertedOutcome())) \(originCurrency)"
 		gasViewController.convertedDifferenceLabel.text = "with a difference of \(originSymbol) \(String(format: "%.2f", gasConvertedDifference())) \(originCurrency)"
-		//Update MealsViewController's elements
-		mealsViewController.amountLabel1.text = "The check is (\(travelSymbol))"
-		mealsViewController.amountTextField.text = String(format: "%.2f", programData!.mealsAmount.doubleValue)
-		mealsViewController.amountLabel2.text = travelCurrency
-		mealsViewController.percentageTextField.text = String(format: "%.2f", programData!.mealsPercentage.doubleValue)
-		mealsViewController.tipLabel.text = "(which equals \(travelSymbol) \(String(format: "%.2f", mealTip())) \(travelCurrency))"
-		mealsViewController.totalLabel.text = "then the total is \(travelSymbol) \(String(format: "%.2f", mealTotal())) \(travelCurrency)"
-		mealsViewController.peopleTextField.text = String(programData!.mealsPeople.integerValue)
-		mealsViewController.resultLabel.text = "then I should pay \(travelSymbol) \(String(format: "%.2f", mealResult())) \(travelCurrency)"
-		mealsViewController.outcomeLabel1.text = "If I paid (\(travelSymbol))"
-		mealsViewController.outcomeTextField.text = String(format: "%.2f", programData!.mealsOutcome.doubleValue)
-		mealsViewController.outcomeLabel2.text = travelCurrency
+		//Update MealViewController's elements
+		mealViewController.amountLabel1.text = "The check is (\(travelSymbol))"
+		mealViewController.amountTextField.text = String(format: "%.2f", programData!.mealAmount.doubleValue)
+		mealViewController.amountLabel2.text = travelCurrency
+		mealViewController.percentageTextField.text = String(format: "%.2f", programData!.mealPercentage.doubleValue)
+		mealViewController.tipLabel.text = "(which equals \(travelSymbol) \(String(format: "%.2f", mealTip())) \(travelCurrency))"
+		mealViewController.totalLabel.text = "then the total is \(travelSymbol) \(String(format: "%.2f", mealTotal())) \(travelCurrency)"
+		mealViewController.peopleTextField.text = String(programData!.mealPeople.integerValue)
+		mealViewController.resultLabel.text = "then I should pay \(travelSymbol) \(String(format: "%.2f", mealResult())) \(travelCurrency)"
+		mealViewController.outcomeLabel1.text = "If I paid (\(travelSymbol))"
+		mealViewController.outcomeTextField.text = String(format: "%.2f", programData!.mealOutcome.doubleValue)
+		mealViewController.outcomeLabel2.text = travelCurrency
 		if mealDifference() == 0{
-			mealsViewController.differenceLabel.text = "then it was a fair transaction"
+			mealViewController.differenceLabel.text = "then it was a fair transaction"
 		} else if mealDifference() > 0 {
-			mealsViewController.differenceLabel.text = "then you got \(travelSymbol) \(String(format: "%.2f", mealDifference())) \(travelCurrency) extra"
+			mealViewController.differenceLabel.text = "then you got \(travelSymbol) \(String(format: "%.2f", mealDifference())) \(travelCurrency) extra"
 		} else {
-			mealsViewController.differenceLabel.text = "then you are short \(travelSymbol) \(String(format: "%.2f", -mealDifference())) \(travelCurrency)"
+			mealViewController.differenceLabel.text = "then you are short \(travelSymbol) \(String(format: "%.2f", -mealDifference())) \(travelCurrency)"
 		}
-		mealsViewController.convertedUnitLabel.text = "In converting these values to \(originCurrency):"
-		mealsViewController.convertedAmountLabel.text = "The check was \(originSymbol) \(String(format: "%.2f", mealConvertedAmount())) \(originCurrency)"
-		mealsViewController.convertedTipLabel.text = "with a tip of \(originSymbol) \(String(format: "%.2f", mealConvertedTip())) \(originCurrency)"
-		mealsViewController.convertedTotalLabel.text = "and the total was \(originSymbol) \(String(format: "%.2f", mealConvertedTotal())) \(originCurrency)"
-		mealsViewController.convertedResultLabel.text = "costing each person \(originSymbol) \(String(format: "%.2f", mealConvertedResult())) \(originCurrency)"
-		mealsViewController.convertedOutcomeLabel.text = "but I paid roughly \(originSymbol) \(String(format: "%.2f", mealConvertedOutcome())) \(originCurrency)"
-		mealsViewController.convertedDifferenceLabel.text = "with a difference of \(originSymbol) \(String(format: "%.2f", mealConvertedDifference())) \(originCurrency)"
+		mealViewController.convertedUnitLabel.text = "In converting these values to \(originCurrency):"
+		mealViewController.convertedAmountLabel.text = "The check was \(originSymbol) \(String(format: "%.2f", mealConvertedAmount())) \(originCurrency)"
+		mealViewController.convertedTipLabel.text = "with a tip of \(originSymbol) \(String(format: "%.2f", mealConvertedTip())) \(originCurrency)"
+		mealViewController.convertedTotalLabel.text = "and the total was \(originSymbol) \(String(format: "%.2f", mealConvertedTotal())) \(originCurrency)"
+		mealViewController.convertedResultLabel.text = "costing each person \(originSymbol) \(String(format: "%.2f", mealConvertedResult())) \(originCurrency)"
+		mealViewController.convertedOutcomeLabel.text = "but I paid roughly \(originSymbol) \(String(format: "%.2f", mealConvertedOutcome())) \(originCurrency)"
+		mealViewController.convertedDifferenceLabel.text = "with a difference of \(originSymbol) \(String(format: "%.2f", mealConvertedDifference())) \(originCurrency)"
 		//Update MiscViewController's elements
 		miscViewController.measurementControl.selectedSegmentIndex = programData!.miscMeasurement.integerValue
 		miscViewController.amountTextField.text = String(format: "%.3f", programData!.miscAmount.doubleValue)
@@ -278,32 +278,32 @@ class TripBuddyViewController: UIViewController {
 
 	//Returns the meal tip, which is the meal amount times the meal percentage
 	func mealTip() -> Double {
-		return programData!.mealsAmount.doubleValue * (programData!.mealsPercentage.doubleValue / 100)
+		return programData!.mealAmount.doubleValue * (programData!.mealPercentage.doubleValue / 100)
 	}
 
 	//Returns the meal total, which is the meal amount plus the meal tip
 	func mealTotal() -> Double {
-		return programData!.mealsAmount.doubleValue + mealTip()
+		return programData!.mealAmount.doubleValue + mealTip()
 	}
 
 	//Returns the meal result, which is the meal total divided by the meal people
 	func mealResult() -> Double {
-		return mealTotal() / programData!.mealsPeople.doubleValue
+		return mealTotal() / programData!.mealPeople.doubleValue
 	}
 
 	//Returns the meal difference, which is the meal outcome minus the meal result
 	func mealDifference() -> Double {
-		return programData!.mealsOutcome.doubleValue - mealResult()
+		return programData!.mealOutcome.doubleValue - mealResult()
 	}
 
 	//Returns the converted meal amount, which is the meal amount divided by the country exchange rate
 	func mealConvertedAmount() -> Double {
-		return programData!.mealsAmount.doubleValue / countryExchangeRate()
+		return programData!.mealAmount.doubleValue / countryExchangeRate()
 	}
 
 	//Returns the converted meal tip, which is the converted meal amount times the meal percentage
 	func mealConvertedTip() -> Double {
-		return mealConvertedAmount() * (programData!.mealsPercentage.doubleValue / 100)
+		return mealConvertedAmount() * (programData!.mealPercentage.doubleValue / 100)
 	}
 
 	//Returns the converted meal total, which is the converted meal amount plus the converted meal tip
@@ -313,12 +313,12 @@ class TripBuddyViewController: UIViewController {
 
 	//Returns the converted meal result, which is the converted meal total divided by the meal people
 	func mealConvertedResult() -> Double {
-		return mealConvertedTotal() / programData!.mealsPeople.doubleValue
+		return mealConvertedTotal() / programData!.mealPeople.doubleValue
 	}
 
 	//Returns the converted meal outcome, which is the meal outcome divided by the country exchange rate
 	func mealConvertedOutcome() -> Double {
-		return programData!.mealsOutcome.doubleValue / countryExchangeRate()
+		return programData!.mealOutcome.doubleValue / countryExchangeRate()
 	}
 
 	//Returns the converted meal differece, which is the converted meal outcome minus the converted meal result

@@ -1,10 +1,10 @@
 //Trip Buddy
-//MealsViewController.swift
+//MealViewController.swift
 //© 2016 Kaiyode Software
 
 import UIKit
 
-class MealsViewController: ParentViewController {
+class MealViewController: ParentViewController {
 	@IBOutlet weak var amountLabel1: UILabel!
 	@IBOutlet weak var amountTextField: UITextField!
 	@IBOutlet weak var amountLabel2: UILabel!
@@ -47,10 +47,10 @@ class MealsViewController: ParentViewController {
 	}
 
 	@IBAction func resetButtonPressed(sender: AnyObject) {
-		tripBuddyViewController!.programData!.mealsAmount = 0
-		tripBuddyViewController!.programData!.mealsPercentage = 0
-		tripBuddyViewController!.programData!.mealsPeople = 1
-		tripBuddyViewController!.programData!.mealsOutcome = 0
+		tripBuddyViewController!.programData!.mealAmount = 0
+		tripBuddyViewController!.programData!.mealPercentage = 0
+		tripBuddyViewController!.programData!.mealPeople = 1
+		tripBuddyViewController!.programData!.mealOutcome = 0
 		tripBuddyViewController!.saveProgramData()
 		view.endEditing(true) //If any quantity was changed, save it after changing it to its default value
 	}

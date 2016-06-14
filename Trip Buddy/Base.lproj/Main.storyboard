@@ -52,7 +52,7 @@
                                     <constraint firstAttribute="height" constant="60" id="LUu-kf-EVU"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Meals">
+                                <state key="normal" title="Meal">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>

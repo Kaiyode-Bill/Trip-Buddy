@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MealsViewController" customModule="Trip_Buddy" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MealViewController" customModule="Trip_Buddy" customModuleProvider="target">
             <connections>
                 <outlet property="amountLabel1" destination="FMf-pz-sz0" id="pMy-Q1-VhQ"/>
                 <outlet property="amountLabel2" destination="bKd-A0-tyn" id="m12-uC-mvJ"/>
