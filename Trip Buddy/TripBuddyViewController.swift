@@ -36,8 +36,16 @@ class TripBuddyViewController: UIViewController {
 	                        66.07, 0.94, 122.725, 4.3949, 16.7305, 1.4, 0.92, 0.99,
 	                        0.654, 1.5172]
 
+	//Gas information
+	let gasUnitsPlural: [String] = ["U.S. Gallons", "Imp. Gallons", "Liters"]
+
+	let gasUnitsSingular: [String] = ["US Gal.", "Imp Gal.", "Liter"]
+
+	let gasWeights: [Double] = [1000000000, 832673840, 3785411784]
+
 	//Miscellaneous information
 	let miscUnits: [[String]] = [["Miles (or MPH)", "Kilometers (or km/h)"], ["° Farenheit", "° Celsius"]]
+
 	let miscMeasurements: [String] = ["distance", "temperature"]
 
 	//CoreData variables for saving program data
@@ -114,10 +122,12 @@ class TripBuddyViewController: UIViewController {
 		let exchangeViewController = viewControllers[0] as! ExchangeViewController
 		//Relevant gas information
 		let gasViewController = viewControllers[1] as! GasViewController
-		//
+		let gasUnitPlural = gasUnitsPlural[programData!.gasUnit.integerValue]
+		let gasUnitSingular = gasUnitsSingular[programData!.gasUnit.integerValue]
+		let gasConvertedUnitPlural = gasUnitsPlural[programData!.gasConvertedUnit.integerValue]
+		let gasConvertedUnitSingular = gasUnitsSingular[programData!.gasConvertedUnit.integerValue]
 		//Relevant meal information
 		let mealsViewController = viewControllers[2] as! MealsViewController
-		//
 		//Relevant miscellaneous information
 		let miscViewController = viewControllers[3] as! MiscViewController
 		let miscUnit = miscUnits[programData!.miscMeasurement.integerValue][programData!.miscUnit.integerValue]
@@ -144,12 +154,34 @@ class TripBuddyViewController: UIViewController {
 		if exchangeDifference() == 0 {
 			exchangeViewController.differenceLabel.text = "then it was a fair conversion"
 		} else if exchangeDifference() > 0 {
-			exchangeViewController.differenceLabel.text = "then you got \(travelSymbol) \(exchangeDifference()) \(travelCurrency) extra"
+			exchangeViewController.differenceLabel.text = "then you got \(travelSymbol) \(String(format: "%.2f", exchangeDifference())) \(travelCurrency) extra"
 		} else {
-			exchangeViewController.differenceLabel.text = "then you are short \(travelSymbol) \(-exchangeDifference()) \(travelCurrency)"
+			exchangeViewController.differenceLabel.text = "then you are short \(travelSymbol) \(String(format: "%.2f", -exchangeDifference())) \(travelCurrency)"
 		}
 		//Update GasViewController's elements
-		//
+		gasViewController.unitControl.selectedSegmentIndex = programData!.gasUnit.integerValue
+		gasViewController.amountTextField.text = String(format: "%.2f", programData!.gasAmount.doubleValue)
+		gasViewController.amountLabel2.text = gasUnitPlural
+		gasViewController.rateLabel1.text = "at a rate of (\(travelSymbol))"
+		gasViewController.rateTextField.text = String(format: "%.2f", programData!.gasRate.doubleValue)
+		gasViewController.rateLabel2.text = "\(travelCurrency)/\(gasUnitSingular)"
+		gasViewController.resultLabel.text = "then I should pay \(travelSymbol) \(String(format: "%.2f", gasResult())) \(travelCurrency)"
+		gasViewController.outcomeLabel1.text = "If I payed (\(travelSymbol))"
+		gasViewController.outcomeTextField.text = String(format: "%.2f", programData!.gasOutcome.doubleValue)
+		gasViewController.outcomeLabel2.text = travelCurrency
+		if gasDifference() == 0 {
+			gasViewController.differenceLabel.text = "then it was a fair transaction"
+		} else if gasDifference() > 0 {
+			gasViewController.differenceLabel.text = "then you got \(travelSymbol) \(String(format: "%.2f", gasDifference())) \(travelCurrency) extra"
+		} else {
+			gasViewController.differenceLabel.text = "then you are short \(travelSymbol) \(String(format: "%.2f", -gasDifference())) \(travelCurrency)"
+		}
+		gasViewController.convertedUnitControl.selectedSegmentIndex = programData!.gasConvertedUnit.integerValue
+		gasViewController.convertedAmountLabel.text = "As such, I bought \(String(format: "%.2f", gasConvertedAmount())) \(gasConvertedUnitPlural)"
+		gasViewController.convertedRateLabel.text = "at a rate of \(originSymbol) \(String(format: "%.2f", gasConvertedRate())) \(originCurrency)/\(gasConvertedUnitSingular)"
+		gasViewController.convertedResultLabel.text = "which is worth \(originSymbol) \(String(format: "%.2f", gasConvertedResult())) \(originCurrency)"
+		gasViewController.convertedOutcomeLabel.text = "but I paid roughly \(originSymbol) \(String(format: "%.2f", gasConvertedOutcome())) \(originCurrency)"
+		gasViewController.convertedDifferenceLabel.text = "with a difference of \(originSymbol) \(String(format: "%.2f", gasConvertedDifference())) \(originCurrency)"
 		//Update MealsViewController's elements
 		//
 		//Update MiscViewController's elements
@@ -170,14 +202,54 @@ class TripBuddyViewController: UIViewController {
 		return programData!.exchangeAmount.doubleValue * (programData!.exchangePercentage.doubleValue / 100)
 	}
 
-	//Returns the exchange result, which is the exchange fee divided by the exchange rate
+	//Returns the exchange result, which is the exchange fee times the exchange rate
 	func exchangeResult() -> Double {
-		return exchangeFee() / exchangeRate()
+		return exchangeFee() * exchangeRate()
 	}
 
 	//Returns the exchange difference, which is the exchange outcome minues the exchange result
 	func exchangeDifference() -> Double {
 		return programData!.exchangeOutcome.doubleValue - exchangeResult()
+	}
+
+	//Returns the gas result, which is the gas amount times the gas rate
+	func gasResult() -> Double {
+		return programData!.gasAmount.doubleValue * programData!.gasRate.doubleValue
+	}
+
+	//Returns the gas difference, which is the gas outcome minus the gas result
+	func gasDifference() -> Double {
+		return programData!.gasOutcome.doubleValue - gasResult()
+	}
+
+	//Returns the converted gas amount, which is the gas amount times the gas volume rate
+	func gasConvertedAmount() -> Double {
+		return programData!.gasAmount.doubleValue * gasVolumeRate()
+	}
+
+	//Returns the gas volume rate between the gas unit and the converted gas unit
+	func gasVolumeRate() -> Double {
+		return gasWeights[programData!.gasConvertedUnit.integerValue] / gasWeights[programData!.gasUnit.integerValue]
+	}
+
+	//Returns the converted gas rate, which is the gas rate divided by both the exchange rate and the gas volume rate
+	func gasConvertedRate() -> Double {
+		return (programData!.gasRate.doubleValue / exchangeRate()) / gasVolumeRate()
+	}
+
+	//Returns the converted gas result, which is
+	func gasConvertedResult() -> Double {
+		return gasConvertedAmount() * gasConvertedRate()
+	}
+
+	//Returns the converted gas outcome, which is
+	func gasConvertedOutcome() -> Double {
+		return programData!.gasOutcome.doubleValue / exchangeRate()
+	}
+
+	//Returns the converted gas difference, which is
+	func gasConvertedDifference() -> Double {
+		return gasConvertedOutcome() - gasConvertedResult()
 	}
 
 	//Returns the converted amount from the MiscViewController
