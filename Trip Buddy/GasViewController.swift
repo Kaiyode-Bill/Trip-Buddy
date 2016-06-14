@@ -17,6 +17,7 @@ class GasViewController: ParentViewController {
 	@IBOutlet weak var outcomeUnitLabel: UILabel!
 	@IBOutlet weak var differenceLabel: UILabel!
 	@IBOutlet weak var equivalentUnitControl: UISegmentedControl!
+	@IBOutlet weak var exchangeRateLabel: UILabel!
 	@IBOutlet weak var equivalentAmountLabel: UILabel!
 	@IBOutlet weak var equivalentRateLabel: UILabel!
 	@IBOutlet weak var equivalentResultLabel: UILabel!

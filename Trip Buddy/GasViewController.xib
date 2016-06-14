@@ -16,6 +16,7 @@
                 <outlet property="equivalentRateLabel" destination="ReC-yL-fAu" id="WUv-iM-8EA"/>
                 <outlet property="equivalentResultLabel" destination="dtC-1W-CK7" id="0Xy-I5-PVB"/>
                 <outlet property="equivalentUnitControl" destination="Fnx-uT-kbX" id="4wZ-VT-raJ"/>
+                <outlet property="exchangeRateLabel" destination="6wq-kO-dvm" id="7HW-P5-eyr"/>
                 <outlet property="outcomeSymbolLabel" destination="eaV-bg-WpP" id="dcI-IG-A8S"/>
                 <outlet property="outcomeTextField" destination="o8U-fh-4Mf" id="1VA-uG-fve"/>
                 <outlet property="outcomeUnitLabel" destination="hRr-Gz-jov" id="K95-Pq-mFn"/>
@@ -193,39 +194,30 @@
                         <action selector="equivalentUnitControlChanged:" destination="-1" eventType="valueChanged" id="yne-kq-JKS"/>
                     </connections>
                 </segmentedControl>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="As such, I bought 0.00 U.S. Gallons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5a-fe-nsQ">
-                    <rect key="frame" x="10" y="252" width="580" height="20"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="20" id="YLA-sb-ZQP"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="as a rate of $ 0.00 Dollars/US Gal." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReC-yL-fAu">
-                    <rect key="frame" x="10" y="276" width="580" height="20"/>
+                    <rect key="frame" x="10" y="296" width="580" height="16"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="20" id="Le4-RK-y2G"/>
+                        <constraint firstAttribute="height" constant="16" id="Le4-RK-y2G"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="which is worth $ 0.00 Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtC-1W-CK7">
-                    <rect key="frame" x="10" y="300" width="580" height="20"/>
+                    <rect key="frame" x="10" y="316" width="580" height="16"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="20" id="ZmL-IF-5ai"/>
+                        <constraint firstAttribute="height" constant="16" id="ZmL-IF-5ai"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="but I payed roughly $ 0.00 Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjS-Pt-4By">
-                    <rect key="frame" x="10" y="324" width="580" height="20"/>
+                    <rect key="frame" x="10" y="336" width="580" height="16"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="20" id="iJe-Sx-zI6"/>
+                        <constraint firstAttribute="height" constant="16" id="iJe-Sx-zI6"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -239,11 +231,29 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="with a difference of $ 0.00 Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vz-pe-hvQ">
-                    <rect key="frame" x="10" y="348" width="580" height="20"/>
+                    <rect key="frame" x="10" y="356" width="580" height="16"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="20" id="i3J-y0-rWR"/>
+                        <constraint firstAttribute="height" constant="16" id="i3J-y0-rWR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.00 Imp. Gallons = 1.20 U.S. Gallons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wq-kO-dvm">
+                    <rect key="frame" x="10" y="252" width="580" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="BDE-KR-tzm"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="As such, I bought 0.00 U.S. Gallons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5a-fe-nsQ">
+                    <rect key="frame" x="10" y="276" width="580" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="YLA-sb-ZQP"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -262,6 +272,7 @@
                 <constraint firstItem="6vz-pe-hvQ" firstAttribute="top" secondItem="HjS-Pt-4By" secondAttribute="bottom" constant="4" id="A4Q-ri-N2l"/>
                 <constraint firstAttribute="trailing" secondItem="JcJ-8B-q6Q" secondAttribute="trailing" constant="10" id="AzJ-C9-5lt"/>
                 <constraint firstItem="cJW-Lg-V8U" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="BwH-HA-eoZ"/>
+                <constraint firstItem="S5a-fe-nsQ" firstAttribute="top" secondItem="6wq-kO-dvm" secondAttribute="bottom" constant="4" id="DIy-04-FMB"/>
                 <constraint firstItem="ReC-yL-fAu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="DMd-FN-gCu"/>
                 <constraint firstItem="JcJ-8B-q6Q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="DVO-kR-chd"/>
                 <constraint firstItem="dtC-1W-CK7" firstAttribute="top" secondItem="ReC-yL-fAu" secondAttribute="bottom" constant="4" id="F0l-x4-9hg"/>
@@ -289,14 +300,15 @@
                 <constraint firstItem="0Yf-1F-XAx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="dIg-uM-Ofd"/>
                 <constraint firstItem="0Uc-NK-cz5" firstAttribute="top" secondItem="ech-22-XVL" secondAttribute="bottom" constant="4" id="ech-bW-nRH"/>
                 <constraint firstItem="o8U-fh-4Mf" firstAttribute="top" secondItem="OKi-Y7-mFM" secondAttribute="bottom" constant="4" id="esA-Pv-nW1"/>
+                <constraint firstItem="6wq-kO-dvm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="fLA-aS-R2B"/>
                 <constraint firstAttribute="trailing" secondItem="S5a-fe-nsQ" secondAttribute="trailing" constant="10" id="fLx-Wv-FqJ"/>
                 <constraint firstAttribute="trailing" secondItem="ReC-yL-fAu" secondAttribute="trailing" constant="10" id="fq3-lc-wfa"/>
                 <constraint firstItem="0b7-SK-NWj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="g7J-EU-ihm"/>
                 <constraint firstItem="eaV-bg-WpP" firstAttribute="top" secondItem="OKi-Y7-mFM" secondAttribute="bottom" constant="4" id="hK9-Vk-ZDO"/>
                 <constraint firstItem="0b7-SK-NWj" firstAttribute="top" secondItem="0Yf-1F-XAx" secondAttribute="bottom" constant="4" id="iWB-4Z-hzL"/>
+                <constraint firstAttribute="trailing" secondItem="6wq-kO-dvm" secondAttribute="trailing" constant="10" id="itG-ts-7kg"/>
                 <constraint firstItem="tNn-4I-INu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="j5d-Ek-sfb"/>
                 <constraint firstItem="o8U-fh-4Mf" firstAttribute="leading" secondItem="eaV-bg-WpP" secondAttribute="trailing" constant="4" id="jlG-iI-DsU"/>
-                <constraint firstItem="S5a-fe-nsQ" firstAttribute="top" secondItem="Fnx-uT-kbX" secondAttribute="bottom" constant="4" id="lpD-21-tXK"/>
                 <constraint firstItem="HjS-Pt-4By" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="nwk-9r-nRJ"/>
                 <constraint firstAttribute="trailing" secondItem="dtC-1W-CK7" secondAttribute="trailing" constant="10" id="p2Q-Ov-Zh3"/>
                 <constraint firstItem="hRr-Gz-jov" firstAttribute="top" secondItem="OKi-Y7-mFM" secondAttribute="bottom" constant="4" id="pIp-4x-kDr"/>
@@ -309,6 +321,7 @@
                 <constraint firstItem="ech-22-XVL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="utr-Ie-0zD"/>
                 <constraint firstItem="nvz-Sw-9rr" firstAttribute="top" secondItem="0Yf-1F-XAx" secondAttribute="bottom" constant="4" id="vf9-47-ghm"/>
                 <constraint firstItem="6vz-pe-hvQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="wJV-rt-26d"/>
+                <constraint firstItem="6wq-kO-dvm" firstAttribute="top" secondItem="Fnx-uT-kbX" secondAttribute="bottom" constant="4" id="x8h-EZ-CC7"/>
                 <constraint firstItem="0Uc-NK-cz5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="xna-xI-G5i"/>
             </constraints>
         </view>

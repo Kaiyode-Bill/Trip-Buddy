@@ -5,7 +5,7 @@
 import UIKit
 
 class ExchangeViewController: ParentViewController {
-	@IBOutlet weak var conversionLabel: UILabel!
+	@IBOutlet weak var unitsLabel: UILabel!
 	@IBOutlet weak var rateLabel: UILabel!
 	@IBOutlet weak var amountSymbolLabel: UILabel!
 	@IBOutlet weak var amountTextField: UITextField!

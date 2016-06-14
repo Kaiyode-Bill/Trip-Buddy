@@ -140,9 +140,9 @@ class TripBuddyViewController: UIViewController {
 		travelCountryImageView.image = UIImage(named: travelName + ".png")
 		travelCountryButton.setTitle("Travel Country: \(travelName)", forState: UIControlState.Normal)
 		//Update ExchangeViewController's elements
-		exchangeViewController.conversionLabel.text = "Converting \(originCurrency) to \(travelCurrency):"
+		exchangeViewController.unitsLabel.text = "Exchanging \(originCurrency) to \(travelCurrency):"
 		exchangeViewController.rateLabel.text = "\(originSymbol) 1.00 = \(travelSymbol) \(String(format: "%.2f", countryExchangeRate()))"
-		exchangeViewController.amountSymbolLabel.text = "If I convert (\(originSymbol))"
+		exchangeViewController.amountSymbolLabel.text = "If I exchange (\(originSymbol))"
 		exchangeViewController.amountTextField.text = String(format: "%.2f", programData!.exchangeAmount.doubleValue)
 		exchangeViewController.amountUnitLabel.text = originCurrency
 		exchangeViewController.percentageTextField.text = String(format: "%.2f", programData!.exchangePercentage.doubleValue)
@@ -152,7 +152,7 @@ class TripBuddyViewController: UIViewController {
 		exchangeViewController.outcomeTextField.text = String(format: "%.2f", programData!.exchangeOutcome.doubleValue)
 		exchangeViewController.outcomeUnitLabel.text = travelCurrency
 		if exchangeDifference() == 0 {
-			exchangeViewController.differenceLabel.text = "then it was a fair conversion"
+			exchangeViewController.differenceLabel.text = "then it was a fair exchange"
 		} else if exchangeDifference() > 0 {
 			exchangeViewController.differenceLabel.text = "then you got \(travelSymbol) \(String(format: "%.2f", exchangeDifference())) \(travelCurrency) extra"
 		} else {
@@ -177,6 +177,7 @@ class TripBuddyViewController: UIViewController {
 			gasViewController.differenceLabel.text = "then you are short \(travelSymbol) \(String(format: "%.2f", -gasDifference())) \(travelCurrency)"
 		}
 		gasViewController.equivalentUnitControl.selectedSegmentIndex = programData!.gasEquivalentUnit.integerValue
+		gasViewController.exchangeRateLabel.text = "1.00 \(gasUnitPlural) = \(String(format: "%.2f", gasExchangeRate())) \(gasEquivalentUnitPlural)"
 		gasViewController.equivalentAmountLabel.text = "As such, I bought \(String(format: "%.2f", gasEquivalentAmount())) \(gasEquivalentUnitPlural)"
 		gasViewController.equivalentRateLabel.text = "at a rate of \(originSymbol) \(String(format: "%.2f", gasEquivalentRate())) \(originCurrency)/\(gasEquivalentUnitSingular)"
 		gasViewController.equivalentResultLabel.text = "which is worth \(originSymbol) \(String(format: "%.2f", gasEquivalentResult())) \(originCurrency)"
@@ -201,7 +202,7 @@ class TripBuddyViewController: UIViewController {
 		} else {
 			mealViewController.differenceLabel.text = "then you are short \(travelSymbol) \(String(format: "%.2f", -mealDifference())) \(travelCurrency)"
 		}
-		mealViewController.equivalentUnitLabel.text = "In converting these values to \(originCurrency):"
+		mealViewController.equivalentUnitLabel.text = "The equivalents of these values in \(originCurrency):"
 		mealViewController.equivalentAmountLabel.text = "The check was \(originSymbol) \(String(format: "%.2f", mealEquivalentAmount())) \(originCurrency)"
 		mealViewController.equivalentTipLabel.text = "with a tip of \(originSymbol) \(String(format: "%.2f", mealEquivalentTip())) \(originCurrency)"
 		mealViewController.equivalentTotalLabel.text = "and the total was \(originSymbol) \(String(format: "%.2f", mealEquivalentTotal())) \(originCurrency)"
@@ -246,14 +247,14 @@ class TripBuddyViewController: UIViewController {
 		return programData!.gasOutcome.doubleValue - gasResult()
 	}
 
-	//Returns the equivalent gas amount, which is the gas amount times the gas exchange rate
-	func gasEquivalentAmount() -> Double {
-		return programData!.gasAmount.doubleValue * gasExchangeRate()
-	}
-
 	//Returns the exchange rate between the gas unit and the equivalent gas unit
 	func gasExchangeRate() -> Double {
 		return gasWeights[programData!.gasEquivalentUnit.integerValue] / gasWeights[programData!.gasUnit.integerValue]
+	}
+
+	//Returns the equivalent gas amount, which is the gas amount times the gas exchange rate
+	func gasEquivalentAmount() -> Double {
+		return programData!.gasAmount.doubleValue * gasExchangeRate()
 	}
 
 	//Returns the equivalent gas rate, which is the gas rate divided by both the country exchange rate and the gas exchange rate

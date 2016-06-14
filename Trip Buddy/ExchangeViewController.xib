@@ -10,7 +10,6 @@
                 <outlet property="amountSymbolLabel" destination="sVD-M1-meW" id="AJh-wb-ovH"/>
                 <outlet property="amountTextField" destination="KsZ-pH-KUX" id="Usw-Ak-tdB"/>
                 <outlet property="amountUnitLabel" destination="hEa-Us-PYh" id="y7S-WM-sb8"/>
-                <outlet property="conversionLabel" destination="a2l-ve-DYI" id="0Xe-1g-SIH"/>
                 <outlet property="differenceLabel" destination="dOx-f7-oJi" id="zRy-1d-zSV"/>
                 <outlet property="feeLabel" destination="ojj-6Y-mrr" id="qIb-rD-7OW"/>
                 <outlet property="outcomeSymbolLabel" destination="XVK-V6-MvC" id="ojM-wh-7Dk"/>
@@ -19,6 +18,7 @@
                 <outlet property="percentageTextField" destination="euC-Oe-8RE" id="ign-x6-dbz"/>
                 <outlet property="rateLabel" destination="5dl-oe-tdH" id="Oxv-db-BxH"/>
                 <outlet property="resultLabel" destination="VWA-Wy-ZFs" id="dTZ-5s-WDG"/>
+                <outlet property="unitsLabel" destination="a2l-ve-DYI" id="OrC-3i-9br"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,7 +27,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Converting Dollars to Pounds:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2l-ve-DYI">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exchanging Dollars to Pounds:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2l-ve-DYI">
                     <rect key="frame" x="10" y="10" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="N2M-fl-Rbr"/>
@@ -57,7 +57,7 @@
                         <action selector="amountTextFieldChanged:" destination="-1" eventType="editingDidEnd" id="Se2-il-fvH"/>
                     </connections>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If I convert ($)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVD-M1-meW">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If I exchange ($)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVD-M1-meW">
                     <rect key="frame" x="10" y="64" width="236" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Ph6-cD-060"/>
@@ -135,7 +135,7 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="then it was a fair conversion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOx-f7-oJi">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="then it was a fair exchange" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOx-f7-oJi">
                     <rect key="frame" x="10" y="220" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="nhJ-8H-E56"/>
