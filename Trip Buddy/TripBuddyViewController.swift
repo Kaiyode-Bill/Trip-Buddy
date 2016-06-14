@@ -20,21 +20,21 @@ class TripBuddyViewController: UIViewController {
 	                                               MiscViewController(nibName: "MiscViewController", bundle: nil)]
 
 	//Arrays of information where an index in any array pertains to the same country
-	let names: [String] = ["Argentina", "Austria", "Bulgaria", "Canada", "Chile", "China", "France", "Germany",
-	                           "India", "Italy", "Japan", "Malaysia", "Mexico", "Singapore", "Spain", "Switzerland",
-	                           "United Kingdom", "United States"]
+	let countryNames: [String] = ["Argentina", "Austria", "Bulgaria", "Canada", "Chile", "China", "France", "Germany",
+	                              "India", "Italy", "Japan", "Malaysia", "Mexico", "Singapore", "Spain", "Switzerland",
+	                              "United Kingdom", "United States"]
 
-	let currencies: [String] = ["Pesos", "Euros", "Leva", "Dollars", "Pesos", "Yuan", "Euros", "Euros",
-	                            "Rupees", "Euros", "Yen", "Ringgits", "Pesos", "Dollars", "Euros", "Francs",
-	                            "Pounds", "Dollars"]
+	let countryCurrencies: [String] = ["Pesos", "Euros", "Leva", "Dollars", "Pesos", "Yuan", "Euros", "Euros",
+	                                   "Rupees", "Euros", "Yen", "Ringgits", "Pesos", "Dollars", "Euros", "Francs",
+	                                   "Pounds", "Dollars"]
 
-	let symbols: [String] = ["$", "€", "лев", "$", "$", "¥", "€", "€",
-	                         "₹", "€", "¥", "R", "$", "$", "€", "C",
-	                         "£", "$"]
+	let countrySymbols: [String] = ["$", "€", "лев", "$", "$", "¥", "€", "€",
+	                                "₹", "€", "¥", "R", "$", "$", "€", "C",
+	                                "£", "$"]
 
-	let weights: [Double] = [9.41, 0.65, 1.75, 1.3336, 704.955, 6.34, 0.65, 0.93,
-	                        66.07, 0.94, 122.725, 4.3949, 16.7305, 1.4, 0.92, 0.99,
-	                        0.654, 1.5172]
+	let countryWeights: [Double] = [9.41, 0.65, 1.75, 1.3336, 704.955, 6.34, 0.65, 0.93,
+	                                66.07, 0.94, 122.725, 4.3949, 16.7305, 1.4, 0.92, 0.99,
+	                                0.654, 1.5172]
 
 	//Gas information
 	let gasUnitsPlural: [String] = ["U.S. Gallons", "Imp. Gallons", "Liters"]
@@ -82,8 +82,8 @@ class TripBuddyViewController: UIViewController {
 				existingData.removeAtIndex(i)
 			}
 			existingData = [NSEntityDescription.insertNewObjectForEntityForName("ProgramData", inManagedObjectContext: context) as! ProgramData]
-			existingData[0].originCountry = names.count - 1
-			existingData[0].travelCountry = names.count - 2
+			existingData[0].originCountry = countryNames.count - 1
+			existingData[0].travelCountry = countryNames.count - 2
 			existingData[0].showHelpAtStartup = 1
 			existingData[0].exchangeAmount = 0
 			existingData[0].exchangePercentage = 0
@@ -112,12 +112,12 @@ class TripBuddyViewController: UIViewController {
 		} catch _ as NSError {}
 
 		//Relevant country information
-		let originName = names[programData!.originCountry.integerValue]
-		let originCurrency = currencies[programData!.originCountry.integerValue]
-		let originSymbol = symbols[programData!.originCountry.integerValue]
-		let travelName = names[programData!.travelCountry.integerValue]
-		let travelCurrency = currencies[programData!.travelCountry.integerValue]
-		let travelSymbol = symbols[programData!.travelCountry.integerValue]
+		let originName = countryNames[programData!.originCountry.integerValue]
+		let originCurrency = countryCurrencies[programData!.originCountry.integerValue]
+		let originSymbol = countrySymbols[programData!.originCountry.integerValue]
+		let travelName = countryNames[programData!.travelCountry.integerValue]
+		let travelCurrency = countryCurrencies[programData!.travelCountry.integerValue]
+		let travelSymbol = countrySymbols[programData!.travelCountry.integerValue]
 		//Relevant exchange information
 		let exchangeViewController = viewControllers[0] as! ExchangeViewController
 		//Relevant gas information
@@ -141,7 +141,7 @@ class TripBuddyViewController: UIViewController {
 		travelCountryButton.setTitle("Travel Country: \(travelName)", forState: UIControlState.Normal)
 		//Update ExchangeViewController's elements
 		exchangeViewController.conversionLabel.text = "Converting \(originCurrency) to \(travelCurrency):"
-		exchangeViewController.rateLabel.text = "\(originSymbol) 1.00 = \(travelSymbol) \(String(format: "%.2f", exchangeRate()))"
+		exchangeViewController.rateLabel.text = "\(originSymbol) 1.00 = \(travelSymbol) \(String(format: "%.2f", countryExchangeRate()))"
 		exchangeViewController.amountLabel1.text = "If I convert (\(originSymbol))"
 		exchangeViewController.amountTextField.text = String(format: "%.2f", programData!.exchangeAmount.doubleValue)
 		exchangeViewController.amountLabel2.text = originCurrency
@@ -217,8 +217,8 @@ class TripBuddyViewController: UIViewController {
 	}
 
 	//Returns the exchange rate between the origin country and the travel country
-	func exchangeRate() -> Double {
-		return weights[programData!.travelCountry.integerValue] / weights[programData!.originCountry.integerValue]
+	func countryExchangeRate() -> Double {
+		return countryWeights[programData!.travelCountry.integerValue] / countryWeights[programData!.originCountry.integerValue]
 	}
 
 	//Returns the exchange fee, which is the exchange amount times the exchange percentage
@@ -226,9 +226,9 @@ class TripBuddyViewController: UIViewController {
 		return programData!.exchangeAmount.doubleValue * (programData!.exchangePercentage.doubleValue / 100)
 	}
 
-	//Returns the exchange result, which is the exchange fee times the exchange rate
+	//Returns the exchange result, which is the exchange fee times the country exchange rate
 	func exchangeResult() -> Double {
-		return exchangeFee() * exchangeRate()
+		return exchangeFee() * countryExchangeRate()
 	}
 
 	//Returns the exchange difference, which is the exchange outcome minues the exchange result
@@ -246,19 +246,19 @@ class TripBuddyViewController: UIViewController {
 		return programData!.gasOutcome.doubleValue - gasResult()
 	}
 
-	//Returns the converted gas amount, which is the gas amount times the gas volume rate
+	//Returns the converted gas amount, which is the gas amount times the gas exchange rate
 	func gasConvertedAmount() -> Double {
-		return programData!.gasAmount.doubleValue * gasVolumeRate()
+		return programData!.gasAmount.doubleValue * gasExchangeRate()
 	}
 
-	//Returns the gas volume rate between the gas unit and the converted gas unit
-	func gasVolumeRate() -> Double {
+	//Returns the exchange rate between the gas unit and the converted gas unit
+	func gasExchangeRate() -> Double {
 		return gasWeights[programData!.gasConvertedUnit.integerValue] / gasWeights[programData!.gasUnit.integerValue]
 	}
 
-	//Returns the converted gas rate, which is the gas rate divided by both the exchange rate and the gas volume rate
+	//Returns the converted gas rate, which is the gas rate divided by both the country exchange rate and the gas exchange rate
 	func gasConvertedRate() -> Double {
-		return (programData!.gasRate.doubleValue / exchangeRate()) / gasVolumeRate()
+		return (programData!.gasRate.doubleValue / countryExchangeRate()) / gasExchangeRate()
 	}
 
 	//Returns the converted gas result, which is the converted gas amount times the converted gas rate
@@ -266,9 +266,9 @@ class TripBuddyViewController: UIViewController {
 		return gasConvertedAmount() * gasConvertedRate()
 	}
 
-	//Returns the converted gas outcome, which is the gas outcome divided by the exchange rate
+	//Returns the converted gas outcome, which is the gas outcome divided by the country exchange rate
 	func gasConvertedOutcome() -> Double {
-		return programData!.gasOutcome.doubleValue / exchangeRate()
+		return programData!.gasOutcome.doubleValue / countryExchangeRate()
 	}
 
 	//Returns the converted gas difference, which is the converted gas outcome minus the converted gas result
@@ -296,9 +296,9 @@ class TripBuddyViewController: UIViewController {
 		return programData!.mealsOutcome.doubleValue - mealResult()
 	}
 
-	//Returns the converted meal amount, which is the meal amount divided by the exchange rate
+	//Returns the converted meal amount, which is the meal amount divided by the country exchange rate
 	func mealConvertedAmount() -> Double {
-		return programData!.mealsAmount.doubleValue / exchangeRate()
+		return programData!.mealsAmount.doubleValue / countryExchangeRate()
 	}
 
 	//Returns the converted meal tip, which is the converted meal amount times the meal percentage
@@ -316,9 +316,9 @@ class TripBuddyViewController: UIViewController {
 		return mealConvertedTotal() / programData!.mealsPeople.doubleValue
 	}
 
-	//Returns the converted meal outcome, which is the meal outcome divided by the exchange rate
+	//Returns the converted meal outcome, which is the meal outcome divided by the country exchange rate
 	func mealConvertedOutcome() -> Double {
-		return programData!.mealsOutcome.doubleValue / exchangeRate()
+		return programData!.mealsOutcome.doubleValue / countryExchangeRate()
 	}
 
 	//Returns the converted meal differece, which is the converted meal outcome minus the converted meal result
@@ -329,13 +329,13 @@ class TripBuddyViewController: UIViewController {
 	//Returns the converted amount from the MiscViewController
 	func miscConvertedAmount() -> Double {
 		if programData!.miscMeasurement == 0 && programData!.miscUnit == 0 {
-			return programData!.miscAmount.doubleValue * 25146 / 15625
+			return programData!.miscAmount.doubleValue * (25146 / 15625)
 		} else if programData!.miscMeasurement == 0 && programData!.miscUnit != 0 {
-			return programData!.miscAmount.doubleValue * 15625 / 25146
+			return programData!.miscAmount.doubleValue * (15625 / 25146)
 		} else if programData!.miscMeasurement != 0 && programData!.miscUnit == 0 {
-			return (programData!.miscAmount.doubleValue - 32) * 5 / 9
+			return (programData!.miscAmount.doubleValue - 32) * (5 / 9)
 		} else {
-			return (programData!.miscAmount.doubleValue * 9 / 5) + 32
+			return (programData!.miscAmount.doubleValue * (9 / 5)) + 32
 		}
 	}
 
@@ -343,8 +343,8 @@ class TripBuddyViewController: UIViewController {
 	@IBAction func originCountryButtonPressed(sender: AnyObject) {
 		let alertController = UIAlertController(title: "Select a country:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
 
-		for i in 0.stride(to: names.count, by: 1) {
-			alertController.addAction(UIAlertAction(title: names[i], style: UIAlertActionStyle.Default, handler: originCountryAlertActionHandler))
+		for i in 0.stride(to: countryNames.count, by: 1) {
+			alertController.addAction(UIAlertAction(title: countryNames[i], style: UIAlertActionStyle.Default, handler: originCountryAlertActionHandler))
 		}
 		alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
 		presentViewController(alertController, animated: true, completion: nil)
@@ -352,8 +352,8 @@ class TripBuddyViewController: UIViewController {
 
 	//Changes the origin country based upon the selected choice
 	func originCountryAlertActionHandler(action: UIAlertAction!) {
-		for i in 0.stride(to: names.count, by: 1) {
-			if names[i] == action.title {
+		for i in 0.stride(to: countryNames.count, by: 1) {
+			if countryNames[i] == action.title {
 				programData!.originCountry = i
 				saveProgramData()
 				break
@@ -365,8 +365,8 @@ class TripBuddyViewController: UIViewController {
 	@IBAction func travelCountryButtonPressed(sender: AnyObject) {
 		let alertController = UIAlertController(title: "Select a country:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
 
-		for i in 0.stride(to: names.count, by: 1) {
-			alertController.addAction(UIAlertAction(title: names[i], style: UIAlertActionStyle.Default, handler: travelCountryAlertActionHandler))
+		for i in 0.stride(to: countryNames.count, by: 1) {
+			alertController.addAction(UIAlertAction(title: countryNames[i], style: UIAlertActionStyle.Default, handler: travelCountryAlertActionHandler))
 		}
 		alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
 		presentViewController(alertController, animated: true, completion: nil)
@@ -374,8 +374,8 @@ class TripBuddyViewController: UIViewController {
 
 	//Changes the travel country based upon the selected choice
 	func travelCountryAlertActionHandler(action: UIAlertAction!) {
-		for i in 0.stride(to: names.count, by: 1) {
-			if names[i] == action.title {
+		for i in 0.stride(to: countryNames.count, by: 1) {
+			if countryNames[i] == action.title {
 				programData!.travelCountry = i
 				saveProgramData()
 				break
