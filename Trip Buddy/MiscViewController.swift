@@ -25,11 +25,7 @@ class MiscViewController: ParentViewController {
 	}
 
 	@IBAction func amountTextFieldChanged(sender: AnyObject) {
-		if Double(amountTextField.text!) != nil {
-			tripBuddyViewController!.programData!.miscAmount = truncateDouble(Double(amountTextField.text!)!, decimalPlaces: 3)
-		} else {
-			tripBuddyViewController!.programData!.miscAmount = 0
-		}
+		tripBuddyViewController!.programData!.miscAmount = parseNumber(amountTextField.text!, minimum: -99999.999, maximum: 99999.999, decimalPlaces: 3)
 		tripBuddyViewController!.saveProgramData()
 	}
 
