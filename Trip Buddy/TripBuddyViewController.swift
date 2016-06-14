@@ -272,9 +272,9 @@ class TripBuddyViewController: UIViewController {
 		return programData!.gasOutcome.doubleValue / countryExchangeRate()
 	}
 
-	//Returns the equivalent gas difference, which is the equivalent gas outcome minus the equivalent gas result
+	//Returns the equivalent gas difference, which is the absolute value of the equivalent gas outcome minus the equivalent gas result
 	func gasEquivalentDifference() -> Double {
-		return gasEquivalentOutcome() - gasEquivalentResult()
+		return abs(gasEquivalentOutcome() - gasEquivalentResult())
 	}
 
 	//Returns the meal tip, which is the meal amount times the meal percentage
@@ -322,9 +322,9 @@ class TripBuddyViewController: UIViewController {
 		return programData!.mealOutcome.doubleValue / countryExchangeRate()
 	}
 
-	//Returns the equivalent meal differece, which is the equivalent meal outcome minus the equivalent meal result
+	//Returns the equivalent meal differece, which is the absolute value of the equivalent meal outcome minus the equivalent meal result
 	func mealEquivalentDifference() -> Double {
-		return mealEquivalentOutcome() - mealEquivalentResult()
+		return abs(mealEquivalentOutcome() - mealEquivalentResult())
 	}
 
 	//Returns the equivalent amount from the MiscViewController
