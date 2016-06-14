@@ -7,9 +7,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MealViewController" customModule="Trip_Buddy" customModuleProvider="target">
             <connections>
-                <outlet property="amountLabel1" destination="FMf-pz-sz0" id="pMy-Q1-VhQ"/>
-                <outlet property="amountLabel2" destination="bKd-A0-tyn" id="m12-uC-mvJ"/>
+                <outlet property="amountSymbolLabel" destination="FMf-pz-sz0" id="hv8-3W-On6"/>
                 <outlet property="amountTextField" destination="SsL-qS-jL7" id="lO6-Al-dQA"/>
+                <outlet property="amountUnitLabel" destination="bKd-A0-tyn" id="xbP-AN-9z8"/>
                 <outlet property="convertedAmountLabel" destination="BT5-dR-R41" id="OqF-VI-4Zn"/>
                 <outlet property="convertedDifferenceLabel" destination="xhy-eZ-ZWi" id="ceK-DT-AhM"/>
                 <outlet property="convertedOutcomeLabel" destination="xaL-TB-SjF" id="XKE-j5-Ynr"/>
@@ -18,9 +18,9 @@
                 <outlet property="convertedTotalLabel" destination="oPy-lB-QxJ" id="Ip6-1o-b9X"/>
                 <outlet property="convertedUnitLabel" destination="hRE-CP-PWH" id="STN-H8-Law"/>
                 <outlet property="differenceLabel" destination="Hie-sk-SQx" id="H29-DD-bgq"/>
-                <outlet property="outcomeLabel1" destination="6Di-oj-hmV" id="KRs-tb-dRT"/>
-                <outlet property="outcomeLabel2" destination="dYC-y4-STC" id="buQ-Bd-HsG"/>
+                <outlet property="outcomeSymbolLabel" destination="6Di-oj-hmV" id="CRf-cz-GJe"/>
                 <outlet property="outcomeTextField" destination="d8k-gX-5A6" id="Bfy-D2-rYy"/>
+                <outlet property="outcomeUnitLabel" destination="dYC-y4-STC" id="qHF-Do-pkQ"/>
                 <outlet property="peopleTextField" destination="5ma-P1-X05" id="zuO-Us-Ggh"/>
                 <outlet property="percentageTextField" destination="Tl3-xF-tp7" id="Peu-0I-bus"/>
                 <outlet property="resultLabel" destination="yT7-J1-OTq" id="ZQr-sw-Ero"/>

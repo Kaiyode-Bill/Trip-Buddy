@@ -142,15 +142,15 @@ class TripBuddyViewController: UIViewController {
 		//Update ExchangeViewController's elements
 		exchangeViewController.conversionLabel.text = "Converting \(originCurrency) to \(travelCurrency):"
 		exchangeViewController.rateLabel.text = "\(originSymbol) 1.00 = \(travelSymbol) \(String(format: "%.2f", countryExchangeRate()))"
-		exchangeViewController.amountLabel1.text = "If I convert (\(originSymbol))"
+		exchangeViewController.amountSymbolLabel.text = "If I convert (\(originSymbol))"
 		exchangeViewController.amountTextField.text = String(format: "%.2f", programData!.exchangeAmount.doubleValue)
-		exchangeViewController.amountLabel2.text = originCurrency
+		exchangeViewController.amountUnitLabel.text = originCurrency
 		exchangeViewController.percentageTextField.text = String(format: "%.2f", programData!.exchangePercentage.doubleValue)
 		exchangeViewController.feeLabel.text = "(which equals \(originSymbol) \(String(format: "%.2f", exchangeFee())) \(originCurrency))"
 		exchangeViewController.resultLabel.text = "then I should get \(travelSymbol) \(String(format: "%.2f", exchangeResult())) \(travelCurrency)"
-		exchangeViewController.outcomeLabel1.text = "If I got (\(travelSymbol))"
+		exchangeViewController.outcomeSymbolLabel.text = "If I got (\(travelSymbol))"
 		exchangeViewController.outcomeTextField.text = String(format: "%.2f", programData!.exchangeOutcome.doubleValue)
-		exchangeViewController.outcomeLabel2.text = travelCurrency
+		exchangeViewController.outcomeUnitLabel.text = travelCurrency
 		if exchangeDifference() == 0 {
 			exchangeViewController.differenceLabel.text = "then it was a fair conversion"
 		} else if exchangeDifference() > 0 {
@@ -161,14 +161,14 @@ class TripBuddyViewController: UIViewController {
 		//Update GasViewController's elements
 		gasViewController.unitControl.selectedSegmentIndex = programData!.gasUnit.integerValue
 		gasViewController.amountTextField.text = String(format: "%.2f", programData!.gasAmount.doubleValue)
-		gasViewController.amountLabel2.text = gasUnitPlural
-		gasViewController.rateLabel1.text = "at a rate of (\(travelSymbol))"
+		gasViewController.amountUnitLabel.text = gasUnitPlural
+		gasViewController.rateSymbolLabel.text = "at a rate of (\(travelSymbol))"
 		gasViewController.rateTextField.text = String(format: "%.2f", programData!.gasRate.doubleValue)
-		gasViewController.rateLabel2.text = "\(travelCurrency)/\(gasUnitSingular)"
+		gasViewController.rateUnitLabel.text = "\(travelCurrency)/\(gasUnitSingular)"
 		gasViewController.resultLabel.text = "then I should pay \(travelSymbol) \(String(format: "%.2f", gasResult())) \(travelCurrency)"
-		gasViewController.outcomeLabel1.text = "If I paid (\(travelSymbol))"
+		gasViewController.outcomeSymbolLabel.text = "If I paid (\(travelSymbol))"
 		gasViewController.outcomeTextField.text = String(format: "%.2f", programData!.gasOutcome.doubleValue)
-		gasViewController.outcomeLabel2.text = travelCurrency
+		gasViewController.outcomeUnitLabel.text = travelCurrency
 		if gasDifference() == 0 {
 			gasViewController.differenceLabel.text = "then it was a fair transaction"
 		} else if gasDifference() > 0 {
@@ -183,17 +183,17 @@ class TripBuddyViewController: UIViewController {
 		gasViewController.convertedOutcomeLabel.text = "but I paid roughly \(originSymbol) \(String(format: "%.2f", gasConvertedOutcome())) \(originCurrency)"
 		gasViewController.convertedDifferenceLabel.text = "with a difference of \(originSymbol) \(String(format: "%.2f", gasConvertedDifference())) \(originCurrency)"
 		//Update MealViewController's elements
-		mealViewController.amountLabel1.text = "The check is (\(travelSymbol))"
+		mealViewController.amountSymbolLabel.text = "The check is (\(travelSymbol))"
 		mealViewController.amountTextField.text = String(format: "%.2f", programData!.mealAmount.doubleValue)
-		mealViewController.amountLabel2.text = travelCurrency
+		mealViewController.amountUnitLabel.text = travelCurrency
 		mealViewController.percentageTextField.text = String(format: "%.2f", programData!.mealPercentage.doubleValue)
 		mealViewController.tipLabel.text = "(which equals \(travelSymbol) \(String(format: "%.2f", mealTip())) \(travelCurrency))"
 		mealViewController.totalLabel.text = "then the total is \(travelSymbol) \(String(format: "%.2f", mealTotal())) \(travelCurrency)"
 		mealViewController.peopleTextField.text = String(programData!.mealPeople.integerValue)
 		mealViewController.resultLabel.text = "then I should pay \(travelSymbol) \(String(format: "%.2f", mealResult())) \(travelCurrency)"
-		mealViewController.outcomeLabel1.text = "If I paid (\(travelSymbol))"
+		mealViewController.outcomeSymbolLabel.text = "If I paid (\(travelSymbol))"
 		mealViewController.outcomeTextField.text = String(format: "%.2f", programData!.mealOutcome.doubleValue)
-		mealViewController.outcomeLabel2.text = travelCurrency
+		mealViewController.outcomeUnitLabel.text = travelCurrency
 		if mealDifference() == 0{
 			mealViewController.differenceLabel.text = "then it was a fair transaction"
 		} else if mealDifference() > 0 {
@@ -211,7 +211,7 @@ class TripBuddyViewController: UIViewController {
 		//Update MiscViewController's elements
 		miscViewController.measurementControl.selectedSegmentIndex = programData!.miscMeasurement.integerValue
 		miscViewController.amountTextField.text = String(format: "%.3f", programData!.miscAmount.doubleValue)
-		miscViewController.unitLabel.text = miscUnit
+		miscViewController.amountUnitLabel.text = miscUnit
 		miscViewController.equivalentLabel.text = "is equal to \(String(format: "%.3f", miscConvertedAmount())) \(miscConvertedUnit)"
 		miscViewController.toggleButton.setTitle("Switch the \(miscMeasurement) units", forState: UIControlState.Normal)
 	}

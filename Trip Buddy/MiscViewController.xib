@@ -8,10 +8,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MiscViewController" customModule="Trip_Buddy" customModuleProvider="target">
             <connections>
                 <outlet property="amountTextField" destination="BEA-67-ipO" id="e1d-1y-0nq"/>
+                <outlet property="amountUnitLabel" destination="KgV-PG-RMj" id="Kul-wc-dZK"/>
                 <outlet property="equivalentLabel" destination="yus-QM-rhB" id="nDB-LP-qk4"/>
                 <outlet property="measurementControl" destination="FqY-mr-d53" id="zu1-w5-Cy9"/>
                 <outlet property="toggleButton" destination="DBU-BJ-HGS" id="I9d-nt-Ij9"/>
-                <outlet property="unitLabel" destination="KgV-PG-RMj" id="8vC-rN-2TY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

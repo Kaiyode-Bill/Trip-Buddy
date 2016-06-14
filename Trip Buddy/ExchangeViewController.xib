@@ -7,15 +7,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExchangeViewController" customModule="Trip_Buddy" customModuleProvider="target">
             <connections>
-                <outlet property="amountLabel1" destination="sVD-M1-meW" id="fNp-fM-J3Y"/>
-                <outlet property="amountLabel2" destination="hEa-Us-PYh" id="xEN-kr-UIv"/>
+                <outlet property="amountSymbolLabel" destination="sVD-M1-meW" id="AJh-wb-ovH"/>
                 <outlet property="amountTextField" destination="KsZ-pH-KUX" id="Usw-Ak-tdB"/>
+                <outlet property="amountUnitLabel" destination="hEa-Us-PYh" id="y7S-WM-sb8"/>
                 <outlet property="conversionLabel" destination="a2l-ve-DYI" id="0Xe-1g-SIH"/>
                 <outlet property="differenceLabel" destination="dOx-f7-oJi" id="zRy-1d-zSV"/>
                 <outlet property="feeLabel" destination="ojj-6Y-mrr" id="qIb-rD-7OW"/>
-                <outlet property="outcomeLabel1" destination="XVK-V6-MvC" id="8Pn-91-iqN"/>
-                <outlet property="outcomeLabel2" destination="83y-rK-RqT" id="Bkv-M4-JO4"/>
+                <outlet property="outcomeSymbolLabel" destination="XVK-V6-MvC" id="ojM-wh-7Dk"/>
                 <outlet property="outcomeTextField" destination="hG0-uz-X8b" id="flH-T6-uqr"/>
+                <outlet property="outcomeUnitLabel" destination="83y-rK-RqT" id="02A-A0-896"/>
                 <outlet property="percentageTextField" destination="euC-Oe-8RE" id="ign-x6-dbz"/>
                 <outlet property="rateLabel" destination="5dl-oe-tdH" id="Oxv-db-BxH"/>
                 <outlet property="resultLabel" destination="VWA-Wy-ZFs" id="dTZ-5s-WDG"/>

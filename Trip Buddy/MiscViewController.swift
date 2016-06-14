@@ -7,7 +7,7 @@ import UIKit
 class MiscViewController: ParentViewController {
 	@IBOutlet weak var measurementControl: UISegmentedControl!
 	@IBOutlet weak var amountTextField: UITextField!
-	@IBOutlet weak var unitLabel: UILabel!
+	@IBOutlet weak var amountUnitLabel: UILabel!
 	@IBOutlet weak var equivalentLabel: UILabel!
 	@IBOutlet weak var toggleButton: UIButton!
 

@@ -7,8 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GasViewController" customModule="Trip_Buddy" customModuleProvider="target">
             <connections>
-                <outlet property="amountLabel2" destination="nvz-Sw-9rr" id="bI5-RM-R0r"/>
                 <outlet property="amountTextField" destination="0b7-SK-NWj" id="L4H-kw-hi0"/>
+                <outlet property="amountUnitLabel" destination="nvz-Sw-9rr" id="eGo-xT-VFa"/>
                 <outlet property="convertedAmountLabel" destination="S5a-fe-nsQ" id="DuA-Uc-ksZ"/>
                 <outlet property="convertedDifferenceLabel" destination="6vz-pe-hvQ" id="TwR-Hm-FMb"/>
                 <outlet property="convertedOutcomeLabel" destination="HjS-Pt-4By" id="RJf-Xx-tsr"/>
@@ -16,12 +16,12 @@
                 <outlet property="convertedResultLabel" destination="dtC-1W-CK7" id="VXc-Iv-5Xn"/>
                 <outlet property="convertedUnitControl" destination="Fnx-uT-kbX" id="qVU-Ii-sk0"/>
                 <outlet property="differenceLabel" destination="JcJ-8B-q6Q" id="UK0-dc-Ajr"/>
-                <outlet property="outcomeLabel1" destination="eaV-bg-WpP" id="F1b-5r-UCr"/>
-                <outlet property="outcomeLabel2" destination="hRr-Gz-jov" id="Fda-dN-ETf"/>
+                <outlet property="outcomeSymbolLabel" destination="eaV-bg-WpP" id="dcI-IG-A8S"/>
                 <outlet property="outcomeTextField" destination="o8U-fh-4Mf" id="1VA-uG-fve"/>
-                <outlet property="rateLabel1" destination="0Uc-NK-cz5" id="j54-0v-FR0"/>
-                <outlet property="rateLabel2" destination="nlG-qb-2DY" id="fFu-G6-lFO"/>
+                <outlet property="outcomeUnitLabel" destination="hRr-Gz-jov" id="K95-Pq-mFn"/>
+                <outlet property="rateSymbolLabel" destination="0Uc-NK-cz5" id="76W-Mn-hUd"/>
                 <outlet property="rateTextField" destination="vx6-Nq-SUH" id="LX0-S8-3kT"/>
+                <outlet property="rateUnitLabel" destination="nlG-qb-2DY" id="YL0-xT-QRg"/>
                 <outlet property="resultLabel" destination="OKi-Y7-mFM" id="cZq-ie-g1v"/>
                 <outlet property="unitControl" destination="0Yf-1F-XAx" id="Wqg-s7-NTN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
