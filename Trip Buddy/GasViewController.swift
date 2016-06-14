@@ -16,12 +16,12 @@ class GasViewController: ParentViewController {
 	@IBOutlet weak var outcomeTextField: UITextField!
 	@IBOutlet weak var outcomeUnitLabel: UILabel!
 	@IBOutlet weak var differenceLabel: UILabel!
-	@IBOutlet weak var convertedUnitControl: UISegmentedControl!
-	@IBOutlet weak var convertedAmountLabel: UILabel!
-	@IBOutlet weak var convertedRateLabel: UILabel!
-	@IBOutlet weak var convertedResultLabel: UILabel!
-	@IBOutlet weak var convertedOutcomeLabel: UILabel!
-	@IBOutlet weak var convertedDifferenceLabel: UILabel!
+	@IBOutlet weak var equivalentUnitControl: UISegmentedControl!
+	@IBOutlet weak var equivalentAmountLabel: UILabel!
+	@IBOutlet weak var equivalentRateLabel: UILabel!
+	@IBOutlet weak var equivalentResultLabel: UILabel!
+	@IBOutlet weak var equivalentOutcomeLabel: UILabel!
+	@IBOutlet weak var equivalentDifferenceLabel: UILabel!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -43,7 +43,7 @@ class GasViewController: ParentViewController {
 	@IBAction func outcomeTextFieldChanged(sender: AnyObject) {
 	}
 
-	@IBAction func convertedUnitControlChanged(sender: AnyObject) {
+	@IBAction func equivalentUnitControlChanged(sender: AnyObject) {
 	}
 
 	@IBAction func resetButtonPressed(sender: AnyObject) {
@@ -51,7 +51,7 @@ class GasViewController: ParentViewController {
 		tripBuddyViewController!.programData!.gasAmount = 0
 		tripBuddyViewController!.programData!.gasRate = 0
 		tripBuddyViewController!.programData!.gasOutcome = 0
-		tripBuddyViewController!.programData!.gasConvertedUnit = 0
+		tripBuddyViewController!.programData!.gasEquivalentUnit = 0
 		tripBuddyViewController!.saveProgramData()
 		view.endEditing(true) //If any quantity was changed, save it after changing it to its default value
 	}

@@ -17,13 +17,13 @@ class MealViewController: ParentViewController {
 	@IBOutlet weak var outcomeTextField: UITextField!
 	@IBOutlet weak var outcomeUnitLabel: UILabel!
 	@IBOutlet weak var differenceLabel: UILabel!
-	@IBOutlet weak var convertedUnitLabel: UILabel!
-	@IBOutlet weak var convertedAmountLabel: UILabel!
-	@IBOutlet weak var convertedTipLabel: UILabel!
-	@IBOutlet weak var convertedTotalLabel: UILabel!
-	@IBOutlet weak var convertedResultLabel: UILabel!
-	@IBOutlet weak var convertedOutcomeLabel: UILabel!
-	@IBOutlet weak var convertedDifferenceLabel: UILabel!
+	@IBOutlet weak var equivalentUnitLabel: UILabel!
+	@IBOutlet weak var equivalentAmountLabel: UILabel!
+	@IBOutlet weak var equivalentTipLabel: UILabel!
+	@IBOutlet weak var equivalentTotalLabel: UILabel!
+	@IBOutlet weak var equivalentResultLabel: UILabel!
+	@IBOutlet weak var equivalentOutcomeLabel: UILabel!
+	@IBOutlet weak var equivalentDifferenceLabel: UILabel!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()

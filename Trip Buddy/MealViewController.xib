@@ -10,14 +10,14 @@
                 <outlet property="amountSymbolLabel" destination="FMf-pz-sz0" id="hv8-3W-On6"/>
                 <outlet property="amountTextField" destination="SsL-qS-jL7" id="lO6-Al-dQA"/>
                 <outlet property="amountUnitLabel" destination="bKd-A0-tyn" id="xbP-AN-9z8"/>
-                <outlet property="convertedAmountLabel" destination="BT5-dR-R41" id="OqF-VI-4Zn"/>
-                <outlet property="convertedDifferenceLabel" destination="xhy-eZ-ZWi" id="ceK-DT-AhM"/>
-                <outlet property="convertedOutcomeLabel" destination="xaL-TB-SjF" id="XKE-j5-Ynr"/>
-                <outlet property="convertedResultLabel" destination="dmC-cD-6JO" id="ZFD-z9-LZ4"/>
-                <outlet property="convertedTipLabel" destination="JEx-lf-FPc" id="itN-F0-4al"/>
-                <outlet property="convertedTotalLabel" destination="oPy-lB-QxJ" id="Ip6-1o-b9X"/>
-                <outlet property="convertedUnitLabel" destination="hRE-CP-PWH" id="STN-H8-Law"/>
                 <outlet property="differenceLabel" destination="Hie-sk-SQx" id="H29-DD-bgq"/>
+                <outlet property="equivalentAmountLabel" destination="BT5-dR-R41" id="Qiy-gQ-iXJ"/>
+                <outlet property="equivalentDifferenceLabel" destination="xhy-eZ-ZWi" id="gSa-Hg-tx6"/>
+                <outlet property="equivalentOutcomeLabel" destination="xaL-TB-SjF" id="GBF-HV-U6u"/>
+                <outlet property="equivalentResultLabel" destination="dmC-cD-6JO" id="52g-qj-u5d"/>
+                <outlet property="equivalentTipLabel" destination="JEx-lf-FPc" id="PGV-ss-Ij5"/>
+                <outlet property="equivalentTotalLabel" destination="oPy-lB-QxJ" id="UiU-mW-xnr"/>
+                <outlet property="equivalentUnitLabel" destination="hRE-CP-PWH" id="goV-Mj-qel"/>
                 <outlet property="outcomeSymbolLabel" destination="6Di-oj-hmV" id="CRf-cz-GJe"/>
                 <outlet property="outcomeTextField" destination="d8k-gX-5A6" id="Bfy-D2-rYy"/>
                 <outlet property="outcomeUnitLabel" destination="dYC-y4-STC" id="qHF-Do-pkQ"/>

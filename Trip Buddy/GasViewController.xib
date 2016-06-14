@@ -9,13 +9,13 @@
             <connections>
                 <outlet property="amountTextField" destination="0b7-SK-NWj" id="L4H-kw-hi0"/>
                 <outlet property="amountUnitLabel" destination="nvz-Sw-9rr" id="eGo-xT-VFa"/>
-                <outlet property="convertedAmountLabel" destination="S5a-fe-nsQ" id="DuA-Uc-ksZ"/>
-                <outlet property="convertedDifferenceLabel" destination="6vz-pe-hvQ" id="TwR-Hm-FMb"/>
-                <outlet property="convertedOutcomeLabel" destination="HjS-Pt-4By" id="RJf-Xx-tsr"/>
-                <outlet property="convertedRateLabel" destination="ReC-yL-fAu" id="0q2-De-xaj"/>
-                <outlet property="convertedResultLabel" destination="dtC-1W-CK7" id="VXc-Iv-5Xn"/>
-                <outlet property="convertedUnitControl" destination="Fnx-uT-kbX" id="qVU-Ii-sk0"/>
                 <outlet property="differenceLabel" destination="JcJ-8B-q6Q" id="UK0-dc-Ajr"/>
+                <outlet property="equivalentAmountLabel" destination="S5a-fe-nsQ" id="Hby-jg-hr2"/>
+                <outlet property="equivalentDifferenceLabel" destination="6vz-pe-hvQ" id="nyW-Zb-F0G"/>
+                <outlet property="equivalentOutcomeLabel" destination="HjS-Pt-4By" id="tfA-33-400"/>
+                <outlet property="equivalentRateLabel" destination="ReC-yL-fAu" id="WUv-iM-8EA"/>
+                <outlet property="equivalentResultLabel" destination="dtC-1W-CK7" id="0Xy-I5-PVB"/>
+                <outlet property="equivalentUnitControl" destination="Fnx-uT-kbX" id="4wZ-VT-raJ"/>
                 <outlet property="outcomeSymbolLabel" destination="eaV-bg-WpP" id="dcI-IG-A8S"/>
                 <outlet property="outcomeTextField" destination="o8U-fh-4Mf" id="1VA-uG-fve"/>
                 <outlet property="outcomeUnitLabel" destination="hRr-Gz-jov" id="K95-Pq-mFn"/>
@@ -190,7 +190,7 @@
                     </segments>
                     <color key="tintColor" red="0.50196078430000002" green="0.50196078430000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <connections>
-                        <action selector="convertedUnitControlChanged:" destination="-1" eventType="touchUpInside" id="diW-Zg-0jn"/>
+                        <action selector="equivalentUnitControlChanged:" destination="-1" eventType="valueChanged" id="yne-kq-JKS"/>
                     </connections>
                 </segmentedControl>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="As such, I bought 0.00 U.S. Gallons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5a-fe-nsQ">

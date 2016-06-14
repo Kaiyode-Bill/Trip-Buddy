@@ -16,7 +16,7 @@ class ProgramData: NSManagedObject {
 	@NSManaged var gasAmount: NSNumber
 	@NSManaged var gasRate: NSNumber
 	@NSManaged var gasOutcome: NSNumber
-	@NSManaged var gasConvertedUnit: NSNumber
+	@NSManaged var gasEquivalentUnit: NSNumber
 	@NSManaged var mealAmount: NSNumber
 	@NSManaged var mealPercentage: NSNumber
 	@NSManaged var mealPeople: NSNumber
