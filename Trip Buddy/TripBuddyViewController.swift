@@ -36,7 +36,7 @@ class TripBuddyViewController: UIViewController {
 	                        66.07, 0.94, 122.725, 4.3949, 16.7305, 1.4, 0.92, 0.99,
 	                        0.654, 1.5172]
 
-	//Miscellaneous data
+	//Miscellaneous information
 	let miscUnits: [[String]] = [["Miles (or MPH)", "Kilometers (or km/h)"], ["° Farenheit", "° Celsius"]]
 	let miscMeasurements: [String] = ["distance", "temperature"]
 
@@ -103,28 +103,81 @@ class TripBuddyViewController: UIViewController {
 			try context.save()
 		} catch _ as NSError {}
 
+		//Relevant country information
 		let originName = names[programData!.originCountry.integerValue]
-		//let originCurrency = currencies[programData!.originCountry.integerValue]
-		//let originSymbol = symbols[programData!.originCountry.integerValue]
-		//let originWeight = weights[programData!.originCountry.integerValue]
+		let originCurrency = currencies[programData!.originCountry.integerValue]
+		let originSymbol = symbols[programData!.originCountry.integerValue]
 		let travelName = names[programData!.travelCountry.integerValue]
-		//let travelCurrency = currencies[programData!.travelCountry.integerValue]
-		//let travelSymbol = symbols[programData!.travelCountry.integerValue]
-		//let travelWeight = weights[programData!.travelCountry.integerValue]
+		let travelCurrency = currencies[programData!.travelCountry.integerValue]
+		let travelSymbol = symbols[programData!.travelCountry.integerValue]
+		//Relevant exchange information
+		let exchangeViewController = viewControllers[0] as! ExchangeViewController
+		//Relevant gas information
+		let gasViewController = viewControllers[1] as! GasViewController
+		//
+		//Relevant meal information
+		let mealsViewController = viewControllers[2] as! MealsViewController
+		//
+		//Relevant miscellaneous information
 		let miscViewController = viewControllers[3] as! MiscViewController
 		let miscUnit = miscUnits[programData!.miscMeasurement.integerValue][programData!.miscUnit.integerValue]
 		let miscConvertedUnit = miscUnits[programData!.miscMeasurement.integerValue][1 - programData!.miscUnit.integerValue]
 		let miscMeasurement = miscMeasurements[programData!.miscMeasurement.integerValue]
 
+		//Update TripBuddyViewController's elements
 		originCountryImageView.image = UIImage(named: originName + ".png")
 		originCountryButton.setTitle("Origin Country: \(originName)", forState: UIControlState.Normal)
 		travelCountryImageView.image = UIImage(named: travelName + ".png")
 		travelCountryButton.setTitle("Travel Country: \(travelName)", forState: UIControlState.Normal)
+		//Update ExchangeViewController's elements
+		exchangeViewController.conversionLabel.text = "Converting \(originCurrency) to \(travelCurrency):"
+		exchangeViewController.rateLabel.text = "\(originSymbol) 1.00 = \(travelSymbol) \(String(format: "%.2f", exchangeRate()))"
+		exchangeViewController.amountLabel1.text = "If I convert (\(originSymbol))"
+		exchangeViewController.amountTextField.text = String(format: "%.2f", programData!.exchangeAmount.doubleValue)
+		exchangeViewController.amountLabel2.text = originCurrency
+		exchangeViewController.percentageTextField.text = String(format: "%.2f", programData!.exchangePercentage.doubleValue)
+		exchangeViewController.feeLabel.text = "(which equals \(originSymbol) \(String(format: "%.2f", exchangeFee())) \(originCurrency))"
+		exchangeViewController.resultLabel.text = "then I should get \(travelSymbol) \(String(format: "%.2f", exchangeResult())) \(travelCurrency)"
+		exchangeViewController.outcomeLabel1.text = "If I got (\(travelSymbol))"
+		exchangeViewController.outcomeTextField.text = String(format: "%.2f", programData!.exchangeOutcome.doubleValue)
+		exchangeViewController.outcomeLabel2.text = travelCurrency
+		if exchangeDifference() == 0 {
+			exchangeViewController.differenceLabel.text = "then it was a fair conversion"
+		} else if exchangeDifference() > 0 {
+			exchangeViewController.differenceLabel.text = "then you got \(travelSymbol) \(exchangeDifference()) \(travelCurrency) extra"
+		} else {
+			exchangeViewController.differenceLabel.text = "then you are short \(travelSymbol) \(-exchangeDifference()) \(travelCurrency)"
+		}
+		//Update GasViewController's elements
+		//
+		//Update MealsViewController's elements
+		//
+		//Update MiscViewController's elements
 		miscViewController.measurementControl.selectedSegmentIndex = programData!.miscMeasurement.integerValue
 		miscViewController.amountTextField.text = String(format: "%.3f", programData!.miscAmount.doubleValue)
 		miscViewController.unitLabel.text = miscUnit
 		miscViewController.equivalentLabel.text = "is equal to \(String(format: "%.3f", miscConvertedAmount())) \(miscConvertedUnit)"
 		miscViewController.toggleButton.setTitle("Switch the \(miscMeasurement) units", forState: UIControlState.Normal)
+	}
+
+	//Returns the exchange rate between the origin country and the travel country
+	func exchangeRate() -> Double {
+		return weights[programData!.travelCountry.integerValue] / weights[programData!.originCountry.integerValue]
+	}
+
+	//Returns the exchange fee, which is the exchange amount times the exchange percentage
+	func exchangeFee() -> Double {
+		return programData!.exchangeAmount.doubleValue * (programData!.exchangePercentage.doubleValue / 100)
+	}
+
+	//Returns the exchange result, which is the exchange fee divided by the exchange rate
+	func exchangeResult() -> Double {
+		return exchangeFee() / exchangeRate()
+	}
+
+	//Returns the exchange difference, which is the exchange outcome minues the exchange result
+	func exchangeDifference() -> Double {
+		return programData!.exchangeOutcome.doubleValue - exchangeResult()
 	}
 
 	//Returns the converted amount from the MiscViewController
