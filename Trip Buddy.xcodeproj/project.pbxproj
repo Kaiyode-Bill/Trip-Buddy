@@ -41,6 +41,7 @@
 		71829A0A1CCAF6970069F92D /* United Kingdom.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299F81CCAF6970069F92D /* United Kingdom.png */; };
 		71829A0B1CCAF6970069F92D /* United States.png in Resources */ = {isa = PBXBuildFile; fileRef = 718299F91CCAF6970069F92D /* United States.png */; };
 		719496951CC9E46C00299AC2 /* ProgramData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719496931CC9E46C00299AC2 /* ProgramData.swift */; };
+		71D0B9301D116FCD004BBEE9 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D0B92F1D116FCD004BBEE9 /* HelpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		718299F81CCAF6970069F92D /* United Kingdom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "United Kingdom.png"; path = "Images/United Kingdom.png"; sourceTree = "<group>"; };
 		718299F91CCAF6970069F92D /* United States.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "United States.png"; path = "Images/United States.png"; sourceTree = "<group>"; };
 		719496931CC9E46C00299AC2 /* ProgramData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgramData.swift; sourceTree = "<group>"; };
+		71D0B92F1D116FCD004BBEE9 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				71010CB61D0CEFD100D2397A /* MealViewController.xib */,
 				71010CB91D0CF02600D2397A /* MiscViewController.swift */,
 				71010CBA1D0CF02600D2397A /* MiscViewController.xib */,
+				71D0B92F1D116FCD004BBEE9 /* HelpViewController.swift */,
 				719496931CC9E46C00299AC2 /* ProgramData.swift */,
 				71792E341CC3119F008EAAAF /* Main.storyboard */,
 				71792E3A1CC3119F008EAAAF /* Assets.xcassets */,
@@ -261,6 +264,7 @@
 				719496951CC9E46C00299AC2 /* ProgramData.swift in Sources */,
 				71010CAF1D0CEB4900D2397A /* ExchangeViewController.swift in Sources */,
 				71010CBB1D0CF02600D2397A /* MiscViewController.swift in Sources */,
+				71D0B9301D116FCD004BBEE9 /* HelpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

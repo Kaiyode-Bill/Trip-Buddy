@@ -44,6 +44,7 @@ class ExchangeViewController: ParentViewController {
 
 	@IBAction func helpButtonPressed(sender: AnyObject) {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
+		tripBuddyViewController!.performSegueWithIdentifier("TripBuddyToHelpSegue", sender: self)
 	}
 
 	@IBAction func resetButtonPressed(sender: AnyObject) {

@@ -52,8 +52,10 @@ class TripBuddyViewController: UIViewController {
 	let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
 	var programData: ProgramData? = nil
 
+	//This code is executed when the view is first loaded
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		var existingData: [ProgramData]
 
 		//Initialize each of the view controllers and add them into the scroll view
 		for i in 0.stride(to: viewControllers.count, by: 1) {
@@ -63,12 +65,6 @@ class TripBuddyViewController: UIViewController {
 			viewControllers[i].tripBuddyViewController = self
 		}
 		scrollView.contentSize = CGSizeMake(view.frame.size.width * CGFloat(viewControllers.count), scrollView.bounds.height)
-	}
-
-	override func viewWillAppear(animated: Bool) {
-		super.viewWillAppear(animated)
-		var existingData: [ProgramData]
-
 		//Access the program data from CoreData
 		do {
 			existingData = try context.executeFetchRequest(NSFetchRequest(entityName: "ProgramData")) as! [ProgramData]
@@ -102,7 +98,12 @@ class TripBuddyViewController: UIViewController {
 			existingData[0].miscUnit = 0
 		}
 		programData = existingData[0]
+		//Once program data is obtained, save it and update all UI elements with their respective values
 		saveProgramData()
+		//Transition to the help view controller by default
+		if programData!.showHelpAtStartup == 1 {
+			performSegueWithIdentifier("TripBuddyToHelpSegue", sender: self)
+		}
 	}
 
 	//Saves the program data to CoreData and then updates all of the UI elements
@@ -343,6 +344,14 @@ class TripBuddyViewController: UIViewController {
 			return (programData!.miscAmount.doubleValue - 32) * (5 / 9)
 		} else {
 			return (programData!.miscAmount.doubleValue * (9 / 5)) + 32
+		}
+	}
+
+	//This code is executed whenever a segue is about to take place
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "TripBuddyToHelpSegue" {
+			let helpViewController = segue.destinationViewController as! HelpViewController
+			helpViewController.tripBuddyViewController = self
 		}
 	}
 
