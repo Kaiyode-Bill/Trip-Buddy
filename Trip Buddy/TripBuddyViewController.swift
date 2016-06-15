@@ -344,6 +344,7 @@ class TripBuddyViewController: UIViewController {
 	@IBAction func originCountryButtonPressed(sender: AnyObject) {
 		let alertController = UIAlertController(title: "Select a country:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
 
+		view.endEditing(true) //Close any open responder before showing the alert
 		for i in 0.stride(to: countryNames.count, by: 1) {
 			alertController.addAction(UIAlertAction(title: countryNames[i], style: UIAlertActionStyle.Default, handler: originCountryAlertActionHandler))
 		}
@@ -366,6 +367,7 @@ class TripBuddyViewController: UIViewController {
 	@IBAction func travelCountryButtonPressed(sender: AnyObject) {
 		let alertController = UIAlertController(title: "Select a country:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
 
+		view.endEditing(true) //Close any open responder before showing the alert
 		for i in 0.stride(to: countryNames.count, by: 1) {
 			alertController.addAction(UIAlertAction(title: countryNames[i], style: UIAlertActionStyle.Default, handler: travelCountryAlertActionHandler))
 		}
@@ -386,6 +388,7 @@ class TripBuddyViewController: UIViewController {
 
 	//Changes the scroll view depending upon what bottom button was pressed
 	@IBAction func bottomButtonPressed(sender: AnyObject) {
+		view.endEditing(true) //Close any open responder before changing the scroll view's content offset
 		scrollView.contentOffset = CGPointMake(view.frame.size.width * CGFloat(sender.tag), 0)
 	}
 }
