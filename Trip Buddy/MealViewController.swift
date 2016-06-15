@@ -55,11 +55,11 @@ class MealViewController: ParentViewController {
 	}
 
 	@IBAction func resetButtonPressed(sender: AnyObject) {
+		view.endEditing(true) //Close any open responder from this view controller beforehand
 		tripBuddyViewController!.programData!.mealAmount = 0
 		tripBuddyViewController!.programData!.mealPercentage = 0
 		tripBuddyViewController!.programData!.mealPeople = 1
 		tripBuddyViewController!.programData!.mealOutcome = 0
 		tripBuddyViewController!.saveProgramData()
-		view.endEditing(true) //If any quantity was changed, save it after changing it to its default value
 	}
 }

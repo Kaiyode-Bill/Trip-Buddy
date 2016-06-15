@@ -17,11 +17,13 @@ class MiscViewController: ParentViewController {
 	}
 
 	@IBAction func measurementControlChanged(sender: AnyObject) {
-		tripBuddyViewController!.programData!.miscMeasurement = measurementControl.selectedSegmentIndex
+		let changedValue = measurementControl.selectedSegmentIndex
+
+		view.endEditing(true) //Close any open responder from this view controller beforehand
+		tripBuddyViewController!.programData!.miscMeasurement = changedValue
 		tripBuddyViewController!.programData!.miscAmount = 0
 		tripBuddyViewController!.programData!.miscUnit = 0
 		tripBuddyViewController!.saveProgramData()
-		view.endEditing(true) //If the amount was changed, save it after changing it to 0
 	}
 
 	@IBAction func amountTextFieldChanged(sender: AnyObject) {
@@ -30,16 +32,16 @@ class MiscViewController: ParentViewController {
 	}
 
 	@IBAction func toggleButtonPressed(sender: AnyObject) {
-		view.endEditing(true) //If the amount was changed, save it before changing the units
+		view.endEditing(true) //Close any open responder from this view controller beforehand
 		tripBuddyViewController!.programData!.miscUnit = 1 - tripBuddyViewController!.programData!.miscUnit.integerValue
 		tripBuddyViewController!.saveProgramData()
 	}
 
 	@IBAction func resetButtonPressed(sender: AnyObject) {
+		view.endEditing(true) //Close any open responder from this view controller beforehand
 		tripBuddyViewController!.programData!.miscMeasurement = 0
 		tripBuddyViewController!.programData!.miscAmount = 0
 		tripBuddyViewController!.programData!.miscUnit = 0
 		tripBuddyViewController!.saveProgramData()
-		view.endEditing(true) //If the amount was changed, save it after changing it to 0
 	}
 }

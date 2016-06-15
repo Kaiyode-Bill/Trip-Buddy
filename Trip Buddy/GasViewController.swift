@@ -33,6 +33,11 @@ class GasViewController: ParentViewController {
 	}
 
 	@IBAction func unitControlChanged(sender: AnyObject) {
+		let changedValue = unitControl.selectedSegmentIndex
+
+		view.endEditing(true) //Close any open responder from this view controller beforehand
+		tripBuddyViewController!.programData!.gasUnit = changedValue
+		tripBuddyViewController!.saveProgramData()
 	}
 
 	@IBAction func amountTextFieldChanged(sender: AnyObject) {
@@ -51,15 +56,20 @@ class GasViewController: ParentViewController {
 	}
 
 	@IBAction func equivalentUnitControlChanged(sender: AnyObject) {
+		let changedValue = equivalentUnitControl.selectedSegmentIndex
+
+		view.endEditing(true) //Close any open responder from this view controller beforehand
+		tripBuddyViewController!.programData!.gasEquivalentUnit = changedValue
+		tripBuddyViewController!.saveProgramData()
 	}
 
 	@IBAction func resetButtonPressed(sender: AnyObject) {
+		view.endEditing(true) //Close any open responder from this view controller beforehand
 		tripBuddyViewController!.programData!.gasUnit = 1
 		tripBuddyViewController!.programData!.gasAmount = 0
 		tripBuddyViewController!.programData!.gasRate = 0
 		tripBuddyViewController!.programData!.gasOutcome = 0
 		tripBuddyViewController!.programData!.gasEquivalentUnit = 0
 		tripBuddyViewController!.saveProgramData()
-		view.endEditing(true) //If any quantity was changed, save it after changing it to its default value
 	}
 }

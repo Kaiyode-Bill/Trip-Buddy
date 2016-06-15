@@ -43,13 +43,14 @@ class ExchangeViewController: ParentViewController {
 	}
 
 	@IBAction func helpButtonPressed(sender: AnyObject) {
+		view.endEditing(true) //Close any open responder from this view controller beforehand
 	}
 
 	@IBAction func resetButtonPressed(sender: AnyObject) {
+		view.endEditing(true) //Close any open responder from this view controller beforehand
 		tripBuddyViewController!.programData!.exchangeAmount = 0
 		tripBuddyViewController!.programData!.exchangePercentage = 0
 		tripBuddyViewController!.programData!.exchangeOutcome = 0
 		tripBuddyViewController!.saveProgramData()
-		view.endEditing(true) //If any quantity was changed, save it after changing it to its default value
 	}
 }
