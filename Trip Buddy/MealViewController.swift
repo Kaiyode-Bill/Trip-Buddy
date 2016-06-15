@@ -35,15 +35,23 @@ class MealViewController: ParentViewController {
 	}
 
 	@IBAction func amountTextFieldChanged(sender: AnyObject) {
+		tripBuddyViewController!.programData!.mealAmount = parseNumber(amountTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
+		tripBuddyViewController!.saveProgramData()
 	}
 
 	@IBAction func percentageTextFieldChanged(sender: AnyObject) {
+		tripBuddyViewController!.programData!.mealPercentage = parseNumber(percentageTextField.text!, minimum: 0, maximum: 99.99, decimalPlaces: 2)
+		tripBuddyViewController!.saveProgramData()
 	}
 
 	@IBAction func peopleTextFieldChanged(sender: AnyObject) {
+		tripBuddyViewController!.programData!.mealPeople = parseNumber(peopleTextField.text!, minimum: 1, maximum: 999, decimalPlaces: 0)
+		tripBuddyViewController!.saveProgramData()
 	}
 
 	@IBAction func outcomeTextFieldChanged(sender: AnyObject) {
+		tripBuddyViewController!.programData!.mealOutcome = parseNumber(outcomeTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
+		tripBuddyViewController!.saveProgramData()
 	}
 
 	@IBAction func resetButtonPressed(sender: AnyObject) {

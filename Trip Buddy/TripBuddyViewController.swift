@@ -227,9 +227,9 @@ class TripBuddyViewController: UIViewController {
 		return programData!.exchangeAmount.doubleValue * (programData!.exchangePercentage.doubleValue / 100)
 	}
 
-	//Returns the exchange result, which is the exchange fee times the country exchange rate
+	//Returns the exchange result, which is the exchange amount minus the exchange fee times the country exchange rate
 	func exchangeResult() -> Double {
-		return exchangeFee() * countryExchangeRate()
+		return Double(String(format: "%.2f", (programData!.exchangeAmount.doubleValue - exchangeFee()) * countryExchangeRate()))!
 	}
 
 	//Returns the exchange difference, which is the exchange outcome minues the exchange result
@@ -239,7 +239,7 @@ class TripBuddyViewController: UIViewController {
 
 	//Returns the gas result, which is the gas amount times the gas rate
 	func gasResult() -> Double {
-		return programData!.gasAmount.doubleValue * programData!.gasRate.doubleValue
+		return Double(String(format: "%.2f", programData!.gasAmount.doubleValue * programData!.gasRate.doubleValue))!
 	}
 
 	//Returns the gas difference, which is the gas outcome minus the gas result
@@ -262,9 +262,9 @@ class TripBuddyViewController: UIViewController {
 		return (programData!.gasRate.doubleValue / countryExchangeRate()) / gasExchangeRate()
 	}
 
-	//Returns the equivalent gas result, which is the equivalent gas amount times the equivalent gas rate
+	//Returns the equivalent gas result, which is the gas result divided by the country exchange rate
 	func gasEquivalentResult() -> Double {
-		return gasEquivalentAmount() * gasEquivalentRate()
+		return gasResult() / countryExchangeRate()
 	}
 
 	//Returns the equivalent gas outcome, which is the gas outcome divided by the country exchange rate
@@ -289,7 +289,7 @@ class TripBuddyViewController: UIViewController {
 
 	//Returns the meal result, which is the meal total divided by the meal people
 	func mealResult() -> Double {
-		return mealTotal() / programData!.mealPeople.doubleValue
+		return Double(String(format: "%.2f", mealTotal() / programData!.mealPeople.doubleValue))!
 	}
 
 	//Returns the meal difference, which is the meal outcome minus the meal result
@@ -312,9 +312,9 @@ class TripBuddyViewController: UIViewController {
 		return mealEquivalentAmount() + mealEquivalentTip()
 	}
 
-	//Returns the equivalent meal result, which is the equivalent meal total divided by the meal people
+	//Returns the equivalent meal result, which is the meal result divided by the country exchange rate
 	func mealEquivalentResult() -> Double {
-		return mealEquivalentTotal() / programData!.mealPeople.doubleValue
+		return mealResult() / countryExchangeRate()
 	}
 
 	//Returns the equivalent meal outcome, which is the meal outcome divided by the country exchange rate

@@ -27,12 +27,18 @@ class ExchangeViewController: ParentViewController {
 	}
 
 	@IBAction func amountTextFieldChanged(sender: AnyObject) {
+		tripBuddyViewController!.programData!.exchangeAmount = parseNumber(amountTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
+		tripBuddyViewController!.saveProgramData()
 	}
 
 	@IBAction func percentageTextFieldChanged(sender: AnyObject) {
+		tripBuddyViewController!.programData!.exchangePercentage = parseNumber(percentageTextField.text!, minimum: 0, maximum: 99.99, decimalPlaces: 2)
+		tripBuddyViewController!.saveProgramData()
 	}
 
 	@IBAction func outcomeTextFieldChanged(sender: AnyObject) {
+		tripBuddyViewController!.programData!.exchangeOutcome = parseNumber(outcomeTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
+		tripBuddyViewController!.saveProgramData()
 	}
 
 	@IBAction func helpButtonPressed(sender: AnyObject) {

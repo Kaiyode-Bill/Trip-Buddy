@@ -36,12 +36,18 @@ class GasViewController: ParentViewController {
 	}
 
 	@IBAction func amountTextFieldChanged(sender: AnyObject) {
+		tripBuddyViewController!.programData!.gasAmount = parseNumber(amountTextField.text!, minimum: 0, maximum: 999.99, decimalPlaces: 2)
+		tripBuddyViewController!.saveProgramData()
 	}
 
 	@IBAction func rateTextFieldChanged(sender: AnyObject) {
+		tripBuddyViewController!.programData!.gasRate = parseNumber(rateTextField.text!, minimum: 0, maximum: 999.99, decimalPlaces: 2)
+		tripBuddyViewController!.saveProgramData()
 	}
 
 	@IBAction func outcomeTextFieldChanged(sender: AnyObject) {
+		tripBuddyViewController!.programData!.gasOutcome = parseNumber(outcomeTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
+		tripBuddyViewController!.saveProgramData()
 	}
 
 	@IBAction func equivalentUnitControlChanged(sender: AnyObject) {
