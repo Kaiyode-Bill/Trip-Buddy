@@ -147,7 +147,8 @@ class TripBuddyViewController: UIViewController {
 		exchangeViewController.amountUnitLabel.text = originCurrency
 		exchangeViewController.percentageTextField.text = String(format: "%.2f", programData!.exchangePercentage.doubleValue)
 		exchangeViewController.feeLabel.text = "(which equals \(originSymbol) \(String(format: "%.2f", exchangeFee())) \(originCurrency))"
-		exchangeViewController.resultLabel.text = "then I should get \(travelSymbol) \(String(format: "%.2f", exchangeResult())) \(travelCurrency)"
+		exchangeViewController.totalLabel.text = "then out of \(originSymbol) \(String(format: "%.2f", exchangeTotal())) \(originCurrency)"
+		exchangeViewController.resultLabel.text = "I should get \(travelSymbol) \(String(format: "%.2f", exchangeResult())) \(travelCurrency) back"
 		exchangeViewController.outcomeSymbolLabel.text = "If I got (\(travelSymbol))"
 		exchangeViewController.outcomeTextField.text = String(format: "%.2f", programData!.exchangeOutcome.doubleValue)
 		exchangeViewController.outcomeUnitLabel.text = travelCurrency
@@ -227,9 +228,14 @@ class TripBuddyViewController: UIViewController {
 		return programData!.exchangeAmount.doubleValue * (programData!.exchangePercentage.doubleValue / 100)
 	}
 
-	//Returns the exchange result, which is the exchange amount minus the exchange fee times the country exchange rate
+	//Returns the exchange total which is the exchange amount minus the exchange fee
+	func exchangeTotal() -> Double {
+		return programData!.exchangeAmount.doubleValue - exchangeFee()
+	}
+
+	//Returns the exchange result, which is the exchange total times the country exchange rate
 	func exchangeResult() -> Double {
-		return Double(String(format: "%.2f", (programData!.exchangeAmount.doubleValue - exchangeFee()) * countryExchangeRate()))!
+		return Double(String(format: "%.2f", exchangeTotal() * countryExchangeRate()))!
 	}
 
 	//Returns the exchange difference, which is the exchange outcome minues the exchange result

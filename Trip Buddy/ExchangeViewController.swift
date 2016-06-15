@@ -12,6 +12,7 @@ class ExchangeViewController: ParentViewController {
 	@IBOutlet weak var amountUnitLabel: UILabel!
 	@IBOutlet weak var percentageTextField: UITextField!
 	@IBOutlet weak var feeLabel: UILabel!
+	@IBOutlet weak var totalLabel: UILabel!
 	@IBOutlet weak var resultLabel: UILabel!
 	@IBOutlet weak var outcomeSymbolLabel: UILabel!
 	@IBOutlet weak var outcomeTextField: UITextField!
