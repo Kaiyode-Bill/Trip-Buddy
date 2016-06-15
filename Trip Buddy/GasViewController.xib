@@ -131,8 +131,8 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If I paid (£)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaV-bg-WpP">
-                    <rect key="frame" x="10" y="142" width="236" height="24"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="But if I paid (£)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaV-bg-WpP">
+                    <rect key="frame" x="10" y="148" width="236" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="1JF-eF-I3K"/>
                     </constraints>
@@ -141,7 +141,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" borderStyle="roundedRect" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="o8U-fh-4Mf">
-                    <rect key="frame" x="250" y="142" width="100" height="24"/>
+                    <rect key="frame" x="250" y="148" width="100" height="24"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="M7r-aW-YcY"/>
                         <constraint firstAttribute="height" constant="24" id="TKt-nA-kR4"/>
@@ -153,7 +153,7 @@
                     </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pounds" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRr-Gz-jov">
-                    <rect key="frame" x="354" y="142" width="236" height="24"/>
+                    <rect key="frame" x="354" y="148" width="236" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="YiJ-Ai-VAO"/>
                     </constraints>
@@ -162,7 +162,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="then it was a fair transcation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcJ-8B-q6Q">
-                    <rect key="frame" x="10" y="170" width="580" height="20"/>
+                    <rect key="frame" x="10" y="176" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="U4Q-ya-2OZ"/>
                     </constraints>
@@ -171,7 +171,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm normally used to buying gas in:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJW-Lg-V8U">
-                    <rect key="frame" x="10" y="200" width="580" height="20"/>
+                    <rect key="frame" x="10" y="206" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="Zyx-Wu-YUu"/>
                     </constraints>
@@ -180,7 +180,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Fnx-uT-kbX">
-                    <rect key="frame" x="10" y="224" width="580" height="25"/>
+                    <rect key="frame" x="10" y="230" width="580" height="25"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="laq-kn-uMV"/>
                     </constraints>
@@ -195,7 +195,7 @@
                     </connections>
                 </segmentedControl>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="as a rate of $ 0.00 Dollars/US Gal." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ReC-yL-fAu">
-                    <rect key="frame" x="10" y="296" width="580" height="16"/>
+                    <rect key="frame" x="10" y="302" width="580" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="Le4-RK-y2G"/>
                     </constraints>
@@ -204,7 +204,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="which is worth $ 0.00 Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtC-1W-CK7">
-                    <rect key="frame" x="10" y="316" width="580" height="16"/>
+                    <rect key="frame" x="10" y="322" width="580" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="ZmL-IF-5ai"/>
                     </constraints>
@@ -213,7 +213,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="but I payed roughly $ 0.00 Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HjS-Pt-4By">
-                    <rect key="frame" x="10" y="336" width="580" height="16"/>
+                    <rect key="frame" x="10" y="342" width="580" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="iJe-Sx-zI6"/>
                     </constraints>
@@ -231,7 +231,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="with a difference of $ 0.00 Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6vz-pe-hvQ">
-                    <rect key="frame" x="10" y="356" width="580" height="16"/>
+                    <rect key="frame" x="10" y="362" width="580" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="i3J-y0-rWR"/>
                     </constraints>
@@ -240,7 +240,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.00 Imp. Gallons = 1.20 U.S. Gallons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6wq-kO-dvm">
-                    <rect key="frame" x="10" y="252" width="580" height="20"/>
+                    <rect key="frame" x="10" y="258" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="BDE-KR-tzm"/>
                     </constraints>
@@ -249,7 +249,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="As such, I bought 0.00 U.S. Gallons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5a-fe-nsQ">
-                    <rect key="frame" x="10" y="276" width="580" height="16"/>
+                    <rect key="frame" x="10" y="282" width="580" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="YLA-sb-ZQP"/>
                     </constraints>
@@ -299,19 +299,19 @@
                 <constraint firstItem="nlG-qb-2DY" firstAttribute="top" secondItem="nvz-Sw-9rr" secondAttribute="bottom" constant="4" id="cre-r9-ZOv"/>
                 <constraint firstItem="0Yf-1F-XAx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="dIg-uM-Ofd"/>
                 <constraint firstItem="0Uc-NK-cz5" firstAttribute="top" secondItem="ech-22-XVL" secondAttribute="bottom" constant="4" id="ech-bW-nRH"/>
-                <constraint firstItem="o8U-fh-4Mf" firstAttribute="top" secondItem="OKi-Y7-mFM" secondAttribute="bottom" constant="4" id="esA-Pv-nW1"/>
+                <constraint firstItem="o8U-fh-4Mf" firstAttribute="top" secondItem="OKi-Y7-mFM" secondAttribute="bottom" constant="10" id="esA-Pv-nW1"/>
                 <constraint firstItem="6wq-kO-dvm" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="fLA-aS-R2B"/>
                 <constraint firstAttribute="trailing" secondItem="S5a-fe-nsQ" secondAttribute="trailing" constant="10" id="fLx-Wv-FqJ"/>
                 <constraint firstAttribute="trailing" secondItem="ReC-yL-fAu" secondAttribute="trailing" constant="10" id="fq3-lc-wfa"/>
                 <constraint firstItem="0b7-SK-NWj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="g7J-EU-ihm"/>
-                <constraint firstItem="eaV-bg-WpP" firstAttribute="top" secondItem="OKi-Y7-mFM" secondAttribute="bottom" constant="4" id="hK9-Vk-ZDO"/>
+                <constraint firstItem="eaV-bg-WpP" firstAttribute="top" secondItem="OKi-Y7-mFM" secondAttribute="bottom" constant="10" id="hK9-Vk-ZDO"/>
                 <constraint firstItem="0b7-SK-NWj" firstAttribute="top" secondItem="0Yf-1F-XAx" secondAttribute="bottom" constant="4" id="iWB-4Z-hzL"/>
                 <constraint firstAttribute="trailing" secondItem="6wq-kO-dvm" secondAttribute="trailing" constant="10" id="itG-ts-7kg"/>
                 <constraint firstItem="tNn-4I-INu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="j5d-Ek-sfb"/>
                 <constraint firstItem="o8U-fh-4Mf" firstAttribute="leading" secondItem="eaV-bg-WpP" secondAttribute="trailing" constant="4" id="jlG-iI-DsU"/>
                 <constraint firstItem="HjS-Pt-4By" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="nwk-9r-nRJ"/>
                 <constraint firstAttribute="trailing" secondItem="dtC-1W-CK7" secondAttribute="trailing" constant="10" id="p2Q-Ov-Zh3"/>
-                <constraint firstItem="hRr-Gz-jov" firstAttribute="top" secondItem="OKi-Y7-mFM" secondAttribute="bottom" constant="4" id="pIp-4x-kDr"/>
+                <constraint firstItem="hRr-Gz-jov" firstAttribute="top" secondItem="OKi-Y7-mFM" secondAttribute="bottom" constant="10" id="pIp-4x-kDr"/>
                 <constraint firstItem="HjS-Pt-4By" firstAttribute="top" secondItem="dtC-1W-CK7" secondAttribute="bottom" constant="4" id="r0w-cm-sT3"/>
                 <constraint firstItem="cJW-Lg-V8U" firstAttribute="top" secondItem="JcJ-8B-q6Q" secondAttribute="bottom" constant="10" id="rIp-9V-fU5"/>
                 <constraint firstItem="Fnx-uT-kbX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="sDy-cZ-vW4"/>

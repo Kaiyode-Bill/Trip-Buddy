@@ -149,15 +149,15 @@ class TripBuddyViewController: UIViewController {
 		exchangeViewController.feeLabel.text = "(which equals \(originSymbol) \(String(format: "%.2f", exchangeFee())) \(originCurrency))"
 		exchangeViewController.totalLabel.text = "then out of \(originSymbol) \(String(format: "%.2f", exchangeTotal())) \(originCurrency)"
 		exchangeViewController.resultLabel.text = "I should get \(travelSymbol) \(String(format: "%.2f", exchangeResult())) \(travelCurrency) back"
-		exchangeViewController.outcomeSymbolLabel.text = "If I got (\(travelSymbol))"
+		exchangeViewController.outcomeSymbolLabel.text = "But if I got (\(travelSymbol))"
 		exchangeViewController.outcomeTextField.text = String(format: "%.2f", programData!.exchangeOutcome.doubleValue)
 		exchangeViewController.outcomeUnitLabel.text = travelCurrency
 		if exchangeDifference() == 0 {
 			exchangeViewController.differenceLabel.text = "then it was a fair exchange"
 		} else if exchangeDifference() > 0 {
-			exchangeViewController.differenceLabel.text = "then you got \(travelSymbol) \(String(format: "%.2f", exchangeDifference())) \(travelCurrency) extra"
+			exchangeViewController.differenceLabel.text = "then I got \(travelSymbol) \(String(format: "%.2f", exchangeDifference())) \(travelCurrency) more"
 		} else {
-			exchangeViewController.differenceLabel.text = "then you are short \(travelSymbol) \(String(format: "%.2f", -exchangeDifference())) \(travelCurrency)"
+			exchangeViewController.differenceLabel.text = "then I got \(travelSymbol) \(String(format: "%.2f", -exchangeDifference())) \(travelCurrency) less"
 		}
 		//Update GasViewController's elements
 		gasViewController.unitControl.selectedSegmentIndex = programData!.gasUnit.integerValue
@@ -167,15 +167,15 @@ class TripBuddyViewController: UIViewController {
 		gasViewController.rateTextField.text = String(format: "%.2f", programData!.gasRate.doubleValue)
 		gasViewController.rateUnitLabel.text = "\(travelCurrency)/\(gasUnitSingular)"
 		gasViewController.resultLabel.text = "then I should pay \(travelSymbol) \(String(format: "%.2f", gasResult())) \(travelCurrency)"
-		gasViewController.outcomeSymbolLabel.text = "If I paid (\(travelSymbol))"
+		gasViewController.outcomeSymbolLabel.text = "But if I paid (\(travelSymbol))"
 		gasViewController.outcomeTextField.text = String(format: "%.2f", programData!.gasOutcome.doubleValue)
 		gasViewController.outcomeUnitLabel.text = travelCurrency
 		if gasDifference() == 0 {
 			gasViewController.differenceLabel.text = "then it was a fair transaction"
 		} else if gasDifference() > 0 {
-			gasViewController.differenceLabel.text = "then you got \(travelSymbol) \(String(format: "%.2f", gasDifference())) \(travelCurrency) extra"
+			gasViewController.differenceLabel.text = "then I overpaid by \(travelSymbol) \(String(format: "%.2f", gasDifference())) \(travelCurrency)"
 		} else {
-			gasViewController.differenceLabel.text = "then you are short \(travelSymbol) \(String(format: "%.2f", -gasDifference())) \(travelCurrency)"
+			gasViewController.differenceLabel.text = "then I saved \(travelSymbol) \(String(format: "%.2f", -gasDifference())) \(travelCurrency)"
 		}
 		gasViewController.equivalentUnitControl.selectedSegmentIndex = programData!.gasEquivalentUnit.integerValue
 		gasViewController.exchangeRateLabel.text = "1.00 \(gasUnitPlural) = \(String(format: "%.2f", gasExchangeRate())) \(gasEquivalentUnitPlural)"
@@ -193,15 +193,15 @@ class TripBuddyViewController: UIViewController {
 		mealViewController.totalLabel.text = "then the total is \(travelSymbol) \(String(format: "%.2f", mealTotal())) \(travelCurrency)"
 		mealViewController.peopleTextField.text = String(programData!.mealPeople.integerValue)
 		mealViewController.resultLabel.text = "then I should pay \(travelSymbol) \(String(format: "%.2f", mealResult())) \(travelCurrency)"
-		mealViewController.outcomeSymbolLabel.text = "If I paid (\(travelSymbol))"
+		mealViewController.outcomeSymbolLabel.text = "But if I paid (\(travelSymbol))"
 		mealViewController.outcomeTextField.text = String(format: "%.2f", programData!.mealOutcome.doubleValue)
 		mealViewController.outcomeUnitLabel.text = travelCurrency
 		if mealDifference() == 0{
 			mealViewController.differenceLabel.text = "then it was a fair transaction"
 		} else if mealDifference() > 0 {
-			mealViewController.differenceLabel.text = "then you got \(travelSymbol) \(String(format: "%.2f", mealDifference())) \(travelCurrency) extra"
+			mealViewController.differenceLabel.text = "then I overpaid by \(travelSymbol) \(String(format: "%.2f", mealDifference())) \(travelCurrency)"
 		} else {
-			mealViewController.differenceLabel.text = "then you are short \(travelSymbol) \(String(format: "%.2f", -mealDifference())) \(travelCurrency)"
+			mealViewController.differenceLabel.text = "then I saved \(travelSymbol) \(String(format: "%.2f", -mealDifference())) \(travelCurrency)"
 		}
 		mealViewController.equivalentUnitLabel.text = "The equivalents of these values in \(originCurrency):"
 		mealViewController.equivalentAmountLabel.text = "The check was \(originSymbol) \(String(format: "%.2f", mealEquivalentAmount())) \(originCurrency)"
