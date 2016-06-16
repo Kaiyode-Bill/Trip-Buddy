@@ -166,29 +166,29 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The check was $ 0.00 Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BT5-dR-R41">
-                    <rect key="frame" x="10" y="260" width="580" height="16"/>
+                    <rect key="frame" x="10" y="260" width="580" height="20"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="16" id="Pkb-XW-NmG"/>
+                        <constraint firstAttribute="height" constant="20" id="Pkb-XW-NmG"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="with a tip of $ 0.00 Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEx-lf-FPc">
-                    <rect key="frame" x="10" y="280" width="580" height="16"/>
+                    <rect key="frame" x="10" y="284" width="580" height="20"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="16" id="x46-Sg-z9e"/>
+                        <constraint firstAttribute="height" constant="20" id="x46-Sg-z9e"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and the total was $ 0.00 Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPy-lB-QxJ">
-                    <rect key="frame" x="10" y="300" width="580" height="16"/>
+                    <rect key="frame" x="10" y="308" width="580" height="20"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="16" id="Opq-Rb-3og"/>
+                        <constraint firstAttribute="height" constant="20" id="Opq-Rb-3og"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -202,20 +202,20 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="costing each person $ 0.00 Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmC-cD-6JO">
-                    <rect key="frame" x="10" y="320" width="580" height="16"/>
+                    <rect key="frame" x="10" y="332" width="580" height="20"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="16" id="WlH-D3-JeD"/>
+                        <constraint firstAttribute="height" constant="20" id="WlH-D3-JeD"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="but I payed roughly $ 0.00 Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaL-TB-SjF">
-                    <rect key="frame" x="10" y="340" width="580" height="16"/>
+                    <rect key="frame" x="10" y="356" width="580" height="20"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="16" id="8b7-fs-Xw2"/>
+                        <constraint firstAttribute="height" constant="20" id="8b7-fs-Xw2"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -259,11 +259,11 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="with a difference of $ 0.00 Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhy-eZ-ZWi">
-                    <rect key="frame" x="10" y="360" width="580" height="16"/>
+                    <rect key="frame" x="10" y="380" width="580" height="20"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="16" id="nec-Fs-HQb"/>
+                        <constraint firstAttribute="height" constant="20" id="nec-Fs-HQb"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
