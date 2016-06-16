@@ -357,7 +357,7 @@ class TripBuddyViewController: UIViewController {
 
 	//Triggers a menu to pop up for changing the origin country
 	@IBAction func originCountryButtonPressed(sender: AnyObject) {
-		let alertController = UIAlertController(title: "Select a country:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
+		let alertController = UIAlertController(title: "Select your origin country:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
 
 		view.endEditing(true) //Close any open responder beforehand
 		for i in 0.stride(to: countryNames.count, by: 1) {
@@ -380,7 +380,7 @@ class TripBuddyViewController: UIViewController {
 
 	//Triggers a menu to pop up for changing the travel country
 	@IBAction func travelCountryButtonPressed(sender: AnyObject) {
-		let alertController = UIAlertController(title: "Select a country:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
+		let alertController = UIAlertController(title: "Select your travel country:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
 
 		view.endEditing(true) //Close any open responder beforehand
 		for i in 0.stride(to: countryNames.count, by: 1) {
