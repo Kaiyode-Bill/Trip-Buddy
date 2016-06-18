@@ -6,6 +6,7 @@ import UIKit
 import CoreData
 
 class TripBuddyViewController: UIViewController {
+	//THIS IS A TEST COMMENT
 	//All of the UI elements
 	@IBOutlet weak var originCountryImageView: UIImageView!
 	@IBOutlet weak var originCountryButton: UIButton!
