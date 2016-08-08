@@ -55,7 +55,7 @@ class TripBuddyViewController: UIViewController {
 	//This code is executed when the view is first loaded
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		var existingData: [ProgramData]
+		var existingData: [ProgramData] = []
 
 		//Initialize each of the view controllers and add them into the scroll view
 		for i in 0.stride(to: viewControllers.count, by: 1) {
@@ -68,9 +68,7 @@ class TripBuddyViewController: UIViewController {
 		//Access the program data from CoreData
 		do {
 			existingData = try context.executeFetchRequest(NSFetchRequest(entityName: "ProgramData")) as! [ProgramData]
-		} catch _ as NSError {
-			existingData = []
-		}
+		} catch _ as NSError {}
 		//If valid program data doesn't exist, create a default instance instead
 		if existingData.count != 1 {
 			for i in (existingData.count - 1).stride(through: 0, by: -1) {
@@ -136,9 +134,9 @@ class TripBuddyViewController: UIViewController {
 		let miscMeasurement = miscMeasurements[programData!.miscMeasurement.integerValue]
 
 		//Update TripBuddyViewController's elements
-		originCountryImageView.image = UIImage(named: originName + ".png")
+		originCountryImageView.image = UIImage(named: originName)
 		originCountryButton.setTitle("Origin Country: \(originName)", forState: UIControlState.Normal)
-		travelCountryImageView.image = UIImage(named: travelName + ".png")
+		travelCountryImageView.image = UIImage(named: travelName)
 		travelCountryButton.setTitle("Travel Country: \(travelName)", forState: UIControlState.Normal)
 		//Update ExchangeViewController's elements
 		exchangeViewController.unitsLabel.text = "Exchanging \(originCurrency) to \(travelCurrency):"

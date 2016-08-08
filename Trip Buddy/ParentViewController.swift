@@ -26,9 +26,9 @@ class ParentViewController: UIViewController, UITextFieldDelegate {
 		if Double(text) != nil {
 			result = Double(text)!
 		}
-		if (result > maximum) {
+		if result > maximum {
 			result = maximum
-		} else if (result < minimum) {
+		} else if result < minimum {
 			result = minimum
 		}
 
