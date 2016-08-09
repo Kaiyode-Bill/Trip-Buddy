@@ -1,10 +1,6 @@
-//
-//  AppDelegate.swift
-//  Trip Buddy
-//
-//  Created by Chris Bowles on 4/16/16.
-//  Copyright © 2016 Kaiyode Software. All rights reserved.
-//
+//Trip Buddy
+//AppDelegate.swift
+//© 2016 Kaiyode Software
 
 import UIKit
 import CoreData
