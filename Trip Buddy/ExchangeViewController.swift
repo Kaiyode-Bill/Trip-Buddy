@@ -28,30 +28,30 @@ class ExchangeViewController: ParentViewController {
 	}
 
 	@IBAction func amountTextFieldChanged(sender: AnyObject) {
-		tripBuddyViewController!.programData!.exchangeAmount = parseNumber(amountTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
-		tripBuddyViewController!.saveProgramData()
+		mainViewController!.programData!.exchangeAmount = parseNumber(amountTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
+		mainViewController!.saveProgramData()
 	}
 
 	@IBAction func percentageTextFieldChanged(sender: AnyObject) {
-		tripBuddyViewController!.programData!.exchangePercentage = parseNumber(percentageTextField.text!, minimum: 0, maximum: 99.99, decimalPlaces: 2)
-		tripBuddyViewController!.saveProgramData()
+		mainViewController!.programData!.exchangePercentage = parseNumber(percentageTextField.text!, minimum: 0, maximum: 99.99, decimalPlaces: 2)
+		mainViewController!.saveProgramData()
 	}
 
 	@IBAction func outcomeTextFieldChanged(sender: AnyObject) {
-		tripBuddyViewController!.programData!.exchangeOutcome = parseNumber(outcomeTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
-		tripBuddyViewController!.saveProgramData()
+		mainViewController!.programData!.exchangeOutcome = parseNumber(outcomeTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
+		mainViewController!.saveProgramData()
 	}
 
 	@IBAction func helpButtonPressed(sender: AnyObject) {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
-		tripBuddyViewController!.performSegueWithIdentifier("TripBuddyToHelpSegue", sender: self)
+		mainViewController!.performSegueWithIdentifier("MainToHelpSegue", sender: self)
 	}
 
 	@IBAction func resetButtonPressed(sender: AnyObject) {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
-		tripBuddyViewController!.programData!.exchangeAmount = 0
-		tripBuddyViewController!.programData!.exchangePercentage = 0
-		tripBuddyViewController!.programData!.exchangeOutcome = 0
-		tripBuddyViewController!.saveProgramData()
+		mainViewController!.programData!.exchangeAmount = 0
+		mainViewController!.programData!.exchangePercentage = 0
+		mainViewController!.programData!.exchangeOutcome = 0
+		mainViewController!.saveProgramData()
 	}
 }

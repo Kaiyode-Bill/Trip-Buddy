@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		71010CAC1D0CD68A00D2397A /* TripBuddyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71010CAB1D0CD68A00D2397A /* TripBuddyViewController.swift */; };
+		71010CAC1D0CD68A00D2397A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71010CAB1D0CD68A00D2397A /* MainViewController.swift */; };
 		71010CAF1D0CEB4900D2397A /* ExchangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71010CAD1D0CEB4900D2397A /* ExchangeViewController.swift */; };
 		71010CB01D0CEB4900D2397A /* ExchangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71010CAE1D0CEB4900D2397A /* ExchangeViewController.xib */; };
 		71010CB31D0CEFA400D2397A /* GasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71010CB11D0CEFA400D2397A /* GasViewController.swift */; };
@@ -27,7 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		71010CAB1D0CD68A00D2397A /* TripBuddyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripBuddyViewController.swift; sourceTree = "<group>"; };
+		71010CAB1D0CD68A00D2397A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		71010CAD1D0CEB4900D2397A /* ExchangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExchangeViewController.swift; sourceTree = "<group>"; };
 		71010CAE1D0CEB4900D2397A /* ExchangeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExchangeViewController.xib; sourceTree = "<group>"; };
 		71010CB11D0CEFA400D2397A /* GasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasViewController.swift; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				71792E301CC3119F008EAAAF /* AppDelegate.swift */,
-				71010CAB1D0CD68A00D2397A /* TripBuddyViewController.swift */,
+				71010CAB1D0CD68A00D2397A /* MainViewController.swift */,
 				718299E51CCADCAC0069F92D /* ParentViewController.swift */,
 				71010CAD1D0CEB4900D2397A /* ExchangeViewController.swift */,
 				71010CAE1D0CEB4900D2397A /* ExchangeViewController.xib */,
@@ -179,7 +179,7 @@
 				71792E391CC3119F008EAAAF /* Trip_Buddy.xcdatamodeld in Sources */,
 				718299E61CCADCAC0069F92D /* ParentViewController.swift in Sources */,
 				71792E311CC3119F008EAAAF /* AppDelegate.swift in Sources */,
-				71010CAC1D0CD68A00D2397A /* TripBuddyViewController.swift in Sources */,
+				71010CAC1D0CD68A00D2397A /* MainViewController.swift in Sources */,
 				71010CB71D0CEFD100D2397A /* MealViewController.swift in Sources */,
 				719496951CC9E46C00299AC2 /* ProgramData.swift in Sources */,
 				71010CAF1D0CEB4900D2397A /* ExchangeViewController.swift in Sources */,

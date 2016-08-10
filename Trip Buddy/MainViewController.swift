@@ -1,11 +1,11 @@
 //Trip Buddy
-//TripBuddyViewController.swift
+//MainViewController.swift
 //© 2016 Kaiyode Software
 
 import UIKit
 import CoreData
 
-class TripBuddyViewController: UIViewController {
+class MainViewController: UIViewController {
 	//All of the UI elements
 	@IBOutlet weak var originCountryImageView: UIImageView!
 	@IBOutlet weak var originCountryButton: UIButton!
@@ -62,7 +62,7 @@ class TripBuddyViewController: UIViewController {
 			viewControllers[i].view.frame.size.height = scrollView.bounds.height
 			viewControllers[i].view.frame.origin.x = view.frame.size.width * CGFloat(i)
 			scrollView.addSubview(viewControllers[i].view)
-			viewControllers[i].tripBuddyViewController = self
+			viewControllers[i].mainViewController = self
 		}
 		scrollView.contentSize = CGSizeMake(view.frame.size.width * CGFloat(viewControllers.count), scrollView.bounds.height)
 		//Access the program data from CoreData
@@ -100,7 +100,7 @@ class TripBuddyViewController: UIViewController {
 		saveProgramData()
 		//Transition to the help view controller by default
 		if programData!.showHelpAtStartup == 1 {
-			performSegueWithIdentifier("TripBuddyToHelpSegue", sender: self)
+			performSegueWithIdentifier("MainToHelpSegue", sender: self)
 		}
 	}
 
@@ -133,7 +133,7 @@ class TripBuddyViewController: UIViewController {
 		let miscEquivalentUnit = miscUnits[programData!.miscMeasurement.integerValue][1 - programData!.miscUnit.integerValue]
 		let miscMeasurement = miscMeasurements[programData!.miscMeasurement.integerValue]
 
-		//Update TripBuddyViewController's elements
+		//Update MainViewController's elements
 		originCountryImageView.image = UIImage(named: originName)
 		originCountryButton.setTitle("Origin Country: \(originName)", forState: UIControlState.Normal)
 		travelCountryImageView.image = UIImage(named: travelName)
@@ -347,9 +347,9 @@ class TripBuddyViewController: UIViewController {
 
 	//This code is executed whenever a segue is about to take place
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		if segue.identifier == "TripBuddyToHelpSegue" {
+		if segue.identifier == "MainToHelpSegue" {
 			let helpViewController = segue.destinationViewController as! HelpViewController
-			helpViewController.tripBuddyViewController = self
+			helpViewController.mainViewController = self
 		}
 	}
 

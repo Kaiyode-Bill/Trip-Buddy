@@ -35,31 +35,31 @@ class MealViewController: ParentViewController {
 	}
 
 	@IBAction func amountTextFieldChanged(sender: AnyObject) {
-		tripBuddyViewController!.programData!.mealAmount = parseNumber(amountTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
-		tripBuddyViewController!.saveProgramData()
+		mainViewController!.programData!.mealAmount = parseNumber(amountTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
+		mainViewController!.saveProgramData()
 	}
 
 	@IBAction func percentageTextFieldChanged(sender: AnyObject) {
-		tripBuddyViewController!.programData!.mealPercentage = parseNumber(percentageTextField.text!, minimum: 0, maximum: 99.99, decimalPlaces: 2)
-		tripBuddyViewController!.saveProgramData()
+		mainViewController!.programData!.mealPercentage = parseNumber(percentageTextField.text!, minimum: 0, maximum: 99.99, decimalPlaces: 2)
+		mainViewController!.saveProgramData()
 	}
 
 	@IBAction func peopleTextFieldChanged(sender: AnyObject) {
-		tripBuddyViewController!.programData!.mealPeople = parseNumber(peopleTextField.text!, minimum: 1, maximum: 999, decimalPlaces: 0)
-		tripBuddyViewController!.saveProgramData()
+		mainViewController!.programData!.mealPeople = parseNumber(peopleTextField.text!, minimum: 1, maximum: 999, decimalPlaces: 0)
+		mainViewController!.saveProgramData()
 	}
 
 	@IBAction func outcomeTextFieldChanged(sender: AnyObject) {
-		tripBuddyViewController!.programData!.mealOutcome = parseNumber(outcomeTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
-		tripBuddyViewController!.saveProgramData()
+		mainViewController!.programData!.mealOutcome = parseNumber(outcomeTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
+		mainViewController!.saveProgramData()
 	}
 
 	@IBAction func resetButtonPressed(sender: AnyObject) {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
-		tripBuddyViewController!.programData!.mealAmount = 0
-		tripBuddyViewController!.programData!.mealPercentage = 0
-		tripBuddyViewController!.programData!.mealPeople = 1
-		tripBuddyViewController!.programData!.mealOutcome = 0
-		tripBuddyViewController!.saveProgramData()
+		mainViewController!.programData!.mealAmount = 0
+		mainViewController!.programData!.mealPercentage = 0
+		mainViewController!.programData!.mealPeople = 1
+		mainViewController!.programData!.mealOutcome = 0
+		mainViewController!.saveProgramData()
 	}
 }

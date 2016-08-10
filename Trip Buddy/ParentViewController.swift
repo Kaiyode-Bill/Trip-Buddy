@@ -5,7 +5,7 @@
 import UIKit
 
 class ParentViewController: UIViewController, UITextFieldDelegate {
-	var tripBuddyViewController: TripBuddyViewController? = nil
+	var mainViewController: MainViewController? = nil
 
 	//Dismisses the responder when blank area is touched
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent!) {

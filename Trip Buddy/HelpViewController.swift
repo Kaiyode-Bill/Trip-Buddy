@@ -6,16 +6,16 @@ import UIKit
 
 class HelpViewController: UIViewController {
 	@IBOutlet weak var startupSwitch: UISwitch!
-	var tripBuddyViewController: TripBuddyViewController? = nil
+	var mainViewController: MainViewController? = nil
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		startupSwitch.on = tripBuddyViewController!.programData!.showHelpAtStartup.boolValue
+		startupSwitch.on = mainViewController!.programData!.showHelpAtStartup.boolValue
 	}
 
 	@IBAction func startupSwitchChanged(sender: AnyObject) {
-		tripBuddyViewController!.programData!.showHelpAtStartup = startupSwitch.on
-		tripBuddyViewController!.saveProgramData()
+		mainViewController!.programData!.showHelpAtStartup = startupSwitch.on
+		mainViewController!.saveProgramData()
 	}
 
 	@IBAction func returnButtonPressed(sender: AnyObject) {

@@ -36,40 +36,40 @@ class GasViewController: ParentViewController {
 		let changedValue = unitControl.selectedSegmentIndex
 
 		view.endEditing(true) //Close any open responder from this view controller beforehand
-		tripBuddyViewController!.programData!.gasUnit = changedValue
-		tripBuddyViewController!.saveProgramData()
+		mainViewController!.programData!.gasUnit = changedValue
+		mainViewController!.saveProgramData()
 	}
 
 	@IBAction func amountTextFieldChanged(sender: AnyObject) {
-		tripBuddyViewController!.programData!.gasAmount = parseNumber(amountTextField.text!, minimum: 0, maximum: 999.99, decimalPlaces: 2)
-		tripBuddyViewController!.saveProgramData()
+		mainViewController!.programData!.gasAmount = parseNumber(amountTextField.text!, minimum: 0, maximum: 999.99, decimalPlaces: 2)
+		mainViewController!.saveProgramData()
 	}
 
 	@IBAction func rateTextFieldChanged(sender: AnyObject) {
-		tripBuddyViewController!.programData!.gasRate = parseNumber(rateTextField.text!, minimum: 0, maximum: 999.99, decimalPlaces: 2)
-		tripBuddyViewController!.saveProgramData()
+		mainViewController!.programData!.gasRate = parseNumber(rateTextField.text!, minimum: 0, maximum: 999.99, decimalPlaces: 2)
+		mainViewController!.saveProgramData()
 	}
 
 	@IBAction func outcomeTextFieldChanged(sender: AnyObject) {
-		tripBuddyViewController!.programData!.gasOutcome = parseNumber(outcomeTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
-		tripBuddyViewController!.saveProgramData()
+		mainViewController!.programData!.gasOutcome = parseNumber(outcomeTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
+		mainViewController!.saveProgramData()
 	}
 
 	@IBAction func equivalentUnitControlChanged(sender: AnyObject) {
 		let changedValue = equivalentUnitControl.selectedSegmentIndex
 
 		view.endEditing(true) //Close any open responder from this view controller beforehand
-		tripBuddyViewController!.programData!.gasEquivalentUnit = changedValue
-		tripBuddyViewController!.saveProgramData()
+		mainViewController!.programData!.gasEquivalentUnit = changedValue
+		mainViewController!.saveProgramData()
 	}
 
 	@IBAction func resetButtonPressed(sender: AnyObject) {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
-		tripBuddyViewController!.programData!.gasUnit = 1
-		tripBuddyViewController!.programData!.gasAmount = 0
-		tripBuddyViewController!.programData!.gasRate = 0
-		tripBuddyViewController!.programData!.gasOutcome = 0
-		tripBuddyViewController!.programData!.gasEquivalentUnit = 0
-		tripBuddyViewController!.saveProgramData()
+		mainViewController!.programData!.gasUnit = 1
+		mainViewController!.programData!.gasAmount = 0
+		mainViewController!.programData!.gasRate = 0
+		mainViewController!.programData!.gasOutcome = 0
+		mainViewController!.programData!.gasEquivalentUnit = 0
+		mainViewController!.saveProgramData()
 	}
 }

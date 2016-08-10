@@ -20,28 +20,28 @@ class MiscViewController: ParentViewController {
 		let changedValue = measurementControl.selectedSegmentIndex
 
 		view.endEditing(true) //Close any open responder from this view controller beforehand
-		tripBuddyViewController!.programData!.miscMeasurement = changedValue
-		tripBuddyViewController!.programData!.miscAmount = 0
-		tripBuddyViewController!.programData!.miscUnit = 0
-		tripBuddyViewController!.saveProgramData()
+		mainViewController!.programData!.miscMeasurement = changedValue
+		mainViewController!.programData!.miscAmount = 0
+		mainViewController!.programData!.miscUnit = 0
+		mainViewController!.saveProgramData()
 	}
 
 	@IBAction func amountTextFieldChanged(sender: AnyObject) {
-		tripBuddyViewController!.programData!.miscAmount = parseNumber(amountTextField.text!, minimum: -99999.999, maximum: 99999.999, decimalPlaces: 3)
-		tripBuddyViewController!.saveProgramData()
+		mainViewController!.programData!.miscAmount = parseNumber(amountTextField.text!, minimum: -99999.999, maximum: 99999.999, decimalPlaces: 3)
+		mainViewController!.saveProgramData()
 	}
 
 	@IBAction func toggleButtonPressed(sender: AnyObject) {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
-		tripBuddyViewController!.programData!.miscUnit = 1 - tripBuddyViewController!.programData!.miscUnit.integerValue
-		tripBuddyViewController!.saveProgramData()
+		mainViewController!.programData!.miscUnit = 1 - mainViewController!.programData!.miscUnit.integerValue
+		mainViewController!.saveProgramData()
 	}
 
 	@IBAction func resetButtonPressed(sender: AnyObject) {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
-		tripBuddyViewController!.programData!.miscMeasurement = 0
-		tripBuddyViewController!.programData!.miscAmount = 0
-		tripBuddyViewController!.programData!.miscUnit = 0
-		tripBuddyViewController!.saveProgramData()
+		mainViewController!.programData!.miscMeasurement = 0
+		mainViewController!.programData!.miscAmount = 0
+		mainViewController!.programData!.miscUnit = 0
+		mainViewController!.saveProgramData()
 	}
 }

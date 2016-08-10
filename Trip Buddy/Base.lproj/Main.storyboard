@@ -8,7 +8,7 @@
         <!--Trip Buddy-->
         <scene sceneID="grO-RM-J2M">
             <objects>
-                <viewController id="IEU-Kc-3ir" customClass="TripBuddyViewController" customModule="Trip_Buddy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IEU-Kc-3ir" customClass="MainViewController" customModule="Trip_Buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="flf-aW-oUp"/>
                         <viewControllerLayoutGuide type="bottom" id="nBJ-UT-2AH"/>
@@ -154,7 +154,7 @@
                         <outlet property="scrollView" destination="U4P-IN-2GG" id="HWq-9a-78h"/>
                         <outlet property="travelCountryButton" destination="DIb-0u-JrV" id="K2D-zP-cue"/>
                         <outlet property="travelCountryImageView" destination="Sfr-qi-fHz" id="HTJ-s1-dzH"/>
-                        <segue destination="pWi-zc-zjq" kind="show" identifier="TripBuddyToHelpSegue" id="zLn-GQ-mwf"/>
+                        <segue destination="pWi-zc-zjq" kind="show" identifier="MainToHelpSegue" id="zLn-GQ-mwf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2p-pd-cpF" userLabel="First Responder" sceneMemberID="firstResponder"/>
