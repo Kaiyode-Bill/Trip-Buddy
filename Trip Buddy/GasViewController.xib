@@ -113,7 +113,7 @@
                         <action selector="rateTextFieldChanged:" destination="-1" eventType="editingDidEnd" id="Mib-SJ-9ra"/>
                     </connections>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pounds/Imp Gal." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="nlG-qb-2DY">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pounds/Imp. Gallon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="nlG-qb-2DY">
                     <rect key="frame" x="354" y="90" width="236" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="ulc-Fl-9CT"/>
@@ -194,7 +194,7 @@
                         <action selector="equivalentUnitControlChanged:" destination="-1" eventType="valueChanged" id="yne-kq-JKS"/>
                     </connections>
                 </segmentedControl>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="at a rate of $ 0.00 Dollars/US Gal." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ReC-yL-fAu">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="at a rate of $ 0.00 Dollars/U.S. Gallon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ReC-yL-fAu">
                     <rect key="frame" x="10" y="306" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="Le4-RK-y2G"/>

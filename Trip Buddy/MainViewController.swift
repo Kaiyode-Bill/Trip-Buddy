@@ -42,9 +42,7 @@ class MainViewController: UIViewController {
 	                                0.654, 1.5172]
 
 	//Gas information
-	let gasUnitsPlural: [String] = ["U.S. Gallons", "Imp. Gallons", "Liters"]
-
-	let gasUnitsSingular: [String] = ["US Gal.", "Imp Gal.", "Liter"]
+	let gasUnits: [String] = ["U.S. Gallon", "Imp. Gallon", "Liter"]
 
 	let gasWeights: [Double] = [1000000000, 832673840, 3785411784]
 
@@ -125,10 +123,8 @@ class MainViewController: UIViewController {
 		let exchangeViewController = viewControllers[0] as! ExchangeViewController
 		//Relevant gas information
 		let gasViewController = viewControllers[1] as! GasViewController
-		let gasUnitPlural = gasUnitsPlural[programData!.gasUnit.integerValue]
-		let gasUnitSingular = gasUnitsSingular[programData!.gasUnit.integerValue]
-		let gasEquivalentUnitPlural = gasUnitsPlural[programData!.gasEquivalentUnit.integerValue]
-		let gasEquivalentUnitSingular = gasUnitsSingular[programData!.gasEquivalentUnit.integerValue]
+		let gasUnit = gasUnits[programData!.gasUnit.integerValue]
+		let gasEquivalentUnit = gasUnits[programData!.gasEquivalentUnit.integerValue]
 		//Relevant meal information
 		let mealViewController = viewControllers[2] as! MealViewController
 		//Relevant miscellaneous information
@@ -165,10 +161,10 @@ class MainViewController: UIViewController {
 		//Update GasViewController's elements
 		gasViewController.unitControl.selectedSegmentIndex = programData!.gasUnit.integerValue
 		gasViewController.amountTextField.text = String(format: "%.2f", programData!.gasAmount.doubleValue)
-		gasViewController.amountUnitLabel.text = gasUnitPlural
+		gasViewController.amountUnitLabel.text = "\(gasUnit)s"
 		gasViewController.rateSymbolLabel.text = "at a rate of (\(travelSymbol))"
 		gasViewController.rateTextField.text = String(format: "%.2f", programData!.gasRate.doubleValue)
-		gasViewController.rateUnitLabel.text = "\(travelCurrency)/\(gasUnitSingular)"
+		gasViewController.rateUnitLabel.text = "\(travelCurrency)/\(gasUnit)"
 		gasViewController.resultLabel.text = "then I should pay \(travelSymbol) \(String(format: "%.2f", gasResult())) \(travelCurrency)"
 		gasViewController.outcomeSymbolLabel.text = "But if I paid (\(travelSymbol))"
 		gasViewController.outcomeTextField.text = String(format: "%.2f", programData!.gasOutcome.doubleValue)
@@ -181,9 +177,9 @@ class MainViewController: UIViewController {
 			gasViewController.differenceLabel.text = "then I saved \(travelSymbol) \(String(format: "%.2f", -gasDifference())) \(travelCurrency)"
 		}
 		gasViewController.equivalentUnitControl.selectedSegmentIndex = programData!.gasEquivalentUnit.integerValue
-		gasViewController.exchangeRateLabel.text = "1.00 \(gasUnitPlural) = \(String(format: "%.2f", gasExchangeRate())) \(gasEquivalentUnitPlural)"
-		gasViewController.equivalentAmountLabel.text = "As such, I bought \(String(format: "%.2f", gasEquivalentAmount())) \(gasEquivalentUnitPlural)"
-		gasViewController.equivalentRateLabel.text = "at a rate of \(originSymbol) \(String(format: "%.2f", gasEquivalentRate())) \(originCurrency)/\(gasEquivalentUnitSingular)"
+		gasViewController.exchangeRateLabel.text = "1.00 \(gasUnit)s = \(String(format: "%.2f", gasExchangeRate())) \(gasEquivalentUnit)s"
+		gasViewController.equivalentAmountLabel.text = "As such, I bought \(String(format: "%.2f", gasEquivalentAmount())) \(gasEquivalentUnit)s"
+		gasViewController.equivalentRateLabel.text = "at a rate of \(originSymbol) \(String(format: "%.2f", gasEquivalentRate())) \(originCurrency)/\(gasEquivalentUnit)"
 		gasViewController.equivalentResultLabel.text = "which is worth \(originSymbol) \(String(format: "%.2f", gasEquivalentResult())) \(originCurrency)"
 		gasViewController.equivalentOutcomeLabel.text = "but I paid roughly \(originSymbol) \(String(format: "%.2f", gasEquivalentOutcome())) \(originCurrency)"
 		gasViewController.equivalentDifferenceLabel.text = "with a difference of \(originSymbol) \(String(format: "%.2f", gasEquivalentDifference())) \(originCurrency)"
