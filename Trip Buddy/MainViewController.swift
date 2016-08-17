@@ -28,10 +28,15 @@ class MainViewController: UIViewController {
 	                                   "Rupees", "Euros", "Yen", "Ringgits", "Pesos", "Dollars", "Euros", "Francs",
 	                                   "Pounds", "Dollars"]
 
-	let countrySymbols: [String] = ["$", "€", "лев", "$", "$", "¥", "€", "€",
+	let countrySymbols: [String] = ["$", "€", "лв", "$", "$", "¥", "€", "€",
 	                                "₹", "€", "¥", "R", "$", "$", "€", "C",
 	                                "£", "$"]
 
+	let countryAbbreviations: [String] = ["ARS", "EUR", "BGN", "CAD", "CLP", "CNY", "EUR", "EUR",
+	                                      "INR", "EUR", "JPY", "MYR", "MXN", "SGD", "EUR", "CHF",
+	                                      "GBP", "USD"]
+
+	//Eventually, country weights will be replaced by country abbreviations
 	let countryWeights: [Double] = [9.41, 0.65, 1.75, 1.3336, 704.955, 6.34, 0.65, 0.93,
 	                                66.07, 0.94, 122.725, 4.3949, 16.7305, 1.4, 0.92, 0.99,
 	                                0.654, 1.5172]
@@ -64,7 +69,6 @@ class MainViewController: UIViewController {
 			scrollView.addSubview(viewControllers[i].view)
 			viewControllers[i].mainViewController = self
 		}
-		scrollView.contentSize = CGSizeMake(view.frame.size.width * CGFloat(viewControllers.count), scrollView.bounds.height)
 		//Access the program data from CoreData
 		do {
 			existingData = try context.executeFetchRequest(NSFetchRequest(entityName: "ProgramData")) as! [ProgramData]
@@ -343,6 +347,11 @@ class MainViewController: UIViewController {
 		} else {
 			return (programData!.miscAmount.doubleValue * (9 / 5)) + 32
 		}
+	}
+
+	//Set the scroll view's content size once all of the sub-views have been loaded and resized
+	override func viewDidLayoutSubviews() {
+		scrollView.contentSize = CGSizeMake(view.frame.size.width * CGFloat(viewControllers.count), scrollView.bounds.height)
 	}
 
 	//This code is executed whenever a segue is about to take place
