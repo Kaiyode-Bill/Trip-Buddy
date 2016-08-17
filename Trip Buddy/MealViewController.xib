@@ -49,19 +49,19 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The check is (£)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="FMf-pz-sz0">
-                    <rect key="frame" x="10" y="10" width="236" height="24"/>
+                    <rect key="frame" x="10" y="10" width="236" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="24" id="Cci-dU-rXp"/>
+                        <constraint firstAttribute="height" constant="30" id="Cci-dU-rXp"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" borderStyle="roundedRect" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="SsL-qS-jL7">
-                    <rect key="frame" x="250" y="10" width="100" height="24"/>
+                    <rect key="frame" x="250" y="10" width="100" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="7KU-jx-adm"/>
-                        <constraint firstAttribute="height" constant="24" id="HeB-xC-p3z"/>
+                        <constraint firstAttribute="height" constant="30" id="HeB-xC-p3z"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
@@ -70,27 +70,27 @@
                     </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pounds" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="bKd-A0-tyn">
-                    <rect key="frame" x="354" y="10" width="236" height="24"/>
+                    <rect key="frame" x="354" y="10" width="236" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="24" id="dAj-PQ-Q96"/>
+                        <constraint firstAttribute="height" constant="30" id="dAj-PQ-Q96"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If I tip" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3EM-ec-ze5">
-                    <rect key="frame" x="10" y="38" width="236" height="24"/>
+                    <rect key="frame" x="10" y="44" width="236" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="24" id="QRm-ew-88s"/>
+                        <constraint firstAttribute="height" constant="30" id="QRm-ew-88s"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" borderStyle="roundedRect" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="Tl3-xF-tp7">
-                    <rect key="frame" x="250" y="38" width="100" height="24"/>
+                    <rect key="frame" x="250" y="44" width="100" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="24" id="Mmb-zC-joi"/>
+                        <constraint firstAttribute="height" constant="30" id="Mmb-zC-joi"/>
                         <constraint firstAttribute="width" constant="100" id="rBU-IC-R03"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -100,16 +100,16 @@
                     </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(%)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZcO-be-4Sg">
-                    <rect key="frame" x="354" y="38" width="236" height="24"/>
+                    <rect key="frame" x="354" y="44" width="236" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="24" id="BlI-Og-p44"/>
+                        <constraint firstAttribute="height" constant="30" id="BlI-Og-p44"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(which equals £ 0.00 Pounds)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="o2M-03-RUh">
-                    <rect key="frame" x="10" y="66" width="580" height="20"/>
+                    <rect key="frame" x="10" y="78" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="36V-gJ-JGo"/>
                     </constraints>
@@ -118,19 +118,19 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If splitting w/" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xH9-WR-wwv">
-                    <rect key="frame" x="10" y="120" width="236" height="24"/>
+                    <rect key="frame" x="10" y="132" width="236" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="24" id="ci0-XN-HUI"/>
+                        <constraint firstAttribute="height" constant="30" id="ci0-XN-HUI"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="5ma-P1-X05">
-                    <rect key="frame" x="250" y="120" width="100" height="24"/>
+                    <rect key="frame" x="250" y="132" width="100" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="2uf-f3-sf0"/>
-                        <constraint firstAttribute="height" constant="24" id="Iyd-ZN-MF2"/>
+                        <constraint firstAttribute="height" constant="30" id="Iyd-ZN-MF2"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
@@ -139,16 +139,16 @@
                     </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="people" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3h-Vu-XSV">
-                    <rect key="frame" x="354" y="120" width="236" height="24"/>
+                    <rect key="frame" x="354" y="132" width="236" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="24" id="1vM-E8-WqG"/>
+                        <constraint firstAttribute="height" constant="30" id="1vM-E8-WqG"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="then I should pay £ 0.00 Pounds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="yT7-J1-OTq">
-                    <rect key="frame" x="10" y="148" width="580" height="20"/>
+                    <rect key="frame" x="10" y="166" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="NjL-we-inQ"/>
                     </constraints>
@@ -157,7 +157,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The equivalents of these values in Dollars:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="hRE-CP-PWH">
-                    <rect key="frame" x="10" y="236" width="580" height="20"/>
+                    <rect key="frame" x="10" y="260" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="D6h-bx-lYW"/>
                     </constraints>
@@ -166,7 +166,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The check was $ 0.00 Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="BT5-dR-R41">
-                    <rect key="frame" x="10" y="260" width="580" height="20"/>
+                    <rect key="frame" x="10" y="284" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="Pkb-XW-NmG"/>
                     </constraints>
@@ -175,7 +175,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="with a tip of $ 0.00 Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="JEx-lf-FPc">
-                    <rect key="frame" x="10" y="284" width="580" height="20"/>
+                    <rect key="frame" x="10" y="308" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="x46-Sg-z9e"/>
                     </constraints>
@@ -184,7 +184,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and the total was $ 0.00 Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="oPy-lB-QxJ">
-                    <rect key="frame" x="10" y="308" width="580" height="20"/>
+                    <rect key="frame" x="10" y="332" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="Opq-Rb-3og"/>
                     </constraints>
@@ -193,7 +193,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="then the total is £ 0.00 Pounds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="DCn-YT-jZV">
-                    <rect key="frame" x="10" y="90" width="580" height="20"/>
+                    <rect key="frame" x="10" y="102" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="o8l-Nu-ErK"/>
                     </constraints>
@@ -202,7 +202,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="costing each person $ 0.00 Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="dmC-cD-6JO">
-                    <rect key="frame" x="10" y="332" width="580" height="20"/>
+                    <rect key="frame" x="10" y="356" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="WlH-D3-JeD"/>
                     </constraints>
@@ -211,7 +211,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="but I payed roughly $ 0.00 Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="xaL-TB-SjF">
-                    <rect key="frame" x="10" y="356" width="580" height="20"/>
+                    <rect key="frame" x="10" y="380" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="8b7-fs-Xw2"/>
                     </constraints>
@@ -220,18 +220,18 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="But if I paid (£)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="6Di-oj-hmV">
-                    <rect key="frame" x="10" y="178" width="236" height="24"/>
+                    <rect key="frame" x="10" y="196" width="236" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="24" id="lwQ-qd-rUN"/>
+                        <constraint firstAttribute="height" constant="30" id="lwQ-qd-rUN"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" borderStyle="roundedRect" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="d8k-gX-5A6">
-                    <rect key="frame" x="250" y="178" width="100" height="24"/>
+                    <rect key="frame" x="250" y="196" width="100" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="24" id="Eap-fB-LPU"/>
+                        <constraint firstAttribute="height" constant="30" id="Eap-fB-LPU"/>
                         <constraint firstAttribute="width" constant="100" id="uQ0-BW-sOI"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -241,16 +241,16 @@
                     </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pounds" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="dYC-y4-STC">
-                    <rect key="frame" x="354" y="178" width="236" height="24"/>
+                    <rect key="frame" x="354" y="196" width="236" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="24" id="s1L-Nq-BHP"/>
+                        <constraint firstAttribute="height" constant="30" id="s1L-Nq-BHP"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="then it was a fair transaction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="Hie-sk-SQx">
-                    <rect key="frame" x="10" y="206" width="580" height="20"/>
+                    <rect key="frame" x="10" y="230" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="0kU-Pj-Y26"/>
                     </constraints>
@@ -259,7 +259,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="with a difference of $ 0.00 Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="xhy-eZ-ZWi">
-                    <rect key="frame" x="10" y="380" width="580" height="20"/>
+                    <rect key="frame" x="10" y="404" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="nec-Fs-HQb"/>
                     </constraints>
