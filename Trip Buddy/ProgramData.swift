@@ -8,6 +8,7 @@ import CoreData
 class ProgramData: NSManagedObject {
 	@NSManaged var originCountry: NSNumber
 	@NSManaged var travelCountry: NSNumber
+	@NSManaged var countryExchangeRate: NSNumber
 	@NSManaged var showHelpAtStartup: NSNumber
 	@NSManaged var exchangeAmount: NSNumber
 	@NSManaged var exchangePercentage: NSNumber

@@ -36,11 +36,6 @@ class MainViewController: UIViewController {
 	                                      "INR", "EUR", "JPY", "MYR", "MXN", "SGD", "EUR", "CHF",
 	                                      "GBP", "USD"]
 
-	//Eventually, country weights will be replaced by country abbreviations
-	let countryWeights: [Double] = [9.41, 0.65, 1.75, 1.3336, 704.955, 6.34, 0.65, 0.93,
-	                                66.07, 0.94, 122.725, 4.3949, 16.7305, 1.4, 0.92, 0.99,
-	                                0.654, 1.5172]
-
 	//Gas information
 	let gasUnits: [String] = ["U.S. Gallon", "Imp. Gallon", "Liter"]
 
@@ -80,6 +75,7 @@ class MainViewController: UIViewController {
 			existingData = [NSEntityDescription.insertNewObjectForEntityForName("ProgramData", inManagedObjectContext: context) as! ProgramData]
 			existingData[0].originCountry = countryNames.count - 1
 			existingData[0].travelCountry = countryNames.count - 2
+			existingData[0].countryExchangeRate = 1
 			existingData[0].showHelpAtStartup = 1
 			existingData[0].exchangeAmount = 0
 			existingData[0].exchangePercentage = 0
@@ -98,8 +94,8 @@ class MainViewController: UIViewController {
 			existingData[0].miscUnit = 0
 		}
 		programData = existingData[0]
-		//Once program data is obtained, save it and update all UI elements with their respective values
-		saveProgramData()
+		//Once program data is obtained, update the country exchange rate, save all data, and update all UI elements
+		countryExchangeRateRequest()
 		//Transition to the help view controller by default
 		if programData!.showHelpAtStartup == 1 {
 			performSegueWithIdentifier("MainToHelpSegue", sender: self)
@@ -140,7 +136,7 @@ class MainViewController: UIViewController {
 		travelCountryButton.setTitle("Travel Country: \(travelName)", forState: UIControlState.Normal)
 		//Update ExchangeViewController's elements
 		exchangeViewController.unitsLabel.text = "Exchanging \(originCurrency) to \(travelCurrency):"
-		exchangeViewController.rateLabel.text = "\(originSymbol) 1.00 = \(travelSymbol) \(String(format: "%.2f", countryExchangeRate()))"
+		exchangeViewController.rateLabel.text = "\(originSymbol) 1.00 = \(travelSymbol) \(String(format: "%.2f", programData!.countryExchangeRate.doubleValue))"
 		exchangeViewController.amountSymbolLabel.text = "If I exchange (\(originSymbol))"
 		exchangeViewController.amountTextField.text = String(format: "%.2f", programData!.exchangeAmount.doubleValue)
 		exchangeViewController.amountUnitLabel.text = originCurrency
@@ -217,11 +213,6 @@ class MainViewController: UIViewController {
 		miscViewController.toggleButton.setTitle("Switch the \(miscMeasurement) units", forState: UIControlState.Normal)
 	}
 
-	//Returns the exchange rate between the origin country and the travel country
-	func countryExchangeRate() -> Double {
-		return countryWeights[programData!.travelCountry.integerValue] / countryWeights[programData!.originCountry.integerValue]
-	}
-
 	//Returns the exchange fee, which is the exchange amount times the exchange percentage
 	func exchangeFee() -> Double {
 		return programData!.exchangeAmount.doubleValue * (programData!.exchangePercentage.doubleValue / 100)
@@ -234,7 +225,7 @@ class MainViewController: UIViewController {
 
 	//Returns the exchange result, which is the exchange total times the country exchange rate
 	func exchangeResult() -> Double {
-		return Double(String(format: "%.2f", exchangeTotal() * countryExchangeRate()))!
+		return Double(String(format: "%.2f", exchangeTotal() * programData!.countryExchangeRate.doubleValue))!
 	}
 
 	//Returns the exchange difference, which is the exchange outcome minues the exchange result
@@ -264,17 +255,17 @@ class MainViewController: UIViewController {
 
 	//Returns the equivalent gas rate, which is the gas rate divided by both the country exchange rate and the gas exchange rate
 	func gasEquivalentRate() -> Double {
-		return (programData!.gasRate.doubleValue / countryExchangeRate()) / gasExchangeRate()
+		return (programData!.gasRate.doubleValue / programData!.countryExchangeRate.doubleValue) / gasExchangeRate()
 	}
 
 	//Returns the equivalent gas result, which is the gas result divided by the country exchange rate
 	func gasEquivalentResult() -> Double {
-		return gasResult() / countryExchangeRate()
+		return gasResult() / programData!.countryExchangeRate.doubleValue
 	}
 
 	//Returns the equivalent gas outcome, which is the gas outcome divided by the country exchange rate
 	func gasEquivalentOutcome() -> Double {
-		return programData!.gasOutcome.doubleValue / countryExchangeRate()
+		return programData!.gasOutcome.doubleValue / programData!.countryExchangeRate.doubleValue
 	}
 
 	//Returns the equivalent gas difference, which is the absolute value of the equivalent gas outcome minus the equivalent gas result
@@ -304,7 +295,7 @@ class MainViewController: UIViewController {
 
 	//Returns the equivalent meal amount, which is the meal amount divided by the country exchange rate
 	func mealEquivalentAmount() -> Double {
-		return programData!.mealAmount.doubleValue / countryExchangeRate()
+		return programData!.mealAmount.doubleValue / programData!.countryExchangeRate.doubleValue
 	}
 
 	//Returns the equivalent meal tip, which is the equivalent meal amount times the meal percentage
@@ -319,12 +310,12 @@ class MainViewController: UIViewController {
 
 	//Returns the equivalent meal result, which is the meal result divided by the country exchange rate
 	func mealEquivalentResult() -> Double {
-		return mealResult() / countryExchangeRate()
+		return mealResult() / programData!.countryExchangeRate.doubleValue
 	}
 
 	//Returns the equivalent meal outcome, which is the meal outcome divided by the country exchange rate
 	func mealEquivalentOutcome() -> Double {
-		return programData!.mealOutcome.doubleValue / countryExchangeRate()
+		return programData!.mealOutcome.doubleValue / programData!.countryExchangeRate.doubleValue
 	}
 
 	//Returns the equivalent meal differece, which is the absolute value of the equivalent meal outcome minus the equivalent meal result
@@ -343,6 +334,58 @@ class MainViewController: UIViewController {
 		} else {
 			return (programData!.miscAmount.doubleValue * (9 / 5)) + 32
 		}
+	}
+
+	//Makes a request for the exchange rate between the origin country and the travel country
+	func countryExchangeRateRequest() {
+		let originAbbreviation = countryAbbreviations[programData!.originCountry.integerValue]
+		let travelAbbreviation = countryAbbreviations[programData!.travelCountry.integerValue]
+		let url = NSURL(string: "https://download.finance.yahoo.com/d/quotes.csv?s=\(originAbbreviation)\(travelAbbreviation)=X&f=nl1d1t1")
+		let request = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: countryExchangeRateResponse)
+
+		(viewControllers[0] as! ExchangeViewController).rateLabel.text = "(Updating...)"
+		originCountryButton.enabled = false
+		travelCountryButton.enabled = false
+		request.resume()
+	}
+
+	//Given a response, update the exchange rate between the origin country and the travel country
+	func countryExchangeRateResponse(data: NSData?, urlResponse: NSURLResponse?, error: NSError?) {
+		dispatch_async(dispatch_get_main_queue(), {
+			self.originCountryButton.enabled = true
+			self.travelCountryButton.enabled = true
+			if urlResponse != nil {
+				if (urlResponse as! NSHTTPURLResponse).statusCode == 200 {
+					let countryExchangeString = NSString(data: data!, encoding: NSUTF8StringEncoding)!
+					if countryExchangeString.componentsSeparatedByString(",").count > 1 {
+						let countryExchangeArray = countryExchangeString.componentsSeparatedByString(",")
+						if Double(countryExchangeArray[1]) != nil {
+							self.programData!.countryExchangeRate = Double(countryExchangeArray[1])!
+						} else {
+							let alertController = UIAlertController(title: "Error", message: "Unable to update the country exchange rate. The previous value will be used instead. The retrieved data doesn't contain a numeric value. Please try again at a later time. We apologize for the inconvenience.", preferredStyle: UIAlertControllerStyle.Alert)
+							alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+							self.presentViewController(alertController, animated: true, completion: nil)
+						}
+					} else {
+						let alertController = UIAlertController(title: "Error", message: "Unable to update the country exchange rate. The previous value will be used instead. The retrieved data isn't properly formatted. Please try again at a later time. We apologize for the inconvenience.", preferredStyle: UIAlertControllerStyle.Alert)
+						alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+						self.presentViewController(alertController, animated: true, completion: nil)
+					}
+				} else {
+					let alertController = UIAlertController(title: "Error", message: "Unable to update the country exchange rate. The previous value will be used instead. One of the countries you selected doesn't seem to have any data currently. Please try a different country for the time being. We apologize for the inconvenience.", preferredStyle: UIAlertControllerStyle.Alert)
+					alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+					self.presentViewController(alertController, animated: true, completion: nil)
+				}
+			} else {
+				let alertController = UIAlertController(title: "Error", message: "Unable to update the country exchange rate. The previous value will be used instead. Make sure your device is connected to the internet before trying again.", preferredStyle: UIAlertControllerStyle.Alert)
+				alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+				self.presentViewController(alertController, animated: true, completion: nil)
+			}
+			if self.programData!.countryExchangeRate.doubleValue < 0.01 {
+				self.programData!.countryExchangeRate = 0.01
+			}
+			self.saveProgramData()
+		})
 	}
 
 	//Set the scroll view's content size once all of the sub-views have been loaded and resized
@@ -375,7 +418,7 @@ class MainViewController: UIViewController {
 		for i in 0.stride(to: countryNames.count, by: 1) {
 			if countryNames[i] == action.title {
 				programData!.originCountry = i
-				saveProgramData()
+				countryExchangeRateRequest()
 				break
 			}
 		}
@@ -398,7 +441,7 @@ class MainViewController: UIViewController {
 		for i in 0.stride(to: countryNames.count, by: 1) {
 			if countryNames[i] == action.title {
 				programData!.travelCountry = i
-				saveProgramData()
+				countryExchangeRateRequest()
 				break
 			}
 		}
