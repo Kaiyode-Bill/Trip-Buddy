@@ -8,11 +8,9 @@ class GasViewController: ParentViewController {
 	@IBOutlet weak var unitControl: UISegmentedControl!
 	@IBOutlet weak var amountTextField: UITextField!
 	@IBOutlet weak var amountUnitLabel: UILabel!
-	@IBOutlet weak var rateSymbolLabel: UILabel!
 	@IBOutlet weak var rateTextField: UITextField!
 	@IBOutlet weak var rateUnitLabel: UILabel!
 	@IBOutlet weak var resultLabel: UILabel!
-	@IBOutlet weak var outcomeSymbolLabel: UILabel!
 	@IBOutlet weak var outcomeTextField: UITextField!
 	@IBOutlet weak var outcomeUnitLabel: UILabel!
 	@IBOutlet weak var differenceLabel: UILabel!

@@ -17,10 +17,8 @@
                 <outlet property="equivalentResultLabel" destination="dtC-1W-CK7" id="0Xy-I5-PVB"/>
                 <outlet property="equivalentUnitControl" destination="Fnx-uT-kbX" id="4wZ-VT-raJ"/>
                 <outlet property="exchangeRateLabel" destination="6wq-kO-dvm" id="7HW-P5-eyr"/>
-                <outlet property="outcomeSymbolLabel" destination="eaV-bg-WpP" id="dcI-IG-A8S"/>
                 <outlet property="outcomeTextField" destination="o8U-fh-4Mf" id="1VA-uG-fve"/>
                 <outlet property="outcomeUnitLabel" destination="hRr-Gz-jov" id="K95-Pq-mFn"/>
-                <outlet property="rateSymbolLabel" destination="0Uc-NK-cz5" id="76W-Mn-hUd"/>
                 <outlet property="rateTextField" destination="vx6-Nq-SUH" id="LX0-S8-3kT"/>
                 <outlet property="rateUnitLabel" destination="nlG-qb-2DY" id="YL0-xT-QRg"/>
                 <outlet property="resultLabel" destination="OKi-Y7-mFM" id="cZq-ie-g1v"/>
@@ -131,7 +129,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="But if I paid (£)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="eaV-bg-WpP">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="But if I paid" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaV-bg-WpP">
                     <rect key="frame" x="10" y="166" width="236" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="1JF-eF-I3K"/>
@@ -221,7 +219,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="at a rate of (£)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="0Uc-NK-cz5">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="at a rate of" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uc-NK-cz5">
                     <rect key="frame" x="10" y="102" width="236" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="4RT-KZ-0wp"/>

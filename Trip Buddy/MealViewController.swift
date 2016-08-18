@@ -5,7 +5,6 @@
 import UIKit
 
 class MealViewController: ParentViewController {
-	@IBOutlet weak var amountSymbolLabel: UILabel!
 	@IBOutlet weak var amountTextField: UITextField!
 	@IBOutlet weak var amountUnitLabel: UILabel!
 	@IBOutlet weak var percentageTextField: UITextField!
@@ -13,7 +12,6 @@ class MealViewController: ParentViewController {
 	@IBOutlet weak var totalLabel: UILabel!
 	@IBOutlet weak var peopleTextField: UITextField!
 	@IBOutlet weak var resultLabel: UILabel!
-	@IBOutlet weak var outcomeSymbolLabel: UILabel!
 	@IBOutlet weak var outcomeTextField: UITextField!
 	@IBOutlet weak var outcomeUnitLabel: UILabel!
 	@IBOutlet weak var differenceLabel: UILabel!

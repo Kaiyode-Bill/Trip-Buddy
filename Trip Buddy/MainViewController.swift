@@ -137,14 +137,12 @@ class MainViewController: UIViewController {
 		//Update ExchangeViewController's elements
 		exchangeViewController.unitsLabel.text = "Exchanging \(originCurrency) to \(travelCurrency):"
 		exchangeViewController.rateLabel.text = "\(originSymbol) 1.00 = \(travelSymbol) \(String(format: "%.2f", programData!.countryExchangeRate.doubleValue))"
-		exchangeViewController.amountSymbolLabel.text = "If I exchange (\(originSymbol))"
 		exchangeViewController.amountTextField.text = String(format: "%.2f", programData!.exchangeAmount.doubleValue)
 		exchangeViewController.amountUnitLabel.text = originCurrency
 		exchangeViewController.percentageTextField.text = String(format: "%.2f", programData!.exchangePercentage.doubleValue)
 		exchangeViewController.feeLabel.text = "(which equals \(originSymbol) \(String(format: "%.2f", exchangeFee())) \(originCurrency))"
 		exchangeViewController.totalLabel.text = "then out of \(originSymbol) \(String(format: "%.2f", exchangeTotal())) \(originCurrency)"
 		exchangeViewController.resultLabel.text = "I should get \(travelSymbol) \(String(format: "%.2f", exchangeResult())) \(travelCurrency) back"
-		exchangeViewController.outcomeSymbolLabel.text = "But if I got (\(travelSymbol))"
 		exchangeViewController.outcomeTextField.text = String(format: "%.2f", programData!.exchangeOutcome.doubleValue)
 		exchangeViewController.outcomeUnitLabel.text = travelCurrency
 		if exchangeDifference() == 0 {
@@ -158,11 +156,9 @@ class MainViewController: UIViewController {
 		gasViewController.unitControl.selectedSegmentIndex = programData!.gasUnit.integerValue
 		gasViewController.amountTextField.text = String(format: "%.2f", programData!.gasAmount.doubleValue)
 		gasViewController.amountUnitLabel.text = "\(gasUnit)s"
-		gasViewController.rateSymbolLabel.text = "at a rate of (\(travelSymbol))"
 		gasViewController.rateTextField.text = String(format: "%.2f", programData!.gasRate.doubleValue)
 		gasViewController.rateUnitLabel.text = "\(travelCurrency)/\(gasUnit)"
 		gasViewController.resultLabel.text = "then I should pay \(travelSymbol) \(String(format: "%.2f", gasResult())) \(travelCurrency)"
-		gasViewController.outcomeSymbolLabel.text = "But if I paid (\(travelSymbol))"
 		gasViewController.outcomeTextField.text = String(format: "%.2f", programData!.gasOutcome.doubleValue)
 		gasViewController.outcomeUnitLabel.text = travelCurrency
 		if gasDifference() == 0 {
@@ -180,7 +176,6 @@ class MainViewController: UIViewController {
 		gasViewController.equivalentOutcomeLabel.text = "but I paid roughly \(originSymbol) \(String(format: "%.2f", gasEquivalentOutcome())) \(originCurrency)"
 		gasViewController.equivalentDifferenceLabel.text = "with a difference of \(originSymbol) \(String(format: "%.2f", gasEquivalentDifference())) \(originCurrency)"
 		//Update MealViewController's elements
-		mealViewController.amountSymbolLabel.text = "The check is (\(travelSymbol))"
 		mealViewController.amountTextField.text = String(format: "%.2f", programData!.mealAmount.doubleValue)
 		mealViewController.amountUnitLabel.text = travelCurrency
 		mealViewController.percentageTextField.text = String(format: "%.2f", programData!.mealPercentage.doubleValue)
@@ -188,7 +183,6 @@ class MainViewController: UIViewController {
 		mealViewController.totalLabel.text = "then the total is \(travelSymbol) \(String(format: "%.2f", mealTotal())) \(travelCurrency)"
 		mealViewController.peopleTextField.text = String(programData!.mealPeople.integerValue)
 		mealViewController.resultLabel.text = "then I should pay \(travelSymbol) \(String(format: "%.2f", mealResult())) \(travelCurrency)"
-		mealViewController.outcomeSymbolLabel.text = "But if I paid (\(travelSymbol))"
 		mealViewController.outcomeTextField.text = String(format: "%.2f", programData!.mealOutcome.doubleValue)
 		mealViewController.outcomeUnitLabel.text = travelCurrency
 		if mealDifference() == 0{

@@ -7,12 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExchangeViewController" customModule="Trip_Buddy" customModuleProvider="target">
             <connections>
-                <outlet property="amountSymbolLabel" destination="sVD-M1-meW" id="AJh-wb-ovH"/>
                 <outlet property="amountTextField" destination="KsZ-pH-KUX" id="Usw-Ak-tdB"/>
                 <outlet property="amountUnitLabel" destination="hEa-Us-PYh" id="y7S-WM-sb8"/>
                 <outlet property="differenceLabel" destination="dOx-f7-oJi" id="zRy-1d-zSV"/>
                 <outlet property="feeLabel" destination="ojj-6Y-mrr" id="qIb-rD-7OW"/>
-                <outlet property="outcomeSymbolLabel" destination="XVK-V6-MvC" id="ojM-wh-7Dk"/>
                 <outlet property="outcomeTextField" destination="hG0-uz-X8b" id="flH-T6-uqr"/>
                 <outlet property="outcomeUnitLabel" destination="83y-rK-RqT" id="02A-A0-896"/>
                 <outlet property="percentageTextField" destination="euC-Oe-8RE" id="ign-x6-dbz"/>
@@ -58,7 +56,7 @@
                         <action selector="amountTextFieldChanged:" destination="-1" eventType="editingDidEnd" id="Se2-il-fvH"/>
                     </connections>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If I exchange ($)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="sVD-M1-meW">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If I exchange" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVD-M1-meW">
                     <rect key="frame" x="10" y="64" width="236" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Ph6-cD-060"/>
@@ -106,7 +104,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="But if I got (£)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="XVK-V6-MvC">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="But if I got" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVK-V6-MvC">
                     <rect key="frame" x="10" y="210" width="236" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="ieL-fj-YFH"/>
