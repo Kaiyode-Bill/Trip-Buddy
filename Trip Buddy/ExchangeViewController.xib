@@ -167,7 +167,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2of-bY-vPb">
-                    <rect key="frame" x="10" y="520" width="580" height="30"/>
+                    <rect key="frame" x="10" y="526" width="580" height="30"/>
                     <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Ii6-MG-bRY"/>
@@ -204,7 +204,7 @@
                 <constraint firstItem="dOx-f7-oJi" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="0oV-dU-NFY"/>
                 <constraint firstItem="VWA-Wy-ZFs" firstAttribute="top" secondItem="uJ8-L0-BtG" secondAttribute="bottom" constant="4" id="34K-8x-F5d"/>
                 <constraint firstItem="hEa-Us-PYh" firstAttribute="top" secondItem="5dl-oe-tdH" secondAttribute="bottom" constant="10" id="6lL-9A-gtu"/>
-                <constraint firstItem="ygi-Je-EGv" firstAttribute="top" secondItem="2of-bY-vPb" secondAttribute="bottom" constant="10" id="7yk-2R-ZWb"/>
+                <constraint firstItem="ygi-Je-EGv" firstAttribute="top" secondItem="2of-bY-vPb" secondAttribute="bottom" constant="4" id="7yk-2R-ZWb"/>
                 <constraint firstAttribute="trailing" secondItem="2of-bY-vPb" secondAttribute="trailing" constant="10" id="8Li-Og-XZ5"/>
                 <constraint firstItem="ygi-Je-EGv" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="9O0-F1-rIj"/>
                 <constraint firstItem="VWA-Wy-ZFs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="Cfo-zF-idq"/>
