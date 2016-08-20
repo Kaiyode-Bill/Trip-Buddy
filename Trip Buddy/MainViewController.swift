@@ -338,16 +338,21 @@ class MainViewController: UIViewController {
 		let request = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: countryExchangeRateResponse)
 
 		(viewControllers[0] as! ExchangeViewController).rateLabel.text = "(Updating...)"
-		originCountryButton.enabled = false
-		travelCountryButton.enabled = false
+		enableViewElements(false)
 		request.resume()
+	}
+
+	//Enables or disables all of the view elements based upon the boolean parameter passed in
+	func enableViewElements(enabled: Bool) {
+		originCountryButton.enabled = enabled
+		travelCountryButton.enabled = enabled
+		//ADD MORE ELEMENTS HERE!
 	}
 
 	//Given a response, update the exchange rate between the origin country and the travel country
 	func countryExchangeRateResponse(data: NSData?, urlResponse: NSURLResponse?, error: NSError?) {
 		dispatch_async(dispatch_get_main_queue(), {
-			self.originCountryButton.enabled = true
-			self.travelCountryButton.enabled = true
+			self.enableViewElements(true)
 			if urlResponse != nil {
 				if (urlResponse as! NSHTTPURLResponse).statusCode == 200 {
 					let countryExchangeString = NSString(data: data!, encoding: NSUTF8StringEncoding)!
