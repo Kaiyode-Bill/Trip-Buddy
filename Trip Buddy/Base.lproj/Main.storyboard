@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VE2-9S-ePA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IEU-Kc-3ir">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -18,38 +18,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l0E-wI-R19">
-                                <rect key="frame" x="2" y="66" width="60" height="30"/>
+                                <rect key="frame" x="2" y="22" width="60" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Uh8-rA-SI3"/>
                                     <constraint firstAttribute="width" constant="60" id="iEj-xB-HdR"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sfr-qi-fHz">
-                                <rect key="frame" x="2" y="98" width="60" height="30"/>
+                                <rect key="frame" x="2" y="54" width="60" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="WIM-uU-qZL"/>
                                     <constraint firstAttribute="width" constant="60" id="zy7-Gq-A6a"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Brt-Bw-d27">
-                                <rect key="frame" x="64" y="66" width="534" height="30"/>
-                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="B6U-og-6De"/>
-                                </constraints>
-                                <state key="normal" title="Origin Country">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="originCountryButtonPressed:" destination="IEU-Kc-3ir" eventType="touchUpInside" id="cE6-z8-pcJ"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIb-0u-JrV">
-                                <rect key="frame" x="64" y="98" width="534" height="30"/>
+                                <rect key="frame" x="64" y="54" width="534" height="30"/>
                                 <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="6eM-wL-eFh"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Travel Country">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -58,16 +46,16 @@
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4P-IN-2GG">
-                                <rect key="frame" x="0.0" y="180" width="600" height="420"/>
+                                <rect key="frame" x="0.0" y="116" width="600" height="484"/>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giY-Be-sUA">
-                                <rect key="frame" x="0.0" y="130" width="150" height="50"/>
+                                <rect key="frame" x="0.0" y="86" width="150" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="aJJ-oT-wkH"/>
+                                    <constraint firstAttribute="height" constant="30" id="aJJ-oT-wkH"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Exchange">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="EXCHANGE">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -75,13 +63,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jw6-QC-RKf">
-                                <rect key="frame" x="150" y="130" width="150" height="50"/>
+                                <rect key="frame" x="150" y="86" width="150" height="30"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Ciy-ZS-Meq"/>
+                                    <constraint firstAttribute="height" constant="30" id="Ciy-ZS-Meq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Gas">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="GAS">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -89,13 +77,13 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYy-8t-yMn">
-                                <rect key="frame" x="300" y="130" width="150" height="50"/>
+                                <rect key="frame" x="300" y="86" width="150" height="30"/>
                                 <color key="backgroundColor" red="0.50196078431372548" green="1" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="LUu-kf-EVU"/>
+                                    <constraint firstAttribute="height" constant="30" id="LUu-kf-EVU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Meal">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="MEAL">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -103,17 +91,31 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkW-YI-8Kv">
-                                <rect key="frame" x="450" y="130" width="150" height="50"/>
+                                <rect key="frame" x="450" y="86" width="150" height="30"/>
                                 <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="p8x-dq-0ov"/>
+                                    <constraint firstAttribute="height" constant="30" id="p8x-dq-0ov"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <state key="normal" title="Misc.">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="EQUAL">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="bottomButtonPressed:" destination="IEU-Kc-3ir" eventType="touchUpInside" id="IoD-9F-vpk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Brt-Bw-d27">
+                                <rect key="frame" x="64" y="22" width="534" height="30"/>
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="B6U-og-6De"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <state key="normal" title="Origin Country">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="originCountryButtonPressed:" destination="IEU-Kc-3ir" eventType="touchUpInside" id="cE6-z8-pcJ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -157,14 +159,14 @@
                         <outlet property="scrollView" destination="U4P-IN-2GG" id="HWq-9a-78h"/>
                         <outlet property="travelCountryButton" destination="DIb-0u-JrV" id="K2D-zP-cue"/>
                         <outlet property="travelCountryImageView" destination="Sfr-qi-fHz" id="HTJ-s1-dzH"/>
-                        <segue destination="pWi-zc-zjq" kind="show" identifier="MainToHelpSegue" id="zLn-GQ-mwf"/>
+                        <segue destination="pWi-zc-zjq" kind="presentation" identifier="MainToHelpSegue" id="zLn-GQ-mwf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2p-pd-cpF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1303" y="-1006"/>
         </scene>
-        <!--Welcome-->
+        <!--Help View Controller-->
         <scene sceneID="9d0-Kh-QKW">
             <objects>
                 <viewController id="pWi-zc-zjq" customClass="HelpViewController" customModule="Trip_Buddy" customModuleProvider="target" sceneMemberID="viewController">
@@ -206,17 +208,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Trip Buddy!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOh-7C-ugJ">
-                                <rect key="frame" x="10" y="74" width="580" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="ai0-D5-lsX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Buddy is an app that handles money calculations for international traveling in four different categories:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiG-gb-C7A">
-                                <rect key="frame" x="10" y="104" width="580" height="60"/>
+                                <rect key="frame" x="10" y="60" width="580" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="1a1-PS-EWH"/>
                                 </constraints>
@@ -225,7 +218,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EXCHANGE - For determining how much to receive when exchanging currencies." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrn-sU-Zl1">
-                                <rect key="frame" x="10" y="170" width="580" height="40"/>
+                                <rect key="frame" x="10" y="126" width="580" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="qIX-tl-xNr"/>
@@ -235,7 +228,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAS - For determining how much to pay when filling up for gas at the pump." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqu-kO-MNg">
-                                <rect key="frame" x="10" y="216" width="580" height="40"/>
+                                <rect key="frame" x="10" y="172" width="580" height="40"/>
                                 <color key="backgroundColor" red="1" green="1" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="iBY-d1-80D"/>
@@ -245,7 +238,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MEAL - For determining how much to pay when dining out alone or in a group." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bi1-vQ-O1L">
-                                <rect key="frame" x="10" y="262" width="580" height="40"/>
+                                <rect key="frame" x="10" y="218" width="580" height="40"/>
                                 <color key="backgroundColor" red="0.50196078431372548" green="1" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="rp8-ya-ucy"/>
@@ -254,8 +247,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MISC. - For determining other types of conversions: distance and temperature." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qz-9I-fq7">
-                                <rect key="frame" x="10" y="308" width="580" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EQUAL - For determining other types of conversions: distance and temperature." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qz-9I-fq7">
+                                <rect key="frame" x="10" y="264" width="580" height="40"/>
                                 <color key="backgroundColor" red="0.50196078431372548" green="0.50196078431372548" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="bxB-X5-3l5"/>
@@ -265,12 +258,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GnK-au-X9u">
-                                <rect key="frame" x="10" y="354" width="580" height="100"/>
+                                <rect key="frame" x="10" y="310" width="580" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="JtK-1Y-pyl"/>
                                 </constraints>
                                 <string key="text">To use, select your countries of origin and travel. Then, swipe left or right to select a category. Enter your numbers into the text fields, and voila! Trip Buddy gives you all the conversions you need.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Trip Buddy!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOh-7C-ugJ">
+                                <rect key="frame" x="10" y="30" width="580" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="ai0-D5-lsX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -308,7 +310,6 @@
                             <constraint firstItem="6mO-YG-KiL" firstAttribute="leading" secondItem="cG0-t5-UwY" secondAttribute="leading" constant="10" id="xvD-BT-d57"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome" id="JTI-kM-Web"/>
                     <connections>
                         <outlet property="startupSwitch" destination="6mO-YG-KiL" id="eiX-vN-tcn"/>
                     </connections>
@@ -316,24 +317,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZWL-IG-P4f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2044" y="-1006"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="xxX-8E-U0k">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VE2-9S-ePA" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EFV-gM-CyB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="IEU-Kc-3ir" kind="relationship" relationship="rootViewController" id="ERB-qu-45X"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5ga-XD-h0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="547" y="-1006"/>
         </scene>
     </scenes>
 </document>

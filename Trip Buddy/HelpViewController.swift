@@ -19,6 +19,6 @@ class HelpViewController: UIViewController {
 	}
 
 	@IBAction func returnButtonPressed(sender: AnyObject) {
-		navigationController!.popViewControllerAnimated(true)
+		dismissViewControllerAnimated(true, completion: nil)
 	}
 }

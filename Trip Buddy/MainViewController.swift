@@ -50,8 +50,9 @@ class MainViewController: UIViewController {
 	let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
 	var programData: ProgramData? = nil
 
-	//Update variable
+	//Runtime variables
 	var updating = false
+	var loading = true
 
 	//This code is executed when the view is first loaded
 	override func viewDidLoad() {
@@ -99,10 +100,60 @@ class MainViewController: UIViewController {
 		programData = existingData[0]
 		//Once program data is obtained, update the country exchange rate, save all data, and update all UI elements
 		countryExchangeRateRequest()
-		//Transition to the help view controller by default
-		if programData!.showHelpAtStartup == 1 {
-			performSegueWithIdentifier("MainToHelpSegue", sender: self)
-		}
+	}
+
+	//Makes a request for the exchange rate between the origin country and the travel country
+	func countryExchangeRateRequest() {
+		let originAbbreviation = countryAbbreviations[programData!.originCountry.integerValue]
+		let travelAbbreviation = countryAbbreviations[programData!.travelCountry.integerValue]
+		let url = NSURL(string: "https://download.finance.yahoo.com/d/quotes.csv?s=\(originAbbreviation)\(travelAbbreviation)=X&f=nl1d1t1")
+		let request = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: countryExchangeRateResponse)
+
+		originCountryButton.enabled = false
+		travelCountryButton.enabled = false
+		updating = true
+		saveProgramData()
+		request.resume()
+	}
+
+	//Given a response, update the exchange rate between the origin country and the travel country
+	func countryExchangeRateResponse(data: NSData?, urlResponse: NSURLResponse?, error: NSError?) {
+		dispatch_async(dispatch_get_main_queue(), {
+			self.originCountryButton.enabled = true
+			self.travelCountryButton.enabled = true
+			self.updating = false
+			if urlResponse != nil {
+				if (urlResponse as! NSHTTPURLResponse).statusCode == 200 {
+					let countryExchangeString = NSString(data: data!, encoding: NSUTF8StringEncoding)!
+					if countryExchangeString.componentsSeparatedByString(",").count > 1 {
+						let countryExchangeArray = countryExchangeString.componentsSeparatedByString(",")
+						if Double(countryExchangeArray[1]) != nil {
+							self.programData!.countryExchangeRate = Double(countryExchangeArray[1])!
+						} else {
+							let alertController = UIAlertController(title: "Error", message: "Unable to update the country exchange rate. The previous value will be used instead. The retrieved data doesn't contain a numeric value. Please try again at a later time. We apologize for the inconvenience.", preferredStyle: UIAlertControllerStyle.Alert)
+							alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+							self.presentViewController(alertController, animated: true, completion: nil)
+						}
+					} else {
+						let alertController = UIAlertController(title: "Error", message: "Unable to update the country exchange rate. The previous value will be used instead. The retrieved data isn't properly formatted. Please try again at a later time. We apologize for the inconvenience.", preferredStyle: UIAlertControllerStyle.Alert)
+						alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+						self.presentViewController(alertController, animated: true, completion: nil)
+					}
+				} else {
+					let alertController = UIAlertController(title: "Error", message: "Unable to update the country exchange rate. The previous value will be used instead. One of the countries you selected doesn't seem to have any data currently. Please try a different country for the time being. We apologize for the inconvenience.", preferredStyle: UIAlertControllerStyle.Alert)
+					alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+					self.presentViewController(alertController, animated: true, completion: nil)
+				}
+			} else {
+				let alertController = UIAlertController(title: "Error", message: "Unable to update the country exchange rate. The previous value will be used instead. Make sure your device is connected to the internet before trying again.", preferredStyle: UIAlertControllerStyle.Alert)
+				alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
+				self.presentViewController(alertController, animated: true, completion: nil)
+			}
+			if self.programData!.countryExchangeRate.doubleValue < 0.01 {
+				self.programData!.countryExchangeRate = 0.01
+			}
+			self.saveProgramData()
+		})
 	}
 
 	//Saves the program data to CoreData and then updates all of the UI elements
@@ -337,62 +388,18 @@ class MainViewController: UIViewController {
 		}
 	}
 
-	//Makes a request for the exchange rate between the origin country and the travel country
-	func countryExchangeRateRequest() {
-		let originAbbreviation = countryAbbreviations[programData!.originCountry.integerValue]
-		let travelAbbreviation = countryAbbreviations[programData!.travelCountry.integerValue]
-		let url = NSURL(string: "https://download.finance.yahoo.com/d/quotes.csv?s=\(originAbbreviation)\(travelAbbreviation)=X&f=nl1d1t1")
-		let request = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: countryExchangeRateResponse)
-
-		originCountryButton.enabled = false
-		travelCountryButton.enabled = false
-		updating = true
-		saveProgramData()
-		request.resume()
-	}
-
-	//Given a response, update the exchange rate between the origin country and the travel country
-	func countryExchangeRateResponse(data: NSData?, urlResponse: NSURLResponse?, error: NSError?) {
-		dispatch_async(dispatch_get_main_queue(), {
-			self.originCountryButton.enabled = true
-			self.travelCountryButton.enabled = true
-			self.updating = false
-			if urlResponse != nil {
-				if (urlResponse as! NSHTTPURLResponse).statusCode == 200 {
-					let countryExchangeString = NSString(data: data!, encoding: NSUTF8StringEncoding)!
-					if countryExchangeString.componentsSeparatedByString(",").count > 1 {
-						let countryExchangeArray = countryExchangeString.componentsSeparatedByString(",")
-						if Double(countryExchangeArray[1]) != nil {
-							self.programData!.countryExchangeRate = Double(countryExchangeArray[1])!
-						} else {
-							let alertController = UIAlertController(title: "Error", message: "Unable to update the country exchange rate. The previous value will be used instead. The retrieved data doesn't contain a numeric value. Please try again at a later time. We apologize for the inconvenience.", preferredStyle: UIAlertControllerStyle.Alert)
-							alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
-							self.presentViewController(alertController, animated: true, completion: nil)
-						}
-					} else {
-						let alertController = UIAlertController(title: "Error", message: "Unable to update the country exchange rate. The previous value will be used instead. The retrieved data isn't properly formatted. Please try again at a later time. We apologize for the inconvenience.", preferredStyle: UIAlertControllerStyle.Alert)
-						alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
-						self.presentViewController(alertController, animated: true, completion: nil)
-					}
-				} else {
-					let alertController = UIAlertController(title: "Error", message: "Unable to update the country exchange rate. The previous value will be used instead. One of the countries you selected doesn't seem to have any data currently. Please try a different country for the time being. We apologize for the inconvenience.", preferredStyle: UIAlertControllerStyle.Alert)
-					alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
-					self.presentViewController(alertController, animated: true, completion: nil)
-				}
-			} else {
-				let alertController = UIAlertController(title: "Error", message: "Unable to update the country exchange rate. The previous value will be used instead. Make sure your device is connected to the internet before trying again.", preferredStyle: UIAlertControllerStyle.Alert)
-				alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
-				self.presentViewController(alertController, animated: true, completion: nil)
-			}
-			if self.programData!.countryExchangeRate.doubleValue < 0.01 {
-				self.programData!.countryExchangeRate = 0.01
-			}
-			self.saveProgramData()
-		})
+	//Transition to the help view controller by default when the app first starts
+	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
+		if programData!.showHelpAtStartup == 1 && loading {
+			performSegueWithIdentifier("MainToHelpSegue", sender: self)
+		}
+		loading = false
 	}
 
 	//Set the scroll view's content size once all of the sub-views have been loaded and resized
 	override func viewDidLayoutSubviews() {
+		super.viewDidLayoutSubviews()
 		scrollView.contentSize = CGSizeMake(view.frame.size.width * CGFloat(viewControllers.count), scrollView.bounds.height)
 	}
 
