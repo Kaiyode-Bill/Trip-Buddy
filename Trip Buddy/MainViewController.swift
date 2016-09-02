@@ -194,25 +194,44 @@ class MainViewController: UIViewController {
 		//Update ExchangeViewController's elements
 		exchangeViewController.unitsLabel.text = "Exchanging \(originCurrency) to \(travelCurrency):"
 		if !updating {
-			exchangeViewController.rateLabel.text = "\(originSymbol) 1.00 = \(travelSymbol) \(String(format: "%.2f", programData!.countryExchangeRate.doubleValue))"
+			exchangeViewController.rateLabel.text = "\(originSymbol) 1.00 \(originCurrency) = \(travelSymbol) \(String(format: "%.2f", programData!.countryExchangeRate.doubleValue)) \(travelCurrency)"
 		} else {
 			exchangeViewController.rateLabel.text = "(Updating...)"
 		}
-		exchangeViewController.amountTextField.text = String(format: "%.2f", programData!.exchangeAmount.doubleValue)
-		exchangeViewController.amountUnitLabel.text = originCurrency
-		exchangeViewController.percentageTextField.text = String(format: "%.2f", programData!.exchangePercentage.doubleValue)
-		exchangeViewController.feeLabel.text = "(which equals \(originSymbol) \(String(format: "%.2f", exchangeFee())) \(originCurrency))"
-		exchangeViewController.totalLabel.text = "then out of \(originSymbol) \(String(format: "%.2f", exchangeTotal())) \(originCurrency)"
-		exchangeViewController.resultLabel.text = "I should get \(travelSymbol) \(String(format: "%.2f", exchangeResult())) \(travelCurrency) back"
-		exchangeViewController.outcomeTextField.text = String(format: "%.2f", programData!.exchangeOutcome.doubleValue)
-		exchangeViewController.outcomeUnitLabel.text = travelCurrency
-		if exchangeDifference() == 0 {
-			exchangeViewController.differenceLabel.text = "then it was a fair exchange"
-		} else if exchangeDifference() > 0 {
-			exchangeViewController.differenceLabel.text = "then I got \(travelSymbol) \(String(format: "%.2f", exchangeDifference())) \(travelCurrency) more"
+		if programData!.exchangeAmount != 0 {
+			exchangeViewController.amountTextField.text = "\(originSymbol) \(String(format: "%.2f", programData!.exchangeAmount.doubleValue)) \(originCurrency)"
 		} else {
-			exchangeViewController.differenceLabel.text = "then I got \(travelSymbol) \(String(format: "%.2f", -exchangeDifference())) \(travelCurrency) less"
+			exchangeViewController.amountTextField.text = ""
 		}
+		exchangeViewController.percentagePrefixLabel.hidden = programData!.exchangeAmount == 0
+		if programData!.exchangePercentage != 0 {
+			exchangeViewController.percentageTextField.text = "\(programData!.exchangePercentage.integerValue) %"
+		} else {
+			exchangeViewController.percentageTextField.text = ""
+		}
+		exchangeViewController.percentageTextField.hidden = programData!.exchangeAmount == 0
+		exchangeViewController.feePrefixLabel.hidden = programData!.exchangeAmount == 0
+		exchangeViewController.feeTextField.text = "\(originSymbol) \(String(format: "%.2f", programData!.exchangeFee.doubleValue)) \(originCurrency)"
+		exchangeViewController.feeTextField.hidden = programData!.exchangeAmount == 0
+		exchangeViewController.feeTextField.enabled = programData!.exchangePercentage == 0
+		exchangeViewController.resultLabel.text = "I should get \(travelSymbol) \(String(format: "%.2f", exchangeResult())) \(travelCurrency) back"
+		exchangeViewController.resultLabel.hidden = programData!.exchangeAmount == 0
+		exchangeViewController.outcomePrefixLabel.hidden = programData!.exchangeAmount == 0
+		if programData!.exchangeOutcome != 0 {
+			exchangeViewController.outcomeTextField.text = "\(travelSymbol) \(String(format: "%.2f", programData!.exchangeOutcome.doubleValue)) \(travelCurrency)"
+		} else {
+			exchangeViewController.outcomeTextField.text = ""
+		}
+		exchangeViewController.outcomeTextField.hidden = programData!.exchangeAmount == 0
+		if exchangeDifference() == 0 {
+			exchangeViewController.differenceLabel.text = "Then it was a fair exchange"
+		} else if exchangeDifference() > 0 {
+			exchangeViewController.differenceLabel.text = "Then I got \(travelSymbol) \(String(format: "%.2f", exchangeDifference())) \(travelCurrency) more"
+		} else {
+			exchangeViewController.differenceLabel.text = "Then I got \(travelSymbol) \(String(format: "%.2f", -exchangeDifference())) \(travelCurrency) less"
+		}
+		exchangeViewController.differenceLabel.hidden = programData!.exchangeOutcome == 0
+		exchangeViewController.helpButton.enabled = !updating
 		//Update GasViewController's elements
 		gasViewController.unitButton.setTitle("\(gasUnit)s", forState: UIControlState.Normal)
 		gasViewController.unitButton.enabled = !updating
@@ -304,14 +323,9 @@ class MainViewController: UIViewController {
 		miscViewController.equivalentTemperatureUnitLabel.text = miscEquivalentTemperatureUnit
 	}
 
-	//Returns the exchange fee, which is the exchange amount times the exchange percentage
-	func exchangeFee() -> Double {
-		return programData!.exchangeAmount.doubleValue * (programData!.exchangePercentage.doubleValue / 100)
-	}
-
 	//Returns the exchange total which is the exchange amount minus the exchange fee
 	func exchangeTotal() -> Double {
-		return programData!.exchangeAmount.doubleValue - exchangeFee()
+		return programData!.exchangeAmount.doubleValue - programData!.exchangeFee.doubleValue
 	}
 
 	//Returns the exchange result, which is the exchange total times the country exchange rate
