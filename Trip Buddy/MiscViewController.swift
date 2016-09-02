@@ -5,28 +5,61 @@
 import UIKit
 
 class MiscViewController: ParentViewController {
-	@IBOutlet weak var measurementControl: UISegmentedControl!
-	@IBOutlet weak var amountTextField: UITextField!
-	@IBOutlet weak var amountUnitLabel: UILabel!
-	@IBOutlet weak var equivalentLabel: UILabel!
-	@IBOutlet weak var toggleButton: UIButton!
+	@IBOutlet weak var distanceAmountTextField: UITextField!
+	@IBOutlet weak var distanceUnitButton: UIButton!
+	@IBOutlet weak var equivalentDistanceAmountLabel: UILabel!
+	@IBOutlet weak var equivalentDistanceUnitLabel: UILabel!
+	@IBOutlet weak var temperatureAmountTextField: UITextField!
+	@IBOutlet weak var temperatureUnitButton: UIButton!
+	@IBOutlet weak var equivalentTemperatureAmountLabel: UILabel!
+	@IBOutlet weak var equivalentTemperatureUnitLabel: UILabel!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		amountTextField.delegate = self
+
+		distanceAmountTextField.delegate = self
+		temperatureAmountTextField.delegate = self
 	}
 
-	@IBAction func measurementControlChanged(sender: AnyObject) {
-		view.endEditing(true) //Close any open responder from this view controller beforehand
+	@IBAction func distanceAmountTextFieldEntered(sender: AnyObject) {
+		if mainViewController!.programData!.miscDistanceAmount != 0 {
+			distanceAmountTextField.selectAll(self)
+			distanceAmountTextField.text = String(format: "%.3f", mainViewController!.programData!.miscDistanceAmount.doubleValue)
+		} else {
+			distanceAmountTextField.text = ""
+		}
+		distanceAmountTextField.textAlignment = NSTextAlignment.Right
+	}
+
+	@IBAction func distanceAmountTextFieldExited(sender: AnyObject) {
+		mainViewController!.programData!.miscDistanceAmount = parseNumber(distanceAmountTextField.text!, minimum: -99999.999, maximum: 99999.999, decimalPlaces: 3)
 		mainViewController!.saveProgramData()
 	}
 
-	@IBAction func amountTextFieldChanged(sender: AnyObject) {
+	@IBAction func distanceUnitButtonPressed(sender: AnyObject) {
+		view.endEditing(true) //Close any open responder from this view controller beforehand
+		mainViewController!.programData!.miscDistanceUnit = 1 - mainViewController!.programData!.miscDistanceUnit.integerValue
 		mainViewController!.saveProgramData()
 	}
 
-	@IBAction func toggleButtonPressed(sender: AnyObject) {
+	@IBAction func temperatureAmountTextFieldEntered(sender: AnyObject) {
+		if mainViewController!.programData!.miscTemperatureAmount != 0 {
+			temperatureAmountTextField.selectAll(self)
+			temperatureAmountTextField.text = String(format: "%.3f", mainViewController!.programData!.miscTemperatureAmount.doubleValue)
+		} else {
+			temperatureAmountTextField.text = ""
+		}
+		temperatureAmountTextField.textAlignment = NSTextAlignment.Right
+	}
+
+	@IBAction func temperatureAmountTextFieldExited(sender: AnyObject) {
+		mainViewController!.programData!.miscTemperatureAmount = parseNumber(temperatureAmountTextField.text!, minimum: -99999.999, maximum: 99999.999, decimalPlaces: 3)
+		mainViewController!.saveProgramData()
+	}
+
+	@IBAction func temperatureButtonPressed(sender: AnyObject) {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
+		mainViewController!.programData!.miscTemperatureUnit = 1 - mainViewController!.programData!.miscTemperatureUnit.integerValue
 		mainViewController!.saveProgramData()
 	}
 

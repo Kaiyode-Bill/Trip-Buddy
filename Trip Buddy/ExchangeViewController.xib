@@ -159,7 +159,7 @@
                         <constraint firstAttribute="height" constant="30" id="V5x-Wa-omi"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <state key="normal" title="Reset all fields above">
+                    <state key="normal" title="Reset Exchange">
                         <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
                     <connections>
