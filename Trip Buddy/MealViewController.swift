@@ -6,22 +6,17 @@ import UIKit
 
 class MealViewController: ParentViewController {
 	@IBOutlet weak var amountTextField: UITextField!
-	@IBOutlet weak var amountUnitLabel: UILabel!
+	@IBOutlet weak var equivalentAmountLabel: UILabel!
+	@IBOutlet weak var percentagePrefixLabel: UILabel!
 	@IBOutlet weak var percentageTextField: UITextField!
 	@IBOutlet weak var tipLabel: UILabel!
+	@IBOutlet weak var equivalentTipLabel: UILabel!
 	@IBOutlet weak var totalLabel: UILabel!
+	@IBOutlet weak var equivalentTotalLabel: UILabel!
+	@IBOutlet weak var peoplePrefixLabel: UILabel!
 	@IBOutlet weak var peopleTextField: UITextField!
 	@IBOutlet weak var resultLabel: UILabel!
-	@IBOutlet weak var outcomeTextField: UITextField!
-	@IBOutlet weak var outcomeUnitLabel: UILabel!
-	@IBOutlet weak var differenceLabel: UILabel!
-	@IBOutlet weak var equivalentUnitLabel: UILabel!
-	@IBOutlet weak var equivalentAmountLabel: UILabel!
-	@IBOutlet weak var equivalentTipLabel: UILabel!
-	@IBOutlet weak var equivalentTotalLabel: UILabel!
 	@IBOutlet weak var equivalentResultLabel: UILabel!
-	@IBOutlet weak var equivalentOutcomeLabel: UILabel!
-	@IBOutlet weak var equivalentDifferenceLabel: UILabel!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -29,25 +24,54 @@ class MealViewController: ParentViewController {
 		amountTextField.delegate = self
 		percentageTextField.delegate = self
 		peopleTextField.delegate = self
-		outcomeTextField.delegate = self
 	}
 
-	@IBAction func amountTextFieldChanged(sender: AnyObject) {
+	@IBAction func amountTextFieldEntered(sender: AnyObject) {
+		if mainViewController!.programData!.mealAmount != 0 {
+			amountTextField.selectAll(self)
+			amountTextField.text = String(format: "%.2f", mainViewController!.programData!.mealAmount.doubleValue)
+		} else {
+			amountTextField.text = ""
+		}
+		amountTextField.textAlignment = NSTextAlignment.Center
+	}
+
+	@IBAction func amountTextFieldExited(sender: AnyObject) {
 		mainViewController!.programData!.mealAmount = parseNumber(amountTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
+		if mainViewController!.programData!.mealAmount == 0 {
+			mainViewController!.programData!.mealPercentage = 0
+			mainViewController!.programData!.mealPeople = 1
+		}
 		mainViewController!.saveProgramData()
 	}
 
-	@IBAction func percentageTextFieldChanged(sender: AnyObject) {
-		mainViewController!.programData!.mealPercentage = parseNumber(percentageTextField.text!, minimum: 0, maximum: 99.99, decimalPlaces: 2)
+	@IBAction func percentageTextFieldEntered(sender: AnyObject) {
+		if mainViewController!.programData!.mealPercentage != 0 {
+			percentageTextField.selectAll(self)
+			percentageTextField.text = "\(mainViewController!.programData!.mealPercentage.integerValue)"
+		} else {
+			percentageTextField.text = ""
+		}
+		percentageTextField.textAlignment = NSTextAlignment.Center
+	}
+
+	@IBAction func percentageTextFieldExited(sender: AnyObject) {
+		mainViewController!.programData!.mealPercentage = parseNumber(percentageTextField.text!, minimum: 0, maximum: 30, decimalPlaces: 0)
 		mainViewController!.saveProgramData()
 	}
 
-	@IBAction func peopleTextFieldChanged(sender: AnyObject) {
-		mainViewController!.programData!.mealPeople = parseNumber(peopleTextField.text!, minimum: 1, maximum: 999, decimalPlaces: 0)
-		mainViewController!.saveProgramData()
+	@IBAction func peopleTextFieldEntered(sender: AnyObject) {
+		if mainViewController!.programData!.mealPeople != 1 {
+			peopleTextField.selectAll(self)
+			peopleTextField.text = "\(mainViewController!.programData!.mealPeople.integerValue)"
+		} else {
+			peopleTextField.text = ""
+		}
+		peopleTextField.textAlignment = NSTextAlignment.Center
 	}
 
-	@IBAction func outcomeTextFieldChanged(sender: AnyObject) {
+	@IBAction func peopleTextFieldExited(sender: AnyObject) {
+		mainViewController!.programData!.mealPeople = parseNumber(peopleTextField.text!, minimum: 1, maximum: 30, decimalPlaces: 0)
 		mainViewController!.saveProgramData()
 	}
 

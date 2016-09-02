@@ -237,19 +237,39 @@ class MainViewController: UIViewController {
 		gasViewController.equivalentOutcomeLabel.text = "but I paid roughly \(originSymbol) \(String(format: "%.2f", gasEquivalentOutcome())) \(originCurrency)"
 		gasViewController.equivalentDifferenceLabel.text = "with a difference of \(originSymbol) \(String(format: "%.2f", gasEquivalentDifference())) \(originCurrency)"
 		//Update MealViewController's elements
-		mealViewController.amountTextField.text = String(format: "%.2f", programData!.mealAmount.doubleValue)
-		mealViewController.amountUnitLabel.text = travelCurrency
-		mealViewController.percentageTextField.text = String(format: "%.2f", programData!.mealPercentage.doubleValue)
-		mealViewController.tipLabel.text = "(which equals \(travelSymbol) \(String(format: "%.2f", mealTip())) \(travelCurrency))"
-		mealViewController.totalLabel.text = "then the total is \(travelSymbol) \(String(format: "%.2f", mealTotal())) \(travelCurrency)"
-		mealViewController.peopleTextField.text = String(programData!.mealPeople.integerValue)
-		mealViewController.resultLabel.text = "then I should pay \(travelSymbol) \(String(format: "%.2f", mealResult())) \(travelCurrency)"
-		mealViewController.outcomeUnitLabel.text = travelCurrency
-		mealViewController.equivalentUnitLabel.text = "The equivalents of these values in \(originCurrency):"
-		mealViewController.equivalentAmountLabel.text = "The check was \(originSymbol) \(String(format: "%.2f", mealEquivalentAmount())) \(originCurrency)"
-		mealViewController.equivalentTipLabel.text = "with a tip of \(originSymbol) \(String(format: "%.2f", mealEquivalentTip())) \(originCurrency)"
-		mealViewController.equivalentTotalLabel.text = "and the total was \(originSymbol) \(String(format: "%.2f", mealEquivalentTotal())) \(originCurrency)"
-		mealViewController.equivalentResultLabel.text = "costing each person \(originSymbol) \(String(format: "%.2f", mealEquivalentResult())) \(originCurrency)"
+		if programData!.mealAmount != 0 {
+			mealViewController.amountTextField.text = "\(travelSymbol) \(String(format: "%.2f", programData!.mealAmount.doubleValue)) \(travelCurrency)"
+		} else {
+			mealViewController.amountTextField.text = ""
+		}
+		mealViewController.equivalentAmountLabel.text = "(Which is \(originSymbol) \(String(format: "%.2f", mealEquivalentAmount())) \(originCurrency))"
+		mealViewController.equivalentAmountLabel.hidden = programData!.mealAmount == 0
+		mealViewController.percentagePrefixLabel.hidden = programData!.mealAmount == 0
+		if programData!.mealPercentage != 0 {
+			mealViewController.percentageTextField.text = "\(programData!.mealPercentage.integerValue) %"
+		} else {
+			mealViewController.percentageTextField.text = ""
+		}
+		mealViewController.percentageTextField.hidden = programData!.mealAmount == 0
+		mealViewController.tipLabel.text = "Total tip is \(travelSymbol) \(String(format: "%.2f", mealTip())) \(travelCurrency)"
+		mealViewController.tipLabel.hidden = programData!.mealAmount == 0
+		mealViewController.equivalentTipLabel.text = "(Which is \(originSymbol) \(String(format: "%.2f", mealEquivalentTip())) \(originCurrency))"
+		mealViewController.equivalentTipLabel.hidden = programData!.mealAmount == 0
+		mealViewController.totalLabel.text = "For a total of \(travelSymbol) \(String(format: "%.2f", mealTotal())) \(travelCurrency)"
+		mealViewController.totalLabel.hidden = programData!.mealAmount == 0
+		mealViewController.equivalentTotalLabel.text = "(Which is \(originSymbol) \(String(format: "%.2f", mealEquivalentTotal())) \(originCurrency))"
+		mealViewController.equivalentTotalLabel.hidden = programData!.mealAmount == 0
+		mealViewController.peoplePrefixLabel.hidden = programData!.mealAmount == 0
+		if programData!.mealPeople != 1 {
+			mealViewController.peopleTextField.text = "\(programData!.mealPeople.integerValue) people"
+		} else {
+			mealViewController.peopleTextField.text = ""
+		}
+		mealViewController.peopleTextField.hidden = programData!.mealAmount == 0
+		mealViewController.resultLabel.text = "Each person pays \(travelSymbol) \(String(format: "%.2f", mealResult())) \(travelCurrency)"
+		mealViewController.resultLabel.hidden = programData!.mealPeople == 1
+		mealViewController.equivalentResultLabel.text = "(Which is \(originSymbol) \(String(format: "%.2f", mealEquivalentResult())) \(originCurrency))"
+		mealViewController.equivalentResultLabel.hidden = programData!.mealPeople == 1
 		//Update MiscViewController's elements
 		if programData!.miscDistanceAmount != 0 {
 			miscViewController.distanceAmountTextField.text = String(format: "%.3f", programData!.miscDistanceAmount.doubleValue)
@@ -329,24 +349,14 @@ class MainViewController: UIViewController {
 		return abs(gasEquivalentOutcome() - gasEquivalentResult())
 	}
 
-	//Returns the meal tip, which is the meal amount times the meal percentage
-	func mealTip() -> Double {
-		return programData!.mealAmount.doubleValue * (programData!.mealPercentage.doubleValue / 100)
-	}
-
-	//Returns the meal total, which is the meal amount plus the meal tip
-	func mealTotal() -> Double {
-		return programData!.mealAmount.doubleValue + mealTip()
-	}
-
-	//Returns the meal result, which is the meal total divided by the meal people
-	func mealResult() -> Double {
-		return Double(String(format: "%.2f", mealTotal() / programData!.mealPeople.doubleValue))!
-	}
-
 	//Returns the equivalent meal amount, which is the meal amount divided by the country exchange rate
 	func mealEquivalentAmount() -> Double {
 		return programData!.mealAmount.doubleValue / programData!.countryExchangeRate.doubleValue
+	}
+
+	//Returns the meal tip, which is the meal amount times the meal percentage
+	func mealTip() -> Double {
+		return programData!.mealAmount.doubleValue * (programData!.mealPercentage.doubleValue / 100)
 	}
 
 	//Returns the equivalent meal tip, which is the equivalent meal amount times the meal percentage
@@ -354,9 +364,19 @@ class MainViewController: UIViewController {
 		return mealEquivalentAmount() * (programData!.mealPercentage.doubleValue / 100)
 	}
 
+	//Returns the meal total, which is the meal amount plus the meal tip
+	func mealTotal() -> Double {
+		return programData!.mealAmount.doubleValue + mealTip()
+	}
+
 	//Returns the equivalent meal total, which is the equivalent meal amount plus the equivalent meal tip
 	func mealEquivalentTotal() -> Double {
 		return mealEquivalentAmount() + mealEquivalentTip()
+	}
+
+	//Returns the meal result, which is the meal total divided by the meal people
+	func mealResult() -> Double {
+		return Double(String(format: "%.2f", mealTotal() / programData!.mealPeople.doubleValue))!
 	}
 
 	//Returns the equivalent meal result, which is the meal result divided by the country exchange rate
