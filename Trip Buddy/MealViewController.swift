@@ -48,7 +48,6 @@ class MealViewController: ParentViewController {
 	}
 
 	@IBAction func outcomeTextFieldChanged(sender: AnyObject) {
-		mainViewController!.programData!.mealOutcome = parseNumber(outcomeTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
 		mainViewController!.saveProgramData()
 	}
 
@@ -57,7 +56,6 @@ class MealViewController: ParentViewController {
 		mainViewController!.programData!.mealAmount = 0
 		mainViewController!.programData!.mealPercentage = 0
 		mainViewController!.programData!.mealPeople = 1
-		mainViewController!.programData!.mealOutcome = 0
 		mainViewController!.saveProgramData()
 	}
 }

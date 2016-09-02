@@ -64,10 +64,10 @@ class GasViewController: ParentViewController {
 	@IBAction func resetButtonPressed(sender: AnyObject) {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
 		mainViewController!.programData!.gasUnit = 1
-		mainViewController!.programData!.gasAmount = 0
-		mainViewController!.programData!.gasRate = 0
-		mainViewController!.programData!.gasOutcome = 0
 		mainViewController!.programData!.gasEquivalentUnit = 0
+		mainViewController!.programData!.gasRate = 0
+		mainViewController!.programData!.gasAmount = 0
+		mainViewController!.programData!.gasOutcome = 0
 		mainViewController!.saveProgramData()
 	}
 }

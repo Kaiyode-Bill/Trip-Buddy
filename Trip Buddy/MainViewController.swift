@@ -80,22 +80,24 @@ class MainViewController: UIViewController {
 			existingData[0].originCountry = countryNames.count - 1
 			existingData[0].travelCountry = countryNames.count - 2
 			existingData[0].countryExchangeRate = 1
+			existingData[0].countryExchangeDate = "1/1/2000"
 			existingData[0].showHelpAtStartup = 1
 			existingData[0].exchangeAmount = 0
 			existingData[0].exchangePercentage = 0
+			existingData[0].exchangeFee = 0
 			existingData[0].exchangeOutcome = 0
 			existingData[0].gasUnit = 1
-			existingData[0].gasAmount = 0
-			existingData[0].gasRate = 0
-			existingData[0].gasOutcome = 0
 			existingData[0].gasEquivalentUnit = 0
+			existingData[0].gasRate = 0
+			existingData[0].gasAmount = 0
+			existingData[0].gasOutcome = 0
 			existingData[0].mealAmount = 0
 			existingData[0].mealPercentage = 0
 			existingData[0].mealPeople = 1
-			existingData[0].mealOutcome = 0
-			existingData[0].miscMeasurement = 0
-			existingData[0].miscAmount = 0
-			existingData[0].miscUnit = 0
+			existingData[0].miscDistanceAmount = 0
+			existingData[0].miscDistanceUnit = 0
+			existingData[0].miscTemperatureAmount = 0
+			existingData[0].miscTemperatureUnit = 0
 		}
 		programData = existingData[0]
 		//Once program data is obtained, update the country exchange rate, save all data, and update all UI elements
@@ -179,9 +181,6 @@ class MainViewController: UIViewController {
 		let mealViewController = viewControllers[2] as! MealViewController
 		//Relevant miscellaneous information
 		let miscViewController = viewControllers[3] as! MiscViewController
-		let miscUnit = miscUnits[programData!.miscMeasurement.integerValue][programData!.miscUnit.integerValue]
-		let miscEquivalentUnit = miscUnits[programData!.miscMeasurement.integerValue][1 - programData!.miscUnit.integerValue]
-		let miscMeasurement = miscMeasurements[programData!.miscMeasurement.integerValue]
 
 		//Update MainViewController's elements
 		originCountryImageView.image = UIImage(named: originName)
@@ -241,28 +240,13 @@ class MainViewController: UIViewController {
 		mealViewController.totalLabel.text = "then the total is \(travelSymbol) \(String(format: "%.2f", mealTotal())) \(travelCurrency)"
 		mealViewController.peopleTextField.text = String(programData!.mealPeople.integerValue)
 		mealViewController.resultLabel.text = "then I should pay \(travelSymbol) \(String(format: "%.2f", mealResult())) \(travelCurrency)"
-		mealViewController.outcomeTextField.text = String(format: "%.2f", programData!.mealOutcome.doubleValue)
 		mealViewController.outcomeUnitLabel.text = travelCurrency
-		if mealDifference() == 0{
-			mealViewController.differenceLabel.text = "then it was a fair transaction"
-		} else if mealDifference() > 0 {
-			mealViewController.differenceLabel.text = "then I overpaid by \(travelSymbol) \(String(format: "%.2f", mealDifference())) \(travelCurrency)"
-		} else {
-			mealViewController.differenceLabel.text = "then I saved \(travelSymbol) \(String(format: "%.2f", -mealDifference())) \(travelCurrency)"
-		}
 		mealViewController.equivalentUnitLabel.text = "The equivalents of these values in \(originCurrency):"
 		mealViewController.equivalentAmountLabel.text = "The check was \(originSymbol) \(String(format: "%.2f", mealEquivalentAmount())) \(originCurrency)"
 		mealViewController.equivalentTipLabel.text = "with a tip of \(originSymbol) \(String(format: "%.2f", mealEquivalentTip())) \(originCurrency)"
 		mealViewController.equivalentTotalLabel.text = "and the total was \(originSymbol) \(String(format: "%.2f", mealEquivalentTotal())) \(originCurrency)"
 		mealViewController.equivalentResultLabel.text = "costing each person \(originSymbol) \(String(format: "%.2f", mealEquivalentResult())) \(originCurrency)"
-		mealViewController.equivalentOutcomeLabel.text = "but I paid roughly \(originSymbol) \(String(format: "%.2f", mealEquivalentOutcome())) \(originCurrency)"
-		mealViewController.equivalentDifferenceLabel.text = "with a difference of \(originSymbol) \(String(format: "%.2f", mealEquivalentDifference())) \(originCurrency)"
 		//Update MiscViewController's elements
-		miscViewController.measurementControl.selectedSegmentIndex = programData!.miscMeasurement.integerValue
-		miscViewController.amountTextField.text = String(format: "%.3f", programData!.miscAmount.doubleValue)
-		miscViewController.amountUnitLabel.text = miscUnit
-		miscViewController.equivalentLabel.text = "is equal to \(String(format: "%.3f", miscEquivalentAmount())) \(miscEquivalentUnit)"
-		miscViewController.toggleButton.setTitle("Switch the \(miscMeasurement) units", forState: UIControlState.Normal)
 	}
 
 	//Returns the exchange fee, which is the exchange amount times the exchange percentage
@@ -340,11 +324,6 @@ class MainViewController: UIViewController {
 		return Double(String(format: "%.2f", mealTotal() / programData!.mealPeople.doubleValue))!
 	}
 
-	//Returns the meal difference, which is the meal outcome minus the meal result
-	func mealDifference() -> Double {
-		return programData!.mealOutcome.doubleValue - mealResult()
-	}
-
 	//Returns the equivalent meal amount, which is the meal amount divided by the country exchange rate
 	func mealEquivalentAmount() -> Double {
 		return programData!.mealAmount.doubleValue / programData!.countryExchangeRate.doubleValue
@@ -363,29 +342,6 @@ class MainViewController: UIViewController {
 	//Returns the equivalent meal result, which is the meal result divided by the country exchange rate
 	func mealEquivalentResult() -> Double {
 		return mealResult() / programData!.countryExchangeRate.doubleValue
-	}
-
-	//Returns the equivalent meal outcome, which is the meal outcome divided by the country exchange rate
-	func mealEquivalentOutcome() -> Double {
-		return programData!.mealOutcome.doubleValue / programData!.countryExchangeRate.doubleValue
-	}
-
-	//Returns the equivalent meal differece, which is the absolute value of the equivalent meal outcome minus the equivalent meal result
-	func mealEquivalentDifference() -> Double {
-		return abs(mealEquivalentOutcome() - mealEquivalentResult())
-	}
-
-	//Returns the equivalent amount from the MiscViewController
-	func miscEquivalentAmount() -> Double {
-		if programData!.miscMeasurement == 0 && programData!.miscUnit == 0 {
-			return programData!.miscAmount.doubleValue * (25146 / 15625)
-		} else if programData!.miscMeasurement == 0 && programData!.miscUnit != 0 {
-			return programData!.miscAmount.doubleValue * (15625 / 25146)
-		} else if programData!.miscMeasurement != 0 && programData!.miscUnit == 0 {
-			return (programData!.miscAmount.doubleValue - 32) * (5 / 9)
-		} else {
-			return (programData!.miscAmount.doubleValue * (9 / 5)) + 32
-		}
 	}
 
 	//Transition to the help view controller by default when the app first starts

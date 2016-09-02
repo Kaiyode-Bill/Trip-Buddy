@@ -49,6 +49,7 @@ class ExchangeViewController: ParentViewController {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
 		mainViewController!.programData!.exchangeAmount = 0
 		mainViewController!.programData!.exchangePercentage = 0
+		mainViewController!.programData!.exchangeFee = 0
 		mainViewController!.programData!.exchangeOutcome = 0
 		mainViewController!.saveProgramData()
 	}
