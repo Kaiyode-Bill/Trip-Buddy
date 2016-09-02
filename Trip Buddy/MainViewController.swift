@@ -214,28 +214,43 @@ class MainViewController: UIViewController {
 			exchangeViewController.differenceLabel.text = "then I got \(travelSymbol) \(String(format: "%.2f", -exchangeDifference())) \(travelCurrency) less"
 		}
 		//Update GasViewController's elements
-		gasViewController.unitControl.selectedSegmentIndex = programData!.gasUnit.integerValue
-		gasViewController.amountTextField.text = String(format: "%.2f", programData!.gasAmount.doubleValue)
-		gasViewController.amountUnitLabel.text = "\(gasUnit)s"
-		gasViewController.rateTextField.text = String(format: "%.2f", programData!.gasRate.doubleValue)
-		gasViewController.rateUnitLabel.text = "\(travelCurrency)/\(gasUnit)"
-		gasViewController.resultLabel.text = "then I should pay \(travelSymbol) \(String(format: "%.2f", gasResult())) \(travelCurrency)"
-		gasViewController.outcomeTextField.text = String(format: "%.2f", programData!.gasOutcome.doubleValue)
-		gasViewController.outcomeUnitLabel.text = travelCurrency
-		if gasDifference() == 0 {
-			gasViewController.differenceLabel.text = "then it was a fair transaction"
-		} else if gasDifference() > 0 {
-			gasViewController.differenceLabel.text = "then I overpaid by \(travelSymbol) \(String(format: "%.2f", gasDifference())) \(travelCurrency)"
+		gasViewController.unitButton.setTitle("\(gasUnit)s", forState: UIControlState.Normal)
+		gasViewController.unitButton.enabled = !updating
+		gasViewController.equivalentUnitButton.setTitle("\(gasEquivalentUnit)s", forState: UIControlState.Normal)
+		gasViewController.equivalentUnitButton.enabled = !updating
+		gasViewController.equivalentUnitButton.enabled = false //Get rid of this line for the international version!!!
+		gasViewController.ratePrefixLabel.text = "Today's price/\(gasUnit):"
+		if programData!.gasRate != 0 {
+			gasViewController.rateTextField.text = "\(travelSymbol) \(String(format: "%.2f", programData!.gasRate.doubleValue)) \(travelCurrency)"
 		} else {
-			gasViewController.differenceLabel.text = "then I saved \(travelSymbol) \(String(format: "%.2f", -gasDifference())) \(travelCurrency)"
+			gasViewController.rateTextField.text = ""
 		}
-		gasViewController.equivalentUnitControl.selectedSegmentIndex = programData!.gasEquivalentUnit.integerValue
-		gasViewController.exchangeRateLabel.text = "1.00 \(gasUnit)s = \(String(format: "%.2f", gasExchangeRate())) \(gasEquivalentUnit)s"
-		gasViewController.equivalentAmountLabel.text = "As such, I bought \(String(format: "%.2f", gasEquivalentAmount())) \(gasEquivalentUnit)s"
-		gasViewController.equivalentRateLabel.text = "at a rate of \(originSymbol) \(String(format: "%.2f", gasEquivalentRate())) \(originCurrency)/\(gasEquivalentUnit)"
-		gasViewController.equivalentResultLabel.text = "which is worth \(originSymbol) \(String(format: "%.2f", gasEquivalentResult())) \(originCurrency)"
-		gasViewController.equivalentOutcomeLabel.text = "but I paid roughly \(originSymbol) \(String(format: "%.2f", gasEquivalentOutcome())) \(originCurrency)"
-		gasViewController.equivalentDifferenceLabel.text = "with a difference of \(originSymbol) \(String(format: "%.2f", gasEquivalentDifference())) \(originCurrency)"
+		gasViewController.equivalentRateLabel.text = "(Which is \(originSymbol) \(String(format: "%.2f", gasEquivalentRate())) \(originCurrency)/\(gasEquivalentUnit))"
+		gasViewController.equivalentRateLabel.hidden = programData!.gasRate == 0
+		gasViewController.amountPrefixLabel.hidden = programData!.gasRate == 0
+		if programData!.gasAmount != 0 {
+			gasViewController.amountTextField.text = "\(String(format: "%.2f", programData!.gasAmount.doubleValue)) \(gasUnit)s"
+		} else {
+			gasViewController.amountTextField.text = ""
+		}
+		gasViewController.amountTextField.hidden = programData!.gasRate == 0
+		gasViewController.resultLabel.text = "Then I should pay \(travelSymbol) \(String(format: "%.2f", gasResult())) \(travelCurrency)"
+		gasViewController.resultLabel.hidden = programData!.gasAmount == 0
+		gasViewController.outcomePrefixLabel.hidden = programData!.gasAmount == 0
+		if programData!.gasOutcome != 0 {
+			gasViewController.outcomeTextField.text = "\(travelSymbol) \(String(format: "%.2f", programData!.gasOutcome.doubleValue)) \(travelCurrency)"
+		} else {
+			gasViewController.outcomeTextField.text = ""
+		}
+		gasViewController.outcomeTextField.hidden = programData!.gasAmount == 0
+		if gasDifference() == 0 {
+			gasViewController.differenceLabel.text = "Then it was a fair transaction"
+		} else if gasDifference() > 0 {
+			gasViewController.differenceLabel.text = "Then I overpaid by \(travelSymbol) \(String(format: "%.2f", gasDifference())) \(travelCurrency)"
+		} else {
+			gasViewController.differenceLabel.text = "Then I saved \(travelSymbol) \(String(format: "%.2f", -gasDifference())) \(travelCurrency)"
+		}
+		gasViewController.differenceLabel.hidden = programData!.gasOutcome == 0
 		//Update MealViewController's elements
 		if programData!.mealAmount != 0 {
 			mealViewController.amountTextField.text = "\(travelSymbol) \(String(format: "%.2f", programData!.mealAmount.doubleValue)) \(travelCurrency)"
@@ -309,44 +324,24 @@ class MainViewController: UIViewController {
 		return programData!.exchangeOutcome.doubleValue - exchangeResult()
 	}
 
+	//Returns the exchange rate between the gas unit and the gas equivalent unit
+	func gasExchangeRate() -> Double {
+		return gasWeights[programData!.gasUnit.integerValue] / gasWeights[programData!.gasEquivalentUnit.integerValue]
+	}
+
+	//Returns the equivalent gas rate, which is the gas rate divided by both the country exchange rate and the gas exchange rate
+	func gasEquivalentRate() -> Double {
+		return (programData!.gasRate.doubleValue * gasExchangeRate() / programData!.countryExchangeRate.doubleValue)
+	}
+
 	//Returns the gas result, which is the gas amount times the gas rate
 	func gasResult() -> Double {
-		return Double(String(format: "%.2f", programData!.gasAmount.doubleValue * programData!.gasRate.doubleValue))!
+		return Double(String(format: "%.2f", programData!.gasRate.doubleValue * programData!.gasAmount.doubleValue))!
 	}
 
 	//Returns the gas difference, which is the gas outcome minus the gas result
 	func gasDifference() -> Double {
 		return programData!.gasOutcome.doubleValue - gasResult()
-	}
-
-	//Returns the exchange rate between the gas unit and the equivalent gas unit
-	func gasExchangeRate() -> Double {
-		return gasWeights[programData!.gasEquivalentUnit.integerValue] / gasWeights[programData!.gasUnit.integerValue]
-	}
-
-	//Returns the equivalent gas amount, which is the gas amount times the gas exchange rate
-	func gasEquivalentAmount() -> Double {
-		return programData!.gasAmount.doubleValue * gasExchangeRate()
-	}
-
-	//Returns the equivalent gas rate, which is the gas rate divided by both the country exchange rate and the gas exchange rate
-	func gasEquivalentRate() -> Double {
-		return (programData!.gasRate.doubleValue / programData!.countryExchangeRate.doubleValue) / gasExchangeRate()
-	}
-
-	//Returns the equivalent gas result, which is the gas result divided by the country exchange rate
-	func gasEquivalentResult() -> Double {
-		return gasResult() / programData!.countryExchangeRate.doubleValue
-	}
-
-	//Returns the equivalent gas outcome, which is the gas outcome divided by the country exchange rate
-	func gasEquivalentOutcome() -> Double {
-		return programData!.gasOutcome.doubleValue / programData!.countryExchangeRate.doubleValue
-	}
-
-	//Returns the equivalent gas difference, which is the absolute value of the equivalent gas outcome minus the equivalent gas result
-	func gasEquivalentDifference() -> Double {
-		return abs(gasEquivalentOutcome() - gasEquivalentResult())
 	}
 
 	//Returns the equivalent meal amount, which is the meal amount divided by the country exchange rate
