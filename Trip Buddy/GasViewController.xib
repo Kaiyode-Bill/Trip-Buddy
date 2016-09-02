@@ -78,7 +78,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" borderStyle="roundedRect" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="0b7-SK-NWj">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the amount" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="0b7-SK-NWj">
                     <rect key="frame" x="250" y="68" width="100" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="2xK-K5-KRK"/>
@@ -90,7 +90,7 @@
                         <action selector="amountTextFieldChanged:" destination="-1" eventType="editingDidEnd" id="D6B-AU-Nzm"/>
                     </connections>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imp. Gallons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="nvz-Sw-9rr">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Amount Unit Label]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="nvz-Sw-9rr">
                     <rect key="frame" x="354" y="68" width="236" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="645-cj-Ro1"/>
@@ -99,7 +99,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" borderStyle="roundedRect" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="vx6-Nq-SUH">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the rate" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="vx6-Nq-SUH">
                     <rect key="frame" x="250" y="102" width="100" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="6GU-TX-QQ2"/>
@@ -111,7 +111,7 @@
                         <action selector="rateTextFieldChanged:" destination="-1" eventType="editingDidEnd" id="Mib-SJ-9ra"/>
                     </connections>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pounds/Imp. Gallon" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="nlG-qb-2DY">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Rate Unit Label]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="nlG-qb-2DY">
                     <rect key="frame" x="354" y="102" width="236" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="ulc-Fl-9CT"/>
@@ -120,7 +120,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="then I should pay £ 0.00 Pounds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="OKi-Y7-mFM">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Result Label]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="OKi-Y7-mFM">
                     <rect key="frame" x="10" y="136" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="haQ-Sm-Wn7"/>
@@ -138,7 +138,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0.00" borderStyle="roundedRect" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="o8U-fh-4Mf">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter the outcome" textAlignment="center" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="o8U-fh-4Mf">
                     <rect key="frame" x="250" y="166" width="100" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="M7r-aW-YcY"/>
@@ -150,7 +150,7 @@
                         <action selector="outcomeTextFieldChanged:" destination="-1" eventType="editingDidEnd" id="tbp-ah-Ss4"/>
                     </connections>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pounds" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="hRr-Gz-jov">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Outcome Unit Label]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="hRr-Gz-jov">
                     <rect key="frame" x="354" y="166" width="236" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="YiJ-Ai-VAO"/>
@@ -159,7 +159,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="then it was a fair transcation" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="JcJ-8B-q6Q">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Difference Label]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="JcJ-8B-q6Q">
                     <rect key="frame" x="10" y="200" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="U4Q-ya-2OZ"/>
@@ -192,7 +192,7 @@
                         <action selector="equivalentUnitControlChanged:" destination="-1" eventType="valueChanged" id="yne-kq-JKS"/>
                     </connections>
                 </segmentedControl>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="at a rate of $ 0.00 Dollars/U.S. Gallon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ReC-yL-fAu">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Equivalent Rate Label]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="ReC-yL-fAu">
                     <rect key="frame" x="10" y="336" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="Le4-RK-y2G"/>
@@ -201,7 +201,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="which is worth $ 0.00 Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="dtC-1W-CK7">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Equivalent Result Label]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="dtC-1W-CK7">
                     <rect key="frame" x="10" y="360" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="ZmL-IF-5ai"/>
@@ -210,7 +210,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="but I payed roughly $ 0.00 Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="HjS-Pt-4By">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Equivalent Outcome Label]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="HjS-Pt-4By">
                     <rect key="frame" x="10" y="384" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="iJe-Sx-zI6"/>
@@ -228,7 +228,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="with a difference of $ 0.00 Dollars" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="6vz-pe-hvQ">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Equivalent Difference Label]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="6vz-pe-hvQ">
                     <rect key="frame" x="10" y="408" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="i3J-y0-rWR"/>
@@ -237,7 +237,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.00 Imp. Gallons = 1.20 U.S. Gallons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="6wq-kO-dvm">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Exchange Rate Label]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="6wq-kO-dvm">
                     <rect key="frame" x="10" y="288" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="BDE-KR-tzm"/>
@@ -246,7 +246,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="As such, I bought 0.00 U.S. Gallons" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="S5a-fe-nsQ">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Equivalent Amount Label]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="S5a-fe-nsQ">
                     <rect key="frame" x="10" y="312" width="580" height="20"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="20" id="YLA-sb-ZQP"/>
