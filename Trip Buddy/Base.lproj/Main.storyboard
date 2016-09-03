@@ -59,7 +59,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="bottomButtonPressed:" destination="IEU-Kc-3ir" eventType="touchUpInside" id="JtG-iU-zfv"/>
+                                    <action selector="tabButtonPressed:" destination="IEU-Kc-3ir" eventType="touchUpInside" id="XSU-va-6Hh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jw6-QC-RKf">
@@ -73,7 +73,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="bottomButtonPressed:" destination="IEU-Kc-3ir" eventType="touchUpInside" id="pr5-Bj-fxW"/>
+                                    <action selector="tabButtonPressed:" destination="IEU-Kc-3ir" eventType="touchUpInside" id="2fk-Xd-o5E"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYy-8t-yMn">
@@ -87,7 +87,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="bottomButtonPressed:" destination="IEU-Kc-3ir" eventType="touchUpInside" id="0mu-cO-0gX"/>
+                                    <action selector="tabButtonPressed:" destination="IEU-Kc-3ir" eventType="touchUpInside" id="3bj-bC-aWh"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkW-YI-8Kv">
@@ -101,7 +101,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="bottomButtonPressed:" destination="IEU-Kc-3ir" eventType="touchUpInside" id="IoD-9F-vpk"/>
+                                    <action selector="tabButtonPressed:" destination="IEU-Kc-3ir" eventType="touchUpInside" id="J4c-ws-lS9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Brt-Bw-d27">

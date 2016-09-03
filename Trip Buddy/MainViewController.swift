@@ -306,7 +306,7 @@ class MainViewController: UIViewController {
 		mealViewController.equivalentTotalLabel.hidden = programData!.mealAmount == 0
 		mealViewController.peoplePrefixLabel.hidden = programData!.mealAmount == 0
 		if programData!.mealPeople != 1 {
-			mealViewController.peopleTextField.text = "\(programData!.mealPeople.integerValue) people"
+			mealViewController.peopleTextField.text = "\(programData!.mealPeople.integerValue) People"
 		} else {
 			mealViewController.peopleTextField.text = ""
 		}
@@ -482,8 +482,8 @@ class MainViewController: UIViewController {
 		}
 	}
 
-	//Changes the scroll view depending upon what bottom button was pressed
-	@IBAction func bottomButtonPressed(sender: AnyObject) {
+	//Changes the scroll view depending upon what tab button was pressed
+	@IBAction func tabButtonPressed(sender: AnyObject) {
 		view.endEditing(true) //Close any open responder beforehand
 		scrollView.contentOffset = CGPointMake(view.frame.size.width * CGFloat(sender.tag), 0)
 	}
