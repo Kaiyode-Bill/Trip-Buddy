@@ -322,7 +322,7 @@ class MainViewController: UIViewController {
 			miscViewController.distanceAmountTextField.text = ""
 		}
 		miscViewController.distanceUnitButton.setTitle(miscDistanceUnit, forState: UIControlState.Normal)
-		miscViewController.equivalentDistanceAmountLabel.text = "equals \(String(format: "%.3f", miscEquivalentDistanceAmount()))"
+		miscViewController.equivalentDistanceAmountLabel.text = String(format: "%.3f", miscEquivalentDistanceAmount())
 		miscViewController.equivalentDistanceUnitLabel.text = miscEquivalentDistanceUnit
 		if programData!.miscTemperatureAmount != 0 {
 			miscViewController.temperatureAmountTextField.text = String(format: "%.3f", programData!.miscTemperatureAmount.doubleValue)
@@ -330,7 +330,7 @@ class MainViewController: UIViewController {
 			miscViewController.temperatureAmountTextField.text = ""
 		}
 		miscViewController.temperatureUnitButton.setTitle(miscTemperatureUnit, forState: UIControlState.Normal)
-		miscViewController.equivalentTemperatureAmountLabel.text = "equals \(String(format: "%.3f", miscEquivalentTemperatureAmount()))"
+		miscViewController.equivalentTemperatureAmountLabel.text = String(format: "%.3f", miscEquivalentTemperatureAmount())
 		miscViewController.equivalentTemperatureUnitLabel.text = miscEquivalentTemperatureUnit
 	}
 
@@ -341,12 +341,12 @@ class MainViewController: UIViewController {
 
 	//Returns the exchange result, which is the exchange total times the country exchange rate
 	func exchangeResult() -> Double {
-		return Double(String(format: "%.2f", exchangeTotal() * programData!.countryExchangeRate.doubleValue))!
+		return exchangeTotal() * programData!.countryExchangeRate.doubleValue
 	}
 
 	//Returns the exchange difference, which is the exchange outcome minues the exchange result
 	func exchangeDifference() -> Double {
-		return programData!.exchangeOutcome.doubleValue - exchangeResult()
+		return programData!.exchangeOutcome.doubleValue - Double(String(format: "%.2f", exchangeResult()))!
 	}
 
 	//Returns the exchange rate between the gas unit and the gas equivalent unit
@@ -354,19 +354,19 @@ class MainViewController: UIViewController {
 		return gasWeights[programData!.gasUnit.integerValue] / gasWeights[programData!.gasEquivalentUnit.integerValue]
 	}
 
-	//Returns the equivalent gas rate, which is the gas rate divided by both the country exchange rate and the gas exchange rate
+	//Returns the equivalent gas rate, which is the gas rate times the gas exchange rate, divided by the country exchange rate
 	func gasEquivalentRate() -> Double {
-		return (programData!.gasRate.doubleValue * gasExchangeRate() / programData!.countryExchangeRate.doubleValue)
+		return (programData!.gasRate.doubleValue * gasExchangeRate()) / programData!.countryExchangeRate.doubleValue
 	}
 
-	//Returns the gas result, which is the gas amount times the gas rate
+	//Returns the gas result, which is the gas rate times the gas amount
 	func gasResult() -> Double {
-		return Double(String(format: "%.2f", programData!.gasRate.doubleValue * programData!.gasAmount.doubleValue))!
+		return programData!.gasRate.doubleValue * programData!.gasAmount.doubleValue
 	}
 
 	//Returns the gas difference, which is the gas outcome minus the gas result
 	func gasDifference() -> Double {
-		return programData!.gasOutcome.doubleValue - gasResult()
+		return programData!.gasOutcome.doubleValue - Double(String(format: "%.2f", gasResult()))!
 	}
 
 	//Returns the equivalent meal amount, which is the meal amount divided by the country exchange rate
@@ -379,9 +379,9 @@ class MainViewController: UIViewController {
 		return programData!.mealAmount.doubleValue * (programData!.mealPercentage.doubleValue / 100)
 	}
 
-	//Returns the equivalent meal tip, which is the equivalent meal amount times the meal percentage
+	//Returns the equivalent meal tip, which is the meal tip divided by the country exchange rate
 	func mealEquivalentTip() -> Double {
-		return mealEquivalentAmount() * (programData!.mealPercentage.doubleValue / 100)
+		return mealTip() / programData!.countryExchangeRate.doubleValue
 	}
 
 	//Returns the meal total, which is the meal amount plus the meal tip
@@ -389,14 +389,14 @@ class MainViewController: UIViewController {
 		return programData!.mealAmount.doubleValue + mealTip()
 	}
 
-	//Returns the equivalent meal total, which is the equivalent meal amount plus the equivalent meal tip
+	//Returns the equivalent meal total, which is the meal total divided by the country exchange rate
 	func mealEquivalentTotal() -> Double {
-		return mealEquivalentAmount() + mealEquivalentTip()
+		return mealTotal() / programData!.countryExchangeRate.doubleValue
 	}
 
 	//Returns the meal result, which is the meal total divided by the meal people
 	func mealResult() -> Double {
-		return Double(String(format: "%.2f", mealTotal() / programData!.mealPeople.doubleValue))!
+		return mealTotal() / programData!.mealPeople.doubleValue
 	}
 
 	//Returns the equivalent meal result, which is the meal result divided by the country exchange rate
