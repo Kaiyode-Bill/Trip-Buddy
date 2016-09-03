@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MiscViewController" customModule="Trip_Buddy" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EqualViewController" customModule="Trip_Buddy" customModuleProvider="target">
             <connections>
                 <outlet property="distanceAmountTextField" destination="IPj-iB-OGD" id="zsg-kQ-se1"/>
                 <outlet property="distanceUnitButton" destination="7X2-pu-WhJ" id="Ais-GY-GzC"/>

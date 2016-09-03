@@ -23,8 +23,8 @@ class ProgramData: NSManagedObject {
 	@NSManaged var mealAmount: NSNumber
 	@NSManaged var mealPercentage: NSNumber
 	@NSManaged var mealPeople: NSNumber
-	@NSManaged var miscDistanceAmount: NSNumber
-	@NSManaged var miscDistanceUnit: NSNumber
-	@NSManaged var miscTemperatureAmount: NSNumber
-	@NSManaged var miscTemperatureUnit: NSNumber
+	@NSManaged var equalDistanceAmount: NSNumber
+	@NSManaged var equalDistanceUnit: NSNumber
+	@NSManaged var equalTemperatureAmount: NSNumber
+	@NSManaged var equalTemperatureUnit: NSNumber
 }

@@ -1,10 +1,10 @@
 //Trip Buddy
-//MiscViewController.swift
+//EqualViewController.swift
 //© 2016 Kaiyode Software
 
 import UIKit
 
-class MiscViewController: ParentViewController {
+class EqualViewController: ParentViewController {
 	@IBOutlet weak var distanceAmountTextField: UITextField!
 	@IBOutlet weak var distanceUnitButton: UIButton!
 	@IBOutlet weak var equivalentDistanceAmountLabel: UILabel!
@@ -22,9 +22,9 @@ class MiscViewController: ParentViewController {
 	}
 
 	@IBAction func distanceAmountTextFieldEntered(sender: AnyObject) {
-		if mainViewController!.programData!.miscDistanceAmount != 0 {
+		if mainViewController!.programData!.equalDistanceAmount != 0 {
 			distanceAmountTextField.selectAll(self)
-			distanceAmountTextField.text = String(format: "%.3f", mainViewController!.programData!.miscDistanceAmount.doubleValue)
+			distanceAmountTextField.text = String(format: "%.3f", mainViewController!.programData!.equalDistanceAmount.doubleValue)
 		} else {
 			distanceAmountTextField.text = ""
 		}
@@ -32,20 +32,20 @@ class MiscViewController: ParentViewController {
 	}
 
 	@IBAction func distanceAmountTextFieldExited(sender: AnyObject) {
-		mainViewController!.programData!.miscDistanceAmount = parseNumber(distanceAmountTextField.text!, minimum: -99999.999, maximum: 99999.999, decimalPlaces: 3)
+		mainViewController!.programData!.equalDistanceAmount = parseNumber(distanceAmountTextField.text!, minimum: -99999.999, maximum: 99999.999, decimalPlaces: 3)
 		mainViewController!.saveProgramData()
 	}
 
 	@IBAction func distanceUnitButtonPressed(sender: AnyObject) {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
-		mainViewController!.programData!.miscDistanceUnit = 1 - mainViewController!.programData!.miscDistanceUnit.integerValue
+		mainViewController!.programData!.equalDistanceUnit = 1 - mainViewController!.programData!.equalDistanceUnit.integerValue
 		mainViewController!.saveProgramData()
 	}
 
 	@IBAction func temperatureAmountTextFieldEntered(sender: AnyObject) {
-		if mainViewController!.programData!.miscTemperatureAmount != 0 {
+		if mainViewController!.programData!.equalTemperatureAmount != 0 {
 			temperatureAmountTextField.selectAll(self)
-			temperatureAmountTextField.text = String(format: "%.3f", mainViewController!.programData!.miscTemperatureAmount.doubleValue)
+			temperatureAmountTextField.text = String(format: "%.3f", mainViewController!.programData!.equalTemperatureAmount.doubleValue)
 		} else {
 			temperatureAmountTextField.text = ""
 		}
@@ -53,22 +53,22 @@ class MiscViewController: ParentViewController {
 	}
 
 	@IBAction func temperatureAmountTextFieldExited(sender: AnyObject) {
-		mainViewController!.programData!.miscTemperatureAmount = parseNumber(temperatureAmountTextField.text!, minimum: -99999.999, maximum: 99999.999, decimalPlaces: 3)
+		mainViewController!.programData!.equalTemperatureAmount = parseNumber(temperatureAmountTextField.text!, minimum: -99999.999, maximum: 99999.999, decimalPlaces: 3)
 		mainViewController!.saveProgramData()
 	}
 
 	@IBAction func temperatureButtonPressed(sender: AnyObject) {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
-		mainViewController!.programData!.miscTemperatureUnit = 1 - mainViewController!.programData!.miscTemperatureUnit.integerValue
+		mainViewController!.programData!.equalTemperatureUnit = 1 - mainViewController!.programData!.equalTemperatureUnit.integerValue
 		mainViewController!.saveProgramData()
 	}
 
 	@IBAction func resetButtonPressed(sender: AnyObject) {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
-		mainViewController!.programData!.miscDistanceAmount = 0
-		mainViewController!.programData!.miscDistanceUnit = 0
-		mainViewController!.programData!.miscTemperatureAmount = 0
-		mainViewController!.programData!.miscTemperatureUnit = 0
+		mainViewController!.programData!.equalDistanceAmount = 0
+		mainViewController!.programData!.equalDistanceUnit = 0
+		mainViewController!.programData!.equalTemperatureAmount = 0
+		mainViewController!.programData!.equalTemperatureUnit = 0
 		mainViewController!.saveProgramData()
 	}
 }

@@ -14,8 +14,8 @@
 		71010CB41D0CEFA400D2397A /* GasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71010CB21D0CEFA400D2397A /* GasViewController.xib */; };
 		71010CB71D0CEFD100D2397A /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71010CB51D0CEFD100D2397A /* MealViewController.swift */; };
 		71010CB81D0CEFD100D2397A /* MealViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71010CB61D0CEFD100D2397A /* MealViewController.xib */; };
-		71010CBB1D0CF02600D2397A /* MiscViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71010CB91D0CF02600D2397A /* MiscViewController.swift */; };
-		71010CBC1D0CF02600D2397A /* MiscViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71010CBA1D0CF02600D2397A /* MiscViewController.xib */; };
+		71010CBB1D0CF02600D2397A /* EqualViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71010CB91D0CF02600D2397A /* EqualViewController.swift */; };
+		71010CBC1D0CF02600D2397A /* EqualViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71010CBA1D0CF02600D2397A /* EqualViewController.xib */; };
 		71792E311CC3119F008EAAAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71792E301CC3119F008EAAAF /* AppDelegate.swift */; };
 		71792E361CC3119F008EAAAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71792E341CC3119F008EAAAF /* Main.storyboard */; };
 		71792E391CC3119F008EAAAF /* Trip_Buddy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71792E371CC3119F008EAAAF /* Trip_Buddy.xcdatamodeld */; };
@@ -34,8 +34,8 @@
 		71010CB21D0CEFA400D2397A /* GasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GasViewController.xib; sourceTree = "<group>"; };
 		71010CB51D0CEFD100D2397A /* MealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
 		71010CB61D0CEFD100D2397A /* MealViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MealViewController.xib; sourceTree = "<group>"; };
-		71010CB91D0CF02600D2397A /* MiscViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiscViewController.swift; sourceTree = "<group>"; };
-		71010CBA1D0CF02600D2397A /* MiscViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MiscViewController.xib; sourceTree = "<group>"; };
+		71010CB91D0CF02600D2397A /* EqualViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EqualViewController.swift; sourceTree = "<group>"; };
+		71010CBA1D0CF02600D2397A /* EqualViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EqualViewController.xib; sourceTree = "<group>"; };
 		71792E2D1CC3119E008EAAAF /* Trip Buddy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trip Buddy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		71792E301CC3119F008EAAAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71792E351CC3119F008EAAAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,8 +87,8 @@
 				71010CB21D0CEFA400D2397A /* GasViewController.xib */,
 				71010CB51D0CEFD100D2397A /* MealViewController.swift */,
 				71010CB61D0CEFD100D2397A /* MealViewController.xib */,
-				71010CB91D0CF02600D2397A /* MiscViewController.swift */,
-				71010CBA1D0CF02600D2397A /* MiscViewController.xib */,
+				71010CB91D0CF02600D2397A /* EqualViewController.swift */,
+				71010CBA1D0CF02600D2397A /* EqualViewController.xib */,
 				71D0B92F1D116FCD004BBEE9 /* HelpViewController.swift */,
 				719496931CC9E46C00299AC2 /* ProgramData.swift */,
 				71792E341CC3119F008EAAAF /* Main.storyboard */,
@@ -158,7 +158,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71010CBC1D0CF02600D2397A /* MiscViewController.xib in Resources */,
+				71010CBC1D0CF02600D2397A /* EqualViewController.xib in Resources */,
 				71792E3E1CC3119F008EAAAF /* LaunchScreen.storyboard in Resources */,
 				71792E3B1CC3119F008EAAAF /* Assets.xcassets in Resources */,
 				71010CB41D0CEFA400D2397A /* GasViewController.xib in Resources */,
@@ -183,7 +183,7 @@
 				71010CB71D0CEFD100D2397A /* MealViewController.swift in Sources */,
 				719496951CC9E46C00299AC2 /* ProgramData.swift in Sources */,
 				71010CAF1D0CEB4900D2397A /* ExchangeViewController.swift in Sources */,
-				71010CBB1D0CF02600D2397A /* MiscViewController.swift in Sources */,
+				71010CBB1D0CF02600D2397A /* EqualViewController.swift in Sources */,
 				71D0B9301D116FCD004BBEE9 /* HelpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

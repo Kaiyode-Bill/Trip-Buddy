@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
 	let viewControllers: [ParentViewController] = [ExchangeViewController(nibName: "ExchangeViewController", bundle: nil),
 	                                               GasViewController(nibName: "GasViewController", bundle: nil),
 	                                               MealViewController(nibName: "MealViewController", bundle: nil),
-	                                               MiscViewController(nibName: "MiscViewController", bundle: nil)]
+	                                               EqualViewController(nibName: "EqualViewController", bundle: nil)]
 
 	//Arrays of information where an index in any array pertains to the same country
 	let countryNames: [String] = ["Argentina", "Austria", "Bulgaria", "Canada", "Chile", "China", "France", "Germany",
@@ -41,10 +41,10 @@ class MainViewController: UIViewController {
 
 	let gasWeights: [Double] = [1000000000, 832673840, 3785411784]
 
-	//Miscellaneous information
-	let miscDistanceUnits: [String] = ["Miles (or MPH)", "Kilometers (or km/h)"]
+	//Equal information
+	let equalDistanceUnits: [String] = ["Miles (or MPH)", "Kilometers (or km/h)"]
 
-	let miscTemperatureUnits: [String] = ["° Farenheit", "° Celsius"]
+	let equalTemperatureUnits: [String] = ["° Farenheit", "° Celsius"]
 
 	//CoreData variables for saving program data
 	let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
@@ -94,10 +94,10 @@ class MainViewController: UIViewController {
 			existingData[0].mealAmount = 0
 			existingData[0].mealPercentage = 0
 			existingData[0].mealPeople = 1
-			existingData[0].miscDistanceAmount = 0
-			existingData[0].miscDistanceUnit = 0
-			existingData[0].miscTemperatureAmount = 0
-			existingData[0].miscTemperatureUnit = 0
+			existingData[0].equalDistanceAmount = 0
+			existingData[0].equalDistanceUnit = 0
+			existingData[0].equalTemperatureAmount = 0
+			existingData[0].equalTemperatureUnit = 0
 		}
 		programData = existingData[0]
 		//Once program data is obtained, update the country exchange rate, save all data, and update all UI elements
@@ -187,12 +187,12 @@ class MainViewController: UIViewController {
 		let gasEquivalentUnit = gasUnits[programData!.gasEquivalentUnit.integerValue]
 		//Relevant meal information
 		let mealViewController = viewControllers[2] as! MealViewController
-		//Relevant miscellaneous information
-		let miscViewController = viewControllers[3] as! MiscViewController
-		let miscDistanceUnit = miscDistanceUnits[programData!.miscDistanceUnit.integerValue]
-		let miscEquivalentDistanceUnit = miscDistanceUnits[1 - programData!.miscDistanceUnit.integerValue]
-		let miscTemperatureUnit = miscTemperatureUnits[programData!.miscTemperatureUnit.integerValue]
-		let miscEquivalentTemperatureUnit = miscTemperatureUnits[1 - programData!.miscTemperatureUnit.integerValue]
+		//Relevant equal information
+		let equalViewController = viewControllers[3] as! EqualViewController
+		let equalDistanceUnit = equalDistanceUnits[programData!.equalDistanceUnit.integerValue]
+		let equalEquivalentDistanceUnit = equalDistanceUnits[1 - programData!.equalDistanceUnit.integerValue]
+		let equalTemperatureUnit = equalTemperatureUnits[programData!.equalTemperatureUnit.integerValue]
+		let equalEquivalentTemperatureUnit = equalTemperatureUnits[1 - programData!.equalTemperatureUnit.integerValue]
 
 		//Update MainViewController's elements
 		originCountryImageView.image = UIImage(named: originName)
@@ -315,23 +315,23 @@ class MainViewController: UIViewController {
 		mealViewController.resultLabel.hidden = programData!.mealPeople == 1
 		mealViewController.equivalentResultLabel.text = "(Which is \(originSymbol) \(String(format: "%.2f", mealEquivalentResult())) \(originCurrency))"
 		mealViewController.equivalentResultLabel.hidden = programData!.mealPeople == 1
-		//Update MiscViewController's elements
-		if programData!.miscDistanceAmount != 0 {
-			miscViewController.distanceAmountTextField.text = String(format: "%.3f", programData!.miscDistanceAmount.doubleValue)
+		//Update EqualViewController's elements
+		if programData!.equalDistanceAmount != 0 {
+			equalViewController.distanceAmountTextField.text = String(format: "%.3f", programData!.equalDistanceAmount.doubleValue)
 		} else {
-			miscViewController.distanceAmountTextField.text = ""
+			equalViewController.distanceAmountTextField.text = ""
 		}
-		miscViewController.distanceUnitButton.setTitle(miscDistanceUnit, forState: UIControlState.Normal)
-		miscViewController.equivalentDistanceAmountLabel.text = String(format: "%.3f", miscEquivalentDistanceAmount())
-		miscViewController.equivalentDistanceUnitLabel.text = miscEquivalentDistanceUnit
-		if programData!.miscTemperatureAmount != 0 {
-			miscViewController.temperatureAmountTextField.text = String(format: "%.3f", programData!.miscTemperatureAmount.doubleValue)
+		equalViewController.distanceUnitButton.setTitle(equalDistanceUnit, forState: UIControlState.Normal)
+		equalViewController.equivalentDistanceAmountLabel.text = String(format: "%.3f", equalEquivalentDistanceAmount())
+		equalViewController.equivalentDistanceUnitLabel.text = equalEquivalentDistanceUnit
+		if programData!.equalTemperatureAmount != 0 {
+			equalViewController.temperatureAmountTextField.text = String(format: "%.3f", programData!.equalTemperatureAmount.doubleValue)
 		} else {
-			miscViewController.temperatureAmountTextField.text = ""
+			equalViewController.temperatureAmountTextField.text = ""
 		}
-		miscViewController.temperatureUnitButton.setTitle(miscTemperatureUnit, forState: UIControlState.Normal)
-		miscViewController.equivalentTemperatureAmountLabel.text = String(format: "%.3f", miscEquivalentTemperatureAmount())
-		miscViewController.equivalentTemperatureUnitLabel.text = miscEquivalentTemperatureUnit
+		equalViewController.temperatureUnitButton.setTitle(equalTemperatureUnit, forState: UIControlState.Normal)
+		equalViewController.equivalentTemperatureAmountLabel.text = String(format: "%.3f", equalEquivalentTemperatureAmount())
+		equalViewController.equivalentTemperatureUnitLabel.text = equalEquivalentTemperatureUnit
 	}
 
 	//Returns the exchange total which is the exchange amount minus the exchange fee
@@ -404,21 +404,21 @@ class MainViewController: UIViewController {
 		return mealResult() / programData!.countryExchangeRate.doubleValue
 	}
 
-	//Returns the equivalent distance amount from the MiscViewController
-	func miscEquivalentDistanceAmount() -> Double {
-		if programData!.miscDistanceUnit == 0 {
-			return programData!.miscDistanceAmount.doubleValue * (25146 / 15625)
+	//Returns the equivalent distance amount from the EqualViewController
+	func equalEquivalentDistanceAmount() -> Double {
+		if programData!.equalDistanceUnit == 0 {
+			return programData!.equalDistanceAmount.doubleValue * (25146 / 15625)
 		} else {
-			return programData!.miscDistanceAmount.doubleValue * (15625 / 25146)
+			return programData!.equalDistanceAmount.doubleValue * (15625 / 25146)
 		}
 	}
 
-	//Returns the equivalent temperature amount from the MiscViewController
-	func miscEquivalentTemperatureAmount() -> Double {
-		if programData!.miscTemperatureUnit == 0 {
-			return (programData!.miscTemperatureAmount.doubleValue - 32) * (5 / 9)
+	//Returns the equivalent temperature amount from the EqualViewController
+	func equalEquivalentTemperatureAmount() -> Double {
+		if programData!.equalTemperatureUnit == 0 {
+			return (programData!.equalTemperatureAmount.doubleValue - 32) * (5 / 9)
 		} else {
-			return (programData!.miscTemperatureAmount.doubleValue * (9 / 5)) + 32
+			return (programData!.equalTemperatureAmount.doubleValue * (9 / 5)) + 32
 		}
 	}
 
