@@ -217,8 +217,10 @@ class MainViewController: UIViewController {
 		exchangeViewController.percentagePrefixLabel.hidden = programData!.exchangeAmount == 0
 		if programData!.exchangePercentage != 0 {
 			exchangeViewController.percentageTextField.text = "\(programData!.exchangePercentage.integerValue) %"
+			exchangeViewController.feeTextField.textColor = UIColor.grayColor()
 		} else {
 			exchangeViewController.percentageTextField.text = ""
+			exchangeViewController.feeTextField.textColor = UIColor.blackColor()
 		}
 		exchangeViewController.percentageTextField.hidden = programData!.exchangeAmount == 0
 		exchangeViewController.feePrefixLabel.hidden = programData!.exchangeAmount == 0
