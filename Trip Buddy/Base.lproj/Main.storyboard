@@ -154,6 +154,7 @@
                             <constraint firstItem="U4P-IN-2GG" firstAttribute="top" secondItem="jw6-QC-RKf" secondAttribute="bottom" id="xki-CY-tIu"/>
                             <constraint firstAttribute="trailing" secondItem="Brt-Bw-d27" secondAttribute="trailing" constant="2" id="xqe-J7-CLh"/>
                             <constraint firstItem="Sfr-qi-fHz" firstAttribute="leading" secondItem="D39-pz-o8f" secondAttribute="leading" constant="2" id="yd0-oe-Sq9"/>
+                            <constraint firstItem="giY-Be-sUA" firstAttribute="top" secondItem="Sfr-qi-fHz" secondAttribute="bottom" constant="2" id="ysc-if-BBr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Trip Buddy" id="D16-AV-Qsn"/>
@@ -198,6 +199,10 @@
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6mO-YG-KiL">
                                 <rect key="frame" x="10" y="580" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="Fk5-AD-OtL"/>
+                                    <constraint firstAttribute="height" constant="31" id="SUj-tj-GOX"/>
+                                </constraints>
                                 <color key="onTintColor" red="0.66666666669999997" green="0.33333333329999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="startupSwitchChanged:" destination="pWi-zc-zjq" eventType="valueChanged" id="ncK-1h-Ld4"/>

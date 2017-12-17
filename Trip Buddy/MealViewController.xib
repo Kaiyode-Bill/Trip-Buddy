@@ -192,6 +192,7 @@
                 <constraint firstItem="SsL-qS-jL7" firstAttribute="leading" secondItem="FMf-pz-sz0" secondAttribute="trailing" constant="4" id="Edv-7C-F7z"/>
                 <constraint firstItem="Tl3-xF-tp7" firstAttribute="top" secondItem="BT5-dR-R41" secondAttribute="bottom" constant="4" id="FCE-yy-buW"/>
                 <constraint firstAttribute="trailing" secondItem="Tl3-xF-tp7" secondAttribute="trailing" constant="10" id="Hw4-dG-dbH"/>
+                <constraint firstItem="o2M-03-RUh" firstAttribute="top" secondItem="3EM-ec-ze5" secondAttribute="bottom" constant="4" id="JtQ-Fy-BFV"/>
                 <constraint firstItem="FMf-pz-sz0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="KGf-ex-BNr"/>
                 <constraint firstAttribute="trailing" secondItem="oPy-lB-QxJ" secondAttribute="trailing" constant="10" id="LDt-Qk-Zgb"/>
                 <constraint firstAttribute="trailing" secondItem="JEx-lf-FPc" secondAttribute="trailing" constant="10" id="NiP-Tg-CHl"/>
@@ -214,7 +215,9 @@
                 <constraint firstItem="SsL-qS-jL7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="10" id="pCc-Td-6L4"/>
                 <constraint firstItem="oPy-lB-QxJ" firstAttribute="top" secondItem="DCn-YT-jZV" secondAttribute="bottom" constant="4" id="rAs-u4-OJN"/>
                 <constraint firstAttribute="trailing" secondItem="DCn-YT-jZV" secondAttribute="trailing" constant="10" id="sqF-IC-USI"/>
+                <constraint firstItem="yT7-J1-OTq" firstAttribute="top" secondItem="xH9-WR-wwv" secondAttribute="bottom" constant="4" id="vmV-Hb-B6r"/>
                 <constraint firstItem="3EM-ec-ze5" firstAttribute="top" secondItem="BT5-dR-R41" secondAttribute="bottom" constant="4" id="wyF-wp-3rq"/>
+                <constraint firstItem="BT5-dR-R41" firstAttribute="top" secondItem="FMf-pz-sz0" secondAttribute="bottom" constant="4" id="xb9-cx-2Is"/>
                 <constraint firstItem="JEx-lf-FPc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="zXF-tX-78A"/>
             </constraints>
         </view>

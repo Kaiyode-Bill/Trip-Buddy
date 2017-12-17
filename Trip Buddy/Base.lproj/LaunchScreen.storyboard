@@ -43,7 +43,6 @@
                             <constraint firstItem="gDi-7n-YP4" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" id="1Ec-ZS-dD6"/>
                             <constraint firstItem="gDi-7n-YP4" firstAttribute="top" secondItem="Oei-zt-yGp" secondAttribute="bottom" constant="10" id="2HR-80-bKi"/>
                             <constraint firstItem="Oei-zt-yGp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="HL9-GV-6SG"/>
-                            <constraint firstItem="gDi-7n-YP4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="LRs-ii-GpW"/>
                             <constraint firstAttribute="trailing" secondItem="gDi-7n-YP4" secondAttribute="trailing" constant="20" id="OEd-KR-zf7"/>
                             <constraint firstItem="Oei-zt-yGp" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Z9p-45-8Ap"/>
                         </constraints>
