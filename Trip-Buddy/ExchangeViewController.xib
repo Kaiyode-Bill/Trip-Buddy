@@ -12,6 +12,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExchangeViewController" customModule="Trip_Buddy" customModuleProvider="target">
             <connections>
+                <outlet property="amountTextField" destination="Y1u-EU-yY9" id="Oj6-gV-t1A"/>
+                <outlet property="differenceLabel" destination="FgM-x6-cvz" id="4a0-x8-9Jh"/>
+                <outlet property="feePrefixLabel" destination="qjV-Ao-VHx" id="9Zh-Jf-Dua"/>
+                <outlet property="feeTextField" destination="bD5-rQ-W0L" id="6i4-nQ-Uvs"/>
+                <outlet property="helpButton" destination="J1Q-Pb-HKW" id="YrR-C0-5Wo"/>
+                <outlet property="outcomePrefixLabel" destination="FKs-b1-ifn" id="B62-Al-Fbw"/>
+                <outlet property="outcomeTextField" destination="fa7-3p-bQH" id="e9o-7V-Kqu"/>
+                <outlet property="percentagePrefixLabel" destination="eh7-qk-Xlp" id="yVz-WH-P0F"/>
+                <outlet property="percentageTextField" destination="mDU-tj-ea1" id="tlP-WD-1BE"/>
+                <outlet property="rateLabel" destination="3ge-Yr-1OX" id="Mfp-3o-5VG"/>
+                <outlet property="resultLabel" destination="1Ud-2Z-NhQ" id="S7R-Qy-CI9"/>
+                <outlet property="unitsLabel" destination="6ks-Ob-pLM" id="dc8-9A-nFI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -56,6 +68,10 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="amountTextFieldEntered" destination="-1" eventType="editingDidBegin" id="UTi-kU-UUm"/>
+                        <action selector="amountTextFieldExited" destination="-1" eventType="editingDidEnd" id="tal-A9-c5o"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set the fee:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eh7-qk-Xlp">
                     <rect key="frame" x="10" y="112" width="120" height="30"/>
@@ -75,6 +91,10 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="percentageTextFieldEntered" destination="-1" eventType="editingDidBegin" id="gMq-lw-7Qf"/>
+                        <action selector="percentageTextFieldExited" destination="-1" eventType="editingDidEnd" id="k4B-yU-ZdN"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total fee is:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjV-Ao-VHx">
                     <rect key="frame" x="10" y="146" width="120" height="30"/>
@@ -94,6 +114,10 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="feeTextFieldEntered" destination="-1" eventType="editingDidBegin" id="qzk-9S-4i2"/>
+                        <action selector="feeTextFieldExited" destination="-1" eventType="editingDidEnd" id="Yvx-cU-gGp"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Result Label]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="1Ud-2Z-NhQ">
                     <rect key="frame" x="10" y="180" width="355" height="20"/>
@@ -122,6 +146,10 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="outcomeTextFieldEntered" destination="-1" eventType="editingDidBegin" id="Lhj-HK-usX"/>
+                        <action selector="outcomeTextFieldExited" destination="-1" eventType="editingDidEnd" id="HLK-A3-Vgt"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Difference Label]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="FgM-x6-cvz">
                     <rect key="frame" x="10" y="238" width="355" height="20"/>
@@ -140,6 +168,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="Reset Exchange"/>
+                    <connections>
+                        <action selector="resetButtonPressed" destination="-1" eventType="touchUpInside" id="xEL-EQ-cPq"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1Q-Pb-HKW">
                     <rect key="frame" x="10" y="593" width="355" height="30"/>
@@ -149,6 +180,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="Need Help?"/>
+                    <connections>
+                        <action selector="helpButtonPressed" destination="-1" eventType="touchUpInside" id="3ZF-h6-oxF"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -12,6 +12,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EqualViewController" customModule="Trip_Buddy" customModuleProvider="target">
             <connections>
+                <outlet property="distanceAmountTextField" destination="lnx-kT-kfK" id="Wc3-sE-fPu"/>
+                <outlet property="distanceUnitButton" destination="YyE-Ol-AWj" id="opJ-5C-bCu"/>
+                <outlet property="equivalentDistanceAmountLabel" destination="jXK-kA-Gkt" id="GIz-p2-BVm"/>
+                <outlet property="equivalentDistanceUnitLabel" destination="zsm-v5-Y6j" id="yb1-Mg-I99"/>
+                <outlet property="equivalentTemperatureAmountLabel" destination="FEI-rX-98a" id="4Kf-4Q-eh8"/>
+                <outlet property="equivalentTemperatureUnitLabel" destination="LWL-Qg-J2X" id="wcZ-bf-e3o"/>
+                <outlet property="temperatureAmountTextField" destination="7xC-jL-Kuv" id="bGe-7Y-5Na"/>
+                <outlet property="temperatureUnitButton" destination="APU-RI-AD8" id="TRH-1Z-JPe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -29,6 +37,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="[Dst. Unit Button]"/>
+                    <connections>
+                        <action selector="distanceUnitButtonPressed" destination="-1" eventType="touchUpInside" id="djY-IT-WJR"/>
+                    </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.000" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="lnx-kT-kfK">
                     <rect key="frame" x="10" y="30" width="201" height="30"/>
@@ -38,6 +49,10 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="distanceAmountTextFieldEntered" destination="-1" eventType="editingDidBegin" id="MF5-dK-Cga"/>
+                        <action selector="distanceAmountTextFieldExited" destination="-1" eventType="editingDidEnd" id="Hfd-fS-NLp"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Eq-Dst. Unit Label]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zsm-v5-Y6j">
                     <rect key="frame" x="215" y="64" width="150" height="20"/>
@@ -76,6 +91,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="[Tmp. Unit Button]"/>
+                    <connections>
+                        <action selector="temperatureButtonPressed" destination="-1" eventType="touchUpInside" id="g3w-7r-pGr"/>
+                    </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.000" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="7xC-jL-Kuv">
                     <rect key="frame" x="10" y="128" width="201" height="30"/>
@@ -85,6 +103,10 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="temperatureAmountTextFieldEntered" destination="-1" eventType="editingDidBegin" id="Oqv-vE-OJj"/>
+                        <action selector="temperatureAmountTextFieldExited" destination="-1" eventType="editingDidEnd" id="BcY-iX-7HU"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Eq-Tmp. Unit Label]" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWL-Qg-J2X">
                     <rect key="frame" x="215" y="162" width="150" height="20"/>
@@ -113,6 +135,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="Reset Equal"/>
+                    <connections>
+                        <action selector="resetButtonPressed" destination="-1" eventType="touchUpInside" id="vlH-Wc-J0Q"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.50196078430000002" green="0.50196078430000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -12,6 +12,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GasViewController" customModule="Trip_Buddy" customModuleProvider="target">
             <connections>
+                <outlet property="amountPrefixLabel" destination="WnF-fJ-BV9" id="gAz-gp-8TB"/>
+                <outlet property="amountTextField" destination="9vb-8i-Cnw" id="ru2-6s-czX"/>
+                <outlet property="differenceLabel" destination="y0r-Nc-PR4" id="Jt7-tc-5ES"/>
+                <outlet property="equivalentRateLabel" destination="VPQ-MY-ZXb" id="M07-gO-PVM"/>
+                <outlet property="equivalentUnitButton" destination="nYb-KZ-QpQ" id="woW-Bz-Chx"/>
+                <outlet property="outcomePrefixLabel" destination="bPC-Eb-PuG" id="MHj-XJ-kdQ"/>
+                <outlet property="outcomeTextField" destination="Kl4-zu-d9I" id="hN8-ii-eBd"/>
+                <outlet property="ratePrefixLabel" destination="Euc-IV-Iz4" id="o6e-y5-7Au"/>
+                <outlet property="rateTextField" destination="Aav-C0-vY6" id="ayf-uD-1Hp"/>
+                <outlet property="resultLabel" destination="2sE-Qs-8mD" id="uE5-je-ZJv"/>
+                <outlet property="unitButton" destination="Q3s-qg-VRh" id="QSt-Bj-XhG"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -38,6 +49,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="[Equivalent Unit Button]"/>
+                    <connections>
+                        <action selector="equivalentUnitButtonPressed" destination="-1" eventType="touchUpInside" id="arH-4X-toV"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today I'm buying:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jf8-qy-BBT">
                     <rect key="frame" x="10" y="64" width="140" height="30"/>
@@ -57,6 +71,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="[Unit Button]"/>
+                    <connections>
+                        <action selector="unitButtonPressed" destination="-1" eventType="touchUpInside" id="BWH-hA-MwG"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Rate Prefix Label]" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Euc-IV-Iz4">
                     <rect key="frame" x="10" y="98" width="140" height="30"/>
@@ -76,6 +93,10 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="rateTextFieldEntered" destination="-1" eventType="editingDidBegin" id="wv4-cS-WnZ"/>
+                        <action selector="rateTextFieldExited" destination="-1" eventType="editingDidEnd" id="8QB-Ba-i8k"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Equivalent Rate Label]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="VPQ-MY-ZXb">
                     <rect key="frame" x="10" y="132" width="355" height="20"/>
@@ -104,6 +125,10 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="amountTextFieldEntered" destination="-1" eventType="editingDidBegin" id="QcS-yL-cVt"/>
+                        <action selector="amountTextFieldExited" destination="-1" eventType="editingDidEnd" id="jsl-cx-Kyi"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Result Label]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="2sE-Qs-8mD">
                     <rect key="frame" x="10" y="190" width="355" height="20"/>
@@ -132,6 +157,10 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="outcomeTextFieldEntered" destination="-1" eventType="editingDidBegin" id="En6-uh-4eL"/>
+                        <action selector="outcomeTextFieldExited" destination="-1" eventType="editingDidEnd" id="fML-pU-shc"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Difference Label]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="y0r-Nc-PR4">
                     <rect key="frame" x="10" y="248" width="355" height="20"/>
@@ -150,6 +179,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="Reset Gas"/>
+                    <connections>
+                        <action selector="resetButtonPressed" destination="-1" eventType="touchUpInside" id="qD4-Ip-qO9"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

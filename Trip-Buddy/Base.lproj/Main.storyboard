@@ -33,6 +33,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="[Origin Country Button]"/>
+                                <connections>
+                                    <action selector="originCountryButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fad-ar-k9y"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xtV-7R-a30">
                                 <rect key="frame" x="2" y="54" width="60" height="30"/>
@@ -49,6 +52,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="[Travel Country Button]"/>
+                                <connections>
+                                    <action selector="travelCountryButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="CwM-oG-ApX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CEJ-CJ-Ejd">
                                 <rect key="frame" x="0.0" y="86" width="94" height="30"/>
@@ -60,6 +66,9 @@
                                 <state key="normal" title="EXCHANGE">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="tabButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gv4-7Z-y5P"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iax-wn-fpG">
                                 <rect key="frame" x="94" y="86" width="93.5" height="30"/>
@@ -68,6 +77,9 @@
                                 <state key="normal" title="GAS">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="tabButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="If4-rz-V0w"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3I8-Rr-v8l">
                                 <rect key="frame" x="187.5" y="86" width="94" height="30"/>
@@ -76,6 +88,9 @@
                                 <state key="normal" title="MEAL">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="tabButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="53z-ug-EN5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1m2-8g-B34">
                                 <rect key="frame" x="281.5" y="86" width="93.5" height="30"/>
@@ -84,6 +99,9 @@
                                 <state key="normal" title="EQUAL">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="tabButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2yz-h1-ZyF"/>
+                                </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Syn-S0-XCR">
                                 <rect key="frame" x="0.0" y="116" width="375" height="551"/>
@@ -125,16 +143,21 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="originCountryButton" destination="sRS-q9-mII" id="BD8-u4-Cx5"/>
+                        <outlet property="originCountryImageView" destination="tJ1-xO-1Oi" id="XjV-jk-sH5"/>
+                        <outlet property="scrollView" destination="Syn-S0-XCR" id="ceb-oZ-6Ha"/>
+                        <outlet property="travelCountryButton" destination="rf8-kx-TqH" id="sa8-is-4BP"/>
+                        <outlet property="travelCountryImageView" destination="xtV-7R-a30" id="ySe-gg-DZ9"/>
                         <segue destination="f7K-G9-hJh" kind="presentation" identifier="MainToHelpSegue" id="Ugq-1b-Be0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Help View Controller-->
         <scene sceneID="2dJ-jO-sDl">
             <objects>
-                <viewController id="f7K-G9-hJh" sceneMemberID="viewController">
+                <viewController id="f7K-G9-hJh" customClass="HelpViewController" customModule="Trip_Buddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cgh-Rk-rdi">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -215,6 +238,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Got it, let's get started!"/>
+                                <connections>
+                                    <action selector="returnButtonPressed" destination="f7K-G9-hJh" eventType="touchUpInside" id="M0C-2a-xSg"/>
+                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ue6-S1-CVB">
                                 <rect key="frame" x="10" y="580" width="51" height="31"/>
@@ -223,6 +249,9 @@
                                     <constraint firstAttribute="width" constant="49" id="cpw-Od-5HP"/>
                                 </constraints>
                                 <color key="onTintColor" red="0.66666666669999997" green="0.33333333329999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="startupSwitchChanged" destination="f7K-G9-hJh" eventType="valueChanged" id="Jye-su-V3c"/>
+                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(show this page at startup)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSs-FR-uvr">
                                 <rect key="frame" x="65" y="580" width="300" height="31"/>
@@ -268,10 +297,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NYf-Zg-Kuz"/>
                     </view>
+                    <connections>
+                        <outlet property="startupSwitch" destination="ue6-S1-CVB" id="TgC-vN-KCY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e7r-Dx-mre" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="903" y="134"/>
+            <point key="canvasLocation" x="1442" y="33"/>
         </scene>
     </scenes>
 </document>

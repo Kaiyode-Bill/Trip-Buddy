@@ -12,6 +12,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MealViewController" customModule="Trip_Buddy" customModuleProvider="target">
             <connections>
+                <outlet property="amountTextField" destination="eY0-Kg-47J" id="Y6g-0I-RpQ"/>
+                <outlet property="equivalentAmountLabel" destination="VfF-wA-Vy5" id="pAF-Ju-Lka"/>
+                <outlet property="equivalentResultLabel" destination="Fsi-q0-2mk" id="Gy5-n6-ykj"/>
+                <outlet property="equivalentTipLabel" destination="IG3-Lh-v9Z" id="ojx-l8-LaX"/>
+                <outlet property="equivalentTotalLabel" destination="9Jd-5R-zbN" id="fHi-ht-jcm"/>
+                <outlet property="peoplePrefixLabel" destination="7oW-QB-8pk" id="hBJ-eO-Fx3"/>
+                <outlet property="peopleTextField" destination="MeB-Ya-XYH" id="N2M-PD-U5Q"/>
+                <outlet property="percentagePrefixLabel" destination="T1H-ZL-Ez3" id="zuR-sZ-bSi"/>
+                <outlet property="percentageTextField" destination="RV1-qL-rlb" id="NI8-yp-cYR"/>
+                <outlet property="resultLabel" destination="F8v-CD-vrZ" id="MbQ-4O-gci"/>
+                <outlet property="tipLabel" destination="w3d-8I-S0Y" id="oqD-PJ-xrM"/>
+                <outlet property="totalLabel" destination="ukC-Zy-RvT" id="c9s-bW-Tfk"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -38,6 +50,10 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" keyboardType="decimalPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="amountTextFieldEntered" destination="-1" eventType="editingDidBegin" id="L1o-EG-q5d"/>
+                        <action selector="amountTextFieldExited" destination="-1" eventType="editingDidEnd" id="sMf-N4-BA2"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Equivalent Amount Label]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="VfF-wA-Vy5">
                     <rect key="frame" x="10" y="64" width="355" height="20"/>
@@ -66,6 +82,10 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="percentageTextFieldEntered" destination="-1" eventType="editingDidBegin" id="OpO-5N-y8u"/>
+                        <action selector="percentageTextFieldExited" destination="-1" eventType="editingDidEnd" id="Fb3-DR-r6Q"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Tip Label]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="w3d-8I-S0Y">
                     <rect key="frame" x="10" y="122" width="355" height="20"/>
@@ -121,6 +141,10 @@
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
+                    <connections>
+                        <action selector="peopleTextFieldEntered" destination="-1" eventType="editingDidBegin" id="49r-tS-hBw"/>
+                        <action selector="peopleTextFieldExited" destination="-1" eventType="editingDidEnd" id="sAq-PC-wer"/>
+                    </connections>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[Result Label]" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="F8v-CD-vrZ">
                     <rect key="frame" x="10" y="252" width="355" height="20"/>
@@ -148,6 +172,9 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="Reset Meal"/>
+                    <connections>
+                        <action selector="resetButtonPressed" destination="-1" eventType="touchUpInside" id="3xu-JR-deO"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.50196078430000002" green="1" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
