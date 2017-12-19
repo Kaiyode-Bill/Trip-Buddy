@@ -7,7 +7,7 @@ import UIKit
 class ParentViewController: UIViewController, UITextFieldDelegate {
 	var mainViewController: MainViewController? = nil
 
-	//Dismisses the keyboard upon pressing Done, or typing the Enter key
+	//Dismisses the keyboard upon pressing Done, or upon typing the Enter key
 	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		view.endEditing(true)
 		return false
