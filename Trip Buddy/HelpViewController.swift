@@ -19,6 +19,6 @@ class HelpViewController: UIViewController {
 	}
 
 	@IBAction func returnButtonPressed() {
-		dismissViewControllerAnimated(true, completion: nil)
+		dismiss(animated: true, completion: nil)
 	}
 }
