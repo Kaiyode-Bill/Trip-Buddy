@@ -70,7 +70,7 @@ class GasViewController: ParentViewController {
 	@IBAction func rateTextFieldEntered() {
 		if mainViewController!.programData!.gasRate != 0 {
 			rateTextField.selectAll(self)
-			rateTextField.text = String(format: "%.2f", mainViewController!.programData!.gasRate.doubleValue)
+			rateTextField.text = String(format: "%.2f", mainViewController!.programData!.gasRate)
 		} else {
 			rateTextField.text = ""
 		}
@@ -89,7 +89,7 @@ class GasViewController: ParentViewController {
 	@IBAction func amountTextFieldEntered() {
 		if mainViewController!.programData!.gasAmount != 0 {
 			amountTextField.selectAll(self)
-			amountTextField.text = String(format: "%.2f", mainViewController!.programData!.gasAmount.doubleValue)
+			amountTextField.text = String(format: "%.2f", mainViewController!.programData!.gasAmount)
 		} else {
 			amountTextField.text = ""
 		}
@@ -107,7 +107,7 @@ class GasViewController: ParentViewController {
 	@IBAction func outcomeTextFieldEntered() {
 		if mainViewController!.programData!.gasOutcome != 0 {
 			outcomeTextField.selectAll(self)
-			outcomeTextField.text = String(format: "%.2f", mainViewController!.programData!.gasOutcome.doubleValue)
+			outcomeTextField.text = String(format: "%.2f", mainViewController!.programData!.gasOutcome)
 		} else {
 			outcomeTextField.text = ""
 		}

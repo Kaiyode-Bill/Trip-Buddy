@@ -30,7 +30,7 @@ class ExchangeViewController: ParentViewController {
 	@IBAction func amountTextFieldEntered() {
 		if mainViewController!.programData!.exchangeAmount != 0 {
 			amountTextField.selectAll(self)
-			amountTextField.text = String(format: "%.2f", mainViewController!.programData!.exchangeAmount.doubleValue)
+			amountTextField.text = String(format: "%.2f", mainViewController!.programData!.exchangeAmount)
 		} else {
 			amountTextField.text = ""
 		}
@@ -50,7 +50,7 @@ class ExchangeViewController: ParentViewController {
 	@IBAction func percentageTextFieldEntered() {
 		if mainViewController!.programData!.exchangePercentage != 0 {
 			percentageTextField.selectAll(self)
-			percentageTextField.text = "\(mainViewController!.programData!.exchangePercentage.integerValue)"
+			percentageTextField.text = "\(mainViewController!.programData!.exchangePercentage)"
 		} else {
 			percentageTextField.text = ""
 		}
@@ -59,14 +59,14 @@ class ExchangeViewController: ParentViewController {
 
 	@IBAction func percentageTextFieldExited() {
 		mainViewController!.programData!.exchangePercentage = parseNumber(percentageTextField.text!, minimum: 0, maximum: 30, decimalPlaces: 0)
-		mainViewController!.programData!.exchangeFee = mainViewController!.programData!.exchangeAmount.doubleValue * (mainViewController!.programData!.exchangePercentage.doubleValue / 100)
+		mainViewController!.programData!.exchangeFee = mainViewController!.programData!.exchangeAmount * (Double(mainViewController!.programData!.exchangePercentage) / 100)
 		mainViewController!.saveProgramData()
 	}
 
 	@IBAction func feeTextFieldEntered() {
 		if mainViewController!.programData!.exchangeFee != 0 {
 			feeTextField.selectAll(self)
-			feeTextField.text = String(format: "%.2f", mainViewController!.programData!.exchangeFee.doubleValue)
+			feeTextField.text = String(format: "%.2f", mainViewController!.programData!.exchangeFee)
 		} else {
 			feeTextField.text = ""
 		}
@@ -81,7 +81,7 @@ class ExchangeViewController: ParentViewController {
 	@IBAction func outcomeTextFieldEntered() {
 		if mainViewController!.programData!.exchangeOutcome != 0 {
 			outcomeTextField.selectAll(self)
-			outcomeTextField.text = String(format: "%.2f", mainViewController!.programData!.exchangeOutcome.doubleValue)
+			outcomeTextField.text = String(format: "%.2f", mainViewController!.programData!.exchangeOutcome)
 		} else {
 			outcomeTextField.text = ""
 		}

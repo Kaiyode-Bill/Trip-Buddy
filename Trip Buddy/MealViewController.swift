@@ -29,7 +29,7 @@ class MealViewController: ParentViewController {
 	@IBAction func amountTextFieldEntered() {
 		if mainViewController!.programData!.mealAmount != 0 {
 			amountTextField.selectAll(self)
-			amountTextField.text = String(format: "%.2f", mainViewController!.programData!.mealAmount.doubleValue)
+			amountTextField.text = String(format: "%.2f", mainViewController!.programData!.mealAmount)
 		} else {
 			amountTextField.text = ""
 		}
@@ -48,7 +48,7 @@ class MealViewController: ParentViewController {
 	@IBAction func percentageTextFieldEntered() {
 		if mainViewController!.programData!.mealPercentage != 0 {
 			percentageTextField.selectAll(self)
-			percentageTextField.text = "\(mainViewController!.programData!.mealPercentage.integerValue)"
+			percentageTextField.text = "\(mainViewController!.programData!.mealPercentage)"
 		} else {
 			percentageTextField.text = ""
 		}
@@ -63,7 +63,7 @@ class MealViewController: ParentViewController {
 	@IBAction func peopleTextFieldEntered() {
 		if mainViewController!.programData!.mealPeople != 1 {
 			peopleTextField.selectAll(self)
-			peopleTextField.text = "\(mainViewController!.programData!.mealPeople.integerValue)"
+			peopleTextField.text = "\(mainViewController!.programData!.mealPeople)"
 		} else {
 			peopleTextField.text = ""
 		}

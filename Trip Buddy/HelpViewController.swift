@@ -10,7 +10,7 @@ class HelpViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		startupSwitch.isOn = mainViewController!.programData!.showHelpAtStartup.boolValue
+		startupSwitch.isOn = mainViewController!.programData!.showHelpAtStartup
 	}
 
 	@IBAction func startupSwitchChanged() {

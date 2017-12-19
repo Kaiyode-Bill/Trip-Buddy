@@ -106,8 +106,8 @@ class MainViewController: UIViewController {
 
 	//Makes a request for the exchange rate between the origin country and the travel country
 	func countryExchangeRateRequest() {
-		let originAbbreviation = countryAbbreviations[programData!.originCountry.integerValue]
-		let travelAbbreviation = countryAbbreviations[programData!.travelCountry.integerValue]
+		let originAbbreviation = countryAbbreviations[programData!.originCountry]
+		let travelAbbreviation = countryAbbreviations[programData!.travelCountry]
 		let url = NSURL(string: "https://download.finance.yahoo.com/d/quotes.csv?s=\(originAbbreviation)\(travelAbbreviation)=X&f=nl1d1t1")
 		let request = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: countryExchangeRateResponse)
 
@@ -143,7 +143,7 @@ class MainViewController: UIViewController {
 			} else {
 				alertReason = "Make sure your device is connected to the internet before trying again."
 			}
-			if self.programData!.countryExchangeRate.doubleValue < 0.01 {
+			if self.programData!.countryExchangeRate < 0.01 {
 				self.programData!.countryExchangeRate = 0.01
 			}
 			self.saveProgramData()
@@ -156,7 +156,7 @@ class MainViewController: UIViewController {
 			} else {
 				//If there is an alert reason, display it
 				if self.programData!.countryExchangeDate != "1/1/2000" {
-					previousValue = "The previous value (\(String(format: "%.2f", self.programData!.countryExchangeRate.doubleValue))) from \(self.programData!.countryExchangeDate) will be used instead."
+					previousValue = "The previous value (\(String(format: "%.2f", self.programData!.countryExchangeRate))) from \(self.programData!.countryExchangeDate) will be used instead."
 				}
 				let alertController = UIAlertController(title: "Unable to update the country exchange rate", message: "\(previousValue) \(alertReason)", preferredStyle: UIAlertControllerStyle.alert)
 				alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
@@ -173,26 +173,26 @@ class MainViewController: UIViewController {
 		} catch {}
 
 		//Relevant country information
-		let originName = countryNames[programData!.originCountry.integerValue]
-		let originCurrency = countryCurrencies[programData!.originCountry.integerValue]
-		let originSymbol = countrySymbols[programData!.originCountry.integerValue]
-		let travelName = countryNames[programData!.travelCountry.integerValue]
-		let travelCurrency = countryCurrencies[programData!.travelCountry.integerValue]
-		let travelSymbol = countrySymbols[programData!.travelCountry.integerValue]
+		let originName = countryNames[programData!.originCountry]
+		let originCurrency = countryCurrencies[programData!.originCountry]
+		let originSymbol = countrySymbols[programData!.originCountry]
+		let travelName = countryNames[programData!.travelCountry]
+		let travelCurrency = countryCurrencies[programData!.travelCountry]
+		let travelSymbol = countrySymbols[programData!.travelCountry]
 		//Relevant exchange information
 		let exchangeViewController = viewControllers[0] as! ExchangeViewController
 		//Relevant gas information
 		let gasViewController = viewControllers[1] as! GasViewController
-		let gasUnit = gasUnits[programData!.gasUnit.integerValue]
-		let gasEquivalentUnit = gasUnits[programData!.gasEquivalentUnit.integerValue]
+		let gasUnit = gasUnits[programData!.gasUnit]
+		let gasEquivalentUnit = gasUnits[programData!.gasEquivalentUnit]
 		//Relevant meal information
 		let mealViewController = viewControllers[2] as! MealViewController
 		//Relevant equal information
 		let equalViewController = viewControllers[3] as! EqualViewController
-		let equalDistanceUnit = equalDistanceUnits[programData!.equalDistanceUnit.integerValue]
-		let equalEquivalentDistanceUnit = equalDistanceUnits[1 - programData!.equalDistanceUnit.integerValue]
-		let equalTemperatureUnit = equalTemperatureUnits[programData!.equalTemperatureUnit.integerValue]
-		let equalEquivalentTemperatureUnit = equalTemperatureUnits[1 - programData!.equalTemperatureUnit.integerValue]
+		let equalDistanceUnit = equalDistanceUnits[programData!.equalDistanceUnit]
+		let equalEquivalentDistanceUnit = equalDistanceUnits[1 - programData!.equalDistanceUnit]
+		let equalTemperatureUnit = equalTemperatureUnits[programData!.equalTemperatureUnit]
+		let equalEquivalentTemperatureUnit = equalTemperatureUnits[1 - programData!.equalTemperatureUnit]
 
 		//Update MainViewController's elements
 		originCountryImageView.image = UIImage(named: originName)
@@ -205,18 +205,18 @@ class MainViewController: UIViewController {
 		//Update ExchangeViewController's elements
 		exchangeViewController.unitsLabel.text = "Exchanging \(originCurrency) to \(travelCurrency):"
 		if !updating {
-			exchangeViewController.rateLabel.text = "\(originSymbol) 1.00 \(originCurrency) = \(travelSymbol) \(String(format: "%.2f", programData!.countryExchangeRate.doubleValue)) \(travelCurrency)"
+			exchangeViewController.rateLabel.text = "\(originSymbol) 1.00 \(originCurrency) = \(travelSymbol) \(String(format: "%.2f", programData!.countryExchangeRate)) \(travelCurrency)"
 		} else {
 			exchangeViewController.rateLabel.text = "(Updating...)"
 		}
 		if programData!.exchangeAmount != 0 {
-			exchangeViewController.amountTextField.text = "\(originSymbol) \(String(format: "%.2f", programData!.exchangeAmount.doubleValue)) \(originCurrency)"
+			exchangeViewController.amountTextField.text = "\(originSymbol) \(String(format: "%.2f", programData!.exchangeAmount)) \(originCurrency)"
 		} else {
 			exchangeViewController.amountTextField.text = ""
 		}
 		exchangeViewController.percentagePrefixLabel.isHidden = programData!.exchangeAmount == 0
 		if programData!.exchangePercentage != 0 {
-			exchangeViewController.percentageTextField.text = "\(programData!.exchangePercentage.integerValue) %"
+			exchangeViewController.percentageTextField.text = "\(programData!.exchangePercentage) %"
 			exchangeViewController.feeTextField.textColor = UIColor.grayColor()
 		} else {
 			exchangeViewController.percentageTextField.text = ""
@@ -224,14 +224,14 @@ class MainViewController: UIViewController {
 		}
 		exchangeViewController.percentageTextField.isHidden = programData!.exchangeAmount == 0
 		exchangeViewController.feePrefixLabel.isHidden = programData!.exchangeAmount == 0
-		exchangeViewController.feeTextField.text = "\(originSymbol) \(String(format: "%.2f", programData!.exchangeFee.doubleValue)) \(originCurrency)"
+		exchangeViewController.feeTextField.text = "\(originSymbol) \(String(format: "%.2f", programData!.exchangeFee)) \(originCurrency)"
 		exchangeViewController.feeTextField.isHidden = programData!.exchangeAmount == 0
 		exchangeViewController.feeTextField.isEnabled = programData!.exchangePercentage == 0
 		exchangeViewController.resultLabel.text = "I should get \(travelSymbol) \(String(format: "%.2f", exchangeResult())) \(travelCurrency) back"
 		exchangeViewController.resultLabel.isHidden = programData!.exchangeAmount == 0
 		exchangeViewController.outcomePrefixLabel.isHidden = programData!.exchangeAmount == 0
 		if programData!.exchangeOutcome != 0 {
-			exchangeViewController.outcomeTextField.text = "\(travelSymbol) \(String(format: "%.2f", programData!.exchangeOutcome.doubleValue)) \(travelCurrency)"
+			exchangeViewController.outcomeTextField.text = "\(travelSymbol) \(String(format: "%.2f", programData!.exchangeOutcome)) \(travelCurrency)"
 		} else {
 			exchangeViewController.outcomeTextField.text = ""
 		}
@@ -253,7 +253,7 @@ class MainViewController: UIViewController {
 		gasViewController.equivalentUnitButton.isEnabled = false //Get rid of this line for the international version!!!
 		gasViewController.ratePrefixLabel.text = "Today's price/\(gasUnit):"
 		if programData!.gasRate != 0 {
-			gasViewController.rateTextField.text = "\(travelSymbol) \(String(format: "%.2f", programData!.gasRate.doubleValue)) \(travelCurrency)"
+			gasViewController.rateTextField.text = "\(travelSymbol) \(String(format: "%.2f", programData!.gasRate)) \(travelCurrency)"
 		} else {
 			gasViewController.rateTextField.text = ""
 		}
@@ -261,7 +261,7 @@ class MainViewController: UIViewController {
 		gasViewController.equivalentRateLabel.isHidden = programData!.gasRate == 0
 		gasViewController.amountPrefixLabel.isHidden = programData!.gasRate == 0
 		if programData!.gasAmount != 0 {
-			gasViewController.amountTextField.text = "\(String(format: "%.2f", programData!.gasAmount.doubleValue)) \(gasUnit)s"
+			gasViewController.amountTextField.text = "\(String(format: "%.2f", programData!.gasAmount)) \(gasUnit)s"
 		} else {
 			gasViewController.amountTextField.text = ""
 		}
@@ -270,7 +270,7 @@ class MainViewController: UIViewController {
 		gasViewController.resultLabel.isHidden = programData!.gasAmount == 0
 		gasViewController.outcomePrefixLabel.isHidden = programData!.gasAmount == 0
 		if programData!.gasOutcome != 0 {
-			gasViewController.outcomeTextField.text = "\(travelSymbol) \(String(format: "%.2f", programData!.gasOutcome.doubleValue)) \(travelCurrency)"
+			gasViewController.outcomeTextField.text = "\(travelSymbol) \(String(format: "%.2f", programData!.gasOutcome)) \(travelCurrency)"
 		} else {
 			gasViewController.outcomeTextField.text = ""
 		}
@@ -285,7 +285,7 @@ class MainViewController: UIViewController {
 		gasViewController.differenceLabel.isHidden = programData!.gasOutcome == 0
 		//Update MealViewController's elements
 		if programData!.mealAmount != 0 {
-			mealViewController.amountTextField.text = "\(travelSymbol) \(String(format: "%.2f", programData!.mealAmount.doubleValue)) \(travelCurrency)"
+			mealViewController.amountTextField.text = "\(travelSymbol) \(String(format: "%.2f", programData!.mealAmount)) \(travelCurrency)"
 		} else {
 			mealViewController.amountTextField.text = ""
 		}
@@ -293,7 +293,7 @@ class MainViewController: UIViewController {
 		mealViewController.equivalentAmountLabel.isHidden = programData!.mealAmount == 0
 		mealViewController.percentagePrefixLabel.isHidden = programData!.mealAmount == 0
 		if programData!.mealPercentage != 0 {
-			mealViewController.percentageTextField.text = "\(programData!.mealPercentage.integerValue) %"
+			mealViewController.percentageTextField.text = "\(programData!.mealPercentage) %"
 		} else {
 			mealViewController.percentageTextField.text = ""
 		}
@@ -308,7 +308,7 @@ class MainViewController: UIViewController {
 		mealViewController.equivalentTotalLabel.isHidden = programData!.mealAmount == 0
 		mealViewController.peoplePrefixLabel.isHidden = programData!.mealAmount == 0
 		if programData!.mealPeople != 1 {
-			mealViewController.peopleTextField.text = "\(programData!.mealPeople.integerValue) People"
+			mealViewController.peopleTextField.text = "\(programData!.mealPeople) People"
 		} else {
 			mealViewController.peopleTextField.text = ""
 		}
@@ -319,7 +319,7 @@ class MainViewController: UIViewController {
 		mealViewController.equivalentResultLabel.isHidden = programData!.mealPeople == 1
 		//Update EqualViewController's elements
 		if programData!.equalDistanceAmount != 0 {
-			equalViewController.distanceAmountTextField.text = String(format: "%.3f", programData!.equalDistanceAmount.doubleValue)
+			equalViewController.distanceAmountTextField.text = String(format: "%.3f", programData!.equalDistanceAmount)
 		} else {
 			equalViewController.distanceAmountTextField.text = ""
 		}
@@ -327,7 +327,7 @@ class MainViewController: UIViewController {
 		equalViewController.equivalentDistanceAmountLabel.text = String(format: "%.3f", equalEquivalentDistanceAmount())
 		equalViewController.equivalentDistanceUnitLabel.text = equalEquivalentDistanceUnit
 		if programData!.equalTemperatureAmount != 0 {
-			equalViewController.temperatureAmountTextField.text = String(format: "%.3f", programData!.equalTemperatureAmount.doubleValue)
+			equalViewController.temperatureAmountTextField.text = String(format: "%.3f", programData!.equalTemperatureAmount)
 		} else {
 			equalViewController.temperatureAmountTextField.text = ""
 		}
@@ -338,89 +338,89 @@ class MainViewController: UIViewController {
 
 	//Returns the exchange total which is the exchange amount minus the exchange fee
 	func exchangeTotal() -> Double {
-		return programData!.exchangeAmount.doubleValue - programData!.exchangeFee.doubleValue
+		return programData!.exchangeAmount - programData!.exchangeFee
 	}
 
 	//Returns the exchange result, which is the exchange total times the country exchange rate
 	func exchangeResult() -> Double {
-		return exchangeTotal() * programData!.countryExchangeRate.doubleValue
+		return exchangeTotal() * programData!.countryExchangeRate
 	}
 
 	//Returns the exchange difference, which is the exchange outcome minues the exchange result
 	func exchangeDifference() -> Double {
-		return programData!.exchangeOutcome.doubleValue - Double(String(format: "%.2f", exchangeResult()))!
+		return programData!.exchangeOutcome - Double(String(format: "%.2f", exchangeResult()))!
 	}
 
 	//Returns the exchange rate between the gas unit and the gas equivalent unit
 	func gasExchangeRate() -> Double {
-		return gasWeights[programData!.gasUnit.integerValue] / gasWeights[programData!.gasEquivalentUnit.integerValue]
+		return gasWeights[programData!.gasUnit] / gasWeights[programData!.gasEquivalentUnit]
 	}
 
 	//Returns the equivalent gas rate, which is the gas rate times the gas exchange rate, divided by the country exchange rate
 	func gasEquivalentRate() -> Double {
-		return (programData!.gasRate.doubleValue * gasExchangeRate()) / programData!.countryExchangeRate.doubleValue
+		return (programData!.gasRate * gasExchangeRate()) / programData!.countryExchangeRate
 	}
 
 	//Returns the gas result, which is the gas rate times the gas amount
 	func gasResult() -> Double {
-		return programData!.gasRate.doubleValue * programData!.gasAmount.doubleValue
+		return programData!.gasRate * programData!.gasAmount
 	}
 
 	//Returns the gas difference, which is the gas outcome minus the gas result
 	func gasDifference() -> Double {
-		return programData!.gasOutcome.doubleValue - Double(String(format: "%.2f", gasResult()))!
+		return programData!.gasOutcome - Double(String(format: "%.2f", gasResult()))!
 	}
 
 	//Returns the equivalent meal amount, which is the meal amount divided by the country exchange rate
 	func mealEquivalentAmount() -> Double {
-		return programData!.mealAmount.doubleValue / programData!.countryExchangeRate.doubleValue
+		return programData!.mealAmount / programData!.countryExchangeRate
 	}
 
 	//Returns the meal tip, which is the meal amount times the meal percentage
 	func mealTip() -> Double {
-		return programData!.mealAmount.doubleValue * (programData!.mealPercentage.doubleValue / 100)
+		return programData!.mealAmount * (Double(programData!.mealPercentage) / 100)
 	}
 
 	//Returns the equivalent meal tip, which is the meal tip divided by the country exchange rate
 	func mealEquivalentTip() -> Double {
-		return mealTip() / programData!.countryExchangeRate.doubleValue
+		return mealTip() / programData!.countryExchangeRate
 	}
 
 	//Returns the meal total, which is the meal amount plus the meal tip
 	func mealTotal() -> Double {
-		return programData!.mealAmount.doubleValue + mealTip()
+		return programData!.mealAmount + mealTip()
 	}
 
 	//Returns the equivalent meal total, which is the meal total divided by the country exchange rate
 	func mealEquivalentTotal() -> Double {
-		return mealTotal() / programData!.countryExchangeRate.doubleValue
+		return mealTotal() / programData!.countryExchangeRate
 	}
 
 	//Returns the meal result, which is the meal total divided by the meal people
 	func mealResult() -> Double {
-		return mealTotal() / programData!.mealPeople.doubleValue
+		return mealTotal() / Double(programData!.mealPeople)
 	}
 
 	//Returns the equivalent meal result, which is the meal result divided by the country exchange rate
 	func mealEquivalentResult() -> Double {
-		return mealResult() / programData!.countryExchangeRate.doubleValue
+		return mealResult() / programData!.countryExchangeRate
 	}
 
 	//Returns the equivalent distance amount from the EqualViewController
 	func equalEquivalentDistanceAmount() -> Double {
 		if programData!.equalDistanceUnit == 0 {
-			return programData!.equalDistanceAmount.doubleValue * (25146 / 15625)
+			return programData!.equalDistanceAmount * (25146 / 15625)
 		} else {
-			return programData!.equalDistanceAmount.doubleValue * (15625 / 25146)
+			return programData!.equalDistanceAmount * (15625 / 25146)
 		}
 	}
 
 	//Returns the equivalent temperature amount from the EqualViewController
 	func equalEquivalentTemperatureAmount() -> Double {
 		if programData!.equalTemperatureUnit == 0 {
-			return (programData!.equalTemperatureAmount.doubleValue - 32) * (5 / 9)
+			return (programData!.equalTemperatureAmount - 32) * (5 / 9)
 		} else {
-			return (programData!.equalTemperatureAmount.doubleValue * (9 / 5)) + 32
+			return (programData!.equalTemperatureAmount * (9 / 5)) + 32
 		}
 	}
 

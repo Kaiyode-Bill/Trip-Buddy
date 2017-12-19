@@ -24,7 +24,7 @@ class EqualViewController: ParentViewController {
 	@IBAction func distanceAmountTextFieldEntered() {
 		if mainViewController!.programData!.equalDistanceAmount != 0 {
 			distanceAmountTextField.selectAll(self)
-			distanceAmountTextField.text = String(format: "%.3f", mainViewController!.programData!.equalDistanceAmount.doubleValue)
+			distanceAmountTextField.text = String(format: "%.3f", mainViewController!.programData!.equalDistanceAmount)
 		} else {
 			distanceAmountTextField.text = ""
 		}
@@ -38,14 +38,14 @@ class EqualViewController: ParentViewController {
 
 	@IBAction func distanceUnitButtonPressed() {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
-		mainViewController!.programData!.equalDistanceUnit = 1 - mainViewController!.programData!.equalDistanceUnit.integerValue
+		mainViewController!.programData!.equalDistanceUnit = 1 - mainViewController!.programData!.equalDistanceUnit
 		mainViewController!.saveProgramData()
 	}
 
 	@IBAction func temperatureAmountTextFieldEntered() {
 		if mainViewController!.programData!.equalTemperatureAmount != 0 {
 			temperatureAmountTextField.selectAll(self)
-			temperatureAmountTextField.text = String(format: "%.3f", mainViewController!.programData!.equalTemperatureAmount.doubleValue)
+			temperatureAmountTextField.text = String(format: "%.3f", mainViewController!.programData!.equalTemperatureAmount)
 		} else {
 			temperatureAmountTextField.text = ""
 		}
@@ -59,7 +59,7 @@ class EqualViewController: ParentViewController {
 
 	@IBAction func temperatureUnitButtonPressed() {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
-		mainViewController!.programData!.equalTemperatureUnit = 1 - mainViewController!.programData!.equalTemperatureUnit.integerValue
+		mainViewController!.programData!.equalTemperatureUnit = 1 - mainViewController!.programData!.equalTemperatureUnit
 		mainViewController!.saveProgramData()
 	}
 
