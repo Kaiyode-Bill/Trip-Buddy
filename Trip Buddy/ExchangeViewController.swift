@@ -95,7 +95,7 @@ class ExchangeViewController: ParentViewController {
 
 	@IBAction func helpButtonPressed() {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
-		mainViewController!.performSegueWithIdentifier("MainToHelpSegue", sender: self)
+		mainViewController!.performSegue(withIdentifier: "MainToHelpSegue", sender: self)
 	}
 
 	@IBAction func resetButtonPressed() {

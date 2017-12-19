@@ -151,7 +151,7 @@ class MainViewController: UIViewController {
 			if alertReason == "" {
 				//Transition to the help view controller by default when the app first starts
 				if self.loading && self.programData!.showHelpAtStartup == 1 {
-					self.performSegueWithIdentifier("MainToHelpSegue", sender: self)
+					self.performSegue(withIdentifier: "MainToHelpSegue", sender: self)
 				}
 			} else {
 				//If there is an alert reason, display it
