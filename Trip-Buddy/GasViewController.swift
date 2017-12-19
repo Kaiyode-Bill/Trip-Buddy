@@ -78,7 +78,7 @@ class GasViewController: ParentViewController {
 	}
 
 	@IBAction func rateTextFieldExited() {
-		mainViewController!.programData!.gasRate = parseNumber(rateTextField.text!, minimum: 0, maximum: 999.99, decimalPlaces: 2)
+		mainViewController!.programData!.gasRate = parseDouble(rateTextField.text!, minimum: 0, maximum: 999.99, decimalPlaces: 2)
 		if mainViewController!.programData!.gasRate == 0 {
 			mainViewController!.programData!.gasAmount = 0
 			mainViewController!.programData!.gasOutcome = 0
@@ -97,7 +97,7 @@ class GasViewController: ParentViewController {
 	}
 
 	@IBAction func amountTextFieldExited() {
-		mainViewController!.programData!.gasAmount = parseNumber(amountTextField.text!, minimum: 0, maximum: 999.99, decimalPlaces: 2)
+		mainViewController!.programData!.gasAmount = parseDouble(amountTextField.text!, minimum: 0, maximum: 999.99, decimalPlaces: 2)
 		if mainViewController!.programData!.gasAmount == 0 {
 			mainViewController!.programData!.gasOutcome = 0
 		}
@@ -115,7 +115,7 @@ class GasViewController: ParentViewController {
 	}
 
 	@IBAction func outcomeTextFieldExited() {
-		mainViewController!.programData!.gasOutcome = parseNumber(outcomeTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
+		mainViewController!.programData!.gasOutcome = parseDouble(outcomeTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
 		mainViewController!.saveProgramData()
 	}
 

@@ -19,8 +19,8 @@ class ParentViewController: UIViewController, UITextFieldDelegate {
 		super.touchesBegan(touches, with: event)
 	}
 
-	//Parses a number from a string to a legitimate value, as defined by the minimum, maximum and decimal places
-	func parseNumber(_ text: String, minimum: Double, maximum: Double, decimalPlaces: Int) -> Double {
+	//Parses a double from a string, as defined by the minimum, maximum and decimal places
+	func parseDouble(_ text: String, minimum: Double, maximum: Double, decimalPlaces: Int) -> Double {
 		var result = 0.0
 
 		if Double(text) != nil {
@@ -31,7 +31,21 @@ class ParentViewController: UIViewController, UITextFieldDelegate {
 		} else if result < minimum {
 			result = minimum
 		}
-
 		return Double(String(format: "%.\(decimalPlaces)f", result))!
+	}
+
+	//Parses an integer from a string, as defined by the minimum and maximum
+	func parseInt(_ text: String, minimum: Int, maximum: Int) -> Int {
+		var result = 0
+
+		if Int(text) != nil {
+			result = Int(text)!
+		}
+		if result > maximum {
+			result = maximum
+		} else if result < minimum {
+			result = minimum
+		}
+		return result
 	}
 }
