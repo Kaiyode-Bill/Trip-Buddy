@@ -38,7 +38,7 @@ class ExchangeViewController: ParentViewController {
 	}
 
 	@IBAction func amountTextFieldExited() {
-		mainViewController!.programData!.exchangeAmount = parseNumber(amountTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
+		mainViewController!.programData!.exchangeAmount = parseDouble(amountTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
 		if mainViewController!.programData!.exchangeAmount == 0 {
 			mainViewController!.programData!.exchangePercentage = 0
 			mainViewController!.programData!.exchangeFee = 0
@@ -58,7 +58,7 @@ class ExchangeViewController: ParentViewController {
 	}
 
 	@IBAction func percentageTextFieldExited() {
-		mainViewController!.programData!.exchangePercentage = parseNumber(percentageTextField.text!, minimum: 0, maximum: 30, decimalPlaces: 0)
+		mainViewController!.programData!.exchangePercentage = parseInt(percentageTextField.text!, minimum: 0, maximum: 30)
 		mainViewController!.programData!.exchangeFee = mainViewController!.programData!.exchangeAmount * (Double(mainViewController!.programData!.exchangePercentage) / 100)
 		mainViewController!.saveProgramData()
 	}
@@ -74,7 +74,7 @@ class ExchangeViewController: ParentViewController {
 	}
 
 	@IBAction func feeTextFieldExited() {
-		mainViewController!.programData!.exchangeFee = parseNumber(feeTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
+		mainViewController!.programData!.exchangeFee = parseDouble(feeTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
 		mainViewController!.saveProgramData()
 	}
 
@@ -89,7 +89,7 @@ class ExchangeViewController: ParentViewController {
 	}
 
 	@IBAction func outcomeTextFieldExited() {
-		mainViewController!.programData!.exchangeOutcome = parseNumber(outcomeTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
+		mainViewController!.programData!.exchangeOutcome = parseDouble(outcomeTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
 		mainViewController!.saveProgramData()
 	}
 
