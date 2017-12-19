@@ -28,7 +28,7 @@ class EqualViewController: ParentViewController {
 		} else {
 			distanceAmountTextField.text = ""
 		}
-		distanceAmountTextField.textAlignment = NSTextAlignment.Right
+		distanceAmountTextField.textAlignment = NSTextAlignment.right
 	}
 
 	@IBAction func distanceAmountTextFieldExited() {
@@ -49,7 +49,7 @@ class EqualViewController: ParentViewController {
 		} else {
 			temperatureAmountTextField.text = ""
 		}
-		temperatureAmountTextField.textAlignment = NSTextAlignment.Right
+		temperatureAmountTextField.textAlignment = NSTextAlignment.right
 	}
 
 	@IBAction func temperatureAmountTextFieldExited() {

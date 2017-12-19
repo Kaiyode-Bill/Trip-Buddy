@@ -74,7 +74,7 @@ class GasViewController: ParentViewController {
 		} else {
 			rateTextField.text = ""
 		}
-		rateTextField.textAlignment = NSTextAlignment.Center
+		rateTextField.textAlignment = NSTextAlignment.center
 	}
 
 	@IBAction func rateTextFieldExited() {
@@ -93,7 +93,7 @@ class GasViewController: ParentViewController {
 		} else {
 			amountTextField.text = ""
 		}
-		amountTextField.textAlignment = NSTextAlignment.Center
+		amountTextField.textAlignment = NSTextAlignment.center
 	}
 
 	@IBAction func amountTextFieldExited() {
@@ -111,7 +111,7 @@ class GasViewController: ParentViewController {
 		} else {
 			outcomeTextField.text = ""
 		}
-		outcomeTextField.textAlignment = NSTextAlignment.Center
+		outcomeTextField.textAlignment = NSTextAlignment.center
 	}
 
 	@IBAction func outcomeTextFieldExited() {

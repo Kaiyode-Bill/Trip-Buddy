@@ -34,7 +34,7 @@ class ExchangeViewController: ParentViewController {
 		} else {
 			amountTextField.text = ""
 		}
-		amountTextField.textAlignment = NSTextAlignment.Center
+		amountTextField.textAlignment = NSTextAlignment.center
 	}
 
 	@IBAction func amountTextFieldExited() {
@@ -54,7 +54,7 @@ class ExchangeViewController: ParentViewController {
 		} else {
 			percentageTextField.text = ""
 		}
-		percentageTextField.textAlignment = NSTextAlignment.Center
+		percentageTextField.textAlignment = NSTextAlignment.center
 	}
 
 	@IBAction func percentageTextFieldExited() {
@@ -70,7 +70,7 @@ class ExchangeViewController: ParentViewController {
 		} else {
 			feeTextField.text = ""
 		}
-		feeTextField.textAlignment = NSTextAlignment.Center
+		feeTextField.textAlignment = NSTextAlignment.center
 	}
 
 	@IBAction func feeTextFieldExited() {
@@ -85,7 +85,7 @@ class ExchangeViewController: ParentViewController {
 		} else {
 			outcomeTextField.text = ""
 		}
-		outcomeTextField.textAlignment = NSTextAlignment.Center
+		outcomeTextField.textAlignment = NSTextAlignment.center
 	}
 
 	@IBAction func outcomeTextFieldExited() {

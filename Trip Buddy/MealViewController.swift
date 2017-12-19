@@ -33,7 +33,7 @@ class MealViewController: ParentViewController {
 		} else {
 			amountTextField.text = ""
 		}
-		amountTextField.textAlignment = NSTextAlignment.Center
+		amountTextField.textAlignment = NSTextAlignment.center
 	}
 
 	@IBAction func amountTextFieldExited() {
@@ -52,7 +52,7 @@ class MealViewController: ParentViewController {
 		} else {
 			percentageTextField.text = ""
 		}
-		percentageTextField.textAlignment = NSTextAlignment.Center
+		percentageTextField.textAlignment = NSTextAlignment.center
 	}
 
 	@IBAction func percentageTextFieldExited() {
@@ -67,7 +67,7 @@ class MealViewController: ParentViewController {
 		} else {
 			peopleTextField.text = ""
 		}
-		peopleTextField.textAlignment = NSTextAlignment.Center
+		peopleTextField.textAlignment = NSTextAlignment.center
 	}
 
 	@IBAction func peopleTextFieldExited() {
