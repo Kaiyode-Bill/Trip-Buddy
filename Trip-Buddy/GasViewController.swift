@@ -36,7 +36,7 @@ class GasViewController: ParentViewController {
 		mainViewController!.present(alertController, animated: true, completion: nil)
 	}
 
-	func unitAlertActionHandler(action: UIAlertAction!) {
+    func unitAlertActionHandler(action: UIAlertAction!) {
 		for i in stride(from: 0, to: mainViewController!.gasUnits.count, by: 1) {
 			if action.title == "\(mainViewController!.gasUnits[i])s" {
 				mainViewController!.programData!.gasUnit = i
@@ -57,7 +57,7 @@ class GasViewController: ParentViewController {
 		mainViewController!.present(alertController, animated: true, completion: nil)
 	}
 
-	func equivalentUnitAlertActionHandler(action: UIAlertAction!) {
+    func equivalentUnitAlertActionHandler(action: UIAlertAction!) {
 		for i in stride(from: 0, to: mainViewController!.gasUnits.count, by: 1) {
 			if action.title == "\(mainViewController!.gasUnits[i])s" {
 				mainViewController!.programData!.gasEquivalentUnit = i
@@ -78,7 +78,7 @@ class GasViewController: ParentViewController {
 	}
 
 	@IBAction func rateTextFieldExited() {
-		mainViewController!.programData!.gasRate = parseNumber(text: rateTextField.text!, minimum: 0, maximum: 999.99, decimalPlaces: 2)
+		mainViewController!.programData!.gasRate = parseNumber(rateTextField.text!, minimum: 0, maximum: 999.99, decimalPlaces: 2)
 		if mainViewController!.programData!.gasRate == 0 {
 			mainViewController!.programData!.gasAmount = 0
 			mainViewController!.programData!.gasOutcome = 0
@@ -97,7 +97,7 @@ class GasViewController: ParentViewController {
 	}
 
 	@IBAction func amountTextFieldExited() {
-		mainViewController!.programData!.gasAmount = parseNumber(text: amountTextField.text!, minimum: 0, maximum: 999.99, decimalPlaces: 2)
+		mainViewController!.programData!.gasAmount = parseNumber(amountTextField.text!, minimum: 0, maximum: 999.99, decimalPlaces: 2)
 		if mainViewController!.programData!.gasAmount == 0 {
 			mainViewController!.programData!.gasOutcome = 0
 		}
@@ -115,7 +115,7 @@ class GasViewController: ParentViewController {
 	}
 
 	@IBAction func outcomeTextFieldExited() {
-		mainViewController!.programData!.gasOutcome = parseNumber(text: outcomeTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
+		mainViewController!.programData!.gasOutcome = parseNumber(outcomeTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
 		mainViewController!.saveProgramData()
 	}
 

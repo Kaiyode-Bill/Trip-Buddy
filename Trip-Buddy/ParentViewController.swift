@@ -20,7 +20,7 @@ class ParentViewController: UIViewController, UITextFieldDelegate {
 	}
 
 	//Parses a number from a string to a legitimate value, as defined by the minimum, maximum and decimal places
-	func parseNumber(text: String, minimum: Double, maximum: Double, decimalPlaces: Int) -> Double {
+	func parseNumber(_ text: String, minimum: Double, maximum: Double, decimalPlaces: Int) -> Double {
 		var result = 0.0
 
 		if Double(text) != nil {

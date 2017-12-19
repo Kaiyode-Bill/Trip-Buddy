@@ -32,7 +32,7 @@ class EqualViewController: ParentViewController {
 	}
 
 	@IBAction func distanceAmountTextFieldExited() {
-		mainViewController!.programData!.equalDistanceAmount = parseNumber(text: distanceAmountTextField.text!, minimum: -99999.999, maximum: 99999.999, decimalPlaces: 3)
+		mainViewController!.programData!.equalDistanceAmount = parseNumber(distanceAmountTextField.text!, minimum: -99999.999, maximum: 99999.999, decimalPlaces: 3)
 		mainViewController!.saveProgramData()
 	}
 
@@ -53,7 +53,7 @@ class EqualViewController: ParentViewController {
 	}
 
 	@IBAction func temperatureAmountTextFieldExited() {
-		mainViewController!.programData!.equalTemperatureAmount = parseNumber(text: temperatureAmountTextField.text!, minimum: -99999.999, maximum: 99999.999, decimalPlaces: 3)
+		mainViewController!.programData!.equalTemperatureAmount = parseNumber(temperatureAmountTextField.text!, minimum: -99999.999, maximum: 99999.999, decimalPlaces: 3)
 		mainViewController!.saveProgramData()
 	}
 

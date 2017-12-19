@@ -37,7 +37,7 @@ class MealViewController: ParentViewController {
 	}
 
 	@IBAction func amountTextFieldExited() {
-		mainViewController!.programData!.mealAmount = parseNumber(text: amountTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
+		mainViewController!.programData!.mealAmount = parseNumber(amountTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
 		if mainViewController!.programData!.mealAmount == 0 {
 			mainViewController!.programData!.mealPercentage = 0
 			mainViewController!.programData!.mealPeople = 1
@@ -56,7 +56,7 @@ class MealViewController: ParentViewController {
 	}
 
 	@IBAction func percentageTextFieldExited() {
-		mainViewController!.programData!.mealPercentage = Int(parseNumber(text: percentageTextField.text!, minimum: 0, maximum: 30, decimalPlaces: 0))
+		mainViewController!.programData!.mealPercentage = Int(parseNumber(percentageTextField.text!, minimum: 0, maximum: 30, decimalPlaces: 0))
 		mainViewController!.saveProgramData()
 	}
 
@@ -71,7 +71,7 @@ class MealViewController: ParentViewController {
 	}
 
 	@IBAction func peopleTextFieldExited() {
-		mainViewController!.programData!.mealPeople = Int(parseNumber(text: peopleTextField.text!, minimum: 1, maximum: 30, decimalPlaces: 0))
+		mainViewController!.programData!.mealPeople = Int(parseNumber(peopleTextField.text!, minimum: 1, maximum: 30, decimalPlaces: 0))
 		mainViewController!.saveProgramData()
 	}
 
