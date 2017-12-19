@@ -197,11 +197,11 @@ class MainViewController: UIViewController {
 		//Update MainViewController's elements
 		originCountryImageView.image = UIImage(named: originName)
 		originCountryButton.setTitle("Origin Country: \(originName)", forState: UIControlState.Normal)
-		originCountryButton.enabled = !updating
-		originCountryButton.enabled = false //Get rid of this line for the international version!!!
+		originCountryButton.isEnabled = !updating
+		originCountryButton.isEnabled = false //Get rid of this line for the international version!!!
 		travelCountryImageView.image = UIImage(named: travelName)
 		travelCountryButton.setTitle("Travel Country: \(travelName)", forState: UIControlState.Normal)
-		travelCountryButton.enabled = !updating
+		travelCountryButton.isEnabled = !updating
 		//Update ExchangeViewController's elements
 		exchangeViewController.unitsLabel.text = "Exchanging \(originCurrency) to \(travelCurrency):"
 		if !updating {
@@ -214,7 +214,7 @@ class MainViewController: UIViewController {
 		} else {
 			exchangeViewController.amountTextField.text = ""
 		}
-		exchangeViewController.percentagePrefixLabel.hidden = programData!.exchangeAmount == 0
+		exchangeViewController.percentagePrefixLabel.isHidden = programData!.exchangeAmount == 0
 		if programData!.exchangePercentage != 0 {
 			exchangeViewController.percentageTextField.text = "\(programData!.exchangePercentage.integerValue) %"
 			exchangeViewController.feeTextField.textColor = UIColor.grayColor()
@@ -222,20 +222,20 @@ class MainViewController: UIViewController {
 			exchangeViewController.percentageTextField.text = ""
 			exchangeViewController.feeTextField.textColor = UIColor.blackColor()
 		}
-		exchangeViewController.percentageTextField.hidden = programData!.exchangeAmount == 0
-		exchangeViewController.feePrefixLabel.hidden = programData!.exchangeAmount == 0
+		exchangeViewController.percentageTextField.isHidden = programData!.exchangeAmount == 0
+		exchangeViewController.feePrefixLabel.isHidden = programData!.exchangeAmount == 0
 		exchangeViewController.feeTextField.text = "\(originSymbol) \(String(format: "%.2f", programData!.exchangeFee.doubleValue)) \(originCurrency)"
-		exchangeViewController.feeTextField.hidden = programData!.exchangeAmount == 0
-		exchangeViewController.feeTextField.enabled = programData!.exchangePercentage == 0
+		exchangeViewController.feeTextField.isHidden = programData!.exchangeAmount == 0
+		exchangeViewController.feeTextField.isEnabled = programData!.exchangePercentage == 0
 		exchangeViewController.resultLabel.text = "I should get \(travelSymbol) \(String(format: "%.2f", exchangeResult())) \(travelCurrency) back"
-		exchangeViewController.resultLabel.hidden = programData!.exchangeAmount == 0
-		exchangeViewController.outcomePrefixLabel.hidden = programData!.exchangeAmount == 0
+		exchangeViewController.resultLabel.isHidden = programData!.exchangeAmount == 0
+		exchangeViewController.outcomePrefixLabel.isHidden = programData!.exchangeAmount == 0
 		if programData!.exchangeOutcome != 0 {
 			exchangeViewController.outcomeTextField.text = "\(travelSymbol) \(String(format: "%.2f", programData!.exchangeOutcome.doubleValue)) \(travelCurrency)"
 		} else {
 			exchangeViewController.outcomeTextField.text = ""
 		}
-		exchangeViewController.outcomeTextField.hidden = programData!.exchangeAmount == 0
+		exchangeViewController.outcomeTextField.isHidden = programData!.exchangeAmount == 0
 		if exchangeDifference() == 0 {
 			exchangeViewController.differenceLabel.text = "Then it was a fair exchange"
 		} else if exchangeDifference() > 0 {
@@ -243,14 +243,14 @@ class MainViewController: UIViewController {
 		} else {
 			exchangeViewController.differenceLabel.text = "Then I got \(travelSymbol) \(String(format: "%.2f", -exchangeDifference())) \(travelCurrency) less"
 		}
-		exchangeViewController.differenceLabel.hidden = programData!.exchangeOutcome == 0
-		exchangeViewController.helpButton.enabled = !updating
+		exchangeViewController.differenceLabel.isHidden = programData!.exchangeOutcome == 0
+		exchangeViewController.helpButton.isEnabled = !updating
 		//Update GasViewController's elements
 		gasViewController.unitButton.setTitle("\(gasUnit)s", forState: UIControlState.Normal)
-		gasViewController.unitButton.enabled = !updating
+		gasViewController.unitButton.isEnabled = !updating
 		gasViewController.equivalentUnitButton.setTitle("\(gasEquivalentUnit)s", forState: UIControlState.Normal)
-		gasViewController.equivalentUnitButton.enabled = !updating
-		gasViewController.equivalentUnitButton.enabled = false //Get rid of this line for the international version!!!
+		gasViewController.equivalentUnitButton.isEnabled = !updating
+		gasViewController.equivalentUnitButton.isEnabled = false //Get rid of this line for the international version!!!
 		gasViewController.ratePrefixLabel.text = "Today's price/\(gasUnit):"
 		if programData!.gasRate != 0 {
 			gasViewController.rateTextField.text = "\(travelSymbol) \(String(format: "%.2f", programData!.gasRate.doubleValue)) \(travelCurrency)"
@@ -258,23 +258,23 @@ class MainViewController: UIViewController {
 			gasViewController.rateTextField.text = ""
 		}
 		gasViewController.equivalentRateLabel.text = "(Which is \(originSymbol) \(String(format: "%.2f", gasEquivalentRate())) \(originCurrency)/\(gasEquivalentUnit))"
-		gasViewController.equivalentRateLabel.hidden = programData!.gasRate == 0
-		gasViewController.amountPrefixLabel.hidden = programData!.gasRate == 0
+		gasViewController.equivalentRateLabel.isHidden = programData!.gasRate == 0
+		gasViewController.amountPrefixLabel.isHidden = programData!.gasRate == 0
 		if programData!.gasAmount != 0 {
 			gasViewController.amountTextField.text = "\(String(format: "%.2f", programData!.gasAmount.doubleValue)) \(gasUnit)s"
 		} else {
 			gasViewController.amountTextField.text = ""
 		}
-		gasViewController.amountTextField.hidden = programData!.gasRate == 0
+		gasViewController.amountTextField.isHidden = programData!.gasRate == 0
 		gasViewController.resultLabel.text = "Then I should pay \(travelSymbol) \(String(format: "%.2f", gasResult())) \(travelCurrency)"
-		gasViewController.resultLabel.hidden = programData!.gasAmount == 0
-		gasViewController.outcomePrefixLabel.hidden = programData!.gasAmount == 0
+		gasViewController.resultLabel.isHidden = programData!.gasAmount == 0
+		gasViewController.outcomePrefixLabel.isHidden = programData!.gasAmount == 0
 		if programData!.gasOutcome != 0 {
 			gasViewController.outcomeTextField.text = "\(travelSymbol) \(String(format: "%.2f", programData!.gasOutcome.doubleValue)) \(travelCurrency)"
 		} else {
 			gasViewController.outcomeTextField.text = ""
 		}
-		gasViewController.outcomeTextField.hidden = programData!.gasAmount == 0
+		gasViewController.outcomeTextField.isHidden = programData!.gasAmount == 0
 		if gasDifference() == 0 {
 			gasViewController.differenceLabel.text = "Then it was a fair transaction"
 		} else if gasDifference() > 0 {
@@ -282,7 +282,7 @@ class MainViewController: UIViewController {
 		} else {
 			gasViewController.differenceLabel.text = "Then I saved \(travelSymbol) \(String(format: "%.2f", -gasDifference())) \(travelCurrency)"
 		}
-		gasViewController.differenceLabel.hidden = programData!.gasOutcome == 0
+		gasViewController.differenceLabel.isHidden = programData!.gasOutcome == 0
 		//Update MealViewController's elements
 		if programData!.mealAmount != 0 {
 			mealViewController.amountTextField.text = "\(travelSymbol) \(String(format: "%.2f", programData!.mealAmount.doubleValue)) \(travelCurrency)"
@@ -290,33 +290,33 @@ class MainViewController: UIViewController {
 			mealViewController.amountTextField.text = ""
 		}
 		mealViewController.equivalentAmountLabel.text = "(Which is \(originSymbol) \(String(format: "%.2f", mealEquivalentAmount())) \(originCurrency))"
-		mealViewController.equivalentAmountLabel.hidden = programData!.mealAmount == 0
-		mealViewController.percentagePrefixLabel.hidden = programData!.mealAmount == 0
+		mealViewController.equivalentAmountLabel.isHidden = programData!.mealAmount == 0
+		mealViewController.percentagePrefixLabel.isHidden = programData!.mealAmount == 0
 		if programData!.mealPercentage != 0 {
 			mealViewController.percentageTextField.text = "\(programData!.mealPercentage.integerValue) %"
 		} else {
 			mealViewController.percentageTextField.text = ""
 		}
-		mealViewController.percentageTextField.hidden = programData!.mealAmount == 0
+		mealViewController.percentageTextField.isHidden = programData!.mealAmount == 0
 		mealViewController.tipLabel.text = "Total tip is \(travelSymbol) \(String(format: "%.2f", mealTip())) \(travelCurrency)"
-		mealViewController.tipLabel.hidden = programData!.mealAmount == 0
+		mealViewController.tipLabel.isHidden = programData!.mealAmount == 0
 		mealViewController.equivalentTipLabel.text = "(Which is \(originSymbol) \(String(format: "%.2f", mealEquivalentTip())) \(originCurrency))"
-		mealViewController.equivalentTipLabel.hidden = programData!.mealAmount == 0
+		mealViewController.equivalentTipLabel.isHidden = programData!.mealAmount == 0
 		mealViewController.totalLabel.text = "For a total of \(travelSymbol) \(String(format: "%.2f", mealTotal())) \(travelCurrency)"
-		mealViewController.totalLabel.hidden = programData!.mealAmount == 0
+		mealViewController.totalLabel.isHidden = programData!.mealAmount == 0
 		mealViewController.equivalentTotalLabel.text = "(Which is \(originSymbol) \(String(format: "%.2f", mealEquivalentTotal())) \(originCurrency))"
-		mealViewController.equivalentTotalLabel.hidden = programData!.mealAmount == 0
-		mealViewController.peoplePrefixLabel.hidden = programData!.mealAmount == 0
+		mealViewController.equivalentTotalLabel.isHidden = programData!.mealAmount == 0
+		mealViewController.peoplePrefixLabel.isHidden = programData!.mealAmount == 0
 		if programData!.mealPeople != 1 {
 			mealViewController.peopleTextField.text = "\(programData!.mealPeople.integerValue) People"
 		} else {
 			mealViewController.peopleTextField.text = ""
 		}
-		mealViewController.peopleTextField.hidden = programData!.mealAmount == 0
+		mealViewController.peopleTextField.isHidden = programData!.mealAmount == 0
 		mealViewController.resultLabel.text = "Each person pays \(travelSymbol) \(String(format: "%.2f", mealResult())) \(travelCurrency)"
-		mealViewController.resultLabel.hidden = programData!.mealPeople == 1
+		mealViewController.resultLabel.isHidden = programData!.mealPeople == 1
 		mealViewController.equivalentResultLabel.text = "(Which is \(originSymbol) \(String(format: "%.2f", mealEquivalentResult())) \(originCurrency))"
-		mealViewController.equivalentResultLabel.hidden = programData!.mealPeople == 1
+		mealViewController.equivalentResultLabel.isHidden = programData!.mealPeople == 1
 		//Update EqualViewController's elements
 		if programData!.equalDistanceAmount != 0 {
 			equalViewController.distanceAmountTextField.text = String(format: "%.3f", programData!.equalDistanceAmount.doubleValue)
