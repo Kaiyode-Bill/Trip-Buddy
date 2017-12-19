@@ -57,7 +57,7 @@ class EqualViewController: ParentViewController {
 		mainViewController!.saveProgramData()
 	}
 
-	@IBAction func temperatureButtonPressed() {
+	@IBAction func temperatureUnitButtonPressed() {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
 		mainViewController!.programData!.equalTemperatureUnit = 1 - mainViewController!.programData!.equalTemperatureUnit
 		mainViewController!.saveProgramData()

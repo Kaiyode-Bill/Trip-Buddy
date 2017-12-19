@@ -92,7 +92,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <state key="normal" title="[Tmp. Unit Button]"/>
                     <connections>
-                        <action selector="temperatureButtonPressed" destination="-1" eventType="touchUpInside" id="g3w-7r-pGr"/>
+                        <action selector="temperatureUnitButtonPressed" destination="-1" eventType="touchUpInside" id="VbQ-cm-Q6B"/>
                     </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0.000" textAlignment="right" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="7xC-jL-Kuv">
