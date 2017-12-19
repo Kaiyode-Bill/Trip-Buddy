@@ -29,7 +29,7 @@ class GasViewController: ParentViewController {
 		let alertController = UIAlertController(title: "Select the current gas unit:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
 
 		view.endEditing(true) //Close any open responder from this view controller beforehand
-		for i in 0.stride(to: mainViewController!.gasUnits.count, by: 1) {
+		for i in stride(from: 0, to: mainViewController!.gasUnits.count, by: 1) {
 			alertController.addAction(UIAlertAction(title: "\(mainViewController!.gasUnits[i])s", style: UIAlertActionStyle.Default, handler: unitAlertActionHandler))
 		}
 		alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
@@ -37,7 +37,7 @@ class GasViewController: ParentViewController {
 	}
 
 	func unitAlertActionHandler(action: UIAlertAction!) {
-		for i in 0.stride(to: mainViewController!.gasUnits.count, by: 1) {
+		for i in stride(from: 0, to: mainViewController!.gasUnits.count, by: 1) {
 			if action.title == "\(mainViewController!.gasUnits[i])s" {
 				mainViewController!.programData!.gasUnit = i
 				mainViewController!.saveProgramData()
@@ -50,7 +50,7 @@ class GasViewController: ParentViewController {
 		let alertController = UIAlertController(title: "Select your native gas unit:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
 
 		view.endEditing(true) //Close any open responder from this view controller beforehand
-		for i in 0.stride(to: mainViewController!.gasUnits.count, by: 1) {
+		for i in stride(from: 0, to: mainViewController!.gasUnits.count, by: 1) {
 			alertController.addAction(UIAlertAction(title: "\(mainViewController!.gasUnits[i])s", style: UIAlertActionStyle.Default, handler: equivalentUnitAlertActionHandler))
 		}
 		alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
@@ -58,7 +58,7 @@ class GasViewController: ParentViewController {
 	}
 
 	func equivalentUnitAlertActionHandler(action: UIAlertAction!) {
-		for i in 0.stride(to: mainViewController!.gasUnits.count, by: 1) {
+		for i in stride(from: 0, to: mainViewController!.gasUnits.count, by: 1) {
 			if action.title == "\(mainViewController!.gasUnits[i])s" {
 				mainViewController!.programData!.gasEquivalentUnit = i
 				mainViewController!.saveProgramData()

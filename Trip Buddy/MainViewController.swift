@@ -60,7 +60,7 @@ class MainViewController: UIViewController {
 		var existingData: [ProgramData] = []
 
 		//Initialize each of the view controllers and add them into the scroll view
-		for i in 0.stride(to: viewControllers.count, by: 1) {
+		for i in stride(from: 0, to: viewControllers.count, by: 1) {
 			viewControllers[i].view.frame.size.height = scrollView.bounds.height
 			viewControllers[i].view.frame.origin.x = view.frame.size.width * CGFloat(i)
 			scrollView.addSubview(viewControllers[i].view)
@@ -72,7 +72,7 @@ class MainViewController: UIViewController {
 		} catch {}
 		//If valid program data doesn't exist, create a default instance instead
 		if existingData.count != 1 {
-			for i in (existingData.count - 1).stride(through: 0, by: -1) {
+			for i in stride(from: existingData.count - 1, through: 0, by: -1) {
 				context.deleteObject(existingData[i] as NSManagedObject)
 				existingData.removeAtIndex(i)
 			}
@@ -443,7 +443,7 @@ class MainViewController: UIViewController {
 		let alertController = UIAlertController(title: "Select your origin country:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
 
 		view.endEditing(true) //Close any open responder beforehand
-		for i in 0.stride(to: countryNames.count, by: 1) {
+		for i in stride(from: 0, to: countryNames.count, by: 1) {
 			alertController.addAction(UIAlertAction(title: countryNames[i], style: UIAlertActionStyle.Default, handler: originCountryAlertActionHandler))
 		}
 		alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
@@ -452,7 +452,7 @@ class MainViewController: UIViewController {
 
 	//Changes the origin country based upon the selected choice
 	func originCountryAlertActionHandler(action: UIAlertAction!) {
-		for i in 0.stride(to: countryNames.count, by: 1) {
+		for i in stride(from: 0, to: countryNames.count, by: 1) {
 			if action.title == countryNames[i] {
 				programData!.originCountry = i
 				countryExchangeRateRequest()
@@ -466,7 +466,7 @@ class MainViewController: UIViewController {
 		let alertController = UIAlertController(title: "Select your travel country:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
 
 		view.endEditing(true) //Close any open responder beforehand
-		for i in 0.stride(to: countryNames.count, by: 1) {
+		for i in stride(from: 0, to: countryNames.count, by: 1) {
 			alertController.addAction(UIAlertAction(title: countryNames[i], style: UIAlertActionStyle.Default, handler: travelCountryAlertActionHandler))
 		}
 		alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
@@ -475,7 +475,7 @@ class MainViewController: UIViewController {
 
 	//Changes the travel country based upon the selected choice
 	func travelCountryAlertActionHandler(action: UIAlertAction!) {
-		for i in 0.stride(to: countryNames.count, by: 1) {
+		for i in stride(from: 0, to: countryNames.count, by: 1) {
 			if action.title == countryNames[i] {
 				programData!.travelCountry = i
 				countryExchangeRateRequest()
