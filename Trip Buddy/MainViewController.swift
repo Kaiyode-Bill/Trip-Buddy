@@ -427,7 +427,7 @@ class MainViewController: UIViewController {
 	//Set the scroll view's content size once all of the sub-views have been loaded and resized
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
-		scrollView.contentSize = CGSizeMake(view.frame.size.width * CGFloat(viewControllers.count), scrollView.bounds.height)
+		scrollView.contentSize = CGSize(width: view.frame.size.width * CGFloat(viewControllers.count), height: scrollView.bounds.height)
 	}
 
 	//This code is executed whenever a segue is about to take place
@@ -487,6 +487,6 @@ class MainViewController: UIViewController {
 	//Changes the scroll view depending upon what tab button was pressed
 	@IBAction func tabButtonPressed(_ sender: Any) {
 		view.endEditing(true) //Close any open responder beforehand
-		scrollView.contentOffset = CGPointMake(view.frame.size.width * CGFloat((sender as AnyObject).tag), 0)
+		scrollView.contentOffset = CGPoint(x: view.frame.size.width * CGFloat((sender as AnyObject).tag), y: 0)
 	}
 }
