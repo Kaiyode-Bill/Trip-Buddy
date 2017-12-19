@@ -487,6 +487,6 @@ class MainViewController: UIViewController {
 	//Changes the scroll view depending upon what tab button was pressed
 	@IBAction func tabButtonPressed(_ sender: Any) {
 		view.endEditing(true) //Close any open responder beforehand
-		scrollView.contentOffset = CGPointMake(view.frame.size.width * CGFloat(sender.tag), 0)
+		scrollView.contentOffset = CGPointMake(view.frame.size.width * CGFloat((sender as AnyObject).tag), 0)
 	}
 }
