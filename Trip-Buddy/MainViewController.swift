@@ -117,7 +117,7 @@ class MainViewController: UIViewController {
 	}
 
 	//Given a response, update the exchange rate between the origin country and the travel country
-	func countryExchangeRateResponse(data: Data?, urlResponse: URLResponse?, error: Error?) {
+	func countryExchangeRateResponse(_ data: Data?, urlResponse: URLResponse?, error: Error?) {
 		var alertReason = ""
 		var previousValue = ""
 
@@ -458,7 +458,7 @@ class MainViewController: UIViewController {
 	}
 
 	//Changes the origin country based upon the selected choice
-	func originCountryAlertActionHandler(action: UIAlertAction!) {
+	func originCountryAlertActionHandler(_ action: UIAlertAction!) {
 		for i in stride(from: 0, to: countryNames.count, by: 1) {
 			if action.title == countryNames[i] {
 				programData!.originCountry = i
@@ -481,7 +481,7 @@ class MainViewController: UIViewController {
 	}
 
 	//Changes the travel country based upon the selected choice
-	func travelCountryAlertActionHandler(action: UIAlertAction!) {
+	func travelCountryAlertActionHandler(_ action: UIAlertAction!) {
 		for i in stride(from: 0, to: countryNames.count, by: 1) {
 			if action.title == countryNames[i] {
 				programData!.travelCountry = i
