@@ -69,7 +69,7 @@ class MainViewController: UIViewController {
 		//Access the program data from CoreData
 		do {
 			existingData = try context.executeFetchRequest(NSFetchRequest(entityName: "ProgramData")) as! [ProgramData]
-		} catch _ as NSError {}
+		} catch {}
 		//If valid program data doesn't exist, create a default instance instead
 		if existingData.count != 1 {
 			for i in (existingData.count - 1).stride(through: 0, by: -1) {
@@ -170,7 +170,7 @@ class MainViewController: UIViewController {
 	func saveProgramData() {
 		do {
 			try context.save()
-		} catch _ as NSError {}
+		} catch {}
 
 		//Relevant country information
 		let originName = countryNames[programData!.originCountry.integerValue]
