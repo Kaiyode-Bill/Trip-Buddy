@@ -15,26 +15,26 @@ class MainViewController: UIViewController {
 
 	//The individual view controllers
 	let viewControllers: [ParentViewController] = [ExchangeViewController(nibName: "ExchangeViewController", bundle: nil),
-	                                               GasViewController(nibName: "GasViewController", bundle: nil),
-	                                               MealViewController(nibName: "MealViewController", bundle: nil),
-	                                               EqualViewController(nibName: "EqualViewController", bundle: nil)]
+												   GasViewController(nibName: "GasViewController", bundle: nil),
+												   MealViewController(nibName: "MealViewController", bundle: nil),
+												   EqualViewController(nibName: "EqualViewController", bundle: nil)]
 
 	//Arrays of information where an index in any array pertains to the same country
 	let countryNames: [String] = ["Argentina", "Austria", "Bulgaria", "Canada", "Chile", "China", "France", "Germany",
-	                              "India", "Italy", "Japan", "Malaysia", "Mexico", "Singapore", "Spain", "Switzerland",
-	                              "United Kingdom", "United States"]
+								  "India", "Italy", "Japan", "Malaysia", "Mexico", "Singapore", "Spain", "Switzerland",
+								  "United Kingdom", "United States"]
 
 	let countryCurrencies: [String] = ["Pesos", "Euros", "Leva", "Dollars", "Pesos", "Yuan", "Euros", "Euros",
-	                                   "Rupees", "Euros", "Yen", "Ringgits", "Pesos", "Dollars", "Euros", "Francs",
-	                                   "Pounds", "Dollars"]
+									   "Rupees", "Euros", "Yen", "Ringgits", "Pesos", "Dollars", "Euros", "Francs",
+									   "Pounds", "Dollars"]
 
 	let countrySymbols: [String] = ["$", "€", "лв", "$", "$", "¥", "€", "€",
-	                                "₹", "€", "¥", "R", "$", "$", "€", "C",
-	                                "£", "$"]
+									"₹", "€", "¥", "R", "$", "$", "€", "C",
+									"£", "$"]
 
 	let countryAbbreviations: [String] = ["ARS", "EUR", "BGN", "CAD", "CLP", "CNY", "EUR", "EUR",
-	                                      "INR", "EUR", "JPY", "MYR", "MXN", "SGD", "EUR", "CHF",
-	                                      "GBP", "USD"]
+										  "INR", "EUR", "JPY", "MYR", "MXN", "SGD", "EUR", "CHF",
+										  "GBP", "USD"]
 
 	//Gas information
 	let gasUnits: [String] = ["U.S. Gallon", "Imp. Gallon", "Liter"]
