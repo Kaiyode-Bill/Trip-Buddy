@@ -21,7 +21,7 @@ class EqualViewController: ParentViewController {
 		temperatureAmountTextField.delegate = self
 	}
 
-	@IBAction func distanceAmountTextFieldEntered(sender: AnyObject) {
+	@IBAction func distanceAmountTextFieldEntered() {
 		if mainViewController!.programData!.equalDistanceAmount != 0 {
 			distanceAmountTextField.selectAll(self)
 			distanceAmountTextField.text = String(format: "%.3f", mainViewController!.programData!.equalDistanceAmount.doubleValue)
@@ -31,18 +31,18 @@ class EqualViewController: ParentViewController {
 		distanceAmountTextField.textAlignment = NSTextAlignment.Right
 	}
 
-	@IBAction func distanceAmountTextFieldExited(sender: AnyObject) {
+	@IBAction func distanceAmountTextFieldExited() {
 		mainViewController!.programData!.equalDistanceAmount = parseNumber(distanceAmountTextField.text!, minimum: -99999.999, maximum: 99999.999, decimalPlaces: 3)
 		mainViewController!.saveProgramData()
 	}
 
-	@IBAction func distanceUnitButtonPressed(sender: AnyObject) {
+	@IBAction func distanceUnitButtonPressed() {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
 		mainViewController!.programData!.equalDistanceUnit = 1 - mainViewController!.programData!.equalDistanceUnit.integerValue
 		mainViewController!.saveProgramData()
 	}
 
-	@IBAction func temperatureAmountTextFieldEntered(sender: AnyObject) {
+	@IBAction func temperatureAmountTextFieldEntered() {
 		if mainViewController!.programData!.equalTemperatureAmount != 0 {
 			temperatureAmountTextField.selectAll(self)
 			temperatureAmountTextField.text = String(format: "%.3f", mainViewController!.programData!.equalTemperatureAmount.doubleValue)
@@ -52,18 +52,18 @@ class EqualViewController: ParentViewController {
 		temperatureAmountTextField.textAlignment = NSTextAlignment.Right
 	}
 
-	@IBAction func temperatureAmountTextFieldExited(sender: AnyObject) {
+	@IBAction func temperatureAmountTextFieldExited() {
 		mainViewController!.programData!.equalTemperatureAmount = parseNumber(temperatureAmountTextField.text!, minimum: -99999.999, maximum: 99999.999, decimalPlaces: 3)
 		mainViewController!.saveProgramData()
 	}
 
-	@IBAction func temperatureUnitButtonPressed(sender: AnyObject) {
+	@IBAction func temperatureUnitButtonPressed() {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
 		mainViewController!.programData!.equalTemperatureUnit = 1 - mainViewController!.programData!.equalTemperatureUnit.integerValue
 		mainViewController!.saveProgramData()
 	}
 
-	@IBAction func resetButtonPressed(sender: AnyObject) {
+	@IBAction func resetButtonPressed() {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
 		mainViewController!.programData!.equalDistanceAmount = 0
 		mainViewController!.programData!.equalDistanceUnit = 0

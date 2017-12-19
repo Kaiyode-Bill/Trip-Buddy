@@ -13,12 +13,12 @@ class HelpViewController: UIViewController {
 		startupSwitch.on = mainViewController!.programData!.showHelpAtStartup.boolValue
 	}
 
-	@IBAction func startupSwitchChanged(sender: AnyObject) {
+	@IBAction func startupSwitchChanged() {
 		mainViewController!.programData!.showHelpAtStartup = startupSwitch.on
 		mainViewController!.saveProgramData()
 	}
 
-	@IBAction func returnButtonPressed(sender: AnyObject) {
+	@IBAction func returnButtonPressed() {
 		dismissViewControllerAnimated(true, completion: nil)
 	}
 }

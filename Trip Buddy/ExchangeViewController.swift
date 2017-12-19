@@ -27,7 +27,7 @@ class ExchangeViewController: ParentViewController {
 		outcomeTextField.delegate = self
 	}
 
-	@IBAction func amountTextFieldEntered(sender: AnyObject) {
+	@IBAction func amountTextFieldEntered() {
 		if mainViewController!.programData!.exchangeAmount != 0 {
 			amountTextField.selectAll(self)
 			amountTextField.text = String(format: "%.2f", mainViewController!.programData!.exchangeAmount.doubleValue)
@@ -37,7 +37,7 @@ class ExchangeViewController: ParentViewController {
 		amountTextField.textAlignment = NSTextAlignment.Center
 	}
 
-	@IBAction func amountTextFieldExited(sender: AnyObject) {
+	@IBAction func amountTextFieldExited() {
 		mainViewController!.programData!.exchangeAmount = parseNumber(amountTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
 		if mainViewController!.programData!.exchangeAmount == 0 {
 			mainViewController!.programData!.exchangePercentage = 0
@@ -47,7 +47,7 @@ class ExchangeViewController: ParentViewController {
 		mainViewController!.saveProgramData()
 	}
 
-	@IBAction func percentageTextFieldEntered(sender: AnyObject) {
+	@IBAction func percentageTextFieldEntered() {
 		if mainViewController!.programData!.exchangePercentage != 0 {
 			percentageTextField.selectAll(self)
 			percentageTextField.text = "\(mainViewController!.programData!.exchangePercentage.integerValue)"
@@ -57,13 +57,13 @@ class ExchangeViewController: ParentViewController {
 		percentageTextField.textAlignment = NSTextAlignment.Center
 	}
 
-	@IBAction func percentageTextFieldExited(sender: AnyObject) {
+	@IBAction func percentageTextFieldExited() {
 		mainViewController!.programData!.exchangePercentage = parseNumber(percentageTextField.text!, minimum: 0, maximum: 30, decimalPlaces: 0)
 		mainViewController!.programData!.exchangeFee = mainViewController!.programData!.exchangeAmount.doubleValue * (mainViewController!.programData!.exchangePercentage.doubleValue / 100)
 		mainViewController!.saveProgramData()
 	}
 
-	@IBAction func feeTextFieldEntered(sender: AnyObject) {
+	@IBAction func feeTextFieldEntered() {
 		if mainViewController!.programData!.exchangeFee != 0 {
 			feeTextField.selectAll(self)
 			feeTextField.text = String(format: "%.2f", mainViewController!.programData!.exchangeFee.doubleValue)
@@ -73,12 +73,12 @@ class ExchangeViewController: ParentViewController {
 		feeTextField.textAlignment = NSTextAlignment.Center
 	}
 
-	@IBAction func feeTextFieldExited(sender: AnyObject) {
+	@IBAction func feeTextFieldExited() {
 		mainViewController!.programData!.exchangeFee = parseNumber(feeTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
 		mainViewController!.saveProgramData()
 	}
 
-	@IBAction func outcomeTextFieldEntered(sender: AnyObject) {
+	@IBAction func outcomeTextFieldEntered() {
 		if mainViewController!.programData!.exchangeOutcome != 0 {
 			outcomeTextField.selectAll(self)
 			outcomeTextField.text = String(format: "%.2f", mainViewController!.programData!.exchangeOutcome.doubleValue)
@@ -88,17 +88,17 @@ class ExchangeViewController: ParentViewController {
 		outcomeTextField.textAlignment = NSTextAlignment.Center
 	}
 
-	@IBAction func outcomeTextFieldExited(sender: AnyObject) {
+	@IBAction func outcomeTextFieldExited() {
 		mainViewController!.programData!.exchangeOutcome = parseNumber(outcomeTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
 		mainViewController!.saveProgramData()
 	}
 
-	@IBAction func helpButtonPressed(sender: AnyObject) {
+	@IBAction func helpButtonPressed() {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
 		mainViewController!.performSegueWithIdentifier("MainToHelpSegue", sender: self)
 	}
 
-	@IBAction func resetButtonPressed(sender: AnyObject) {
+	@IBAction func resetButtonPressed() {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
 		mainViewController!.programData!.exchangeAmount = 0
 		mainViewController!.programData!.exchangePercentage = 0

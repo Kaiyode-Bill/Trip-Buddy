@@ -439,7 +439,7 @@ class MainViewController: UIViewController {
 	}
 
 	//Triggers a menu to pop up for changing the origin country
-	@IBAction func originCountryButtonPressed(sender: AnyObject) {
+	@IBAction func originCountryButtonPressed() {
 		let alertController = UIAlertController(title: "Select your origin country:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
 
 		view.endEditing(true) //Close any open responder beforehand
@@ -462,7 +462,7 @@ class MainViewController: UIViewController {
 	}
 
 	//Triggers a menu to pop up for changing the travel country
-	@IBAction func travelCountryButtonPressed(sender: AnyObject) {
+	@IBAction func travelCountryButtonPressed() {
 		let alertController = UIAlertController(title: "Select your travel country:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
 
 		view.endEditing(true) //Close any open responder beforehand
@@ -485,7 +485,7 @@ class MainViewController: UIViewController {
 	}
 
 	//Changes the scroll view depending upon what tab button was pressed
-	@IBAction func tabButtonPressed(sender: AnyObject) {
+	@IBAction func tabButtonPressed(_ sender: Any) {
 		view.endEditing(true) //Close any open responder beforehand
 		scrollView.contentOffset = CGPointMake(view.frame.size.width * CGFloat(sender.tag), 0)
 	}

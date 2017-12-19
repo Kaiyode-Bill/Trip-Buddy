@@ -26,7 +26,7 @@ class MealViewController: ParentViewController {
 		peopleTextField.delegate = self
 	}
 
-	@IBAction func amountTextFieldEntered(sender: AnyObject) {
+	@IBAction func amountTextFieldEntered() {
 		if mainViewController!.programData!.mealAmount != 0 {
 			amountTextField.selectAll(self)
 			amountTextField.text = String(format: "%.2f", mainViewController!.programData!.mealAmount.doubleValue)
@@ -36,7 +36,7 @@ class MealViewController: ParentViewController {
 		amountTextField.textAlignment = NSTextAlignment.Center
 	}
 
-	@IBAction func amountTextFieldExited(sender: AnyObject) {
+	@IBAction func amountTextFieldExited() {
 		mainViewController!.programData!.mealAmount = parseNumber(amountTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
 		if mainViewController!.programData!.mealAmount == 0 {
 			mainViewController!.programData!.mealPercentage = 0
@@ -45,7 +45,7 @@ class MealViewController: ParentViewController {
 		mainViewController!.saveProgramData()
 	}
 
-	@IBAction func percentageTextFieldEntered(sender: AnyObject) {
+	@IBAction func percentageTextFieldEntered() {
 		if mainViewController!.programData!.mealPercentage != 0 {
 			percentageTextField.selectAll(self)
 			percentageTextField.text = "\(mainViewController!.programData!.mealPercentage.integerValue)"
@@ -55,12 +55,12 @@ class MealViewController: ParentViewController {
 		percentageTextField.textAlignment = NSTextAlignment.Center
 	}
 
-	@IBAction func percentageTextFieldExited(sender: AnyObject) {
+	@IBAction func percentageTextFieldExited() {
 		mainViewController!.programData!.mealPercentage = parseNumber(percentageTextField.text!, minimum: 0, maximum: 30, decimalPlaces: 0)
 		mainViewController!.saveProgramData()
 	}
 
-	@IBAction func peopleTextFieldEntered(sender: AnyObject) {
+	@IBAction func peopleTextFieldEntered() {
 		if mainViewController!.programData!.mealPeople != 1 {
 			peopleTextField.selectAll(self)
 			peopleTextField.text = "\(mainViewController!.programData!.mealPeople.integerValue)"
@@ -70,12 +70,12 @@ class MealViewController: ParentViewController {
 		peopleTextField.textAlignment = NSTextAlignment.Center
 	}
 
-	@IBAction func peopleTextFieldExited(sender: AnyObject) {
+	@IBAction func peopleTextFieldExited() {
 		mainViewController!.programData!.mealPeople = parseNumber(peopleTextField.text!, minimum: 1, maximum: 30, decimalPlaces: 0)
 		mainViewController!.saveProgramData()
 	}
 
-	@IBAction func resetButtonPressed(sender: AnyObject) {
+	@IBAction func resetButtonPressed() {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
 		mainViewController!.programData!.mealAmount = 0
 		mainViewController!.programData!.mealPercentage = 0

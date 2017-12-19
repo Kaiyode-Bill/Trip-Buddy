@@ -25,7 +25,7 @@ class GasViewController: ParentViewController {
 		outcomeTextField.delegate = self
 	}
 
-	@IBAction func unitButtonPressed(sender: AnyObject) {
+	@IBAction func unitButtonPressed() {
 		let alertController = UIAlertController(title: "Select the current gas unit:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
 
 		view.endEditing(true) //Close any open responder from this view controller beforehand
@@ -46,7 +46,7 @@ class GasViewController: ParentViewController {
 		}
 	}
 
-	@IBAction func equivalentUnitButtonPressed(sender: AnyObject) {
+	@IBAction func equivalentUnitButtonPressed() {
 		let alertController = UIAlertController(title: "Select your native gas unit:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
 
 		view.endEditing(true) //Close any open responder from this view controller beforehand
@@ -67,7 +67,7 @@ class GasViewController: ParentViewController {
 		}
 	}
 
-	@IBAction func rateTextFieldEntered(sender: AnyObject) {
+	@IBAction func rateTextFieldEntered() {
 		if mainViewController!.programData!.gasRate != 0 {
 			rateTextField.selectAll(self)
 			rateTextField.text = String(format: "%.2f", mainViewController!.programData!.gasRate.doubleValue)
@@ -77,7 +77,7 @@ class GasViewController: ParentViewController {
 		rateTextField.textAlignment = NSTextAlignment.Center
 	}
 
-	@IBAction func rateTextFieldExited(sender: AnyObject) {
+	@IBAction func rateTextFieldExited() {
 		mainViewController!.programData!.gasRate = parseNumber(rateTextField.text!, minimum: 0, maximum: 999.99, decimalPlaces: 2)
 		if mainViewController!.programData!.gasRate == 0 {
 			mainViewController!.programData!.gasAmount = 0
@@ -86,7 +86,7 @@ class GasViewController: ParentViewController {
 		mainViewController!.saveProgramData()
 	}
 
-	@IBAction func amountTextFieldEntered(sender: AnyObject) {
+	@IBAction func amountTextFieldEntered() {
 		if mainViewController!.programData!.gasAmount != 0 {
 			amountTextField.selectAll(self)
 			amountTextField.text = String(format: "%.2f", mainViewController!.programData!.gasAmount.doubleValue)
@@ -96,7 +96,7 @@ class GasViewController: ParentViewController {
 		amountTextField.textAlignment = NSTextAlignment.Center
 	}
 
-	@IBAction func amountTextFieldExited(sender: AnyObject) {
+	@IBAction func amountTextFieldExited() {
 		mainViewController!.programData!.gasAmount = parseNumber(amountTextField.text!, minimum: 0, maximum: 999.99, decimalPlaces: 2)
 		if mainViewController!.programData!.gasAmount == 0 {
 			mainViewController!.programData!.gasOutcome = 0
@@ -104,7 +104,7 @@ class GasViewController: ParentViewController {
 		mainViewController!.saveProgramData()
 	}
 
-	@IBAction func outcomeTextFieldEntered(sender: AnyObject) {
+	@IBAction func outcomeTextFieldEntered() {
 		if mainViewController!.programData!.gasOutcome != 0 {
 			outcomeTextField.selectAll(self)
 			outcomeTextField.text = String(format: "%.2f", mainViewController!.programData!.gasOutcome.doubleValue)
@@ -114,12 +114,12 @@ class GasViewController: ParentViewController {
 		outcomeTextField.textAlignment = NSTextAlignment.Center
 	}
 
-	@IBAction func outcomeTextFieldExited(sender: AnyObject) {
+	@IBAction func outcomeTextFieldExited() {
 		mainViewController!.programData!.gasOutcome = parseNumber(outcomeTextField.text!, minimum: 0, maximum: 999999.99, decimalPlaces: 2)
 		mainViewController!.saveProgramData()
 	}
 
-	@IBAction func resetButtonPressed(sender: AnyObject) {
+	@IBAction func resetButtonPressed() {
 		view.endEditing(true) //Close any open responder from this view controller beforehand
 		mainViewController!.programData!.gasUnit = 1
 		mainViewController!.programData!.gasEquivalentUnit = 0
