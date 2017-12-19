@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,39 +14,36 @@
         <scene sceneID="EHf-IW-A2E">
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
-                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="World" translatesAutoresizingMaskIntoConstraints="NO" id="Oei-zt-yGp">
-                                <rect key="frame" x="47.5" y="193.5" width="280" height="280"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="World" translatesAutoresizingMaskIntoConstraints="NO" id="g6J-0I-m7P">
+                                <rect key="frame" x="47.5" y="193" width="280" height="280"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="TCf-gL-f0v"/>
-                                    <constraint firstAttribute="height" constant="280" id="VwE-wt-ZZv"/>
+                                    <constraint firstAttribute="width" constant="280" id="9Tm-kd-v5e"/>
+                                    <constraint firstAttribute="height" constant="280" id="MHY-7I-NU5"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Buddy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gDi-7n-YP4">
-                                <rect key="frame" x="20" y="483.5" width="335" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Buddy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ao9-xi-qjB">
+                                <rect key="frame" x="20" y="483" width="335" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="1fI-CS-HRN"/>
+                                    <constraint firstAttribute="height" constant="60" id="n8g-k2-k0f"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="48"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="gDi-7n-YP4" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="20" id="1Ec-ZS-dD6"/>
-                            <constraint firstItem="gDi-7n-YP4" firstAttribute="top" secondItem="Oei-zt-yGp" secondAttribute="bottom" constant="10" id="2HR-80-bKi"/>
-                            <constraint firstItem="Oei-zt-yGp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="HL9-GV-6SG"/>
-                            <constraint firstAttribute="trailing" secondItem="gDi-7n-YP4" secondAttribute="trailing" constant="20" id="OEd-KR-zf7"/>
-                            <constraint firstItem="Oei-zt-yGp" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Z9p-45-8Ap"/>
+                            <constraint firstItem="g6J-0I-m7P" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="2KV-Fo-hJb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ao9-xi-qjB" secondAttribute="trailing" constant="20" id="E3R-ap-6db"/>
+                            <constraint firstItem="g6J-0I-m7P" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="g9b-1n-JWx"/>
+                            <constraint firstItem="ao9-xi-qjB" firstAttribute="top" secondItem="g6J-0I-m7P" secondAttribute="bottom" constant="10" id="jHg-8o-a0H"/>
+                            <constraint firstItem="ao9-xi-qjB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="pGk-KN-BYq"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
