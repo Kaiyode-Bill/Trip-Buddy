@@ -1,6 +1,6 @@
 //Trip Buddy
 //ParentViewController.swift
-//© 2016 Kaiyode Software
+//(c) 2018 Kaiyode Software
 
 import UIKit
 
