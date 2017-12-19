@@ -158,9 +158,9 @@ class MainViewController: UIViewController {
 				if self.programData!.countryExchangeDate != "1/1/2000" {
 					previousValue = "The previous value (\(String(format: "%.2f", self.programData!.countryExchangeRate.doubleValue))) from \(self.programData!.countryExchangeDate) will be used instead."
 				}
-				let alertController = UIAlertController(title: "Unable to update the country exchange rate", message: "\(previousValue) \(alertReason)", preferredStyle: UIAlertControllerStyle.Alert)
-				alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.Default, handler: nil))
-				self.presentViewController(alertController, animated: true, completion: nil)
+				let alertController = UIAlertController(title: "Unable to update the country exchange rate", message: "\(previousValue) \(alertReason)", preferredStyle: UIAlertControllerStyle.alert)
+				alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
+				self.present(alertController, animated: true, completion: nil)
 			}
 			self.loading = false
 		})
@@ -440,14 +440,14 @@ class MainViewController: UIViewController {
 
 	//Triggers a menu to pop up for changing the origin country
 	@IBAction func originCountryButtonPressed() {
-		let alertController = UIAlertController(title: "Select your origin country:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
+		let alertController = UIAlertController(title: "Select your origin country:", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
 
 		view.endEditing(true) //Close any open responder beforehand
 		for i in stride(from: 0, to: countryNames.count, by: 1) {
-			alertController.addAction(UIAlertAction(title: countryNames[i], style: UIAlertActionStyle.Default, handler: originCountryAlertActionHandler))
+			alertController.addAction(UIAlertAction(title: countryNames[i], style: UIAlertActionStyle.default, handler: originCountryAlertActionHandler))
 		}
-		alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
-		presentViewController(alertController, animated: true, completion: nil)
+		alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+		present(alertController, animated: true, completion: nil)
 	}
 
 	//Changes the origin country based upon the selected choice
@@ -463,14 +463,14 @@ class MainViewController: UIViewController {
 
 	//Triggers a menu to pop up for changing the travel country
 	@IBAction func travelCountryButtonPressed() {
-		let alertController = UIAlertController(title: "Select your travel country:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
+		let alertController = UIAlertController(title: "Select your travel country:", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
 
 		view.endEditing(true) //Close any open responder beforehand
 		for i in stride(from: 0, to: countryNames.count, by: 1) {
-			alertController.addAction(UIAlertAction(title: countryNames[i], style: UIAlertActionStyle.Default, handler: travelCountryAlertActionHandler))
+			alertController.addAction(UIAlertAction(title: countryNames[i], style: UIAlertActionStyle.default, handler: travelCountryAlertActionHandler))
 		}
-		alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
-		presentViewController(alertController, animated: true, completion: nil)
+		alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+		present(alertController, animated: true, completion: nil)
 	}
 
 	//Changes the travel country based upon the selected choice

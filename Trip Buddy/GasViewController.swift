@@ -26,14 +26,14 @@ class GasViewController: ParentViewController {
 	}
 
 	@IBAction func unitButtonPressed() {
-		let alertController = UIAlertController(title: "Select the current gas unit:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
+		let alertController = UIAlertController(title: "Select the current gas unit:", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
 
 		view.endEditing(true) //Close any open responder from this view controller beforehand
 		for i in stride(from: 0, to: mainViewController!.gasUnits.count, by: 1) {
-			alertController.addAction(UIAlertAction(title: "\(mainViewController!.gasUnits[i])s", style: UIAlertActionStyle.Default, handler: unitAlertActionHandler))
+			alertController.addAction(UIAlertAction(title: "\(mainViewController!.gasUnits[i])s", style: UIAlertActionStyle.default, handler: unitAlertActionHandler))
 		}
-		alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
-		mainViewController!.presentViewController(alertController, animated: true, completion: nil)
+		alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+		mainViewController!.present(alertController, animated: true, completion: nil)
 	}
 
 	func unitAlertActionHandler(_ action: UIAlertAction!) {
@@ -47,14 +47,14 @@ class GasViewController: ParentViewController {
 	}
 
 	@IBAction func equivalentUnitButtonPressed() {
-		let alertController = UIAlertController(title: "Select your native gas unit:", message: "", preferredStyle: UIAlertControllerStyle.ActionSheet)
+		let alertController = UIAlertController(title: "Select your native gas unit:", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
 
 		view.endEditing(true) //Close any open responder from this view controller beforehand
 		for i in stride(from: 0, to: mainViewController!.gasUnits.count, by: 1) {
-			alertController.addAction(UIAlertAction(title: "\(mainViewController!.gasUnits[i])s", style: UIAlertActionStyle.Default, handler: equivalentUnitAlertActionHandler))
+			alertController.addAction(UIAlertAction(title: "\(mainViewController!.gasUnits[i])s", style: UIAlertActionStyle.default, handler: equivalentUnitAlertActionHandler))
 		}
-		alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: nil))
-		mainViewController!.presentViewController(alertController, animated: true, completion: nil)
+		alertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+		mainViewController!.present(alertController, animated: true, completion: nil)
 	}
 
 	func equivalentUnitAlertActionHandler(_ action: UIAlertAction!) {
