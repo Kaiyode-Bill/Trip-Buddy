@@ -108,8 +108,8 @@ class MainViewController: UIViewController {
 	func countryExchangeRateRequest() {
 		let originAbbreviation = countryAbbreviations[programData!.originCountry]
 		let travelAbbreviation = countryAbbreviations[programData!.travelCountry]
-		let url = NSURL(string: "https://download.finance.yahoo.com/d/quotes.csv?s=\(originAbbreviation)\(travelAbbreviation)=X&f=nl1d1t1")
-		let request = NSURLSession.sharedSession().dataTaskWithURL(url!, completionHandler: countryExchangeRateResponse)
+		let url = URL(string: "https://download.finance.yahoo.com/d/quotes.csv?s=\(originAbbreviation)\(travelAbbreviation)=X&f=nl1d1t1")
+		let request = URLSession.shared.dataTask(with: url!, completionHandler: countryExchangeRateResponse)
 
 		updating = true
 		saveProgramData()
@@ -117,14 +117,14 @@ class MainViewController: UIViewController {
 	}
 
 	//Given a response, update the exchange rate between the origin country and the travel country
-	func countryExchangeRateResponse(_ data: NSData?, urlResponse: NSURLResponse?, error: NSError?) {
+	func countryExchangeRateResponse(_ data: Data?, urlResponse: URLResponse?, error: Error?) {
 		var alertReason = ""
 		var previousValue = "This program requires a successful internet connection in order to utilize country exchange rates."
 
-		dispatch_async(dispatch_get_main_queue(), {
+		DispatchQueue.main.async {
 			self.updating = false
 			if urlResponse != nil {
-				if (urlResponse as! NSHTTPURLResponse).statusCode == 200 {
+				if (urlResponse as! HTTPURLResponse).statusCode == 200 {
 					let countryExchangeString = NSString(data: data!, encoding: NSUTF8StringEncoding)!
 					if countryExchangeString.componentsSeparatedByString(",").count > 2 {
 						let countryExchangeArray = countryExchangeString.componentsSeparatedByString(",")
@@ -163,7 +163,7 @@ class MainViewController: UIViewController {
 				self.present(alertController, animated: true, completion: nil)
 			}
 			self.loading = false
-		})
+		}
 	}
 
 	//Saves the program data to CoreData and then updates all of the UI elements
