@@ -80,8 +80,8 @@ class MainViewController: UIViewController {
 			existingData[0].originCountry = countryNames.count - 1
 			existingData[0].travelCountry = countryNames.count - 2
 			existingData[0].countryExchangeRate = 1
-			existingData[0].countryExchangeDate = "1/1/2000"
-			existingData[0].showHelpAtStartup = 1
+			existingData[0].countryExchangeDate = "2000-01-01 00:00:00"
+			existingData[0].showHelpAtStartup = true
 			existingData[0].exchangeAmount = 0
 			existingData[0].exchangePercentage = 0
 			existingData[0].exchangeFee = 0
@@ -150,12 +150,12 @@ class MainViewController: UIViewController {
 
 			if alertReason == "" {
 				//Transition to the help view controller by default when the app first starts
-				if self.loading && self.programData!.showHelpAtStartup == 1 {
+				if self.loading && self.programData!.showHelpAtStartup {
 					self.performSegue(withIdentifier: "MainToHelpSegue", sender: self)
 				}
 			} else {
 				//If there is an alert reason, display it
-				if self.programData!.countryExchangeDate != "1/1/2000" {
+				if self.programData!.countryExchangeDate != "2000-01-01 00:00:00" {
 					previousValue = "The previous value (\(String(format: "%.2f", self.programData!.countryExchangeRate))) from \(self.programData!.countryExchangeDate) will be used instead."
 				}
 				let alertController = UIAlertController(title: "Unable to update the country exchange rate", message: "\(previousValue) \(alertReason)", preferredStyle: UIAlertControllerStyle.alert)
