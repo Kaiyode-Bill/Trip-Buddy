@@ -119,7 +119,7 @@ class MainViewController: UIViewController {
 	//Given a response, update the exchange rate between the origin country and the travel country
 	func countryExchangeRateResponse(_ data: Data?, urlResponse: URLResponse?, error: Error?) {
 		var alertReason = ""
-		var previousValue = "This program requires a successful internet connection in order to utilize country exchange rates."
+		var previousValue = ""
 
 		DispatchQueue.main.async {
 			self.updating = false
@@ -147,7 +147,6 @@ class MainViewController: UIViewController {
 				self.programData!.countryExchangeRate = 0.01
 			}
 			self.saveProgramData()
-
 			if alertReason == "" {
 				//Transition to the help view controller by default when the app first starts
 				if self.loading && self.programData!.showHelpAtStartup {
@@ -157,6 +156,8 @@ class MainViewController: UIViewController {
 				//If there is an alert reason, display it
 				if self.programData!.countryExchangeDate != "2000-01-01 00:00:00" {
 					previousValue = "The previous value (\(String(format: "%.2f", self.programData!.countryExchangeRate))) from \(self.programData!.countryExchangeDate) will be used instead."
+				} else {
+					previousValue = "This program requires a successful internet connection in order to utilize country exchange rates."
 				}
 				let alertController = UIAlertController(title: "Unable to update the country exchange rate", message: "\(previousValue) \(alertReason)", preferredStyle: UIAlertControllerStyle.alert)
 				alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
