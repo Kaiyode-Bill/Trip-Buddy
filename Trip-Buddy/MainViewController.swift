@@ -59,11 +59,8 @@ class MainViewController: UIViewController {
 		super.viewDidLoad()
 		var existingData: [ProgramData] = []
 
-		//Initialize each of the view controllers and add them into the scroll view
+		//Add each of the view controllers to the scroll view
 		for i in stride(from: 0, to: viewControllers.count, by: 1) {
-			viewControllers[i].view.frame.size.width = scrollView.bounds.width
-			viewControllers[i].view.frame.size.height = scrollView.bounds.height
-			viewControllers[i].view.frame.origin.x = scrollView.bounds.width * CGFloat(i)
 			scrollView.addSubview(viewControllers[i].view)
 			viewControllers[i].mainViewController = self
 		}
@@ -432,10 +429,15 @@ class MainViewController: UIViewController {
 		}
 	}
 
-	//Set the scroll view's content size once all of the sub-views have been loaded and resized
+	//Set the size of each view controller once the scroll view has been loaded
 	override func viewDidLayoutSubviews() {
 		super.viewDidLayoutSubviews()
-		scrollView.contentSize = CGSize(width: view.frame.size.width * CGFloat(viewControllers.count), height: scrollView.bounds.height)
+		scrollView.contentSize = CGSize(width: scrollView.bounds.width * CGFloat(viewControllers.count), height: scrollView.bounds.height)
+		for i in stride(from: 0, to: viewControllers.count, by: 1) {
+			viewControllers[i].view.frame.size.width = scrollView.bounds.width
+			viewControllers[i].view.frame.size.height = scrollView.bounds.height
+			viewControllers[i].view.frame.origin.x = scrollView.bounds.width * CGFloat(i)
+		}
 	}
 
 	//This code is executed whenever a segue is about to take place
@@ -495,6 +497,6 @@ class MainViewController: UIViewController {
 	//Changes the scroll view depending upon what tab button was pressed
 	@IBAction func tabButtonPressed(_ sender: Any) {
 		view.endEditing(true) //Close any open responder beforehand
-		scrollView.contentOffset = CGPoint(x: view.frame.size.width * CGFloat((sender as AnyObject).tag), y: 0)
+		scrollView.contentOffset = CGPoint(x: scrollView.bounds.width * CGFloat((sender as AnyObject).tag), y: 0)
 	}
 }
