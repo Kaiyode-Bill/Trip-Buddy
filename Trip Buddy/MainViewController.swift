@@ -47,7 +47,7 @@ class MainViewController: UIViewController {
 	let equalTemperatureUnits: [String] = ["° Farenheit", "° Celsius"]
 
 	//CoreData variables for saving program data
-	let context = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
+	let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 	var programData: ProgramData? = nil
 
 	//Runtime variables
@@ -68,15 +68,15 @@ class MainViewController: UIViewController {
 		}
 		//Access the program data from CoreData
 		do {
-			existingData = try context.executeFetchRequest(NSFetchRequest(entityName: "ProgramData")) as! [ProgramData]
+			existingData = try context.fetch(NSFetchRequest(entityName: "ProgramData")) as! [ProgramData]
 		} catch {}
 		//If valid program data doesn't exist, create a default instance instead
 		if existingData.count != 1 {
 			for i in stride(from: existingData.count - 1, through: 0, by: -1) {
-				context.deleteObject(existingData[i] as NSManagedObject)
-				existingData.removeAtIndex(i)
+				context.delete(existingData[i] as NSManagedObject)
+				existingData.remove(at: i)
 			}
-			existingData = [NSEntityDescription.insertNewObjectForEntityForName("ProgramData", inManagedObjectContext: context) as! ProgramData]
+			existingData = [NSEntityDescription.insertNewObject(forEntityName: "ProgramData", into: context) as! ProgramData]
 			existingData[0].originCountry = countryNames.count - 1
 			existingData[0].travelCountry = countryNames.count - 2
 			existingData[0].countryExchangeRate = 1
