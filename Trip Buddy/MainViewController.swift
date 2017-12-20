@@ -196,11 +196,11 @@ class MainViewController: UIViewController {
 
 		//Update MainViewController's elements
 		originCountryImageView.image = UIImage(named: originName)
-		originCountryButton.setTitle("Origin Country: \(originName)", forState: UIControlState.normal)
+		originCountryButton.setTitle("Origin Country: \(originName)", for: UIControlState.normal)
 		originCountryButton.isEnabled = !updating
 		originCountryButton.isEnabled = false //Get rid of this line for the international version!!!
 		travelCountryImageView.image = UIImage(named: travelName)
-		travelCountryButton.setTitle("Travel Country: \(travelName)", forState: UIControlState.normal)
+		travelCountryButton.setTitle("Travel Country: \(travelName)", for: UIControlState.normal)
 		travelCountryButton.isEnabled = !updating
 		//Update ExchangeViewController's elements
 		exchangeViewController.unitsLabel.text = "Exchanging \(originCurrency) to \(travelCurrency):"
@@ -246,9 +246,9 @@ class MainViewController: UIViewController {
 		exchangeViewController.differenceLabel.isHidden = programData!.exchangeOutcome == 0
 		exchangeViewController.helpButton.isEnabled = !updating
 		//Update GasViewController's elements
-		gasViewController.unitButton.setTitle("\(gasUnit)s", forState: UIControlState.normal)
+		gasViewController.unitButton.setTitle("\(gasUnit)s", for: UIControlState.normal)
 		gasViewController.unitButton.isEnabled = !updating
-		gasViewController.equivalentUnitButton.setTitle("\(gasEquivalentUnit)s", forState: UIControlState.normal)
+		gasViewController.equivalentUnitButton.setTitle("\(gasEquivalentUnit)s", for: UIControlState.normal)
 		gasViewController.equivalentUnitButton.isEnabled = !updating
 		gasViewController.equivalentUnitButton.isEnabled = false //Get rid of this line for the international version!!!
 		gasViewController.ratePrefixLabel.text = "Today's price/\(gasUnit):"
@@ -323,7 +323,7 @@ class MainViewController: UIViewController {
 		} else {
 			equalViewController.distanceAmountTextField.text = ""
 		}
-		equalViewController.distanceUnitButton.setTitle(equalDistanceUnit, forState: UIControlState.normal)
+		equalViewController.distanceUnitButton.setTitle(equalDistanceUnit, for: UIControlState.normal)
 		equalViewController.equivalentDistanceAmountLabel.text = String(format: "%.3f", equalEquivalentDistanceAmount())
 		equalViewController.equivalentDistanceUnitLabel.text = equalEquivalentDistanceUnit
 		if programData!.equalTemperatureAmount != 0 {
@@ -331,7 +331,7 @@ class MainViewController: UIViewController {
 		} else {
 			equalViewController.temperatureAmountTextField.text = ""
 		}
-		equalViewController.temperatureUnitButton.setTitle(equalTemperatureUnit, forState: UIControlState.normal)
+		equalViewController.temperatureUnitButton.setTitle(equalTemperatureUnit, for: UIControlState.normal)
 		equalViewController.equivalentTemperatureAmountLabel.text = String(format: "%.3f", equalEquivalentTemperatureAmount())
 		equalViewController.equivalentTemperatureUnitLabel.text = equalEquivalentTemperatureUnit
 	}
