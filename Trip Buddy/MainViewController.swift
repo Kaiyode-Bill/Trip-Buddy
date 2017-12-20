@@ -125,17 +125,23 @@ class MainViewController: UIViewController {
 			self.updating = false
 			if urlResponse != nil {
 				if (urlResponse as! HTTPURLResponse).statusCode == 200 {
-					let countryExchangeString = NSString(data: data!, encoding: NSUTF8StringEncoding)!
-					if countryExchangeString.componentsSeparatedByString(",").count > 2 {
-						let countryExchangeArray = countryExchangeString.componentsSeparatedByString(",")
-						if Double(countryExchangeArray[1]) != nil {
-							self.programData!.countryExchangeRate = Double(countryExchangeArray[1])!
-							self.programData!.countryExchangeDate = countryExchangeArray[2].stringByReplacingOccurrencesOfString("\"", withString: "")
+					do {
+						let countryExchangeJSONObject = try JSONSerialization.jsonObject(with: data!, options: []) as! [String : Any]
+						let countryExchangeDictionary = countryExchangeJSONObject["Realtime Currency Exchange Rate"] as? [String : Any]
+						if countryExchangeDictionary != nil {
+							let countryExchangeString = countryExchangeDictionary!["5. Exchange Rate"] as? String
+							let countryExchangeDate = countryExchangeDictionary!["6. Last Refreshed"] as? String
+							if countryExchangeString != nil && Double(countryExchangeString!) != nil && countryExchangeDate != nil {
+								self.programData!.countryExchangeRate = Double(countryExchangeString!)!
+								self.programData!.countryExchangeDate = countryExchangeDate!
+							} else {
+								alertReason = "The retrieved data contains illegitimate values. Please try again at a later time. We apologize for the inconvenience."
+							}
 						} else {
-							alertReason = "The retrieved data contains illegitimate values. Please try again at a later time. We apologize for the inconvenience."
+							alertReason = "One of the selected countries doesn't currently have any exchange rate data. Please try again at a later time. We apologize for the inconvenience."
 						}
-					} else {
-						alertReason = "One of the selected countries doesn't currently have any exchange rate data. Please try again at a later time. We apologize for the inconvenience."
+					} catch {
+						alertReason = "The retrieved data isn't properly formatted. Please try again at a later time. We apologize for the inconvenience."
 					}
 				} else {
 					alertReason = "The web service for exchange rates is currently offline. Please try again at a later time. We apologize for the inconvenience."
