@@ -108,7 +108,7 @@ class MainViewController: UIViewController {
 	func countryExchangeRateRequest() {
 		let originAbbreviation = countryAbbreviations[programData!.originCountry]
 		let travelAbbreviation = countryAbbreviations[programData!.travelCountry]
-		let url = URL(string: "https://download.finance.yahoo.com/d/quotes.csv?s=\(originAbbreviation)\(travelAbbreviation)=X&f=nl1d1t1")
+		let url = URL(string: "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=\(originAbbreviation)&to_currency=\(travelAbbreviation)&apikey=GWQJ4U9KX9O20ESK")
 		let request = URLSession.shared.dataTask(with: url!, completionHandler: countryExchangeRateResponse)
 
 		updating = true
