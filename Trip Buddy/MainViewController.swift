@@ -132,13 +132,13 @@ class MainViewController: UIViewController {
 							self.programData!.countryExchangeRate = Double(countryExchangeArray[1])!
 							self.programData!.countryExchangeDate = countryExchangeArray[2].stringByReplacingOccurrencesOfString("\"", withString: "")
 						} else {
-							alertReason = "The retrieved data doesn't contain a numeric value. Please try again at a later time. We apologize for the inconvenience."
+							alertReason = "The retrieved data contains illegitimate values. Please try again at a later time. We apologize for the inconvenience."
 						}
 					} else {
-						alertReason = "The retrieved data isn't properly formatted. Please try again at a later time. We apologize for the inconvenience."
+						alertReason = "One of the selected countries doesn't currently have any exchange rate data. Please try again at a later time. We apologize for the inconvenience."
 					}
 				} else {
-					alertReason = "One of the countries you selected doesn't seem to have any data currently. Please try a different country for the time being. We apologize for the inconvenience."
+					alertReason = "The web service for exchange rates is currently offline. Please try again at a later time. We apologize for the inconvenience."
 				}
 			} else {
 				alertReason = "Make sure your device is connected to the internet before trying again."
@@ -155,9 +155,9 @@ class MainViewController: UIViewController {
 			} else {
 				//If there is an alert reason, display it
 				if self.programData!.countryExchangeDate != "2000-01-01 00:00:00" {
-					previousValue = "The previous value (\(String(format: "%.2f", self.programData!.countryExchangeRate))) from \(self.programData!.countryExchangeDate) will be used instead."
+					previousValue = "The previous value (\(String(format: "%.2f", self.programData!.countryExchangeRate))) from \(self.programData!.countryExchangeDate) UTC will be used instead."
 				} else {
-					previousValue = "This program requires a successful internet connection in order to utilize country exchange rates."
+					previousValue = "This app requires at least one successful internet connection in order to utilize country exchange rates."
 				}
 				let alertController = UIAlertController(title: "Unable to update the country exchange rate", message: "\(previousValue) \(alertReason)", preferredStyle: UIAlertControllerStyle.alert)
 				alertController.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
