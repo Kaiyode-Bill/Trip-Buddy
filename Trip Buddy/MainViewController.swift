@@ -431,9 +431,9 @@ class MainViewController: UIViewController {
 	}
 
 	//This code is executed whenever a segue is about to take place
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "MainToHelpSegue" {
-			let helpViewController = segue.destinationViewController as! HelpViewController
+			let helpViewController = segue.destination as! HelpViewController
 			helpViewController.mainViewController = self
 		}
 	}
