@@ -66,7 +66,7 @@ class MainViewController: UIViewController {
 		}
 		//Access the program data from CoreData
 		do {
-			existingData = try context.fetch(NSFetchRequest(entityName: "ProgramData")) as! [ProgramData]
+			existingData = try context.fetch(NSFetchRequest(entityName: "ProgramData"))
 		} catch {}
 		//If valid program data doesn't exist, create a default instance instead
 		if existingData.count != 1 {
