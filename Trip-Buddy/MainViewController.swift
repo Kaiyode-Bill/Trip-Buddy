@@ -124,8 +124,8 @@ class MainViewController: UIViewController {
 			if urlResponse != nil {
 				if (urlResponse as! HTTPURLResponse).statusCode == 200 {
 					do {
-						let countryExchangeJSONObject = try JSONSerialization.jsonObject(with: data!, options: []) as! [String : Any]
-						let countryExchangeDictionary = countryExchangeJSONObject["Realtime Currency Exchange Rate"] as? [String : Any]
+						let countryExchangeJSONObject = try JSONSerialization.jsonObject(with: data!, options: []) as! [String: Any]
+						let countryExchangeDictionary = countryExchangeJSONObject["Realtime Currency Exchange Rate"] as? [String: Any]
 						if countryExchangeDictionary != nil {
 							let countryExchangeString = countryExchangeDictionary!["5. Exchange Rate"] as? String
 							let countryExchangeDate = countryExchangeDictionary!["6. Last Refreshed"] as? String
