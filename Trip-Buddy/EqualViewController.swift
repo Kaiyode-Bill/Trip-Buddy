@@ -16,7 +16,6 @@ class EqualViewController: ParentViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
 		distanceAmountTextField.delegate = self
 		temperatureAmountTextField.delegate = self
 	}

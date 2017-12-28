@@ -22,7 +22,6 @@ class ParentViewController: UIViewController, UITextFieldDelegate {
 	//Parses a double from a string, as defined by the minimum, maximum and decimal places
 	func parseDouble(_ text: String, minimum: Double, maximum: Double, decimalPlaces: Int) -> Double {
 		var result = 0.0
-
 		if Double(text) != nil {
 			result = Double(text)!
 		}
@@ -37,7 +36,6 @@ class ParentViewController: UIViewController, UITextFieldDelegate {
 	//Parses an integer from a string, as defined by the minimum and maximum
 	func parseInt(_ text: String, minimum: Int, maximum: Int) -> Int {
 		var result = 0
-
 		if Int(text) != nil {
 			result = Int(text)!
 		}

@@ -20,7 +20,6 @@ class MealViewController: ParentViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
 		amountTextField.delegate = self
 		percentageTextField.delegate = self
 		peopleTextField.delegate = self

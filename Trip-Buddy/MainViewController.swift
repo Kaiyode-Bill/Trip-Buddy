@@ -12,44 +12,33 @@ class MainViewController: UIViewController {
 	@IBOutlet weak var travelCountryImageView: UIImageView!
 	@IBOutlet weak var travelCountryButton: UIButton!
 	@IBOutlet weak var scrollView: UIScrollView!
-
 	//The individual view controllers
 	let viewControllers: [ParentViewController] = [ExchangeViewController(nibName: "ExchangeViewController", bundle: nil),
 												   GasViewController(nibName: "GasViewController", bundle: nil),
 												   MealViewController(nibName: "MealViewController", bundle: nil),
 												   EqualViewController(nibName: "EqualViewController", bundle: nil)]
-
 	//Arrays of information where an index in any array pertains to the same country
 	let countryNames: [String] = ["Argentina", "Austria", "Bulgaria", "Canada", "Chile", "China", "France", "Germany",
 								  "India", "Italy", "Japan", "Malaysia", "Mexico", "Singapore", "Spain", "Switzerland",
 								  "United Kingdom", "United States"]
-
 	let countryCurrencies: [String] = ["Pesos", "Euros", "Leva", "Dollars", "Pesos", "Yuan", "Euros", "Euros",
 									   "Rupees", "Euros", "Yen", "Ringgits", "Pesos", "Dollars", "Euros", "Francs",
 									   "Pounds", "Dollars"]
-
 	let countrySymbols: [String] = ["$", "€", "лв", "$", "$", "¥", "€", "€",
 									"₹", "€", "¥", "R", "$", "$", "€", "C",
 									"£", "$"]
-
 	let countryAbbreviations: [String] = ["ARS", "EUR", "BGN", "CAD", "CLP", "CNY", "EUR", "EUR",
 										  "INR", "EUR", "JPY", "MYR", "MXN", "SGD", "EUR", "CHF",
 										  "GBP", "USD"]
-
 	//Gas information
 	let gasUnits: [String] = ["U.S. Gallon", "Imp. Gallon", "Liter"]
-
 	let gasWeights: [Double] = [1000000000, 832673840, 3785411784]
-
 	//Equal information
 	let equalDistanceUnits: [String] = ["Miles (or MPH)", "Kilometers (or km/h)"]
-
 	let equalTemperatureUnits: [String] = ["° Farenheit", "° Celsius"]
-
 	//CoreData variables for saving program data
 	let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 	var programData: ProgramData? = nil
-
 	//Runtime variables
 	var updating = false
 	var loading = true
@@ -58,7 +47,6 @@ class MainViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		var existingData: [ProgramData] = []
-
 		//Add each of the view controllers to the scroll view
 		for i in stride(from: 0, to: viewControllers.count, by: 1) {
 			scrollView.addSubview(viewControllers[i].view)
@@ -110,7 +98,6 @@ class MainViewController: UIViewController {
 		let travelAbbreviation = countryAbbreviations[programData!.travelCountry]
 		let url = URL(string: "https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=\(originAbbreviation)&to_currency=\(travelAbbreviation)&apikey=GWQJ4U9KX9O20ESK")
 		let request = URLSession.shared.dataTask(with: url!, completionHandler: countryExchangeRateResponse)
-
 		updating = true
 		saveProgramData()
 		request.resume()
@@ -120,7 +107,6 @@ class MainViewController: UIViewController {
 	func countryExchangeRateResponse(_ data: Data?, urlResponse: URLResponse?, error: Error?) {
 		var alertReason = ""
 		var previousValue = ""
-
 		DispatchQueue.main.async {
 			self.updating = false
 			if urlResponse != nil {
@@ -180,7 +166,6 @@ class MainViewController: UIViewController {
 		} catch {
 			//Do nothing
 		}
-
 		//Relevant country information
 		let originName = countryNames[programData!.originCountry]
 		let originCurrency = countryCurrencies[programData!.originCountry]
@@ -202,7 +187,6 @@ class MainViewController: UIViewController {
 		let equalEquivalentDistanceUnit = equalDistanceUnits[1 - programData!.equalDistanceUnit]
 		let equalTemperatureUnit = equalTemperatureUnits[programData!.equalTemperatureUnit]
 		let equalEquivalentTemperatureUnit = equalTemperatureUnits[1 - programData!.equalTemperatureUnit]
-
 		//Update MainViewController's elements
 		originCountryImageView.image = UIImage(named: originName)
 		originCountryButton.setTitle("Origin Country: \(originName)", for: UIControlState.normal)
@@ -455,7 +439,6 @@ class MainViewController: UIViewController {
 	//Triggers a menu to pop up for changing the origin country
 	@IBAction func originCountryButtonPressed() {
 		let alertController = UIAlertController(title: "Select your origin country:", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
-
 		view.endEditing(true) //Close any open responder beforehand
 		for i in stride(from: 0, to: countryNames.count, by: 1) {
 			alertController.addAction(UIAlertAction(title: countryNames[i], style: UIAlertActionStyle.default, handler: originCountryAlertActionHandler))
@@ -478,7 +461,6 @@ class MainViewController: UIViewController {
 	//Triggers a menu to pop up for changing the travel country
 	@IBAction func travelCountryButtonPressed() {
 		let alertController = UIAlertController(title: "Select your travel country:", message: "", preferredStyle: UIAlertControllerStyle.actionSheet)
-
 		view.endEditing(true) //Close any open responder beforehand
 		for i in stride(from: 0, to: countryNames.count, by: 1) {
 			alertController.addAction(UIAlertAction(title: countryNames[i], style: UIAlertActionStyle.default, handler: travelCountryAlertActionHandler))
